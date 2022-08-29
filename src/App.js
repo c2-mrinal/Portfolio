@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from './Main/Navbar';
 
 const Intro = lazy(() => import("./Components/Intro"));
 const Timeline = lazy(() => import("./Components/Timeline"))
@@ -14,13 +15,16 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+     <BrowserRouter>
+          <Navbar/>
+          <Suspense  fallback={<span>Loading...</span>}>
         <Routes>
           <Route path="/" element={<Intro />} />
-          <Route path="/timeline" element={<Timeline />} />
+          <Route path="/career" element={<Timeline />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/skill" element={<Skills data={rawdata} />} />
         </Routes>
+        </Suspense> 
       </BrowserRouter>
     </div>
   );
