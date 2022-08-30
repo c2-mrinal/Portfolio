@@ -8,7 +8,84 @@ const Timeline = lazy(() => import("./Components/Timeline"))
 const Contact = lazy(() => import("./Components/Contact"))
 const Skills = lazy(() => import("./Components/Skill"))
 
-const rawdata = { "data": [{ "v": 18 }, { "v": 46 }, { "v": 95 }, { "v": 99 }, { "v": 35 }, { "v": 46 }, { "v": 55 }, { "v": 57 }, { "v": 84 }, { "v": 74 }, { "v": 23 }, { "v": 47 }, { "v": 15 }, { "v": 60 }, { "v": 26 }, { "v": 12 }, { "v": 47 }, { "v": 33 }, { "v": 33 }, { "v": 28 }, { "v": 71 }, { "v": 94 }, { "v": 65 }, { "v": 61 }, { "v": 10 }, { "v": 26 }, { "v": 80 }, { "v": 66 }, { "v": 65 }, { "v": 18 }, { "v": 11 }, { "v": 64 }, { "v": 41 }, { "v": 84 }, { "v": 70 }, { "v": 10 }, { "v": 33 }, { "v": 96 }, { "v": 81 }, { "v": 97 }, { "v": 23 }, { "v": 79 }, { "v": 54 }, { "v": 72 }, { "v": 100 }, { "v": 42 }, { "v": 39 }, { "v": 10 }, { "v": 37 }], "useLabels": true, "width": 600, "height": 400 }
+const rawdata = [
+  {
+    "rad": 4.5,
+    "type": "a",
+    "name":  "Javascript"
+  },
+  {
+    "rad": 4,
+    "type": "a",
+    "name":  "TypeScript"
+  },
+  {
+    "rad": 4.5,
+    "type": "a",
+    "name":  "ReactJS"
+  },
+  {
+    "rad": 5,
+    "type": "a",
+    "name":  "CSS"
+  },
+  {
+    "rad": 5,
+    "type": "a",
+    "name":  "HTML"
+  },
+  {
+    "rad": 4,
+    "type": "c",
+    "name":  "Jquery"
+  },
+  {
+    "rad": 3,
+    "type": "b",
+    "name":  "NodeJs"
+  },
+  {
+    "rad": 2.5,
+    "type": "b",
+    "name":  "ExpressJS"
+  },
+  {
+    "rad": 3.5,
+    "type": "b",
+    "name":  "VueJS"
+  },
+  {
+    "rad": 3.5,
+    "type": "b",
+    "name":  "C++"
+  },
+  {
+    "rad": 3.5,
+    "type": "b",
+    "name":  "Data Structure"
+  },
+  {
+    "rad": 3.5,
+    "type": "b",
+    "name":  "SQL"
+  },
+  {
+    "rad": 3.5,
+    "type": "b",
+    "name":  "GIT"
+  },
+  {
+    "rad": 3.5,
+    "type": "b",
+    "name":  "VS Code"
+  },
+  {
+    "rad": 3.5,
+    "type": "b",
+    "name":  "Bootstrap"
+  },
+
+]
 
 
 function App() {
@@ -22,7 +99,7 @@ function App() {
           <Route path="/" element={<Intro />} />
           <Route path="/career" element={<Timeline />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/skill" element={<Skills data={rawdata} />} />
+          <Route path="/skill" element={<Skills data={rawdata} height={745} width={1440}/>} />
         </Routes>
         </Suspense> 
       </BrowserRouter>
