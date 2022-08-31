@@ -10,79 +10,79 @@ const Skills = lazy(() => import("./Components/Skill"))
 
 const rawdata = [
   {
-    "rad": 4.5,
+    "value": 4.5,
     "type": "a",
-    "name":  "Javascript"
+    "label":  "Javascript"
   },
   {
-    "rad": 4,
+    "value": 4,
     "type": "a",
-    "name":  "TypeScript"
+    "label":  "TypeScript"
   },
   {
-    "rad": 4.5,
+    "value": 4.5,
     "type": "a",
-    "name":  "ReactJS"
+    "label":  "ReactJS"
   },
   {
-    "rad": 5,
+    "value": 5,
     "type": "a",
-    "name":  "CSS"
+    "label":  "CSS"
   },
   {
-    "rad": 5,
+    "value": 5,
     "type": "a",
-    "name":  "HTML"
+    "label":  "HTML"
   },
   {
-    "rad": 4,
+    "value": 4,
     "type": "c",
-    "name":  "Jquery"
+    "label":  "Jquery"
   },
   {
-    "rad": 3,
+    "value": 3,
     "type": "b",
-    "name":  "NodeJs"
+    "label":  "NodeJs"
   },
   {
-    "rad": 2.5,
+    "value": 2.5,
     "type": "b",
-    "name":  "ExpressJS"
+    "label":  "ExpressJS"
   },
   {
-    "rad": 3.5,
+    "value": 3.5,
     "type": "b",
-    "name":  "VueJS"
+    "label":  "VueJS"
   },
   {
-    "rad": 3.5,
+    "value": 3.5,
     "type": "b",
-    "name":  "C++"
+    "label":  "C++"
   },
   {
-    "rad": 3.5,
+    "value": 3.5,
     "type": "b",
-    "name":  "Data Structure"
+    "label":  "Data Structure"
   },
   {
-    "rad": 3.5,
+    "value": 3.5,
     "type": "b",
-    "name":  "SQL"
+    "label":  "SQL"
   },
   {
-    "rad": 3.5,
+    "value": 3.5,
     "type": "b",
-    "name":  "GIT"
+    "label":  "GIT"
   },
   {
-    "rad": 3.5,
+    "value": 3.5,
     "type": "b",
-    "name":  "VS Code"
+    "label":  "VS Code"
   },
   {
-    "rad": 3.5,
+    "value": 3.5,
     "type": "b",
-    "name":  "Bootstrap"
+    "label":  "Bootstrap"
   },
 
 ]
