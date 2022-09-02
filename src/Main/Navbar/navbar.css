@@ -1,8 +1,15 @@
+.navBarBanner{
+   background: fixed;
+   position: fixed;
+   width: 100vw;
+   background-color: rgba(0, 255, 255, 0.082); 
+    
+}
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: rgb(19, 217, 231);
+    background-color: rgba(19, 217, 231, 0.308);
     position: sticky;
     top: 0;
     width: 100%;
@@ -10,7 +17,7 @@ ul {
   
   li {
     text-decoration: none;
-    float: right;
+    float: left;
     display: block;
     color: white;
     text-align: center;

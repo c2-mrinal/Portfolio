@@ -1,80 +1,140 @@
-import React, {
-    Component
-} from "react";
+import React, {useState,useEffect , useRef} from 'react'
 import * as d3 from "d3";
-class Skill extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            margin: {
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0
-            },
-            sizeDivisor: 0.8,
-            color: null,
-            nodePadding: 2.5,
-            width: 1045,
-            height: 745
-        };
+function Skill(props) {
+   
+    // const [Color, setColor] = useState(null);
+    const [Data, setData] = useState([ 
+        {
+        "value": 4.5,
+        "type": "a",
+        "label":  "Javascript",
+        "experience" : "01/03/2019",
+        "description": "work experience"
+      },
+      {
+        "value": 4,
+        "type": "a",
+        "label":  "TypeScript",
+        "experience" : "01/03/2019",
+        "description": "work experience"
+      },
+      {
+        "value": 4.5,
+        "type": "a",
+        "label":  "ReactJS",
+        "experience" : "01/03/2019",
+        "description": "work experience"
+      },
+      {
+        "value": 5,
+        "type": "a",
+        "label":  "CSS",
+        "experience" : "01/03/2019",
+        "description": "work experience"
+      },
+      {
+        "value": 5,
+        "type": "a",
+        "label":  "HTML",
+        "experience" : "01/03/2019",
+        "description": "work experience"
+      },
+      {
+        "value": 4,
+        "type": "c",
+        "label":  "Jquery"
+      },
+      {
+        "value": 3,
+        "type": "b",
+        "label":  "NodeJs"
+      },
+      {
+        "value": 2.5,
+        "type": "b",
+        "label":  "ExpressJS"
+      },
+      {
+        "value": 3.5,
+        "type": "b",
+        "label":  "VueJS"
+      },
+      {
+        "value": 3.5,
+        "type": "b",
+        "label":  "C++"
+      },
+      {
+        "value": 3.5,
+        "type": "b",
+        "label":  "Data Structure"
+      },
+      {
+        "value": 3.5,
+        "type": "b",
+        "label":  "SQL"
+      },
+      {
+        "value": 3.5,
+        "type": "b",
+        "label":  "GIT"
+      },
+      {
+        "value": 3.5,
+        "type": "b",
+        "label":  "VS Code"
+      },
+      {
+        "value": 3.5,
+        "type": "b",
+        "label":  "Bootstrap"
+      },
+    ]);
+    
+    const Margin = {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0
     }
+    const SizeDivisor = 0.8;
+    const NodePadding = 10.5
+    let simulation = null;
+    let graphdata =null;
 
-    componentDidMount() {
-        const { data } = this.props;
-        window.addEventListener("resize", this.handleResize);
-        this.setState({
-            color: d3.scaleOrdinal(["#597EF7", "#9254DE"])
-        });
-        this.simulation = d3.forceSimulation();
-        let tempData = data;
-        tempData.forEach((d) => {
+    let refNode = useRef(null)
+
+    useEffect(() => {    
+      
+    }, [])
+    
+    useEffect(() => {
+        window.addEventListener("resize", handleResize);
+        simulation = d3.forceSimulation();
+
+        Data.forEach((d) => {
             if (d.value) {
                 d.size = +d.value * 20;
                 d.size < 1 ? (d.radius = 1) : (d.radius = d.size);
             } else {
                 d.value = +d.value;
-                d.size = +d.value / this.state.sizeDivisor;
+                d.size = +d.value / SizeDivisor;
                 d.size < 3 ? (d.radius = 3) : (d.radius = d.size);
             }
         });
-        this.graphdata = tempData.sort((a, b) => {
+        graphdata = Data.sort((a, b) => {
             return b.size - a.size;
         });
-        this.createBubblePlot(this.graphdata);
-    }
+        createBubblePlot(graphdata);
+        }, [])
 
-    componentDidUpdate(prevProps) {
-        const {
-            data
-        } = this.props;
-        if (prevProps.data != this.props.data) {
-            let tempData = data;
-            tempData.forEach((d) => {
-                if (d.value) {
-                    d.size = +d.value * 20;
-                    d.size < 1 ? (d.radius = 1) : (d.radius = d.size);
-                } else {
-                    d.value = +d.value;
-                    d.size = +d.value / this.state.sizeDivisor;
-                    d.size < 5 ? (d.radius = 5) : (d.radius = d.size);
-                }
-            });
-            this.graphdata = tempData.sort((a, b) => {
-                return b.size - a.size;
-            });
-            this.createBubblePlot(this.graphdata);
-        }
-    }
-    createBubblePlot(data) {
-        const node = this.node;
-        d3.select(node).selectAll("g").remove();
+    const createBubblePlot = (data) => {
+        d3.select(refNode.current).selectAll("g").remove();
         const width =
-            this.props.width - this.state.margin.left - this.state.margin.right;
+            props.width - Margin.left - Margin.right;
         const height =
-            this.props.height - this.state.margin.top - this.state.margin.bottom;
-        this.simulation
+            props.height - Margin.top - Margin.bottom;
+        simulation
             .force(
                 "forceX",
                 d3
@@ -98,25 +158,33 @@ class Skill extends Component {
             )
             .force("charge", d3.forceManyBody().strength(-15));
 
-        let nodeg = d3
-            .select(node)
-            .attr("width", width + this.state.margin.left + this.state.margin.right)
-            .attr("height", height + this.state.margin.top + this.state.margin.bottom)
+            var tooltip = d3.select("body")
+            .append("div")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("visibility", "hidden")
+            .text(function(d){console.log(d);return `${d && d.value}`});
+            
+            
+
+        const  nodeg = d3
+            .select(refNode.current)
+            .attr("width", width + Margin.left + Margin.right)
+            .attr("height", height + Margin.top + Margin.bottom)
             .append("g")
             .attr(
                 "transform",
                 "translate(" +
-                this.state.margin.left +
+                Margin.left +
                 "," +
-                this.state.margin.top +
+                Margin.top +
                 ")"
-            );
-
+            )
         let nodes = null;
         let nodestext1 = null;
         let nodeinnercircle = null;
 
-        this.simulation
+        simulation
             .nodes(data)
             .force(
                 "collide",
@@ -124,7 +192,7 @@ class Skill extends Component {
                 .forceCollide()
                 .strength(0.5)
                 .radius((d) => {
-                    return (width / height / 2) * d.radius + this.state.nodePadding;
+                    return (width / height / 2) * d.radius + NodePadding;
                 })
                 .iterations(1)
             )
@@ -185,11 +253,11 @@ class Skill extends Component {
             .attr("fill-opacity", (d) => {
                 if (d.value) {
                     let opacity = d.value.toFixed(2);
-                    if (opacity >= 1) {
+                    if (opacity >= 4) {
                         return opacity;
-                    } else if (opacity < 1 && opacity > 0.4) {
+                    } else if (opacity < 4 && opacity > 3) {
                         return 0.8;
-                    } else if (opacity < 0.4 && opacity > 0.04) {
+                    } else if (opacity < 3 && opacity > 2) {
                         return 0.6;
                     } else {
                         return 0.5;
@@ -204,14 +272,24 @@ class Skill extends Component {
             .attr("cy", (d) => {
                 return d.y;
             })
-            .on("mouseover", this.mouseOver)
-            .on("mouseout", this.mouseOut)
+            .on("mouseover", function(e,d){
+                mouseOver(e,d);
+                tooltip.html(showTooltip(d)); 
+                 tooltip.style("visibility", "visible");
+            })
+            .on("mousemove", function(e,d){
+                 tooltip.style("top", 100+"px").style("left", 10+"px");
+            })
+            .on("mouseout", function(e,d){
+                mouseOut(e,d)
+                tooltip.style("visibility", "hidden");
+            })
             .call(
                 d3
                 .drag()
-                .on("start", this.dragstarted)
-                .on("drag", this.dragged)
-                .on("end", this.dragended)
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended)
             );
 
         nodeinnercircle = nodedata
@@ -277,71 +355,61 @@ class Skill extends Component {
             .attr("line-height", "20px")
             .attr("fill", "white");
 
-        this.simulation.alphaTarget(0.03).restart();
+        simulation.alphaTarget(0.03).restart();
     }
 
-    dragstarted = (e, d) => {
-        if (!e.active) this.simulation.alphaTarget(0.03).restart();
+    const dragstarted = (e, d) => {
+        if (!e.active) simulation.alphaTarget(0.03).restart();
         d.fx = e.x;
         d.fy = e.y;
     };
 
-    dragged = (e, d) => {
+    const dragged = (e, d) => {
         d.fx = e.x;
         d.fy = e.y;
     };
 
-    dragended = (e, d) => {
-        if (!e.active) this.simulation.alphaTarget(0.03);
+    const dragended = (e, d) => {
+        if (!e.active) simulation.alphaTarget(0.03);
         d.fx = null;
         d.fy = null;
     };
+    let handleResize = () => {
+        createBubblePlot(graphdata);
+    };
 
-    render() {
-        return ( <div style = {{
-                    height: "100vh",
-                    width: "100vw",
-                }} >
-            <svg style = {{
-                    height: "100vh",
-                    width: "100vw"
-                }}
-            ref = {
-                (node) => (this.node = node)
-            } >
-            </svg> </div>
-        );
+    const mouseOver = (e, data) => {
+        console.log(e,data)
+        if (data) {
+            if (data.label !== "" && data.label !== " ") {
+                if (props.onMouseOver) {
+                    props.onMouseOver(e, data);
+                }
+            }
+        }
+    };
+    const mouseOut = (e, data) => {
+        if (data) {
+            if (data.label !== "" && data.label !== " ") {
+                if (props.onMouseOut) {
+                    props.onMouseOut(e, data);
+                }
+            }
+        }
+    };
+    const showTooltip = (d) =>{
+        return `<div>
+        <div>Skill: ${d.label}</div>
+        <div>Profency: ${d.value}</div>
+        <div>Description: ${d.description}</div>
+        </div>`
     }
+    
 
-    handleResize = () => {
-        this.setState({
-            width: window.innerWidth,
-            height: window.innerHeight
-        });
-        this.createBubblePlot(this.graphdata);
-        //     this.forceUpdate();
-    };
+    return <>
+    <svg ref = {refNode} className="svgBody"/>
+    </>
 
-    mouseOver = (e, data) => {
-        if (data) {
-            if (data.label !== "" && data.label !== " ") {
-                if (this.props.onMouseOver) {
-                    this.props.onMouseOver(e, data);
-                }
-            }
-        }
-    };
-    mouseOut = (e, data) => {
-        // console.log("onMouseOut")
-        if (data) {
-            if (data.label !== "" && data.label !== " ") {
-                if (this.props.onMouseOut) {
-                    this.props.onMouseOut(e, data);
-                }
-            }
-        }
-    };
 }
-
 
 export default Skill

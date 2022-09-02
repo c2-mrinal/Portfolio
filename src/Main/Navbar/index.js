@@ -1,10 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
-function Navbar() {
+function Header() {
   return (
-    <ul>
+    <>
+      <Navbar variant="ligth" bg="light" expand="lg" fixed="top"> 
+        <Container>
+          <Navbar.Brand href="/">
+          Introduction
+          </Navbar.Brand>
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav></Nav>
+          <Nav>
+            <Nav.Link href="/career">Career</Nav.Link>
+            <Nav.Link  href="/skill">Skills</Nav.Link>
+            <Nav.Link  href="/contact">Contact</Nav.Link>
+
+          </Nav>
+        </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    {/* <div className="navBarBanner"> <ul>
       <li>
         <Link to="/" className="active">
           Introduction
@@ -20,7 +40,9 @@ function Navbar() {
         <Link to="/contact">Contact</Link>
       </li>
     </ul>
+    </div> */}
+    </>
   );
 }
 
-export default Navbar;
+export default Header;
