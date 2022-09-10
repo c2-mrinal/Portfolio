@@ -1,5 +1,45 @@
 .svgBody{
     width:     calc(100% - 20px);
-  /* height:    calc(100% - 1080px); */
+  height:    calc(100% - 1080px);
   /* padding:   calc(1vw + 5px); */
+}
+.bubble
+{
+   position: relative;
+   width: 310px;
+   height: 120px;
+   padding: 0px;
+   background: #CF5858;
+   -webkit-border-radius: 9px;
+   -moz-border-radius: 9px;
+   border-radius: 9px;
+    border: #D6D2D2 solid 4px;
+}
+
+.bubble:after
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 12px 20px;
+    border-color: #CF5858 transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: -20px;
+    left: 11px;
+}
+
+.bubble:before
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 15px 23px;
+    border-color: #D6D2D2 transparent;
+    display: block;
+    width: 0;
+    z-index: 0;
+    top: -27px;
+    left: 8px;
 }

@@ -11,7 +11,7 @@ function Header() {
       <Navbar variant="ligth" bg="light" expand="lg" fixed="top"> 
         <Container>
           <Navbar.Brand href="/">
-          Introduction
+          C2-MRINAL
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav></Nav>

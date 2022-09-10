@@ -1,5 +1,6 @@
 import React, {useState,useEffect , useRef} from 'react'
 import * as d3 from "d3";
+import "./skill.css"
 function Skill(props) {
    
     // const [Color, setColor] = useState(null);
@@ -274,11 +275,12 @@ function Skill(props) {
             })
             .on("mouseover", function(e,d){
                 mouseOver(e,d);
+                console.log(e,d)
                 tooltip.html(showTooltip(d)); 
                  tooltip.style("visibility", "visible");
             })
             .on("mousemove", function(e,d){
-                 tooltip.style("top", 100+"px").style("left", 10+"px");
+                 tooltip.style("top", d.y+d.radius/2-10+"px").style("left", d.x+ d.radius/2 +10+"px");
             })
             .on("mouseout", function(e,d){
                 mouseOut(e,d)
@@ -398,7 +400,7 @@ function Skill(props) {
         }
     };
     const showTooltip = (d) =>{
-        return `<div>
+        return `<div class="bubble">
         <div>Skill: ${d.label}</div>
         <div>Profency: ${d.value}</div>
         <div>Description: ${d.description}</div>
