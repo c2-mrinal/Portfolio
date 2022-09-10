@@ -3,7 +3,7 @@ import "./intro.css"
 
 function Intro() {
     return (
-        <div className='backgroundImage'>Introduction</div>
+        <div className='backgroundImage'></div>
     )
 }
 

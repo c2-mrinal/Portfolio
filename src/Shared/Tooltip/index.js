@@ -2,7 +2,9 @@ import React from 'react'
 
 function Tooltip(props) {
   return (
-    <div>hi</div>
+    <div>
+      hi
+    </div>
   )
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./navbar.css";
+import Logo from "../../image/LOGO.png"
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -8,39 +9,23 @@ import Nav from 'react-bootstrap/Nav';
 function Header() {
   return (
     <>
-      <Navbar variant="ligth" bg="light" expand="lg" fixed="top"> 
-        <Container>
-          <Navbar.Brand href="/">
-          C2-MRINAL
+      <Navbar className="nav-container" expand="lg" fixed="top"> 
+        <Container  className="justify-content-evenly">
+          <Navbar.Brand className= "justify-content-start" href="/">
+            <img className="logo-img"src={Logo} alt="Logo"/>
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav></Nav>
-          <Nav>
-            <Nav.Link href="/career">Career</Nav.Link>
-            <Nav.Link  href="/skill">Skills</Nav.Link>
-            <Nav.Link  href="/contact">Contact</Nav.Link>
+          <Nav className="justify-content-center flex-grow-1 Nav-Link ">
+            <span><Nav.Link href="/career">Career</Nav.Link></span>
+            <span><Nav.Link  href="/skill">Skills</Nav.Link></span>
+            <span><Nav.Link  href="/about">About</Nav.Link></span>
+            <span><Nav.Link  href="/contact">Contact</Nav.Link></span>
 
           </Nav>
         </Navbar.Collapse>
         </Container>
       </Navbar>
-    {/* <div className="navBarBanner"> <ul>
-      <li>
-        <Link to="/" className="active">
-          Introduction
-        </Link>
-      </li>
-      <li>
-        <Link to="/career">Career</Link>
-      </li>
-      <li>
-        <Link to="/skill">Skills</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact</Link>
-      </li>
-    </ul>
-    </div> */}
     </>
   );
 }
