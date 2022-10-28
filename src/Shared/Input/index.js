@@ -13,6 +13,7 @@ function Input(props) {
           id={props.id}
           value={props.value}
           onChange={props.onChange}
+          disabled={props.disabled ? "disabled" : ""}
         />
         <label htmlFor={props.id} className="form__label">
           {props.name}

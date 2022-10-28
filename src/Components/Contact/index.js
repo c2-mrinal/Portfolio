@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import ring from "../../image/ring.png";
-import c2Icon from "../../image/c2Icon.png";
 import "./contact.css";
 import MailPopUp from "./MailPopUp";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 function Contact() {
   const [DisplayMailPopup, setDisplayMailPopup] = useState(false);
@@ -30,19 +32,22 @@ function Contact() {
                   </span>
                   Linkedin
                 </span> */}
-                <a href={""}>
+                <a
+                  href={"https://www.linkedin.com/in/mrinal-kasyap-695853171/"}
+                  target="_blank"
+                >
                   <span className="contactIcon">
-                    <i className="fa fa-brands fa-3x fa-linkedin"></i>
+                    <LinkedInIcon />
                   </span>
                 </a>
-                <a href={""}>
+                <a href={""} target="_blank">
                   <span className="contactIcon">
-                    <i className="fa fa-brands fa-3x fa-twitter"></i>
+                    <TwitterIcon />
                   </span>{" "}
                 </a>
-                <a href={""}>
+                <a href={""} target="_blank">
                   <span className="contactIcon">
-                    <i className="fa fa-brands fa-3x fa-instagram"></i>
+                    <InstagramIcon />
                   </span>
                 </a>
               </div>
@@ -51,7 +56,32 @@ function Contact() {
         </div>
       </div>
       <div className="contactBG">
-        <div className="contactBox">ind</div>
+        <div className="contactBox">
+          <a href={"https://github.com/c2-mrinal"} target="_blank">
+            <span className="contactIcon">
+              <GitHubIcon />
+              <i className="fa  fa-3x fa-brands fa-github"></i>
+            </span>
+          </a>
+          <a
+            href={"https://stackoverflow.com/users/14725561/c2-mrinal"}
+            target="_blank"
+          >
+            <span className="contactIcon">
+              <i className="fa  fa-3x fa-brands fa-stack-overflow"></i>
+            </span>
+          </a>
+          <a href={"https://www.hackerrank.com/mrinalspec"} target="_blank">
+            <span className="contactIcon">
+              <i className="fa  fa-brands fa-hackerrank"></i>
+            </span>
+          </a>
+          <a href={""}>
+            <span className="contactIcon">
+              <i className="fa  fa-3x fa-brands fa-codepen"></i>
+            </span>
+          </a>
+        </div>
       </div>
       <MailPopUp show={DisplayMailPopup} hide={handleMailPopup} />
     </div>

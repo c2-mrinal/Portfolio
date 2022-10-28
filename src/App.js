@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Main/Navbar";
 import Loader from "./Shared/Loader";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/css/font-awesome.min.css";
 
 const Intro = lazy(() => import("./Components/Intro"));
 const Timeline = lazy(() => import("./Components/Timeline"));

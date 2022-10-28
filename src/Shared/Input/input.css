@@ -1,7 +1,7 @@
 .form__group {
     position: relative;
-    padding: 15px 0 0;
-    margin: 30px auto;
+    padding: 5px 0 0;
+    margin: 5px auto;
     width: 80%;
 }
 
@@ -9,6 +9,7 @@
     font-family: inherit;
     width: 100%;
     border: 0;
+    margin-left: 1em;
     border-bottom: 2px solid #9b9b9b;
     outline: 0;
     font-size: 1.3rem;
@@ -27,7 +28,8 @@
 }
 .form__label {
     position: absolute;
-    top: 0;
+    top: 18px;
+    left: -2em;
     display: block;
     transition: 0.2s;
     font-size: 1rem;
@@ -35,18 +37,21 @@
 }
 .form__field:focus {
     padding-bottom: 6px;
+    position: relative;
+    left: 1.25em;
     font-weight: 700;
     border-width: 3px;
-    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image: linear-gradient(to right, #accfcc, #5a926f);
     border-image-slice: 1;
 }
 .form__field:focus ~ .form__label {
     position: absolute;
-    top: 0;
+    top: 25px;
+    left:-1.25em;
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: #11998e;
+    color: #87a5a2;
     font-weight: 700;
 }
 .form__field:required, .form__field:invalid {
