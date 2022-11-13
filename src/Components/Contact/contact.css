@@ -54,9 +54,6 @@
 }
 
 .contactIcon:hover {
-  border: 1px solid black;
-  border-radius: 50px;
-
   animation: expandIcons 1s linear;
   animation-name: expandIcons;
 }

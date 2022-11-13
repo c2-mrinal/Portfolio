@@ -37,17 +37,17 @@ function Contact() {
                   target="_blank"
                 >
                   <span className="contactIcon">
-                    <LinkedInIcon />
+                    <LinkedInIcon fontSize="large" />
                   </span>
                 </a>
                 <a href={""} target="_blank">
                   <span className="contactIcon">
-                    <TwitterIcon />
+                    <TwitterIcon fontSize="large" />
                   </span>{" "}
                 </a>
                 <a href={""} target="_blank">
                   <span className="contactIcon">
-                    <InstagramIcon />
+                    <InstagramIcon fontSize="large" />
                   </span>
                 </a>
               </div>

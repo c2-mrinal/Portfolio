@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
 import Input from "../../../Shared/Input";
-import Textarea from "../../../Shared/TextArea";
 import SendIcon from "@material-ui/icons/Send";
 import CloseIcon from "@material-ui/icons/Close";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
@@ -113,6 +111,7 @@ function MailPopUp(props) {
                 value={MailData.mailId}
                 onChange={handleChange}
                 required={true}
+                autoFocus={true}
               />
               <>
                 {IsSendingMailValid.mailingID &&

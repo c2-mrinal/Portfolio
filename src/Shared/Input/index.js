@@ -14,6 +14,7 @@ function Input(props) {
           value={props.value}
           onChange={props.onChange}
           disabled={props.disabled ? "disabled" : ""}
+          autoFocus={props.autoFocus ? "autoFocus" : ""}
         />
         <label htmlFor={props.id} className="form__label">
           {props.name}
