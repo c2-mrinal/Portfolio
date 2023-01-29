@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Folder from "./Folder";
 import "./leftPanel.css";
 
-function LeftPanel() {
+function LeftPanel(props) {
   const [FolderData, setFolderData] = useState({});
   const [SelectedFolder, setSelectedFolder] = useState("Masters");
 
@@ -146,7 +146,10 @@ function LeftPanel() {
   }, []);
 
   const folderSelected = (data) => {
-    if (data !== SelectedFolder) setSelectedFolder(data);
+    if (data !== SelectedFolder) {
+      setSelectedFolder(data);
+      props.selectFolder(data);
+    }
   };
 
   const showNode = (data) => {};

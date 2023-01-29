@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Input from "../../../Shared/Input";
-import SendIcon from "@material-ui/icons/Send";
-import CloseIcon from "@material-ui/icons/Close";
-import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+// import SendIcon from "@material-ui/icons/Send";
+// import CloseIcon from "@material-ui/icons/Close";
+// import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+// import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
 function MailPopUp(props) {
   const [MailData, setMailData] = useState({
@@ -68,7 +68,7 @@ function MailPopUp(props) {
               title="Close"
               className="modelHeaderMenuAlert"
             >
-              <CloseIcon fontSize="large" />
+              {/* <CloseIcon fontSize="large" /> */}
             </span>
           </div>
           <div className="modelHeaderMenu">
@@ -77,7 +77,7 @@ function MailPopUp(props) {
               title="Discard"
               className="modelHeaderMenuAlert"
             >
-              <DeleteForeverIcon fontSize="large" />
+              {/* <DeleteForeverIcon fontSize="large" /> */}
             </span>
 
             <span
@@ -85,9 +85,9 @@ function MailPopUp(props) {
               title="Send"
               className="modelHeaderMenuConfirm"
             >
-              <SendIcon fontSize="large" />
+              {/* <SendIcon fontSize="large" /> */}
             </span>
-            <MoreHorizIcon />
+            {/* <MoreHorizIcon /> */}
           </div>
         </Modal.Header>
         <Modal.Body>

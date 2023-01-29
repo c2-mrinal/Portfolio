@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./contact.css";
 import MailPopUp from "./MailPopUp";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import GitHubIcon from "@material-ui/icons/GitHub";
+// import InstagramIcon from "@material-ui/icons/Instagram";
+// import LinkedInIcon from "@material-ui/icons/LinkedIn";
+// import TwitterIcon from "@material-ui/icons/Twitter";
+// import GitHubIcon from "@material-ui/icons/GitHub";
 
 function Contact() {
   const [DisplayMailPopup, setDisplayMailPopup] = useState(false);
@@ -37,17 +37,17 @@ function Contact() {
                   target="_blank"
                 >
                   <span className="contactIcon">
-                    <LinkedInIcon fontSize="large" />
+                    {/* <LinkedInIcon fontSize="large" /> */}
                   </span>
                 </a>
                 <a href={""} target="_blank">
                   <span className="contactIcon">
-                    <TwitterIcon fontSize="large" />
+                    {/* <TwitterIcon fontSize="large" /> */}
                   </span>{" "}
                 </a>
                 <a href={""} target="_blank">
                   <span className="contactIcon">
-                    <InstagramIcon fontSize="large" />
+                    {/* <InstagramIcon fontSize="large" /> */}
                   </span>
                 </a>
               </div>
@@ -59,7 +59,7 @@ function Contact() {
         <div className="contactBox">
           <a href={"https://github.com/c2-mrinal"} target="_blank">
             <span className="contactIcon">
-              <GitHubIcon />
+              {/* <GitHubIcon /> */}
               <i className="fa  fa-3x fa-brands fa-github"></i>
             </span>
           </a>

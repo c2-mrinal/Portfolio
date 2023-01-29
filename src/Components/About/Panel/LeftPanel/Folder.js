@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+// import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+// import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+
 function Folder({ explorer, selectedFolder, folderSelected }) {
   const [expand, setExpand] = useState(false);
 
@@ -14,7 +17,6 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
     setExpand(!expand);
     if (!explorer.isFolder) folderSelected(explorer.name);
   };
-  console.log(explorer, selectedFolder, folderSelected);
 
   return (
     <div>
@@ -27,7 +29,13 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
         <span>
           {" "}
           {explorer.isFolder && (
-            <>{expand ? <KeyboardArrowDownIcon /> : <ChevronRightIcon />}</>
+            <>
+              {expand ? (
+                <FontAwesomeIcon className="treeNodeSelected" icon={faCoffee} />
+              ) : (
+                <FontAwesomeIcon icon="fa-regular fa-angle-right" />
+              )}
+            </>
           )}{" "}
         </span>
         <span>{explorer.name}</span>
