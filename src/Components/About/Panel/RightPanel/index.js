@@ -4,13 +4,17 @@ import "./rightPanel.css";
 function RightPanel(props) {
   const folderIs = props.selectedFolder;
   const [data, setdata] = useState({});
+  const [showDetail, setShowDetail] = useState("");
 
   useEffect(() => {
     const data = {
       Masters: {
         img: "",
         info: [
-          ["College", "DAIICT"],
+          [
+            "College",
+            "Dhirubhai Ambani Institute of Information and Communication Technology",
+          ],
           ["Degree", "Masters of Science"],
           ["Specialization", "IT"],
           ["Location", "Gandhinagar"],
@@ -60,29 +64,37 @@ function RightPanel(props) {
     };
   }, props);
 
-  console.log(data);
+  const showDetails = (value) => {
+    if (value == showDetail) {
+      setShowDetail("");
+    } else {
+      setShowDetail(value);
+    }
+  };
+
   return (
     <div>
       <div className="card">
         <div className="card-header row">
-          <div className="col-xs-12 col-md-4">
-            <img
-              src={data[folderIs] && data[folderIs].img}
-              height={100}
-              width={100}
-              alt="123"
-            />
-          </div>
-          <div className="col-xs-12 col-md-8">
+          <div className="col-xs-12 col-md-12">
             {data[folderIs] &&
               data[folderIs].info &&
               data[folderIs]?.info.map((info) => {
                 return (
-                  <div>
-                    <strong>{info[0]} :</strong> {info[1]}
-                  </div>
+                  <span
+                    className="infoTextBox"
+                    onClick={() => showDetails(info[1])}
+                    key={info[1]}
+                  >
+                    <strong>{info[0]} </strong>
+                  </span>
                 );
               })}
+            {showDetail ? (
+              <div className="detailsStyled"> {showDetail}</div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <div className="card-body rightPanel">
@@ -97,10 +109,10 @@ function RightPanel(props) {
             <h5 className="card-title">Projects</h5>
             <ul>
               <li>Kabadiwala</li>
+              {/* <li></li>
               <li></li>
               <li></li>
-              <li></li>
-              <li></li>
+              <li></li> */}
             </ul>
           </div>
         </div>

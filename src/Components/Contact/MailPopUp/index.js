@@ -40,14 +40,11 @@ function MailPopUp(props) {
 
     const mailingID = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(MailData.mailId);
     const mailingMessage = MailData.message.trim().length < 10;
-    setIsSendingMailValid(
-      {
-        mailingName: mailingName,
-        mailingID: mailingID,
-        mailingMessage: mailingMessage,
-      },
-      console.log(mailingID, IsSendingMailValid)
-    );
+    setIsSendingMailValid({
+      mailingName: mailingName,
+      mailingID: mailingID,
+      mailingMessage: mailingMessage,
+    });
     return mailingName || mailingID || mailingMessage;
   };
 
@@ -68,7 +65,7 @@ function MailPopUp(props) {
               title="Close"
               className="modelHeaderMenuAlert"
             >
-              {/* <CloseIcon fontSize="large" /> */}
+              <i class="fa-solid fa-xmark"></i>{" "}
             </span>
           </div>
           <div className="modelHeaderMenu">
@@ -77,17 +74,16 @@ function MailPopUp(props) {
               title="Discard"
               className="modelHeaderMenuAlert"
             >
-              {/* <DeleteForeverIcon fontSize="large" /> */}
+              <i class="fa-solid fa-trash"></i>
             </span>
-
             <span
               onClick={sendMail}
               title="Send"
               className="modelHeaderMenuConfirm"
             >
-              {/* <SendIcon fontSize="large" /> */}
+              <i class="fa-solid fa-paper-plane"></i>
             </span>
-            {/* <MoreHorizIcon /> */}
+            <i class="fa-duotone fa-ellipsis-vertical"></i>
           </div>
         </Modal.Header>
         <Modal.Body>

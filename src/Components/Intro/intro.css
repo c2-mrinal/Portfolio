@@ -6,3 +6,11 @@
     height: 100vh;
     width: 100vw;
 } */
+
+.downloadResumeButton{
+   
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 40%;
+}
