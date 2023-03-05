@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import allActions from "../../../../actions";
+import { useSelector, useDispatch } from "react-redux";
+
 import Folder from "./Folder";
 import "./leftPanel.css";
 
-function LeftPanel() {
+function LeftPanel(props) {
   const [FolderData, setFolderData] = useState({});
   const [SelectedFolder, setSelectedFolder] = useState("Masters");
+
+  const selectedFolder = useSelector((state) => state.folderIs || "Masters");
+  console.log(selectedFolder);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const DummyFolder = {
@@ -146,7 +155,10 @@ function LeftPanel() {
   }, []);
 
   const folderSelected = (data) => {
-    if (data !== SelectedFolder) setSelectedFolder(data);
+    if (data !== selectedFolder) {
+      props.selectFolder(data);
+      dispatch(allActions.folderAction(data));
+    }
   };
 
   const showNode = (data) => {};
@@ -155,14 +167,14 @@ function LeftPanel() {
       {FolderData.Mrinal && (
         <Folder
           explorer={FolderData.Mrinal}
-          selectedFolder={SelectedFolder}
+          selectedFolder={selectedFolder}
           folderSelected={folderSelected}
         />
       )}
       {FolderData.Website && (
         <Folder
           explorer={FolderData.Website}
-          selectedFolder={SelectedFolder}
+          selectedFolder={selectedFolder}
           folderSelected={folderSelected}
         />
       )}
@@ -170,4 +182,11 @@ function LeftPanel() {
   );
 }
 
-export default LeftPanel;
+const mapStateToProps = function (state) {
+  return {
+    // profile: state.user.profile,
+    // loggedIn: state.auth.loggedIn,
+  };
+};
+
+export default connect(null, mapStateToProps)(LeftPanel);

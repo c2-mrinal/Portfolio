@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+
 function Folder({ explorer, selectedFolder, folderSelected }) {
   const [expand, setExpand] = useState(false);
 
@@ -8,13 +7,12 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
     if (explorer && explorer.isOpen) {
       setExpand(true);
     }
-  }, false);
+  }, explorer);
 
   const selectedAboutField = () => {
     setExpand(!expand);
     if (!explorer.isFolder) folderSelected(explorer.name);
   };
-  console.log(explorer, selectedFolder, folderSelected);
 
   return (
     <div>
@@ -24,25 +22,32 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
         }`}
         onClick={selectedAboutField}
       >
-        <span>
+        <span className="folderTreeNode">
           {" "}
-          {explorer.isFolder && (
-            <>{expand ? <KeyboardArrowDownIcon /> : <ChevronRightIcon />}</>
+          {explorer?.isFolder && (
+            <>
+              {expand ? (
+                <i class="fa-solid fa-chevron-down treeNodeSelected"></i>
+              ) : (
+                <i class="fa-solid fa-chevron-right"></i>
+              )}
+            </>
           )}{" "}
         </span>
-        <span>{explorer.name}</span>
+        <span className="folderTreeNode">{explorer?.name}</span>
       </div>
 
       <br />
       <div style={{ display: expand ? "block" : "none", paddingLeft: 15 }}>
-        {explorer.items.map((explore) => (
-          <Folder
-            key={explore.name}
-            explorer={explore}
-            selectedFolder={selectedFolder}
-            folderSelected={folderSelected}
-          />
-        ))}
+        {explorer &&
+          explorer.items?.map((explore) => (
+            <Folder
+              key={explore.name}
+              explorer={explore}
+              selectedFolder={selectedFolder}
+              folderSelected={folderSelected}
+            />
+          ))}
       </div>
     </div>
   );

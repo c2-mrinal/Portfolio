@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./about.css";
 import LeftPanel from "./Panel/LeftPanel";
 import RightPanel from "./Panel/RightPanel";
 
 function About() {
+  const [selectedFolder, setSelectedFolder] = useState("Masters");
+
   return (
     <div className="about-cointainer">
       <div class="splitLeft ">
-        <LeftPanel />
+        <LeftPanel selectFolder={setSelectedFolder} />
       </div>
 
       <div class="splitRight">
-        <RightPanel />
+        <RightPanel selectedFolder={selectedFolder} />
       </div>
     </div>
   );
