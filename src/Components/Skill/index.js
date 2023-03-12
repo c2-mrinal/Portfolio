@@ -104,9 +104,17 @@ function Skill(props) {
 
   let refNode = useRef(null);
 
-  useEffect(() => {}, []);
+  // useEffect(async () => {
+
+  // }, []);
 
   useEffect(() => {
+    const data = fetch("/skill")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        return data;
+      });
     window.addEventListener("resize", handleResize);
     simulation = d3.forceSimulation();
 
