@@ -85,3 +85,5 @@ const skillData = [
     label: "Bootstrap",
   },
 ];
+
+module.exports = { skillData };
