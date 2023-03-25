@@ -3,16 +3,12 @@ import Button from "../../Shared/Button";
 import "./intro.css";
 
 function Intro() {
-  const downloadResume = () => {
-    // fetch("SamplePDF.pdf").then((response) => {
-    //   response.blob().then((blob) => {
-    //     const fileURL = window.URL.createObjectURL(blob);
+  const downloadResume = async () => {
+    const response = await fetch("/api/resume");
+    let data = await response.json();
     let alink = document.createElement("a");
-    alink.href = "../../image/MrinalKasyapResume.pdf";
-    alink.download = "SamplePDF.pdf";
+    alink.href = data.url;
     alink.click();
-    //   });
-    // });
   };
   return (
     <div className="backgroundImage">
