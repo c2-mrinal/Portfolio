@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const fs = require("fs");
 
 const skillData = require("./modules/skills/skillData");
 const { folderData, aboutData } = require("./modules/about/aboutData");
@@ -17,6 +18,30 @@ app.get("/about/folders", (req, res) => {
 });
 app.get("/about/details", (req, res) => {
   res.send(aboutData);
+});
+
+app.get("/api/resume", (req, res) => {
+  try {
+    res.send({ url: "http://localhost:8080/api/resume/download" });
+  } catch (e) {
+    console.error(e);
+    res.status(500).end();
+  }
+});
+
+app.get("/api/resume/download", (req, res) => {
+  try {
+    var file = "./files/MrinalKasyapResume.pdf";
+    var filename = path.basename(file);
+    res.setHeader("Content-disposition", "attachment; filename=" + filename);
+    res.setHeader("Content-type", "application/pdf");
+
+    var filestream = fs.createReadStream(file);
+    filestream.pipe(res);
+  } catch (e) {
+    console.error(e);
+    res.status(500).end();
+  }
 });
 
 app.listen(8080, (error) => {
