@@ -9,7 +9,7 @@ import Nav from "react-bootstrap/Nav";
 function Header() {
   return (
     <>
-      <Navbar className="nav-container" expand="lg" fixed="top">
+      <Navbar className="nav-container sticky-top" expand="lg">
         <Container className="justify-content-evenly">
           <Navbar.Brand className="justify-content-start" href="/">
             <img className="logo-img" src={Logo} alt="Logo" />

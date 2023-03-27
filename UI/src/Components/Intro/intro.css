@@ -1,16 +1,64 @@
 /* .backgroundImage{
-    background-image: url("../../image/fleur-SE2zTdS1MNo-unsplash.jpg");
+    background-image: url("../../image/backgroundMain.mp4");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100vw;
 } */
+.myVideo {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 
 .downloadResumeButton{
-   
-    text-align: center;
-    position: fixed;
-    top: 50%;
-    left: 40%;
+    font-size: 1.7em;
+    position: relative;
+    left: 35%;
+}
+
+.resumeDownloadContainer{
+    float: right;
+    padding: 30px;
+    margin: auto;
+    position: relative;
+    z-index: 10;
+}
+
+.pointingArrow{
+    height: 250px;
+    width: 300px;
+}
+
+.intoDesciption{
+    font-family: font-file-82132;
+    position: absolute;
+    bottom: 0px;
+    padding: 50px;
+    color: aliceblue;
+}
+
+.intoSection{
+    height: 100vh;
+    width: 100vw;
+}
+
+.careerbg{
+    background-color: rgb(158, 204, 233);
+
+}
+
+.skillbg{
+    background-color: rgba(236, 164, 76, 0.667);
+
+}
+
+.aboutbg{
+    background-color: rgba(151, 208, 85, 0.777);
+
+}
+
+.contactbg{
+    background-color: bisque;
 }
