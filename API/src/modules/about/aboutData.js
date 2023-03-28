@@ -166,7 +166,12 @@ const folderData = {
       ],
     },
   },
-  defaultSelected: "Qmetry",
+  defaultSelected: {
+    name: "Softweb Solutions",
+    isFolder: false,
+    value: "softwebSolutions",
+    category: 2,
+  },
 };
 
 const aboutData = {
