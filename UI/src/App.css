@@ -1,5 +1,6 @@
 
 .App{
   font-family: 'arvo';
+  font-size: clamp(1rem, 1.4rem, 1.7rem);
 
 }
