@@ -10,14 +10,15 @@ const app = express();
 // default file to be called in case of no defined path
 const publicDirPath = path.join(__dirname, "../src");
 app.use(express.static(publicDirPath));
-app.get("/skill", (req, res) => {
+app.get("/api/skill", (req, res) => {
   res.send(skillData);
 });
-app.get("/about/folders", (req, res) => {
+app.get("/api/about/folders", (req, res) => {
   res.send(folderData);
 });
-app.get("/about/details", (req, res) => {
-  res.send(aboutData);
+app.get("/api/about/details/:folderIs", (req, res) => {
+  console.log(req.params.folderIs);
+  res.send(aboutData[req.params.folderIs]);
 });
 
 app.get("/api/resume", (req, res) => {
