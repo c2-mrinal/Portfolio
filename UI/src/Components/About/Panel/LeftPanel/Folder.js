@@ -4,6 +4,7 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
   const [expand, setExpand] = useState(false);
 
   useEffect(() => {
+    console.warn(explorer);
     if (explorer && explorer.isOpen) {
       setExpand(true);
     }
@@ -11,14 +12,22 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
 
   const selectedAboutField = () => {
     setExpand(!expand);
-    if (!explorer.isFolder) folderSelected(explorer.name);
+    console.log(explorer);
+    if (!explorer.isFolder) {
+      const folderParams = {
+        category: explorer.category,
+        name: explorer.name,
+        value: explorer.value,
+      };
+      folderSelected(folderParams);
+    }
   };
 
   return (
     <div>
       <div
         className={`folderTreeExpandable ${
-          selectedFolder == explorer.name ? "treeNodeSelected" : ""
+          selectedFolder.name === explorer.name ? "treeNodeSelected" : ""
         }`}
         onClick={selectedAboutField}
       >

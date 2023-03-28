@@ -4,7 +4,7 @@ import LeftPanel from "./Panel/LeftPanel";
 import RightPanel from "./Panel/RightPanel";
 
 function About() {
-  const [selectedFolder, setSelectedFolder] = useState("Masters");
+  const [selectedFolder, setSelectedFolder] = useState("");
 
   return (
     <div className="about-cointainer">
