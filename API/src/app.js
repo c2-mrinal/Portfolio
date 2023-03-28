@@ -17,7 +17,6 @@ app.get("/api/about/folders", (req, res) => {
   res.send(folderData);
 });
 app.get("/api/about/details/:folderIs", (req, res) => {
-  console.log(req.params.folderIs);
   res.send(aboutData[req.params.folderIs]);
 });
 
