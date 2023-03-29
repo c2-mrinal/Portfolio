@@ -10,19 +10,34 @@ const app = express();
 // default file to be called in case of no defined path
 const publicDirPath = path.join(__dirname, "../src");
 app.use(express.static(publicDirPath));
-app.get("/api/skill", (req, res) => {
-  res.send(skillData);
+app.get("/api/skill/details", (req, res) => {
+  try {
+    res.status(200).send(skillData);
+  } catch (e) {
+    console.error(e);
+    res.status(500).end();
+  }
 });
 app.get("/api/about/folders", (req, res) => {
-  res.send(folderData);
+  try {
+    res.status(200).send(folderData);
+  } catch (e) {
+    console.error(e);
+    res.status(500).end();
+  }
 });
 app.get("/api/about/details/:folderIs", (req, res) => {
-  res.send(aboutData[req.params.folderIs]);
+  try {
+    res.status(200).send(aboutData[req.params.folderIs]);
+  } catch (e) {
+    console.error(e);
+    res.status(500).end();
+  }
 });
 
 app.get("/api/resume", (req, res) => {
   try {
-    res.send({ url: "http://localhost:8080/api/resume/download" });
+    res.status(200).send({ url: "http://localhost:8080/api/resume/download" });
   } catch (e) {
     console.error(e);
     res.status(500).end();
