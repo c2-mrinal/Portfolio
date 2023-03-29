@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./rightPanel.css";
 import allActions from "../../../../actions";
 import { useSelector, useDispatch } from "react-redux";
+import Educational from "./Educational";
+import Experiance from "./Experiance";
+import Extracurricular from "./Extracurricular";
 
 function RightPanel(props) {
   const [data, setdata] = useState({});
@@ -32,59 +35,38 @@ function RightPanel(props) {
   };
 
   const showDetails = (value) => {
-    if (value == showDetail) {
+    if (value === showDetail) {
       setShowDetail("");
     } else {
       setShowDetail(value);
     }
   };
+  const detailPanel = () => {
+    switch (folderIs.category) {
+      case 1:
+        return (
+          <Educational
+            data={data}
+            showDetail={showDetail}
+            showDetails={showDetails}
+          />
+        );
+      case 2:
+        return <Experiance />;
 
-  return (
-    <div>
-      <div className="card">
-        <div className="card-header row">
-          <div className="col-xs-12 col-md-12">
-            {data &&
-              data.info?.map((info) => {
-                return (
-                  <span
-                    className="infoTextBox"
-                    onClick={() => showDetails(info[1])}
-                    key={info[1]}
-                  >
-                    <strong>{info[0]} </strong>
-                  </span>
-                );
-              })}
-            {showDetail ? (
-              <div className="detailsStyled"> {showDetail}</div>
-            ) : (
-              ""
-            )}
-          </div>
-        </div>
-        <div className="card-body rightPanel">
-          <div>
-            <h5 className="card-title">About</h5>
-            <p className="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-          </div>
-          <div>
-            <h5 className="card-title">Projects</h5>
-            <ul>
-              <li>Kabadiwala</li>
-              {/* <li></li>
-              <li></li>
-              <li></li>
-              <li></li> */}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+      case 3:
+        return <Extracurricular />;
+      case 4:
+        return <Educational />;
+      case 5:
+        return <Educational />;
+
+      default:
+        break;
+    }
+  };
+
+  return <div>{detailPanel()}</div>;
 }
 
 export default RightPanel;

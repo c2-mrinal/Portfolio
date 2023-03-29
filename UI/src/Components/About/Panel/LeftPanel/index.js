@@ -8,9 +8,7 @@ import "./leftPanel.css";
 function LeftPanel(props) {
   const [FolderData, setFolderData] = useState({});
 
-  const selectedFolder = useSelector(
-    (state) => state.folderIs || "Softweb Solutions"
-  );
+  const selectedFolder = useSelector((state) => state.folderIs);
 
   const dispatch = useDispatch();
 
@@ -26,7 +24,7 @@ function LeftPanel(props) {
   }, []);
 
   const folderSelected = (data) => {
-    if (data !== selectedFolder) {
+    if (data.value !== selectedFolder.value) {
       props.selectFolder(data);
       dispatch(allActions.folderAction(data));
     }

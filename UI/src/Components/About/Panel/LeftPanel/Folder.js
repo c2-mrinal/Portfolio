@@ -4,7 +4,6 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
   const [expand, setExpand] = useState(false);
 
   useEffect(() => {
-    console.warn(explorer);
     if (explorer && explorer.isOpen) {
       setExpand(true);
     }
@@ -12,7 +11,6 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
 
   const selectedAboutField = () => {
     setExpand(!expand);
-    console.log(explorer);
     if (!explorer.isFolder) {
       const folderParams = {
         category: explorer.category,

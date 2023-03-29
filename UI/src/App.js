@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, createContext } from "react";
+import React, { lazy, Suspense, useLayoutEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -15,7 +15,23 @@ const Contact = lazy(() => import("./Components/Contact"));
 const Skills = lazy(() => import("./Components/Skill"));
 const About = lazy(() => import("./Components/About"));
 
+function useWindowSize() {
+  const [size, setSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+  return size;
+}
+
 function App() {
+  const [width, height] = useWindowSize();
+
+  console.log(width, height);
   return (
     <div className="App">
       <Provider store={configureStore()}>
@@ -23,16 +39,25 @@ function App() {
           <Header />
           <Suspense fallback={<Loader />}>
             <Routes className="headerPlaced">
-              <Route path="/" element={<Intro />} />
-              <Route path="/career" element={<Timeline />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route
+                path="/"
+                element={<Intro height={height} width={width} />}
+              />
+              <Route
+                path="/career"
+                element={<Timeline height={height} width={width} />}
+              />
+              <Route
+                path="/contact"
+                element={<Contact height={height} width={width} />}
+              />
               <Route
                 path="/about"
                 element={<About style={{ margin: "200px" }} />}
               />
               <Route
                 path="/skill"
-                element={<Skills height={745} width={1440} />}
+                element={<Skills height={height} width={width} />}
               />
             </Routes>
           </Suspense>

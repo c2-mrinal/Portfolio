@@ -3,93 +3,18 @@ import * as d3 from "d3";
 import "./skill.css";
 function Skill(props) {
   // const [Color, setColor] = useState(null);
-  const [Data, setData] = useState([
-    {
-      value: 4.5,
-      type: "a",
-      label: "Javascript",
-      experience: "01/03/2019",
-      description: "work experience",
-    },
-    {
-      value: 4,
-      type: "a",
-      label: "TypeScript",
-      experience: "01/03/2019",
-      description: "work experience",
-    },
-    {
-      value: 4.5,
-      type: "a",
-      label: "ReactJS",
-      experience: "01/03/2019",
-      description: "work experience",
-    },
-    {
-      value: 5,
-      type: "a",
-      label: "CSS",
-      experience: "01/03/2019",
-      description: "work experience",
-    },
-    {
-      value: 5,
-      type: "a",
-      label: "HTML",
-      experience: "01/03/2019",
-      description: "work experience",
-    },
-    {
-      value: 4,
-      type: "c",
-      label: "Jquery",
-    },
-    {
-      value: 3,
-      type: "b",
-      label: "NodeJs",
-    },
-    {
-      value: 2.5,
-      type: "b",
-      label: "ExpressJS",
-    },
-    {
-      value: 3.5,
-      type: "b",
-      label: "VueJS",
-    },
-    {
-      value: 3.5,
-      type: "b",
-      label: "C++",
-    },
-    {
-      value: 3.5,
-      type: "b",
-      label: "Data Structure",
-    },
-    {
-      value: 3.5,
-      type: "b",
-      label: "SQL",
-    },
-    {
-      value: 3.5,
-      type: "b",
-      label: "GIT",
-    },
-    {
-      value: 3.5,
-      type: "b",
-      label: "VS Code",
-    },
-    {
-      value: 3.5,
-      type: "b",
-      label: "Bootstrap",
-    },
-  ]);
+
+  const [Data, setData] = useState([]);
+  useEffect(() => {
+    async function fetchMyAPI() {
+      let response = await fetch(`/api/skill/details`);
+      response = await response.json();
+      setData([...response.skillData]);
+    }
+    return () => {
+      fetchMyAPI();
+    };
+  }, []);
 
   const Margin = {
     top: 0,
@@ -104,18 +29,7 @@ function Skill(props) {
 
   let refNode = useRef(null);
 
-  // useEffect(async () => {
-
-  // }, []);
-
   useEffect(() => {
-    const data = fetch("/skill")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        return data;
-      });
-    window.addEventListener("resize", handleResize);
     simulation = d3.forceSimulation();
 
     Data.forEach((d) => {
@@ -132,7 +46,7 @@ function Skill(props) {
       return b.size - a.size;
     });
     createBubblePlot(graphdata);
-  }, []);
+  }, [Data, props.width, props.height]);
 
   const createBubblePlot = (data) => {
     d3.select(refNode.current).selectAll("g").remove();
@@ -375,6 +289,10 @@ function Skill(props) {
   let handleResize = () => {
     createBubblePlot(graphdata);
   };
+
+  useEffect(() => {
+    // createBubblePlot(graphdata);
+  }, [props.width]);
 
   const mouseOver = (e, data) => {
     if (data) {
