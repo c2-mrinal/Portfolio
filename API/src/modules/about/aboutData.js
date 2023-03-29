@@ -7,43 +7,9 @@ const folderData = {
       data: [],
       items: [
         {
-          name: "Eductional",
-          isFolder: true,
-          isOpen: true,
-          items: [
-            {
-              name: "Masters",
-              isFolder: false,
-              value: "master",
-              category: 1,
-              items: [],
-            },
-            {
-              name: "Bachlors",
-              isFolder: false,
-              value: "bachlor",
-              category: 1,
-              items: [],
-            },
-            {
-              name: "Intermediate",
-              isFolder: false,
-              value: "intermediate",
-              category: 1,
-              items: [],
-            },
-            {
-              name: "Matriculation",
-              isFolder: false,
-              value: "matriculation",
-              category: 1,
-              items: [],
-            },
-          ],
-        },
-        {
           name: "Experince",
           isFolder: true,
+          isOpen: true,
           items: [
             {
               name: "Softweb Solutions",
@@ -71,6 +37,40 @@ const folderData = {
               isFolder: false,
               value: "daiict",
               category: 2,
+              items: [],
+            },
+          ],
+        },
+        {
+          name: "Eductional",
+          isFolder: true,
+          items: [
+            {
+              name: "Masters",
+              isFolder: false,
+              value: "master",
+              category: 1,
+              items: [],
+            },
+            {
+              name: "Bachlors",
+              isFolder: false,
+              value: "bachlor",
+              category: 1,
+              items: [],
+            },
+            {
+              name: "Intermediate",
+              isFolder: false,
+              value: "intermediate",
+              category: 1,
+              items: [],
+            },
+            {
+              name: "Matriculation",
+              isFolder: false,
+              value: "matriculation",
+              category: 1,
               items: [],
             },
           ],
@@ -176,7 +176,7 @@ const folderData = {
 
 const aboutData = {
   master: {
-    img: "",
+    img: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Dhirubhai_Ambani_Institute_of_Information_and_Communication_Technology_logo.png/220px-Dhirubhai_Ambani_Institute_of_Information_and_Communication_Technology_logo.png",
     info: [
       [
         "College",
@@ -186,17 +186,19 @@ const aboutData = {
       ["Specialization", "IT"],
       ["Location", "Gandhinagar"],
     ],
+    url: "https://www.daiict.ac.in/",
     about: "",
     projects: [],
   },
   bachlor: {
-    img: "",
+    img: "https://upload.wikimedia.org/wikipedia/en/d/d2/Birla_Institute_of_Technology_Mesra.png",
     info: [
       ["College", "BIT, Mesra"],
       ["Degree", "BCA"],
       ["Specialization", "Computer Application"],
       ["Location", "Ranchi"],
     ],
+    url: "https://www.bitmesra.ac.in/",
     about: "",
     projects: [
       { name: "kabadiwala", stackUsed: [], description: "", url: "" },
@@ -206,38 +208,95 @@ const aboutData = {
     ],
   },
   intermediate: {
-    img: "",
+    img: "https://srichaitanyaapp.s3.ap-south-1.amazonaws.com/prod/assets/images/logo-sri-chaitanya.png",
     info: [
       ["School", " Sri Chaitanya"],
       ["Qualification", " Intermediate "],
       ["Specialization", "Phyics, Chm, Math"],
       ["Location", "Vizag"],
     ],
+    url: "https://srichaitanyaschool.net/",
     about: "",
   },
   matriculation: {
-    img: "",
+    img: "http://sunflowerschool.in/images/sunflower.jpg",
     info: [
       ["School", " Sun Flower Public School"],
       ["Qualification", " Intermediate "],
       ["Specialization", "Phyics, Chm, Math"],
       ["Location", "Vizag"],
     ],
+    url: "http://sunflowerschool.in/",
     about: "",
   },
-  matriculation: {
+  softwebSolutions: {
     img: "",
     info: [],
     about: "",
   },
-  matriculation: {
+  qmetry: {
     img: "",
-    info: [
-      ["School", " Sun Flower Public School"],
-      ["Qualification", " Intermediate "],
-      ["Specialization", "Phyics, Chm, Math"],
-      ["Location", "Vizag"],
-    ],
+    info: [],
+    about: "",
+  },
+  magentaBI: {
+    img: "",
+    info: [],
+    about: "",
+  },
+  daiict: {
+    img: "",
+    info: [],
+    about: "",
+  },
+  hobbie: {
+    img: "",
+    info: [],
+    about: "",
+  },
+  achive: {
+    img: "",
+    info: [],
+    about: "",
+  },
+  front_workflow: {
+    img: "",
+    info: [],
+    about: "",
+  },
+  front_library: {
+    img: "",
+    info: [],
+    about: "",
+  },
+  front_dirArchi: {
+    img: "",
+    info: [],
+    about: "",
+  },
+  front_perform: {
+    img: "",
+    info: [],
+    about: "",
+  },
+  back_workflow: {
+    img: "",
+    info: [],
+    about: "",
+  },
+  back_library: {
+    img: "",
+    info: [],
+    about: "",
+  },
+  back_dirArchi: {
+    img: "",
+    info: [],
+    about: "",
+  },
+  back_perform: {
+    img: "",
+    info: [],
     about: "",
   },
 };
