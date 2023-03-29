@@ -16,7 +16,7 @@ function Header() {
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav></Nav>
-            <Nav className="justify-content-center flex-grow-1 Nav-Link ">
+            <Nav className="justify-content-end flex-grow-1 Nav-Link ">
               <span>
                 <Nav.Link href="/career">Career</Nav.Link>
               </span>

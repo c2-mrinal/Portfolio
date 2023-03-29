@@ -65,7 +65,7 @@ function MailPopUp(props) {
               title="Close"
               className="modelHeaderMenuAlert"
             >
-              <i class="fa-solid fa-xmark"></i>{" "}
+              <i className="fa-solid fa-xmark"></i>{" "}
             </span>
           </div>
           <div className="modelHeaderMenu">
@@ -74,16 +74,16 @@ function MailPopUp(props) {
               title="Discard"
               className="modelHeaderMenuAlert"
             >
-              <i class="fa-solid fa-trash"></i>
+              <i className="fa-solid fa-trash"></i>
             </span>
             <span
               onClick={sendMail}
               title="Send"
               className="modelHeaderMenuConfirm"
             >
-              <i class="fa-solid fa-paper-plane"></i>
+              <i className="fa-solid fa-paper-plane"></i>
             </span>
-            <i class="fa-duotone fa-ellipsis-vertical"></i>
+            <i className="fa-duotone fa-ellipsis-vertical"></i>
           </div>
         </Modal.Header>
         <Modal.Body>

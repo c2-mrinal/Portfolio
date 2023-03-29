@@ -5,7 +5,7 @@ import invertedArrowPointing from "../../image/invertedArrowPointing.gif";
 import backgroundMain from "../../image/backgroundMain.mp4";
 import Nav from "react-bootstrap/Nav";
 
-function Intro() {
+function Intro(props) {
   const downloadResume = async () => {
     const response = await fetch("/api/resume");
     let data = await response.json();
