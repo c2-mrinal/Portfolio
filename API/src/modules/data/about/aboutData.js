@@ -320,19 +320,60 @@ const aboutData = {
     about: "",
   },
   softwebSolutions: {
-    img: "",
-    info: [],
-    about: "",
+    name: "Softweb Solutions",
+    designation: "Technical Analyst",
+    department: "IOT Connect (Product) ",
+    startDate: "Sept 2022",
+    endDate: "Apr 2023",
+    website: "https://www.softwebsolutions.com/",
+    linkedin: "https://www.linkedin.com/company/softwebsolutionsinc/mycompany/",
+    img: "https://www.softwebsolutions.com/wp-content/themes/softwebsolutions/images/softweb-logo.svg",
+    skills:
+      "ReactJS:, JavaScript · Debugging · Node.js · Bootstrap · Agile Development · API Development · Front-End Development · Agile Software Development · Learning · Software Development",
+    about: `Working as a ReactJS and NodeJS Developer on the product IOT Connect, where they
+    demonstrate IOT device connectivity and various functionalities to perform on them ( devices
+    like edge , gateway, sphere and more)
+    My role is to handle bug fixes and update the UI as needed for the story. And manage the
+    entire AWS and Azure Instance deployment process.`,
+    activity: [],
   },
   qmetry: {
-    img: "",
-    info: [],
-    about: "",
+    name: "Qmetry",
+    designation: "Associate UI Developer",
+    department: "QTM4J",
+    startDate: "June 2021",
+    endDate: "Sept 2022",
+    website: "https://www.qmetry.com/",
+    linkedin: "https://www.linkedin.com/company/qmetry/",
+    img: "https://s30307.pcdn.co/assets/images/logo.svg",
+    skills:
+      "React.js · Redux.js · Debugging · Bootstrap · Agile Development · Webpack · Front-End Development · Agile Software Development · Chart.js · Learning · Software Development · Methodology",
+    about: `QMetry is a product-based firm that sells numerous test management products (QTM ,
+      QTM4J, and QAS). As a react developer, I was given the opportunity to join the QTM4J UI
+      team. QTM4J is an Atlassian Jira integration for test management and exploratory testing.
+      My responsibilities as a UI developer include improving the code base, troubleshooting the
+      product for any tickets that are produced, adding new features to the product, and working
+      on a chrome extension for exploratory testing. And, I received a pat on the
+      back for successfully completing a sprint without a problem`,
+    activity: [],
   },
   magentaBI: {
-    img: "",
-    info: [],
-    about: "",
+    name: "Qmetry",
+    designation: "Web Developer",
+    department: "MagentaBI",
+    startDate: "Dec 2020",
+    endDate: "June 2021",
+    website: "https://www.magentabi.com/",
+    linkedin: "https://www.linkedin.com/company/mymagenta/",
+    img: "https://media.licdn.com/dms/image/C4E0BAQFv7OwA1N6scQ/company-logo_200_200/0/1614262740739?e=1687996800&v=beta&t=TwFz_a-jZUHVZjoas32mSHon5RbC4dUjhQqkSza1in4",
+    skills:
+      "React.js · Redux.js · Debugging · Bootstrap · Agile Development · Webpack · Front-End Development · Agile Software Development · Chart.js · Learning · Software Development · Methodology",
+    about: `MagentaBI is a business intelligence startup that focuses on SMEs. It also provides visual data
+    analysis from tabular data (excel, tally, databases, and more).
+    At Magenta, I had the pleasure of working as a react js developer, where I created a variety of
+    UI pages and updated the code base of many components. To improve the development of
+    each UI component.`,
+    activity: [],
   },
   daiict: {
     img: "",
