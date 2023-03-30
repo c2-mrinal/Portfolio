@@ -1,19 +1,23 @@
-.rightPanel{
-    height: 100%;
-    width: 100%;
-    background-color: rgba(165, 246, 246, 0.432);
+.rightPanel {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(165, 246, 246, 0.432);
 }
-.infoTextBox{
-    margin: auto 10px;
-    padding: 5px 10px;
-    border: 1px solid;
-    border-radius: 20px;
-    font-family: 'Font Awesome 6 Free';
-    font-size: 1.2rem;
+.infoTextBox {
+  margin: auto 10px;
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: 20px;
+  font-family: "Font Awesome 6 Free";
+  font-size: 1.2rem;
 }
 
-.detailsStyled{
-    margin: 20px auto;
-    font-size: 1.5em;
-    font-family: monospace;
+.mg-10 {
+  margin: auto 10px;
+}
+
+.detailsStyled {
+  margin: 20px auto;
+  font-size: 1.5em;
+  font-family: monospace;
 }

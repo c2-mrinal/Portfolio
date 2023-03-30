@@ -30,8 +30,6 @@ function useWindowSize() {
 
 function App() {
   const [width, height] = useWindowSize();
-
-  console.log(width, height);
   return (
     <div className="App">
       <Provider store={configureStore()}>
@@ -53,7 +51,7 @@ function App() {
               />
               <Route
                 path="/about"
-                element={<About style={{ margin: "200px" }} />}
+                element={<About height={height} width={width} />}
               />
               <Route
                 path="/skill"

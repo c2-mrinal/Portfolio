@@ -1,16 +1,18 @@
 import React from "react";
+import "./rightPanel.css"
 
 export default function Educational(props) {
+  const { data } =  props;
   return (
     <div>
       <div className="card">
         <div className="card-header row">
         <div className="col-xs-3 col-md-3">
-          <img src={props.data?.img} height="150" width="150" alt="" />
+          <img src={data?.img} height="150" width="150" alt="" />
     </div>
           <div className="col-xs-9 col-md-9">
-            {props.data &&
-              props.data.info?.map((info) => {
+            {data &&
+              data.info?.map((info) => {
                 return (
                   <span
                     className="infoTextBox"
@@ -37,14 +39,39 @@ export default function Educational(props) {
             </p>
           </div>
           <div>
-            <h5 className="card-title">Projects</h5>
-            <ul>
-              <li>Kabadiwala</li>
-              {/* <li></li>
-              <li></li>
-              <li></li>
-              <li></li> */}
-            </ul>
+            <div>
+              {
+                data?.projects ? 
+                <>
+                <h1> Projects</h1>
+                {
+                  data.projects.map(data=>{
+                    console.log(data);
+                  return <>
+                  <h2><strong>{data.name}</strong></h2>
+                  <div>
+                    <h3> Descriptions</h3>
+                    {data.description}
+                  </div>
+                  <div>
+                    <span><strong>Stacked Used: </strong></span>
+                    <span>{
+                      Object.entries(data.stackUsed).map(val=>{
+                        return <span className="mg-10"><i className={ val[1]}></i> {val[0]}</span>
+                      })
+                      }
+                    </span>
+                  </div>
+                  <br/>
+                  </>
+                    
+                  })
+                }
+                </>
+                : ""
+              }
+
+            </div>
           </div>
         </div>
       </div>
