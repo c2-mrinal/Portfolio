@@ -14,38 +14,43 @@ function Contact() {
   const handleMailPopup = () => {
     setDisplayMailPopup(!DisplayMailPopup);
   };
+
   return (
     <div className="contactContainer">
       <div className="contactBG">
         <div className="contactBox ">
-          <div className="contactBoxContent d-flex justify-content-around">
-            <div>
-              <h2>Mail</h2>
-              <div className="typewriter" onClick={handleMailPopup}>
-                <h1>Type.</h1>
+          <div className="contactBoxContent ">
+            <div className=" d-flex justify-content-around">
+              <div>
+                <h1>Mail</h1>
+                <div className="typewriter" onClick={handleMailPopup}>
+                  <h1>Type...</h1>
+                </div>
               </div>
-            </div>
-            <div>
-              <h2>Social</h2>
-              <div className="socialIcons d-flex justify-content-between">
-                <a
-                  href={"https://www.linkedin.com/in/mrinal-kasyap-695853171/"}
-                  target="_blank"
-                >
-                  <span className="contactIcon">
-                    <i class="fa-3x fa-brands fa-linkedin-in"></i>
-                  </span>
-                </a>
-                <a href={""} target="_blank">
-                  <span className="contactIcon">
-                    <i class="fa-3x fa-brands fa-twitter"></i>
-                  </span>{" "}
-                </a>
-                <a href={""} target="_blank">
-                  <span className="contactIcon">
-                    <i class="fa-3x fa-brands fa-instagram"></i>
-                  </span>
-                </a>
+              <div>
+                <h1>Social</h1>
+                <span className="socialIcons d-flex justify-content-between">
+                  <a
+                    href={
+                      "https://www.linkedin.com/in/mrinal-kasyap-695853171/"
+                    }
+                    target="_blank"
+                  >
+                    <span className="contactIcon">
+                      <i class="fa-3x fa-brands fa-linkedin-in"></i>
+                    </span>
+                  </a>
+                  <a href={""} target="_blank">
+                    <span className="contactIcon">
+                      <i class="fa-3x fa-brands fa-twitter"></i>
+                    </span>{" "}
+                  </a>
+                  <a href={""} target="_blank">
+                    <span className="contactIcon instagram">
+                      <i class="fa-3x fa-brands fa-instagram"></i>
+                    </span>
+                  </a>
+                </span>
               </div>
             </div>
           </div>
@@ -53,8 +58,8 @@ function Contact() {
       </div>
       <div className="contactBG">
         <div className="contactBox">
-          <div className="contactBoxContent d-flex justify-content-around">
-            <div>
+          <div className="contactBoxContent d-flex justify-content-center">
+            <div className=" d-flex justify-content-center">
               <a href={"https://github.com/c2-mrinal"} target="_blank">
                 <span className="contactIcon">
                   <i class=" fa-3x fa-brands fa-github"></i>

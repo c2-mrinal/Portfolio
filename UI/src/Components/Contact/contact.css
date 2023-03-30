@@ -11,7 +11,7 @@
   width: 90vw;
   height: 80vh;
   border-radius: 50px;
-  scroll-snap-align: start;  
+  scroll-snap-align: start;
 }
 
 .contactBox {
@@ -47,10 +47,27 @@
   border-radius: 50px;
 }
 .contactBoxContent {
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.contactBoxContent h1,
+h2 {
   margin: auto;
   text-align: center;
-  top: 25%;
-  position: inherit;
+}
+.instagram {
+  color: #d6249f;
+  color: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
 }
 
 .contactIcon:hover {
@@ -124,18 +141,16 @@
   border: 2px solid #9b9b9b;
   border-radius: 10px;
 }
-.modelHeaderMenu{
+.modelHeaderMenu {
   margin-right: 10px;
-
 }
- 
-.modelHeaderMenu span{
+
+.modelHeaderMenu span {
   margin: auto 10px;
-
 }
-.modelHeaderMenuAlert:hover{
+.modelHeaderMenuAlert:hover {
   color: rgb(231, 96, 96);
 }
-.modelHeaderMenuConfirm:hover{
+.modelHeaderMenuConfirm:hover {
   color: rgb(96, 231, 107);
 }

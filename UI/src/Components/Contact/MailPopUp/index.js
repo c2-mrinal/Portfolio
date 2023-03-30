@@ -36,20 +36,30 @@ function MailPopUp(props) {
     );
   };
   const validateMailDetail = () => {
-    const mailingName = MailData.name.trim().length < 1;
+    const mailingName = MailData.name.trim()?.length <= 1;
 
     const mailingID = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(MailData.mailId);
-    const mailingMessage = MailData.message.trim().length < 10;
+    const mailingMessage = MailData.message.trim()?.length < 10;
     setIsSendingMailValid({
       mailingName: mailingName,
       mailingID: mailingID,
       mailingMessage: mailingMessage,
     });
-    return mailingName || mailingID || mailingMessage;
+    return !mailingName && !mailingID && !mailingMessage;
   };
 
-  const sendMail = () => {
-    const isValid = validateMailDetail();
+  const sendMail = async () => {
+    const isValid = await validateMailDetail();
+    if (isValid) {
+      const rawResponse = await fetch("/api/sendMail", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(MailData),
+      });
+    }
   };
   const errorInMail = (msg) => {
     return <div className="errorMail">{msg}</div>;
@@ -83,7 +93,7 @@ function MailPopUp(props) {
             >
               <i className="fa-solid fa-paper-plane"></i>
             </span>
-            <i className="fa-duotone fa-ellipsis-vertical"></i>
+            <i className="fa-solid fa-ellipsis-vertical"></i>{" "}
           </div>
         </Modal.Header>
         <Modal.Body>
