@@ -188,12 +188,64 @@ const aboutData = {
     ],
     url: "https://www.daiict.ac.in/",
     about: "",
-    projects: [],
+    projects: [
+      {
+        name: "The KabdaiWala ",
+        stackUsed: {
+          html5: "fa-brands fa-html5",
+          css3: "fa-brands fa-css3-alt",
+          VueJS: "fa-brands fa-vuejs",
+          JavaScript: "fa-brands fa-square-js",
+          "Rest API": "fa-solid fa-gear",
+          ExpressJS: "fa-brands fa-square-js",
+          NodeJS: "fa-brands fa-node",
+          MongoDB: "fa-sharp fa-solid fa-database",
+        },
+        description: `A user-friendly interface for selling and buying scrap metal that allows both customers and dealers to register. This website also has 3R's tips and tricks. Customer and Dealer both have their own profile page where the customer can check the status of their scrap deal and the dealer can check the status and change the price of the scrap items they are purchasing.`,
+        url: "",
+      },
+      {
+        name: "Quantitive algorithm trading",
+        stackUsed: {
+          html5: "fa-brands fa-html5",
+          css3: "fa-brands fa-css3-alt",
+          bootstrap: "fa-brands fa-bootstrap",
+          javaScript: "fa-brands fa-square-js",
+          chartJS: "fa-solid fa-chart-simple",
+        },
+        description: `It includes all of the required trading instruments and data for stock trading. We were able to access data using various APIs to have it under one roof. Currency converter, trading news, live trading info, and several other features areavailable.`,
+        url: "",
+      },
+      {
+        name: "Rating & Review",
+        stackUsed: {
+          html5: "fa-brands fa-html5",
+          css3: "fa-brands fa-css3-alt",
+          bootstrap: "fa-brands fa-bootstrap",
+          javaScript: "fa-brands fa-square-js",
+          chartJS: "fa-solid fa-chart-simple",
+        },
+        description: `It rates and reviews a wide range of entertainment material (like Movies, Games, Tv series, Songs, and more). It like IMDB and Metrics, assigns a ranking based on user input.`,
+        url: "",
+      },
+      {
+        name: "Urban clap",
+        stackUsed: {
+          html5: "fa-brands fa-html5",
+          css3: "fa-brands fa-css3-alt",
+          bootstrap: "fa-brands fa-bootstrap",
+          javaScript: "fa-brands fa-square-js",
+          chartJS: "fa-solid fa-chart-simple",
+        },
+        description: `We built a directory to provide customers with expert resources under one roof. We used about ten entities, as well as DDL and DML. We also created a number of complex queries to make it easier to access them.`,
+        url: "",
+      },
+    ],
   },
   bachlor: {
     img: "https://upload.wikimedia.org/wikipedia/en/d/d2/Birla_Institute_of_Technology_Mesra.png",
     info: [
-      ["College", "BIT, Mesra"],
+      ["College", "Birla Institute of Technology, Mesra"],
       ["Degree", "BCA"],
       ["Specialization", "Computer Application"],
       ["Location", "Ranchi"],
@@ -201,19 +253,54 @@ const aboutData = {
     url: "https://www.bitmesra.ac.in/",
     about: "",
     projects: [
-      { name: "kabadiwala", stackUsed: [], description: "", url: "" },
-      { name: "kabadiwala", stackUsed: [], description: "", url: "" },
-      { name: "kabadiwala", stackUsed: [], description: "", url: "" },
-      { name: "kabadiwala", stackUsed: [], description: "", url: "" },
+      {
+        name: "JHARKHAND TOURISM",
+        stackUsed: {
+          html5: "fa-brands fa-html5",
+          css3: "fa-brands fa-css3-alt",
+          bootstrap: "fa-brands fa-bootstrap",
+          javaScript: "fa-brands fa-square-js",
+          chartJS: "fa-solid fa-chart-simple",
+        },
+        description: `It was a static page for better User Interaction . It provide winsome glimpse of jharkhand , for attracting more tourism to Jharkhand.`,
+        url: "",
+      },
+      {
+        name: "REAL TIME WEATHER",
+        stackUsed: {
+          html5: "fa-brands fa-html5",
+          css3: "fa-brands fa-css3-alt",
+          JavaScript: "fa-brands fa-square-js",
+          "Rest API": "fa-solid fa-gear",
+        },
+        description: `The site shows current weather conditions in all cities around the world in real-time. It also compares functionality between cities using an extremely simple graphical user interface. It uses an open REST API to provide details.`,
+        url: "",
+      },
+      {
+        name: "SPORT ADDA",
+        stackUsed: {
+          ".net": "fa-brands fa-microsoft",
+          "Visual Studio": "fa-solid fa-code",
+          "MS Access": "fa-brands fa-microsoft",
+          "C#": "fa-brands fa-microsoft",
+        },
+        description: `It was .net framework program with MS Access database for a sport shop
+      where seller can create a bill for its available products and can access list of
+      stock available in store.`,
+        url: "",
+      },
     ],
   },
   intermediate: {
     img: "https://srichaitanyaapp.s3.ap-south-1.amazonaws.com/prod/assets/images/logo-sri-chaitanya.png",
     info: [
-      ["School", " Sri Chaitanya"],
+      ["School", " Sri Chaitanya techno School"],
       ["Qualification", " Intermediate "],
-      ["Specialization", "Phyics, Chm, Math"],
-      ["Location", "Vizag"],
+      [
+        "Specialization",
+        "Phyics, Chemistry, Mathematics, English, Physical Education",
+      ],
+      ["Location", "Vishakapatnam - AP"],
     ],
     url: "https://srichaitanyaschool.net/",
     about: "",
@@ -223,8 +310,11 @@ const aboutData = {
     info: [
       ["School", " Sun Flower Public School"],
       ["Qualification", " Intermediate "],
-      ["Specialization", "Phyics, Chm, Math"],
-      ["Location", "Vizag"],
+      [
+        "Specialization",
+        "Mathematics, Science, Social Science, English, Sanskrit",
+      ],
+      ["Location", "Begusarai - BR"],
     ],
     url: "http://sunflowerschool.in/",
     about: "",

@@ -1,11 +1,14 @@
 const path = require("path");
 const express = require("express");
 const fs = require("fs");
+const bodyParser = require("body-parser");
 
-const skillData = require("./modules/skills/skillData");
-const { folderData, aboutData } = require("./modules/about/aboutData");
+const skillData = require("./modules/data/skills/skillData");
+const { folderData, aboutData } = require("./modules/data/about/aboutData");
+const { sendMail } = require("./modules/functions/SendMail");
 
 const app = express();
+var jsonParser = bodyParser.json();
 
 // default file to be called in case of no defined path
 const publicDirPath = path.join(__dirname, "../src");
@@ -24,6 +27,16 @@ app.get("/api/about/folders", (req, res) => {
   } catch (e) {
     console.error(e);
     res.status(500).end();
+  }
+});
+app.post("/api/sendMail", jsonParser, (req, res) => {
+  try {
+    sendMail(req.body, () => {
+      res.send("ok");
+    });
+  } catch (e) {
+    console.error(e);
+    res.status(500).end("errors");
   }
 });
 app.get("/api/about/details/:folderIs", (req, res) => {
