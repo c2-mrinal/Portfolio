@@ -60,7 +60,12 @@ function RightPanel(props) {
 		}
 	};
 
-	return <div>{detailPanel()}</div>;
+	return (
+		<div>
+			{detailPanel()}
+			<div className="pg-100"></div>
+		</div>
+	);
 }
 
 export default RightPanel;
