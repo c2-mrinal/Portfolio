@@ -48,7 +48,7 @@ export default function Educational(props) {
 														<strong>Stacked Used: </strong>
 													</span>
 													<span>
-														{Object.entries(data.stackUsed).map((val) => {
+														{Object.entries(data.skills).map((val) => {
 															return (
 																<span className="mg-10">
 																	<i className={val[1]}></i> {val[0]}

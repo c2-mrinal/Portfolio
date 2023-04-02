@@ -16,12 +16,86 @@
 	margin: auto 10px;
 }
 
-.experianceTop {
-	font-size: 2.5rem;
+.externalLink {
+	font-size: 0.8rem;
+	margin: auto -5px auto;
+}
+.overviewSide {
+	padding: 0px 2rem;
+}
+.roleSide {
+}
+.companyName {
+	font-size: larger;
 }
 
+.experianceTop {
+	font-size: clamp(0.5rem, 1.5rem, 2.5rem);
+	padding: 1.6rem;
+	margin: auto;
+}
+
+.skillSection {
+	padding: 2rem;
+}
+.mgr-5 {
+	margin-right: 5px;
+}
 .detailsStyled {
 	margin: 20px auto;
 	font-size: 1.5em;
 	font-family: monospace;
+}
+
+.activityUL {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+}
+
+.activityLI {
+	text-align: center;
+	display: inline-block;
+	list-style: none;
+	position: relative;
+	border: solid 12px #fff;
+	background: #fff;
+	box-shadow: 0 0 15px 0px #555;
+	transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	top: 50px;
+	opacity: 0.7;
+}
+
+.activityLI:hover {
+	top: 0px;
+	opacity: 1;
+}
+
+.activityLI:nth-child(1) {
+	transform: rotate(10deg);
+}
+
+.activityLI:nth-child(2) {
+	transform: rotate(0deg);
+}
+
+.activityLI:nth-child(3) {
+	transform: rotate(-10deg);
+}
+
+.activityLI:nth-child(4) {
+	transform: rotate(20deg);
+}
+
+.activityText {
+	margin-top: 5px;
+	font-size: 1.5rem;
+	font-family: cursive;
+}
+
+.pg-100 {
+	padding: 20rem 0px;
 }
