@@ -78,7 +78,7 @@ function Experiance(props) {
 									return (
 										<li className="activityLI">
 											<img src={val.img} width="300" />
-											<p>{val.name}</p>
+											<p className="activityText">{val.name}</p>
 										</li>
 									);
 								})}

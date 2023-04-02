@@ -15,6 +15,7 @@
 .mg-10 {
 	margin: auto 10px;
 }
+
 .externalLink {
 	font-size: 0.8rem;
 	margin: auto -5px auto;
@@ -65,11 +66,12 @@
 	-moz-transition: all 1s ease;
 	-webkit-transition: all 1s ease;
 	top: 50px;
+	opacity: 0.7;
 }
 
 .activityLI:hover {
 	top: 0px;
-	opacity: 0.5;
+	opacity: 1;
 }
 
 .activityLI:nth-child(1) {
@@ -88,10 +90,12 @@
 	transform: rotate(20deg);
 }
 
-p {
-	margin: -15px 0 0 0;
+.activityText {
+	margin-top: 5px;
+	font-size: 1.5rem;
+	font-family: cursive;
 }
 
 .pg-100 {
-	padding: 15rem 0px;
+	padding: 20rem 0px;
 }

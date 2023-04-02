@@ -7,58 +7,60 @@
     width: 100vw;
 } */
 .myVideo {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-.downloadResumeButton{
-    font-size: 1.7em;
-    position: relative;
-    left: 35%;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
-.resumeDownloadContainer{
-    float: right;
-    padding: 30px;
-    margin: auto;
-    position: relative;
-    z-index: 10;
+.videoDimension {
+	height: 100%;
+	width: 100%;
 }
 
-.pointingArrow{
-    height: 250px;
-    width: 300px;
+.downloadResumeButton {
+	font-size: 1.7em;
+	position: relative;
+	left: 35%;
 }
 
-.intoDesciption{
-    font-family: font-file-82132;
-    position: absolute;
-    bottom: 0px;
-    padding: 0px 0px 10% 12%;
-    color: aliceblue;
+.resumeDownloadContainer {
+	float: right;
+	padding: 30px;
+	margin: auto;
+	position: relative;
+	z-index: 10;
 }
 
-.intoSection{
-    height: 100vh;
-    width: 100vw;
+.pointingArrow {
+	height: 250px;
+	width: 300px;
 }
 
-.careerbg{
-    background-color: rgb(158, 204, 233);
-
+.intoDesciption {
+	font-family: font-file-82132;
+	position: absolute;
+	bottom: 0px;
+	padding: 0px 0px 10% 12%;
+	color: aliceblue;
 }
 
-.skillbg{
-    background-color: rgba(236, 164, 76, 0.667);
-
+.intoSection {
+	height: 100vh;
+	width: 100vw;
 }
 
-.aboutbg{
-    background-color: rgba(151, 208, 85, 0.777);
-
+.careerbg {
+	background-color: rgb(158, 204, 233);
 }
 
-.contactbg{
-    background-color: bisque;
+.skillbg {
+	background-color: rgba(236, 164, 76, 0.667);
+}
+
+.aboutbg {
+	background-color: rgba(151, 208, 85, 0.777);
+}
+
+.contactbg {
+	background-color: bisque;
 }
