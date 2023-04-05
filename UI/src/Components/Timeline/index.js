@@ -1,53 +1,23 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
+
+// don't forget to register plugins
+// gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin);
 import "./timeline.css";
 
 function Timeline() {
-  return (
-    <div>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <div
-              style={{
-                display: "inlineBlock",
-                width: "100%",
-                height: "100vh",
-                overflowY: "auto",
-              }}
-            >
-              <ul className="timeline timeline-horizontal">
-                <li className="timeline-item">
-                  <div className="timeline-badge primary">
-                    <i className="glyphicon glyphicon-check"> 2023</i>
-                  </div>
-                </li>
-                <li className="timeline-item">
-                  <div className="timeline-badge success">
-                    <i className="glyphicon glyphicon-check">2022</i>
-                  </div>
-                </li>
-                <li className="timeline-item">
-                  <div className="timeline-badge info">
-                    <i className="glyphicon glyphicon-check">2021</i>
-                  </div>
-                </li>
-                <li className="timeline-item">
-                  <div className="timeline-badge danger">
-                    <i className="glyphicon glyphicon-check">2020</i>
-                  </div>
-                </li>
-                <li className="timeline-item">
-                  <div className="timeline-badge warning">
-                    <i className="glyphicon glyphicon-check">2019</i>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className="timelineCointainer">
+			<section class="row d-flex hg-80">
+				<div className="col-sm-1  shape1">1</div>
+				<div className="col-sm-2  shape2">2</div>
+				<div className="col-sm-6  shape3">6</div>
+				<div className="col-sm-2  shape4">2</div>
+				<div className="col-sm-1  shape5">1</div>
+				<div></div>
+			</section>
+		</div>
+	);
 }
 
 export default Timeline;

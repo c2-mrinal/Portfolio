@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import * as d3 from "d3";
 import "./skill.css";
+const halfStar = `<i class="fa-solid fa-star-half"></i>`;
+const oneStar = `<i class="fa-solid fa-star"></i>`;
 
 function useWindowSize() {
 	const [size, setSize] = useState([0, 0]);
@@ -17,8 +19,6 @@ function useWindowSize() {
 
 function Skill(props) {
 	const [propWidth, propHeight] = useWindowSize();
-
-	// const [Color, setColor] = useState(null);
 
 	const [Data, setData] = useState([]);
 	useEffect(() => {
@@ -120,7 +120,8 @@ function Skill(props) {
 					.forceCollide()
 					.strength(0.5)
 					.radius((d) => {
-						return (width / height / 2) * d.radius + NodePadding;
+						const val = width > height ? width / height / 2 : height / width / 2;
+						return val * d.radius + NodePadding;
 					})
 					.iterations(1)
 			)
@@ -155,7 +156,8 @@ function Skill(props) {
 		nodes = nodedata
 			.append("circle")
 			.attr("r", (d) => {
-				return (width / height / 2) * d.radius;
+				const val = width > height ? width / height / 2 : height / width / 2;
+				return val * d.radius;
 			})
 			.attr("fill", (d) => {
 				if (d.value > 4.5) {
@@ -204,7 +206,7 @@ function Skill(props) {
 				tooltip.style("visibility", "visible");
 			})
 			.on("mousemove", function (e, d) {
-				tooltip.style("top", d.y + d.radius / 2 - 10 + "px").style("left", d.x + d.radius / 2 + 10 + "px");
+				tooltip.style("top", "10%").style("left", "80%");
 			})
 			.on("mouseout", function (e, d) {
 				mouseOut(e, d);
@@ -322,10 +324,27 @@ function Skill(props) {
 	};
 	const showTooltip = (d) => {
 		return `<div class="bubble">
-        <div>Skill: ${d.label}</div>
-        <div>Profency: ${d.value}</div>
-        <div>Description: ${d.description}</div>
-        </div>`;
+		    <div className="bubbleTooltip">
+					<strong className="bubbleStrong">Skill</strong> <div>${d.label}</div>
+				</div>
+		    <div className="bubbleTooltip">
+					<strong className="bubbleStrong">Profency</strong>
+					<div>${stars(d.value)}</div>
+				</div>
+		    <div className="bubbleTooltip">
+					<strong className="bubbleStrong">Description</strong>
+					<div>${d.description}</div>
+				</div>
+		    </div>`;
+	};
+
+	const stars = (val) => {
+		let starList = "";
+		while (val > 0) {
+			starList += val < 1 ? halfStar : oneStar;
+			val -= 1;
+		}
+		return starList;
 	};
 
 	return (

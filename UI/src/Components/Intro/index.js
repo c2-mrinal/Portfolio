@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../Shared/Button";
 import "./intro.css";
 import invertedArrowPointing from "../../image/invertedArrowPointing.gif";
@@ -6,12 +6,25 @@ import backgroundMain from "../../image/backgroundMain.mp4";
 import Nav from "react-bootstrap/Nav";
 
 function Intro(props) {
+	const [Downloading, setDownloading] = useState(false);
+	const [downloadSucess, setdownloadSucess] = useState(false);
+
 	const downloadResume = async () => {
-		const response = await fetch("/api/resume");
-		let data = await response.json();
-		let alink = document.createElement("a");
-		alink.href = data.url;
-		alink.click();
+		setDownloading(true);
+		setTimeout(async () => {
+			const response = await fetch("/api/resume");
+			let data = await response.json();
+			if (data) {
+				let alink = document.createElement("a");
+				alink.href = data.url;
+				// alink.click();
+				setdownloadSucess(true);
+				setTimeout(async () => setdownloadSucess(false), 4000);
+			} else {
+				setdownloadSucess(false);
+			}
+			setDownloading(false);
+		}, 1000);
 	};
 	return (
 		<div>
@@ -22,13 +35,25 @@ function Intro(props) {
 			</div>
 			<section className=" intoSection">
 				<div className="resumeDownloadContainer">
-					<Button
-						className="btn btn-secondary downloadResumeButton"
-						name="Resume"
+					<div
+						className={`btn-circle-download ${Downloading ? "load" : ""} ${downloadSucess ? "done" : ""}`}
 						onClick={downloadResume}
-						icon={"fa-1x fa fa-download"}
-					/>
-					<img src={invertedArrowPointing} className="pointingArrow" alt="error" />
+						title={downloadSucess ? "Resume Dowloaded " : "Download Mrinal's Resume"}
+					>
+						<svg id="arrow" viewBox="17 14 14 20">
+							<path d="M24,15 L24,32"></path>
+							<polyline points="30 27 24 33 18 27"></polyline>
+						</svg>
+						<svg id="check" viewBox="13 17 21 15">
+							<polyline points="32.5 18.5 20 31 14.5 25.5"></polyline>
+						</svg>
+						<svg id="border" viewBox="0 0 48 48">
+							<path d="M24,1 L24,1 L24,1 C36.7025492,1 47,11.2974508 47,24 L47,24 L47,24 C47,36.7025492 36.7025492,47 24,47 L24,47 L24,47 C11.2974508,47 1,36.7025492 1,24 L1,24 L1,24 C1,11.2974508 11.2974508,1 24,1 L24,1 Z"></path>
+						</svg>
+					</div>
+					<div>
+						<img src={invertedArrowPointing} className="pointingArrow" alt="error" />
+					</div>
 				</div>
 				<div className="intoDesciption">
 					<h1>Hello !</h1>
