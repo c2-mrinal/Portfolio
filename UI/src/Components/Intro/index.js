@@ -17,7 +17,7 @@ function Intro(props) {
 			if (data) {
 				let alink = document.createElement("a");
 				alink.href = data.url;
-				// alink.click();
+				alink.click();
 				setdownloadSucess(true);
 				setTimeout(async () => setdownloadSucess(false), 4000);
 			} else {
