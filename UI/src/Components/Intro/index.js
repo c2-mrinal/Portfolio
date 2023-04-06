@@ -12,12 +12,12 @@ function Intro(props) {
 	const downloadResume = async () => {
 		setDownloading(true);
 		setTimeout(async () => {
-			const response = await fetch("/api/resume");
-			let data = await response.json();
-			if (data) {
+			let response = await fetch("/api/resume");
+			response = await response.json();
+			if (response.success) {
 				let alink = document.createElement("a");
-				alink.href = data.url;
-				// alink.click();
+				alink.href = response.data.url;
+				alink.click();
 				setdownloadSucess(true);
 				setTimeout(async () => setdownloadSucess(false), 4000);
 			} else {

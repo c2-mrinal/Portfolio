@@ -1,0 +1,7 @@
+.apiBannerAlert {
+	position: fixed;
+	bottom: 10%;
+	width: 80vw;
+	max-height: 20rem;
+	left: 2%;
+}
