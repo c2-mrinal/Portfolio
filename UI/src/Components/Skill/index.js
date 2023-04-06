@@ -25,7 +25,9 @@ function Skill(props) {
 		async function fetchMyAPI() {
 			let response = await fetch(`/api/skill/details`);
 			response = await response.json();
-			setData([...response.skillData]);
+			if (response.success) {
+				setData([...response.data]);
+			}
 		}
 		return () => {
 			fetchMyAPI();
@@ -347,11 +349,7 @@ function Skill(props) {
 		return starList;
 	};
 
-	return (
-		<>
-			<svg ref={refNode} className="svgBody" />
-		</>
-	);
+	return <>{Data ? <svg ref={refNode} className="svgBody" /> : "NO Data Found"}</>;
 }
 
 export default Skill;
