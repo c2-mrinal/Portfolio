@@ -1,18 +1,20 @@
-const http = require("http");
-const fs = require("fs");
-const port = 8080;
+const express = require("express");
+const appRoutes = require("./src/routes.js");
+require("dotenv").config();
 
-// const server = http.createServer((req, res) => {
-//   res.writeHead(200, { "Content-Type": "text/html" });
-//   // fs.readFile()
-//   res.write("Hi your Server is UP and Running!!");
-//   res.end();
-// });
+const app = express();
+const path = require("path");
+const Port = process.env.PORT;
+const publicDirPath = path.join(__dirname, "../src");
+app.use(express.static(publicDirPath));
 
-// server.listen(port, (error) => {
-//   if (error) {
-//     console.log("there is some problem with server !!", error);
-//   } else {
-//     console.log("Server is up on port:", port);
-//   }
-// });
+app.use(express.json());
+app.use("/api", appRoutes);
+
+app.listen(Port, (error) => {
+	if (error) {
+		console.log("there is some problem with server !!", error);
+	} else {
+		console.log("Server is up on port:", Port);
+	}
+});
