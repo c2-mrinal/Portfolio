@@ -184,7 +184,8 @@ const aboutData = {
 			["Location", "Gandhinagar"],
 		],
 		url: "https://www.daiict.ac.in/",
-		about: "",
+		about: "Yet to be Updated",
+		term: "2019 - 2021",
 		projects: [
 			{
 				name: "The KabdaiWala ",
@@ -248,7 +249,8 @@ const aboutData = {
 			["Location", "Ranchi"],
 		],
 		url: "https://www.bitmesra.ac.in/",
-		about: "",
+		about: "Yet to be Updated",
+		term: "2016 - 2019",
 		projects: [
 			{
 				name: "JHARKHAND TOURISM",
@@ -289,7 +291,7 @@ const aboutData = {
 		],
 	},
 	intermediate: {
-		img: "https://srichaitanyaapp.s3.ap-south-1.amazonaws.com/prod/assets/images/logo-sri-chaitanya.png",
+		img: "https://drive.google.com/uc?export=view&id=1_gj_x8xsIAqRgkKl9VdhaQfqmhXXhzIU",
 		info: [
 			["School", " Sri Chaitanya techno School"],
 			["Qualification", " Intermediate "],
@@ -297,10 +299,11 @@ const aboutData = {
 			["Location", "Vishakapatnam - AP"],
 		],
 		url: "https://srichaitanyaschool.net/",
-		about: "",
+		about: "Yet to be Updated",
+		term: "2015 - 2013",
 	},
 	matriculation: {
-		img: "http://sunflowerschool.in/images/sunflower.jpg",
+		img: "https://drive.google.com/uc?export=view&id=1SvusXKkHuc5rlygeAUECqOrfGqfSisxT",
 		info: [
 			["School", " Sun Flower Public School"],
 			["Qualification", " Intermediate "],
@@ -308,7 +311,8 @@ const aboutData = {
 			["Location", "Begusarai - BR"],
 		],
 		url: "http://sunflowerschool.in/",
-		about: "",
+		about: "Yet to be Updated",
+		term: "2011 - 2013",
 	},
 	softwebSolutions: {
 		name: "Softweb Solutions",
