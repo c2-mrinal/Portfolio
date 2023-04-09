@@ -181,10 +181,12 @@ const aboutData = {
 			["College", "Dhirubhai Ambani Institute of Information and Communication Technology"],
 			["Degree", "Masters of Science"],
 			["Specialization", "IT"],
-			["Location", "Gandhinagar"],
+			["Location", "Gandhinagar - GJ"],
 		],
 		url: "https://www.daiict.ac.in/",
-		about: "",
+		degreeImg: "https://drive.google.com/uc?export=view&id=18l920vtFCnuexA37Fhl-gxJ-5DPnPs0j",
+		about: "Yet to be Updated",
+		term: "2019 - 2021",
 		projects: [
 			{
 				name: "The KabdaiWala ",
@@ -243,12 +245,14 @@ const aboutData = {
 		img: "https://upload.wikimedia.org/wikipedia/en/d/d2/Birla_Institute_of_Technology_Mesra.png",
 		info: [
 			["College", "Birla Institute of Technology, Mesra"],
-			["Degree", "BCA"],
+			["Degree", "Bachelor of Computer Applications"],
 			["Specialization", "Computer Application"],
-			["Location", "Ranchi"],
+			["Location", "Ranchi - JH"],
 		],
 		url: "https://www.bitmesra.ac.in/",
-		about: "",
+		degreeImg: "https://drive.google.com/uc?export=view&id=1CF3e1LbDSFBrm48Fe8fz9k6ZinerNQps",
+		about: "Yet to be Updated",
+		term: "2016 - 2019",
 		projects: [
 			{
 				name: "JHARKHAND TOURISM",
@@ -289,7 +293,7 @@ const aboutData = {
 		],
 	},
 	intermediate: {
-		img: "https://srichaitanyaapp.s3.ap-south-1.amazonaws.com/prod/assets/images/logo-sri-chaitanya.png",
+		img: "https://drive.google.com/uc?export=view&id=1_gj_x8xsIAqRgkKl9VdhaQfqmhXXhzIU",
 		info: [
 			["School", " Sri Chaitanya techno School"],
 			["Qualification", " Intermediate "],
@@ -297,10 +301,12 @@ const aboutData = {
 			["Location", "Vishakapatnam - AP"],
 		],
 		url: "https://srichaitanyaschool.net/",
-		about: "",
+		degreeImg: "https://drive.google.com/uc?export=view&id=1IFKnpqcCg7kj_k0GFx01aoCqWDoltAmo",
+		about: "Yet to be Updated",
+		term: "2015 - 2013",
 	},
 	matriculation: {
-		img: "http://sunflowerschool.in/images/sunflower.jpg",
+		img: "https://drive.google.com/uc?export=view&id=1SvusXKkHuc5rlygeAUECqOrfGqfSisxT",
 		info: [
 			["School", " Sun Flower Public School"],
 			["Qualification", " Intermediate "],
@@ -308,7 +314,9 @@ const aboutData = {
 			["Location", "Begusarai - BR"],
 		],
 		url: "http://sunflowerschool.in/",
-		about: "",
+		degreeImg: "https://drive.google.com/uc?export=view&id=16XNZknsgGIH76UTkaT6T3DKN23-l0cAW",
+		about: "Yet to be Updated",
+		term: "2011 - 2013",
 	},
 	softwebSolutions: {
 		name: "Softweb Solutions",
