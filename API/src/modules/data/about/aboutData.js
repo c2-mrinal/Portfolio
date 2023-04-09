@@ -467,16 +467,54 @@ const aboutData = {
 			{ img: "https://unsplash.it/500/500", name: "name" },
 		],
 	},
-	hobbie: {
-		img: "",
-		info: [],
-		about: "",
-	},
-	achive: {
-		img: "",
-		info: [],
-		about: "",
-	},
+	hobbie: [
+		{
+			section: "Sports",
+			expire: "",
+			content: [
+				{
+					img: "https://drive.google.com/uc?export=view&id=1V8P-tZj_r3v9fCU1-t0wECzIPVedvkLe",
+					desc: "Qmetry",
+				},
+				{
+					img: "https://drive.google.com/uc?export=view&id=1BluY-SJj4P_RdtEJj1fGRDoxX_mxiSGX",
+					desc: "Hacker Rank ",
+				},
+			],
+		},
+	],
+	achive: [
+		{
+			section: "Pat On Back",
+			expire: "",
+			content: [
+				{
+					img: "https://drive.google.com/uc?export=view&id=1V8P-tZj_r3v9fCU1-t0wECzIPVedvkLe",
+					desc: "Qmetry",
+				},
+			],
+		},
+		{
+			section: "Problem Solving (Basic)",
+			expire: "",
+			content: [
+				{
+					img: "https://drive.google.com/uc?export=view&id=1BluY-SJj4P_RdtEJj1fGRDoxX_mxiSGX",
+					desc: "Hacker Rank ",
+				},
+			],
+		},
+		{
+			section: "JavaScript (Basic)",
+			expire: "",
+			content: [
+				{
+					img: "https://drive.google.com/uc?export=view&id=1elQu0tj7Cc6LSFn9jpKs4SgZWBLougwr",
+					desc: "Hacker Rank ",
+				},
+			],
+		},
+	],
 	front_workflow: {
 		img: "",
 		info: [],
