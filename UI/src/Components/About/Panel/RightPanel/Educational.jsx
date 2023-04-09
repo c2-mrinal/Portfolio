@@ -23,7 +23,7 @@ export default function Educational(props) {
 			<div className="">
 				<div className="educationHeader row">
 					<div className="col-xs-3 col-md-3">
-						<img src={data?.img} height="150" width="150" alt="" />
+						<img className="educationImage" src={data?.img} height="150" width="150" alt="" />
 					</div>
 					<div className="col-xs-9 col-md-9">
 						{data &&
@@ -45,54 +45,62 @@ export default function Educational(props) {
 				<div className="card-body rightPanel">
 					{data.about ? (
 						<div>
-							<h3 className="card-title">
+							<h2 className="card-title">
 								<strong>About</strong>
-							</h3>
+								<em>{` ( ${data.term} ) `}</em>
+							</h2>
 							<p className="card-text">{data.about}</p>
 						</div>
 					) : (
 						""
 					)}
 					<div>
-						<div>
-							{data?.projects ? (
-								<>
-									<h1> Projects</h1>
-									{data.projects.map((data) => {
-										console.log(data);
-										return (
-											<>
-												<h2>
-													<strong>{data.name}</strong>
-												</h2>
-												<div>
-													<h3> Descriptions</h3>
-													{data.description}
-												</div>
-												<div>
-													<span>
-														<strong>Stacked Used: </strong>
-													</span>
-													<span>
-														{Object.entries(data.skills).map((val) => {
-															return (
-																<span className="mg-10">
-																	<i className={val[1]}></i> {val[0]}
-																</span>
-															);
-														})}
-													</span>
-												</div>
-												<br />
-											</>
-										);
-									})}
-								</>
-							) : (
-								""
-							)}
-						</div>
+						{data?.projects ? (
+							<>
+								<h2>
+									{" "}
+									<strong>Projects</strong>
+								</h2>
+								{data.projects.map((data) => {
+									console.log(data);
+									return (
+										<>
+											<h4>
+												<strong>{data.name}</strong>
+											</h4>
+											<div>{data.description}</div>
+											<div>
+												<span>
+													<strong>Stacked Used: </strong>
+												</span>
+												<span>
+													{Object.entries(data.skills).map((val) => {
+														return (
+															<span className="mg-10">
+																<i className={val[1]}></i> {val[0]}
+															</span>
+														);
+													})}
+												</span>
+											</div>
+											<br />
+										</>
+									);
+								})}
+							</>
+						) : (
+							""
+						)}
 					</div>
+					<section>
+						{data.degreeImg ? (
+							<div className="degreeImgContainer">
+								<img className="h-100 w-100" src={data.degreeImg} alt="marksheet" />
+							</div>
+						) : (
+							""
+						)}
+					</section>
 				</div>
 			</div>
 			<div className="pg-5"></div>
