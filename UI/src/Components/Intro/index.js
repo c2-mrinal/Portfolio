@@ -62,28 +62,28 @@ function Intro(props) {
 					<h1> Developing the change U I need ...</h1>
 				</div>
 			</section>
-			<div className="intoSection">
+			<div className="intoSectionTemp">
 				<div className="careerbg">
 					<h3>
 						<Nav.Link href="/career">Career</Nav.Link>
 					</h3>
 				</div>
 			</div>
-			<div className="intoSection">
+			<div className="intoSectionTemp">
 				<div className="skillbg">
 					<h3>
 						<Nav.Link href="/skill">Skills</Nav.Link>
 					</h3>
 				</div>
 			</div>
-			<div className="intoSection">
+			<div className="intoSectionTemp">
 				<div className="aboutbg">
 					<h3>
 						<Nav.Link href="/about">About</Nav.Link>
 					</h3>
 				</div>
 			</div>
-			<div className="intoSection">
+			<div className="intoSectionTemp">
 				<div className="contactbg">
 					<h3>
 						<Nav.Link href="/contact">Contact</Nav.Link>

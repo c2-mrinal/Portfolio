@@ -1,32 +1,58 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./rightPanel.css";
 
 export default function Educational(props) {
 	const { data } = props;
+	const [showDetail, setShowDetail] = useState("");
+	const showDetails = (value, ind = 0) => {
+		setSelectedIndex(ind);
+		if (value === showDetail) {
+			setShowDetail("");
+		} else {
+			setShowDetail(value);
+		}
+	};
+
+	useEffect(() => {
+		showDetails(showDetail);
+	}, [props.data]);
+
+	const [selectedIndex, setSelectedIndex] = useState(0);
 	return (
 		<div>
-			<div className="card">
-				<div className="card-header row">
+			<div className="">
+				<div className="educationHeader row">
 					<div className="col-xs-3 col-md-3">
 						<img src={data?.img} height="150" width="150" alt="" />
 					</div>
 					<div className="col-xs-9 col-md-9">
 						{data &&
-							data.info?.map((info) => {
+							data.info?.map((info, ind) => {
+								!showDetail && ind === 0 && showDetails(info[1], ind);
 								return (
-									<span className="infoTextBox" onClick={() => props.showDetails(info[1])} key={info[1]}>
+									<span
+										className={`infoTextBox ${selectedIndex === ind ? "infoTextBoxSelected" : ""}`}
+										onClick={() => showDetails(info[1], ind)}
+										key={info[1]}
+									>
 										<strong>{info[0]} </strong>
 									</span>
 								);
 							})}
-						{props.showDetail ? <div className="detailsStyled"> {props.showDetail}</div> : ""}
+						{showDetail ? <div className="detailsStyled"> {showDetail}</div> : ""}
 					</div>
 				</div>
 				<div className="card-body rightPanel">
-					<div>
-						<h5 className="card-title">About</h5>
-						<p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-					</div>
+					{data.about ? (
+						<div>
+							<h3 className="card-title">
+								<strong>About</strong>
+							</h3>
+							<p className="card-text">{data.about}</p>
+						</div>
+					) : (
+						""
+					)}
 					<div>
 						<div>
 							{data?.projects ? (
@@ -69,6 +95,7 @@ export default function Educational(props) {
 					</div>
 				</div>
 			</div>
+			<div className="pg-5"></div>
 		</div>
 	);
 }

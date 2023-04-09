@@ -3,13 +3,29 @@
 	width: 100%;
 	background-color: rgba(165, 246, 246, 0.432);
 }
+.educationHeader {
+	margin: 2rem;
+}
 .infoTextBox {
+	-webkit-appearance: none; /* show none  */
+	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.15);
+
+	transform: translate(-50%, -50%);
+
+	border-radius: 20px;
+	border: solid 8px #ececec;
+	outline: none;
+	align-items: center;
+	cursor: pointer;
 	margin: auto 10px;
 	padding: 5px 10px;
-	border: 1px solid;
-	border-radius: 20px;
 	font-family: "Font Awesome 6 Free";
 	font-size: 1.2rem;
+}
+.infoTextBoxSelected {
+	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.15),
+		inset -10px -10px 15px rgba(255, 255, 255, 0.5), inset 10px 10px 15px rgba(70, 70, 70, 0.15);
+	color: #79b6f8;
 }
 
 .mg-10 {
@@ -96,6 +112,35 @@
 	font-family: cursive;
 }
 
-.pg-100 {
-	padding: 20rem 0px;
+.pg-20 {
+	padding: 20rem;
+}
+.pg-5 {
+	padding: 5rem;
+}
+.etcSection {
+	height: 90vh;
+	max-width: 100%;
+}
+.carouselContainer {
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.itemPlacement {
+	width: 70vw;
+	height: 70vh;
+}
+.maxImageHeight {
+	max-height: 60vh !important;
+}
+
+.itemHeader {
+	font-size: clamp(1.5rem, 2.5rem, 3rem);
+	font-weight: 600;
+	padding: 2.5rem;
+}
+.sectionBackground {
+	background: rgba(163, 226, 224, 0.556);
 }
