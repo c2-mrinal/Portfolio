@@ -8,7 +8,6 @@ import Extracurricular from "./Extracurricular";
 
 function RightPanel(props) {
 	const [data, setdata] = useState({});
-	const [showDetail, setShowDetail] = useState("");
 
 	const dispatch = useDispatch();
 	const folderIs = useSelector((state) => state.folderIs || "");
@@ -29,45 +28,31 @@ function RightPanel(props) {
 			}
 		}
 		fetchMyAPI();
-		showDetails(showDetail);
 	}, [folderIs.value]);
 
 	const storefolderDataUpdate = (key, data) => {
 		dispatch(allActions.folderDataAction({ ...folderData, [key]: data }));
 	};
 
-	const showDetails = (value) => {
-		if (value === showDetail) {
-			setShowDetail("");
-		} else {
-			setShowDetail(value);
-		}
-	};
 	const detailPanel = () => {
 		switch (folderIs.category) {
 			case 1:
-				return <Educational data={data} showDetail={showDetail} showDetails={showDetails} />;
+				return <Educational data={data} />;
 			case 2:
 				return <Experiance data={data} />;
-
 			case 3:
-				return <Extracurricular />;
+				return <Extracurricular data={data} />;
 			case 4:
-				return <Educational />;
+				return <Educational data={data} />;
 			case 5:
-				return <Educational />;
+				return <Educational data={data} />;
 
 			default:
 				break;
 		}
 	};
 
-	return (
-		<div>
-			{detailPanel()}
-			<div className="pg-100"></div>
-		</div>
-	);
+	return <div>{detailPanel()}</div>;
 }
 
 export default RightPanel;

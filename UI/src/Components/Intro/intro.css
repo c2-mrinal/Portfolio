@@ -11,7 +11,7 @@
 	top: 0;
 	height: 100%;
 	width: 100%;
-	z-index: -1;
+	z-index: 0;
 	overflow: hidden;
 }
 
@@ -19,6 +19,12 @@
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+}
+.intoSection {
+	height: 100vh;
+	width: 100vw;
+	background-color: black;
+	z-index: -1;
 }
 
 .downloadResumeButton {
@@ -238,7 +244,7 @@
 	color: aliceblue;
 }
 
-.intoSection {
+.intoSectionTemp {
 	height: 100vh;
 	width: 100vw;
 }

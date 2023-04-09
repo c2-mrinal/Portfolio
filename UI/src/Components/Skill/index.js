@@ -68,8 +68,8 @@ function Skill(props) {
 
 	const createBubblePlot = (data) => {
 		d3.select(refNode.current).selectAll("g").remove();
-		const width = propWidth - Margin.left - Margin.right;
-		const height = propHeight - Margin.top - Margin.bottom;
+		let width = propWidth - Margin.left - Margin.right;
+		let height = propHeight - Margin.top - Margin.bottom;
 		simulation
 			.force(
 				"forceX",
@@ -122,6 +122,7 @@ function Skill(props) {
 					.forceCollide()
 					.strength(0.5)
 					.radius((d) => {
+						height = height - width > 50 ? height - (height - width) + 50 : height;
 						const val = width > height ? width / height / 2 : height / width / 2;
 						return val * d.radius + NodePadding;
 					})
@@ -158,6 +159,7 @@ function Skill(props) {
 		nodes = nodedata
 			.append("circle")
 			.attr("r", (d) => {
+				height = height - width > 50 ? height - (height - width) + 50 : height;
 				const val = width > height ? width / height / 2 : height / width / 2;
 				return val * d.radius;
 			})
@@ -208,7 +210,7 @@ function Skill(props) {
 				tooltip.style("visibility", "visible");
 			})
 			.on("mousemove", function (e, d) {
-				tooltip.style("top", "10%").style("left", "80%");
+				tooltip.style("top", "20%").style("left", "80%");
 			})
 			.on("mouseout", function (e, d) {
 				mouseOut(e, d);
@@ -271,7 +273,7 @@ function Skill(props) {
 				}
 			})
 			.attr("font-family", "SF-Pro-Display-Semibold")
-			.attr("font-size", "1.2rem")
+			.attr("font-size", "clamp(1rem, 5vw, 2rem)")
 			.attr("font-weight", 800)
 			.text(function (d) {
 				return d.label;
@@ -326,15 +328,16 @@ function Skill(props) {
 	};
 	const showTooltip = (d) => {
 		return `<div class="bubble">
-		    <div className="bubbleTooltip">
-					<strong className="bubbleStrong">Skill</strong> <div>${d.label}</div>
+		    <div class="bubbleTooltip">
+					<h5><strong class="bubbleStrong">Skill </strong><i class="${d.icon}" ></i></h5> 
+					<h4> ${d.label}</h4>
 				</div>
-		    <div className="bubbleTooltip">
-					<strong className="bubbleStrong">Profency</strong>
-					<div>${stars(d.value)}</div>
+		    <div class="bubbleTooltip">
+			<h5><strong class="bubbleStrong">Profency</strong><em>${d.experience ? `(since ${d.experience})` : ""}</em> </h5>
+			<h4><div>${stars(d.value)}</div></h4>
 				</div>
-		    <div className="bubbleTooltip">
-					<strong className="bubbleStrong">Description</strong>
+		    <div class="bubbleTooltip">
+					<strong class="bubbleStrong">Description</strong>
 					<div>${d.description}</div>
 				</div>
 		    </div>`;

@@ -47,16 +47,17 @@ function Experiance(props) {
 					<div className="row skillSection">
 						<h3> Skills</h3>
 						<div className="list-inline-item">
-							{Object.entries(data?.skills)?.map((val) => {
-								return (
-									<span className="mg-10 list-inline-item">
-										<span>
-											<i className={val[1] + " mgr-5"} />
+							{data?.skills &&
+								Object.entries(data.skills)?.map((val) => {
+									return (
+										<span className="mg-10 list-inline-item">
+											<span>
+												<i className={val[1] + " mgr-5"} />
+											</span>
+											<span>{val[0]}</span>
 										</span>
-										<span>{val[0]}</span>
-									</span>
-								);
-							})}
+									);
+								})}
 						</div>
 					</div>
 					<div className="row skillSection">
@@ -85,6 +86,7 @@ function Experiance(props) {
 							</ul>
 							<div class="light"></div>
 						</div>
+						<div className="pg-20"></div>
 					</div>
 				</>
 			)}

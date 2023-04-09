@@ -1,22 +1,36 @@
 import React from "react";
+import Carousel from "react-bootstrap/Carousel";
 
-export default function Extracurricular() {
+export default function Extracurricular(props) {
+	console.log(props);
 	return (
 		<div>
-			<div className=" mb-3">
-				<div className="row g-0">
-					<div className="col-md-6"></div>
-					<div className="col-md-6">
-						<div className="card-body">
-							<h2 className="card-title">Sports</h2>
-							<p className="card-text">
-								<small className="text-muted"></small>
-							</p>
-							<p className="card-text">Love to play sports. cricket badminton football</p>
-						</div>
-					</div>
-				</div>
-			</div>
+			{props.data?.length &&
+				props.data?.map((value, ind) => {
+					return (
+						<section className={`etcSection ${ind % 2 !== 0 ? "sectionBackground" : ""}`}>
+							<div className="">
+								<h2 className="itemHeader">{value.section}</h2>
+								<div className="carouselContainer">
+									<Carousel className="itemPlacement" controls={value.content?.length > 1 ? true : false}>
+										{value.content?.map((item) => {
+											return (
+												<Carousel.Item>
+													<img className="d-block w-100 h-80 itemPlacement" src={item.img} alt={item.img} />
+													<Carousel.Caption>
+														<h3>{item.desc}</h3>
+														<p></p>
+													</Carousel.Caption>
+												</Carousel.Item>
+											);
+										})}
+									</Carousel>
+								</div>
+							</div>
+						</section>
+					);
+				})}
+			<div className="pg-5"></div>
 		</div>
 	);
 }
