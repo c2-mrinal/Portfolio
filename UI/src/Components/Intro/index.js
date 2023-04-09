@@ -4,6 +4,7 @@ import "./intro.css";
 import invertedArrowPointing from "../../image/invertedArrowPointing.gif";
 import backgroundMain from "../../image/backgroundMain.mp4";
 import Nav from "react-bootstrap/Nav";
+import Footer from "../../Shared/Footer";
 
 function Intro(props) {
 	const [Downloading, setDownloading] = useState(false);
@@ -90,6 +91,7 @@ function Intro(props) {
 					</h3>
 				</div>
 			</div>
+			<Footer />
 		</div>
 	);
 }

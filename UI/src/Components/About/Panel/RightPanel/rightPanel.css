@@ -32,6 +32,10 @@
 		inset -10px -10px 15px rgba(255, 255, 255, 0.5), inset 10px 10px 15px rgba(70, 70, 70, 0.15);
 }
 
+.degreeImgContainer {
+	width: 800px;
+	height: 700px;
+}
 .mg-10 {
 	margin: auto 10px;
 }
