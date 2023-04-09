@@ -1,31 +1,35 @@
 .rightPanel {
 	height: 100%;
-	width: 100%;
+	padding: 2rem;
+	width: 97%;
 	background-color: rgba(165, 246, 246, 0.432);
 }
 .educationHeader {
 	margin: 2rem;
 }
+.educationImage {
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+}
 .infoTextBox {
-	-webkit-appearance: none; /* show none  */
-	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.15);
-
-	transform: translate(-50%, -50%);
-
-	border-radius: 20px;
-	border: solid 8px #ececec;
-	outline: none;
-	align-items: center;
-	cursor: pointer;
-	margin: auto 10px;
-	padding: 5px 10px;
 	font-family: "Font Awesome 6 Free";
 	font-size: 1.2rem;
+	margin: auto 10px;
+	padding: 5px 10px;
+	align-items: center;
+	border: solid 8px #ececec;
+	border-radius: 20px;
+	outline: none;
+	cursor: pointer;
+	transform: translate(-50%, -50%);
+	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.15);
+	-webkit-appearance: none; /* show none  */
 }
 .infoTextBoxSelected {
+	color: #79b6f8;
 	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.15),
 		inset -10px -10px 15px rgba(255, 255, 255, 0.5), inset 10px 10px 15px rgba(70, 70, 70, 0.15);
-	color: #79b6f8;
 }
 
 .mg-10 {

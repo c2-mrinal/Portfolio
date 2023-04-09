@@ -23,7 +23,7 @@ export default function Educational(props) {
 			<div className="">
 				<div className="educationHeader row">
 					<div className="col-xs-3 col-md-3">
-						<img src={data?.img} height="150" width="150" alt="" />
+						<img className="educationImage" src={data?.img} height="150" width="150" alt="" />
 					</div>
 					<div className="col-xs-9 col-md-9">
 						{data &&
@@ -47,6 +47,7 @@ export default function Educational(props) {
 						<div>
 							<h3 className="card-title">
 								<strong>About</strong>
+								<em>{` ( ${data.term} ) `}</em>
 							</h3>
 							<p className="card-text">{data.about}</p>
 						</div>
