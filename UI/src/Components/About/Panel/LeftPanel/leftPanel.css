@@ -1,20 +1,19 @@
-.folderTreeExpandable{
-    display: flex;
-    margin: auto;
-    padding: 5px 0;
-
+.folderTreeExpandable {
+	display: flex;
+	margin: auto;
+	padding: 5px 0;
 }
-.folderTreeExpandable  span{
-    margin: auto 2px;
-}
-
-.folderTreeNode{
+.folderTreeExpandable span {
+	margin: auto 5px;
 }
 
-.folderTreeExpandable:hover{
-    background-color: rgb(212, 235, 235);
-
+.folderTreeNode {
 }
-.treeNodeSelected{
-    color: rgb(42, 109, 224);
+
+.folderTreeExpandable:hover {
+	background-color: rgb(212, 235, 235);
+}
+.treeNodeSelected {
+	font-weight: 600;
+	color: rgb(42, 109, 224);
 }

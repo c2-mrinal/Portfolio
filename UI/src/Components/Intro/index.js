@@ -1,14 +1,17 @@
-import React, { useState } from "react";
-import Button from "../../Shared/Button";
+import React, { useState, useEffect, useRef } from "react";
 import "./intro.css";
 import invertedArrowPointing from "../../image/invertedArrowPointing.gif";
 import backgroundMain from "../../image/backgroundMain.mp4";
-import Nav from "react-bootstrap/Nav";
 import Footer from "../../Shared/Footer";
+import ContactBG from "./CursorComponents/ContactBG";
+import AboutBG from "./CursorComponents/AboutBG";
+import SkillBG from "./CursorComponents/SkillBG";
+import CareerBG from "./CursorComponents/CareerBG";
 
 function Intro(props) {
 	const [Downloading, setDownloading] = useState(false);
 	const [downloadSucess, setdownloadSucess] = useState(false);
+	const skillWrapperRef = useRef(null);
 
 	const downloadResume = async () => {
 		setDownloading(true);
@@ -27,6 +30,7 @@ function Intro(props) {
 			setDownloading(false);
 		}, 1000);
 	};
+
 	return (
 		<div>
 			<div className="myVideo">
@@ -63,34 +67,20 @@ function Intro(props) {
 					<h1> Developing the change U I need ...</h1>
 				</div>
 			</section>
-			<div className="intoSectionTemp">
-				<div className="careerbg">
-					<h3>
-						<Nav.Link href="/career">Career</Nav.Link>
-					</h3>
+			<section className="row">
+				<div className="col-sm-3 col-lg-3">
+					<CareerBG />
 				</div>
-			</div>
-			<div className="intoSectionTemp">
-				<div className="skillbg">
-					<h3>
-						<Nav.Link href="/skill">Skills</Nav.Link>
-					</h3>
+				<div className="col-sm-3 col-lg-3" ref={skillWrapperRef}>
+					<SkillBG />
 				</div>
-			</div>
-			<div className="intoSectionTemp">
-				<div className="aboutbg">
-					<h3>
-						<Nav.Link href="/about">About</Nav.Link>
-					</h3>
+				<div className="col-sm-3 col-lg-3">
+					<AboutBG />
 				</div>
-			</div>
-			<div className="intoSectionTemp">
-				<div className="contactbg">
-					<h3>
-						<Nav.Link href="/contact">Contact</Nav.Link>
-					</h3>
+				<div className="col-sm-3 col-lg-3">
+					<ContactBG />
 				</div>
-			</div>
+			</section>
 			<Footer />
 		</div>
 	);
