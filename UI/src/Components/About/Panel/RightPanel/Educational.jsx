@@ -22,10 +22,17 @@ export default function Educational(props) {
 		<div>
 			<div className="">
 				<div className="educationHeader row">
-					<div className="col-xs-3 col-md-3">
-						<img className="educationImage" src={data?.img} height="150" width="150" alt="" />
+					<div className="col-xs-3 col-md-3 educationHeaderContainer">
+						<div>
+							<a href={data.url}>
+								<img className="educationImage" src={data?.img} height="150" width="150" alt="" />
+							</a>
+						</div>
+						<div>
+							<em>{` ( ${data.term} ) `}</em>
+						</div>
 					</div>
-					<div className="col-xs-9 col-md-9">
+					<div className="col-xs-9 col-md-9 infoTextContainer">
 						{data &&
 							data.info?.map((info, ind) => {
 								!showDetail && ind === 0 && showDetails(info[1], ind);
@@ -47,7 +54,6 @@ export default function Educational(props) {
 						<div>
 							<h2 className="card-title">
 								<strong>About</strong>
-								<em>{` ( ${data.term} ) `}</em>
 							</h2>
 							<p className="card-text">{data.about}</p>
 						</div>

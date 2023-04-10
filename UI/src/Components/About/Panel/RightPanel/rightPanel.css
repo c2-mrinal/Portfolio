@@ -2,21 +2,36 @@
 	height: 100%;
 	padding: 2rem;
 	width: 97%;
-	background-color: rgba(165, 246, 246, 0.432);
+}
+.rightPanel div {
+	padding: 1rem 0;
+}
+.rightPanel h2 {
+	padding: 0.7rem 0;
 }
 .educationHeader {
 	margin: 2rem;
+	border-radius: 5px;
+	background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+}
+.educationHeaderContainer {
+	margin: auto;
+	text-align: center;
 }
 .educationImage {
 	height: 150px;
 	width: 150px;
 	border-radius: 50%;
 }
+.infoTextContainer {
+	margin: 1rem auto;
+	padding: 0px 1rem;
+}
 .infoTextBox {
 	font-family: "Font Awesome 6 Free";
 	font-size: 1.2rem;
 	margin: auto 10px;
-	padding: 5px 10px;
+	padding: 8px 12px;
 	align-items: center;
 	border: solid 8px #ececec;
 	border-radius: 20px;
@@ -27,7 +42,7 @@
 	-webkit-appearance: none; /* show none  */
 }
 .infoTextBoxSelected {
-	color: #79b6f8;
+	color: #eda371;
 	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.15),
 		inset -10px -10px 15px rgba(255, 255, 255, 0.5), inset 10px 10px 15px rgba(70, 70, 70, 0.15);
 }
@@ -36,27 +51,38 @@
 	width: 800px;
 	height: 700px;
 }
-.mg-10 {
-	margin: auto 10px;
-}
 
-.externalLink {
-	font-size: 0.8rem;
-	margin: auto -5px auto;
-}
-.overviewSide {
-	padding: 0px 2rem;
-}
-.roleSide {
-}
 .companyName {
 	font-size: larger;
 }
 
 .experianceTop {
-	font-size: clamp(0.5rem, 1.5rem, 2.5rem);
-	padding: 1.6rem;
+	font-size: clamp(1.5rem, 2.5rem, 3rem);
+	margin: 2rem;
+}
+.companyLink {
+	font-size: clamp(1rem, 3rem, 3.5rem);
+	background: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
 	margin: auto;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.comapnyNameContainer {
+	margin: auto 0;
+}
+.companyLinkedin {
+	font-size: 0.7em;
+}
+.experianceDetailContainer {
+	margin: 2rem;
+}
+.overviewSide {
+	padding: 0px;
+}
+.roleSide {
+}
+.mg-10 {
+	margin: auto 10px;
 }
 
 .skillSection {
@@ -69,6 +95,11 @@
 	margin: 20px auto;
 	font-size: 1.5em;
 	font-family: monospace;
+	text-align: justify;
+	padding-left: 1rem;
+}
+.skillSection h2 {
+	padding: 0.7rem 1rem;
 }
 
 .activityUL {
