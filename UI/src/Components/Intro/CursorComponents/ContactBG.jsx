@@ -11,7 +11,7 @@ function ContactBG() {
 			<Nav.Link className="careerPageDetail" href="/contact">
 				<div className=" introCursorButton">
 					<h3>Contact</h3>
-					Spotlight Cursor Text Screen
+					{/* Spotlight Cursor Text Screen */}
 				</div>
 			</Nav.Link>
 		</>
