@@ -50,7 +50,6 @@ const aboutDetails = (req, res) => {
 const resume = (req, res) => {
 	try {
 		const URL = process.env.URL;
-		console.log(process.env, URL);
 		if (URL) {
 			res.status(200).send({
 				success: true,
