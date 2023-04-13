@@ -180,7 +180,7 @@ const aboutData = {
 		info: [
 			["College", "Dhirubhai Ambani Institute of Information and Communication Technology"],
 			["Degree", "Masters of Science"],
-			["Specialization", "IT"],
+			["Specialization", "Information Technology"],
 			["Location", "Gandhinagar - GJ"],
 		],
 		url: "https://www.daiict.ac.in/",
@@ -189,7 +189,7 @@ const aboutData = {
 		term: "2019 - 2021",
 		projects: [
 			{
-				name: "The KabdaiWala ",
+				name: "The KabdaiWala",
 				skills: {
 					Html5: "fa-brands fa-html5",
 					Css3: "fa-brands fa-css3-alt",
@@ -330,9 +330,9 @@ const aboutData = {
 		skills: {
 			Html5: "fa-brands fa-html5",
 			Css3: "fa-brands fa-css3-alt",
-			ReactJS: "fa-brands fa-react fa-spin",
+			ReactJS: "fa-brands fa-react ",
 			ReduxJS: "fa-brands fa-react",
-			Debugging: "fa-solid fa-bug fa-fade",
+			Debugging: "fa-solid fa-bug ",
 			Bootstrap: "fa-brands fa-bootstrap",
 			JavaScript: "fa-brands fa-square-js",
 			"Rest API": "fa-solid fa-gear",
@@ -340,7 +340,6 @@ const aboutData = {
 			NodeJS: "fa-brands fa-node",
 			MongoDB: "fa-sharp fa-solid fa-database",
 			"Agile Development": "fa-regular fa-circle",
-			Webpack: "fa-solid fa-cube",
 			ChartJS: "fa-solid fa-chart-simple",
 		},
 		notableWork: [
@@ -370,17 +369,17 @@ const aboutData = {
 		img: "https://s30307.pcdn.co/assets/images/logo.svg",
 		skills: {
 			Html5: "fa-brands fa-html5",
-			Css3: "fa-brands fa-css3-alt",
+			Bootstrap: "fa-brands fa-bootstrap",
 			ReactJS: "fa-brands fa-react",
 			ReduxJS: "fa-brands fa-react",
 			Debugging: "fa-solid fa-bug",
-			Bootstrap: "fa-brands fa-bootstrap",
 			JavaScript: "fa-brands fa-square-js",
 			"Rest API": "fa-solid fa-gear",
-			ExpressJS: "fa-brands fa-square-js",
-			NodeJS: "fa-brands fa-node",
-			MongoDB: "fa-sharp fa-solid fa-database",
-			"Agile Development": "",
+			SonarLint: "fa-solid fa-horizontal-rule",
+			BackboneJS: "fa-regular fa-skull-crossbones",
+			JIRA: "fa-brands fa-jira",
+			"Chrome Extension": "fa-brands fa-chrome",
+			"Agile Development": "fa-regular fa-circle",
 			Webpack: "fa-regular fa-cube",
 			ChartJS: "fa-solid fa-chart-simple",
 		},
@@ -419,61 +418,50 @@ const aboutData = {
 			Debugging: "fa-solid fa-bug",
 			Bootstrap: "fa-brands fa-bootstrap",
 			JavaScript: "fa-brands fa-square-js",
-			"Rest API": "fa-solid fa-gear",
-			ExpressJS: "fa-brands fa-square-js",
-			NodeJS: "fa-brands fa-node",
-			MongoDB: "fa-sharp fa-solid fa-database",
-			"Agile Development": "",
-			Webpack: "fa-regular fa-cube",
-			ChartJS: "fa-solid fa-chart-simple",
+			D3: "fa-solid fa-chart-simple",
+			Docker: "fa-brands fa-docker",
+			SQLAlchecmy: "fa-sharp fa-light fa-database",
 		},
-		notableWork: ["1", "", "CRM Page"],
+		notableWork: [
+			"Created and replaced the entire SQL Alchemy UI Interface with custom made UI with reactJS componennt (with features like drag and drop, resizing, custom component creation and more) ",
+			"Code Modification",
+			"Learn New stacks and implemented on Product",
+			"Team Collabration while Pandemic Situation",
+			"Conducted R&D on CRM (Customer Relationship Management) and Created our company oriented app to handel customers details",
+		],
 		about: `MagentaBI is a business intelligence startup that focuses on SMEs. It also provides visual data
     analysis from tabular data (excel, tally, databases, and more).
     At Magenta, I had the pleasure of working as a react js developer, where I created a variety of
     UI pages and updated the code base of many components. To improve the development of
     each UI component.`,
 		activity: [
-			{ img: "https://drive.google.com/uc?export=view&id=1dmgi4xSuZ1u_yQcBepzm6807rHD99KCl", name: "Brain Storming" },
+			{ img: "https://drive.google.com/uc?export=view&id=1L438k8NwkpxP02oiSCnxIKbTW4S5fQLA", name: "Team Trip" },
+			{ img: "https://drive.google.com/uc?export=view&id=1abB3GIvNvTOHAlMSVWH91sMJISIalvyz", name: "Brain Storming" },
+			{ img: "https://drive.google.com/uc?export=view&id=1KUx5LY_wBMuSZ2_l8Vv_OJCMULjHrrIk", name: "Team Trip" },
 		],
 	},
 	daiict: {
-		name: "Qmetry",
-		designation: "Web Developer",
-		department: "MagentaBI",
-		startDate: "Dec 2020",
-		endDate: "June 2021",
-		website: "https://www.magentabi.com/",
-		linkedin: "https://www.linkedin.com/company/mymagenta/",
-		img: "https://media.licdn.com/dms/image/C4E0BAQFv7OwA1N6scQ/company-logo_200_200/0/1614262740739?e=1687996800&v=beta&t=TwFz_a-jZUHVZjoas32mSHon5RbC4dUjhQqkSza1in4",
+		name: "DAIICT",
+		designation: "Developer Intern",
+		department: "Summer Intern",
+		startDate: "May 2020",
+		endDate: "Aug 2020",
+		website: "https://www.daiict.ac.in/",
+		linkedin: "https://www.linkedin.com/school/dhirubhai-ambani-institute-of-information-and-communication-technology/",
+		img: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Dhirubhai_Ambani_Institute_of_Information_and_Communication_Technology_logo.png/220px-Dhirubhai_Ambani_Institute_of_Information_and_Communication_Technology_logo.png",
 		skills: {
 			Html5: "fa-brands fa-html5",
 			Css3: "fa-brands fa-css3-alt",
-			ReactJS: "fa-brands fa-react",
-			ReduxJS: "fa-brands fa-react",
-			Debugging: "fa-solid fa-bug",
 			Bootstrap: "fa-brands fa-bootstrap",
 			JavaScript: "fa-brands fa-square-js",
-			"Rest API": "fa-solid fa-gear",
+			VueJS: "fa-brands fa-vuejs",
 			ExpressJS: "fa-brands fa-square-js",
 			NodeJS: "fa-brands fa-node",
-			MongoDB: "fa-sharp fa-solid fa-database",
-			"Agile Development": "",
-			Webpack: "fa-regular fa-cube",
-			ChartJS: "fa-solid fa-chart-simple",
 		},
 		notableWork: ["1", "2", "3"],
-		about: `MagentaBI is a business intelligence startup that focuses on SMEs. It also provides visual data
-    analysis from tabular data (excel, tally, databases, and more).
-    At Magenta, I had the pleasure of working as a react js developer, where I created a variety of
-    UI pages and updated the code base of many components. To improve the development of
-    each UI component.`,
-		activity: [
-			{ img: "https://unsplash.it/500/500", name: "name" },
-			{ img: "https://unsplash.it/500/500", name: "name" },
-			{ img: "https://unsplash.it/500/500", name: "name" },
-			{ img: "https://unsplash.it/500/500", name: "name" },
-		],
+		about: `Developed a single-page Web-App using Vue-Cli and nodeJS.
+		The whole web app was based on API which makes the data more streamlined and reliable.
+		Learned a new technology VueJs. API devlopment using Json.`,
 	},
 	hobbie: [
 		{
