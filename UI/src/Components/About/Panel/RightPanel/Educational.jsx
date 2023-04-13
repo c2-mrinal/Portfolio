@@ -67,10 +67,9 @@ export default function Educational(props) {
 									{" "}
 									<strong>Projects</strong>
 								</h2>
-								{data.projects.map((data) => {
-									console.log(data);
+								{data.projects.map((data, ind) => {
 									return (
-										<>
+										<React.Fragment key={ind}>
 											<h4>
 												<strong>{data.name}</strong>
 											</h4>
@@ -82,7 +81,7 @@ export default function Educational(props) {
 												<span>
 													{Object.entries(data.skills).map((val) => {
 														return (
-															<span className="mg-10">
+															<span className="mg-10" key={val[0]}>
 																<i className={val[1]}></i> {val[0]}
 															</span>
 														);
@@ -90,7 +89,7 @@ export default function Educational(props) {
 												</span>
 											</div>
 											<br />
-										</>
+										</React.Fragment>
 									);
 								})}
 							</>

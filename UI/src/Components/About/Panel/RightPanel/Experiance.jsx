@@ -59,9 +59,9 @@ function Experiance(props) {
 						</h2>{" "}
 						<div className="list-inline-item">
 							{data?.skills &&
-								Object.entries(data.skills)?.map((val) => {
+								Object.entries(data.skills)?.map((val, ind) => {
 									return (
-										<span className="mg-10 list-inline-item">
+										<span className="mg-10 list-inline-item" key={ind}>
 											<span>
 												<i className={val[1] + " mgr-5"} />
 											</span>
@@ -77,8 +77,8 @@ function Experiance(props) {
 						</h2>
 						<div className="">
 							<ul>
-								{data.notableWork?.map((val) => {
-									return <li>{val}</li>;
+								{data.notableWork?.map((val, ind) => {
+									return <li key={ind}>{val}</li>;
 								})}
 							</ul>
 						</div>
@@ -89,11 +89,10 @@ function Experiance(props) {
 						</h2>
 						<div className="">
 							<ul className="activityUL">
-								{data.activity?.map((val) => {
-									console.log(val);
+								{data.activity?.map((val, ind) => {
 									return (
-										<li className="activityLI">
-											<img src={val.img} width="300" />
+										<li className="activityLI" key={ind}>
+											<img src={val.img} width="300" height="300" />
 											<p className="activityText">{val.name}</p>
 										</li>
 									);

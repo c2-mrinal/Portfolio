@@ -28,7 +28,6 @@ export function APIBanner(props) {
 }
 
 export const apiBanner = (status, text) => {
-	console.log(status, text);
 	return (
 		<div>
 			"<APIBanner status={status} text={text} />"

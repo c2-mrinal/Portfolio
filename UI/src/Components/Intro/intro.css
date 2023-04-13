@@ -11,7 +11,7 @@
 	top: 0;
 	height: 100%;
 	width: 100%;
-	z-index: 0;
+	z-index: 9;
 	overflow: hidden;
 }
 
@@ -24,7 +24,7 @@
 	height: 100vh;
 	width: 100vw;
 	background-color: black;
-	z-index: -1;
+	z-index: 10;
 }
 
 .downloadResumeButton {
@@ -38,7 +38,7 @@
 	padding: 5rem;
 	margin: auto;
 	position: relative;
-	z-index: 10;
+	z-index: 11;
 }
 /* download button */
 
@@ -247,8 +247,35 @@
 .cursorAnimation {
 	height: 100vh;
 	width: 100%;
+	cursor: none;
+}
+.cursorAnimation {
+	height: 100vh;
+	width: 100%;
+}
+.cursorBubbleAnimation {
+	height: 100vh;
+	width: 100%;
 }
 
+.careerPageDetail {
+	display: inline-block;
+	position: relative;
+	top: -50%;
+	left: 35%;
+}
+.skillPageDetail {
+	display: inline-block;
+	position: relative;
+	top: -50%;
+	left: 35%;
+}
+.careerPageDetail {
+	display: inline-block;
+	position: relative;
+	top: -50%;
+	left: 35%;
+}
 .careerPageDetail {
 	display: inline-block;
 	position: relative;
@@ -267,11 +294,13 @@
 .careerbg {
 	background-color: rgb(158, 204, 233);
 	position: relative;
+	cursor: none;
 }
 
 .skillbg {
 	background-color: rgba(236, 164, 76, 0.667);
 	position: relative;
+	cursor: none;
 }
 
 .aboutbg {
@@ -282,6 +311,9 @@
 .contactbg {
 	background-color: bisque;
 	position: relative;
+}
+.bubble {
+	border-radius: 50%;
 }
 
 .introCursorButton {
@@ -296,8 +328,9 @@
 	height: 8rem;
 	width: 8rem;
 	cursor: pointer;
+	z-index: 20;
 }
-/* .careerbg .introCursorButton {
+/* .careerPageDetail .introCursorButton {
 	animation: anim 20s infinite;
 	animation-delay: 1s;
 } */
@@ -362,4 +395,7 @@
 	90% {
 		border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
 	}
+}
+.trail {
+	cursor: none;
 }
