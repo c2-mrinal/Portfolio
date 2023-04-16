@@ -29,15 +29,14 @@
 }
 .infoTextBox {
 	font-family: "Font Awesome 6 Free";
-	font-size: 1.2rem;
-	margin: auto 10px;
+	font-size: 1.4vw;
+	margin: auto 1vw;
 	padding: 8px 12px;
 	align-items: center;
-	border: solid 8px #ececec;
+	border: solid 0.5vw #ececec;
 	border-radius: 20px;
 	outline: none;
 	cursor: pointer;
-	transform: translate(-50%, -50%);
 	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.15);
 	-webkit-appearance: none; /* show none  */
 }
@@ -92,10 +91,11 @@
 	margin-right: 5px;
 }
 .detailsStyled {
-	margin: 20px auto;
-	font-size: 1.5em;
+	margin: 30px auto;
+	font-size: 2vw;
 	font-family: monospace;
-	text-align: justify;
+	font-weight: 600;
+	text-align: initial;
 	padding-left: 1rem;
 }
 .skillSection h2 {

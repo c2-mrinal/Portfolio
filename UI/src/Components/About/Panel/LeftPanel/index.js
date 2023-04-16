@@ -4,9 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 
 import Folder from "./Folder";
 import "./leftPanel.css";
+import Loader from "../../../../Shared/Loader";
 
 function LeftPanel(props) {
 	const [FolderData, setFolderData] = useState({});
+	const [loading, setLoading] = useState(false);
 
 	const selectedFolder = useSelector((state) => state.folderIs);
 
@@ -14,13 +16,16 @@ function LeftPanel(props) {
 
 	useEffect(() => {
 		async function fetchMyAPI() {
+			setLoading(true);
 			let response = await fetch(`/api/about/folders`);
 			response = await response.json();
 			if (response.success) {
 				setFolderData(response.data.folders);
 				folderSelected(response.data.defaultSelected);
+				setLoading(false);
 			} else {
 				console.log(response);
+				setLoading(false);
 			}
 		}
 		return () => fetchMyAPI();
@@ -42,6 +47,7 @@ function LeftPanel(props) {
 			{FolderData.Website && (
 				<Folder explorer={FolderData.Website} selectedFolder={selectedFolder} folderSelected={folderSelected} />
 			)}
+			{loading && <Loader />}
 		</div>
 	);
 }

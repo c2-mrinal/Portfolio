@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import { Circle } from "../../../Shared/CircleRef";
 
-function SkillBG() {
+function SkillBG(props) {
 	const [pointerCircle, setPointerCircle] = useState([0.1, 0.2, 0.3, 0.4, 0.5]);
 
 	const SkillWrapperRef = useRef();
@@ -19,6 +19,8 @@ function SkillBG() {
 		const posit = SkillWrapperRef.current?.getBoundingClientRect();
 		const x = posit.x;
 		const y = posit.y;
+		props.setPointerComp([false, true, false, false]);
+
 		circleRefs.current.forEach((ref) => ref.moveTo(clientX - x, clientY - y));
 	};
 
@@ -33,9 +35,14 @@ function SkillBG() {
 			<div className="cursorBubbleAnimation skillbg" ref={SkillWrapperRef}>
 				{pointerCircle.map((val, ind) => {
 					return (
-						<>
-							<Circle size={val * 100} ref={addCircleRef} delay={val} />
-						</>
+						<React.Fragment key={ind}>
+							<Circle
+								size={val * 100}
+								ref={addCircleRef}
+								delay={val}
+								display={props.pointerComp[1] ? "block" : "none"}
+							/>
+						</React.Fragment>
 					);
 				})}
 			</div>

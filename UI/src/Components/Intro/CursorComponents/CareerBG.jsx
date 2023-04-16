@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Nav from "react-bootstrap/Nav";
 import { Circle } from "../../../Shared/CircleRef";
 
-function CareerBG() {
+function CareerBG(props) {
 	const CareerWrapperRef = useRef(null);
 	const circleRefs = useRef([]);
 	circleRefs.current = [];
@@ -17,6 +17,7 @@ function CareerBG() {
 		const posit = CareerWrapperRef.current?.getBoundingClientRect();
 		const x = posit.x;
 		const y = posit.y;
+		props.setPointerComp([true, false, false, false]);
 		circleRefs.current?.forEach((ref) => ref.moveTo(clientX - x, clientY - y));
 	};
 
@@ -29,7 +30,14 @@ function CareerBG() {
 	return (
 		<>
 			<div className=" cursorBubbleAnimation careerbg" ref={CareerWrapperRef}>
-				<Circle size={50} ref={addCircleRef} delay={0} />
+				<Circle
+					size={50}
+					ref={addCircleRef}
+					delay={0}
+					display={props.pointerComp[0] ? "block" : "none"}
+					isInvert={true}
+					className="isInverted"
+				/>
 			</div>
 			<Nav.Link className="careerPageDetail" href="/career">
 				<div className=" introCursorButton">
