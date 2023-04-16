@@ -1,44 +1,91 @@
-.loaderBackgroung{
-    margin: auto;
-    text-align: center;
-    background-color: aquamarine;
+.loaderBackgroung {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	background-color: rgba(198, 241, 227, 0.434);
+	z-index: 10000;
+	display: flex;
+	justify-content: center;
+	vertical-align: middle;
 }
-.loader-box{
-    position: relative;
-    top: 0;
-    left: 0;
-    max-width: 400px;
-}
-.loader-c2icon{
-    position: fixed;
-    top: 40%;
-    left: 44%;
-    opacity: 0.5;
-}
-.loader-ring{
-    position: fixed;
-    top: 30%;
-    left: 40%;
-    animation: ringFadeIn 1.5s infinite;
-    opacity: 1;
-}
-@-moz-keyframes ringFadeIn {
-from { -moz-transform: rotate(0deg);opacity: 0.05;}
-to { -moz-transform: rotate(120deg);opacity: .25;}
-to { -moz-transform: rotate(240deg);opacity: .50;}
-to { -moz-transform: rotate(360deg);opacity: .75;}
-}
-@-webkit-keyframes ringFadeIn {
-from { -webkit-transform: rotate(0deg);opacity: 0.05;}
-to { -moz-transform: rotate(120deg);opacity: .25;}
-to { -moz-transform: rotate(240deg);opacity: .50;}
-to { -webkit-transform: rotate(360deg);opacity: .75;
-}
-}
-@keyframes ringFadeIn {
-from {transform:rotate(0deg);opacity: .05;}
-to { -moz-transform: rotate(120deg);opacity: .25;}
-to { -moz-transform: rotate(240deg);opacity: .50;}
-to {transform:rotate(360deg);opacity: .75;}
+.loader-box {
+	position: relative;
+	top: 36%;
+	left: 0;
+	max-width: 350px;
 }
 
+.loader-c2icon {
+	position: relative;
+	margin-left: -7.5rem;
+	opacity: 1;
+	height: clamp(2rem, 3rem, 4rem);
+	width: clamp(2rem, 3rem, 4rem);
+}
+.loader-ring {
+	position: relative;
+	margin-left: -3rem;
+	animation: ringFadeIn 1.5s infinite;
+	opacity: 1;
+	height: clamp(10rem, 12rem, 15rem);
+	width: clamp(10rem, 12rem, 15rem);
+}
+@-moz-keyframes ringFadeIn {
+	from {
+		-moz-transform: rotate(0deg);
+		opacity: 0.05;
+	}
+	to {
+		-moz-transform: rotate(120deg);
+		opacity: 0.25;
+	}
+	to {
+		-moz-transform: rotate(240deg);
+		opacity: 0.5;
+	}
+	to {
+		-moz-transform: rotate(360deg);
+		opacity: 0.75;
+	}
+}
+@-webkit-keyframes ringFadeIn {
+	from {
+		-webkit-transform: rotate(0deg);
+		opacity: 0.05;
+	}
+	to {
+		-moz-transform: rotate(120deg);
+		opacity: 0.25;
+	}
+	to {
+		-moz-transform: rotate(240deg);
+		opacity: 0.5;
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		opacity: 0.75;
+	}
+}
+@keyframes ringFadeIn {
+	from {
+		transform: rotate(0deg);
+		opacity: 0.05;
+	}
+	to {
+		-moz-transform: rotate(120deg);
+		opacity: 0.25;
+	}
+	to {
+		-moz-transform: rotate(240deg);
+		opacity: 0.5;
+	}
+	to {
+		transform: rotate(360deg);
+		opacity: 0.75;
+	}
+}

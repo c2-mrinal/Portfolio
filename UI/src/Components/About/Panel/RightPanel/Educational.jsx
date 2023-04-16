@@ -22,7 +22,7 @@ export default function Educational(props) {
 		<div>
 			<div className="">
 				<div className="educationHeader row">
-					<div className="col-xs-3 col-md-3 educationHeaderContainer">
+					<div className="col-sm-12 col-md-3 educationHeaderContainer">
 						<div>
 							<a href={data.url}>
 								<img className="educationImage" src={data?.img} height="150" width="150" alt="" />
@@ -32,20 +32,22 @@ export default function Educational(props) {
 							<em>{` ( ${data.term} ) `}</em>
 						</div>
 					</div>
-					<div className="col-xs-9 col-md-9 infoTextContainer">
-						{data &&
-							data.info?.map((info, ind) => {
-								!showDetail && ind === 0 && showDetails(info[1], ind);
-								return (
-									<span
-										className={`infoTextBox ${selectedIndex === ind ? "infoTextBoxSelected" : ""}`}
-										onClick={() => showDetails(info[1], ind)}
-										key={info[1]}
-									>
-										<strong>{info[0]} </strong>
-									</span>
-								);
-							})}
+					<div className="col-sm-12 col-md-9 infoTextContainer">
+						<div className="d-flex justify-content-start">
+							{data &&
+								data.info?.map((info, ind) => {
+									!showDetail && ind === 0 && showDetails(info[1], ind);
+									return (
+										<span
+											className={`infoTextBox ${selectedIndex === ind ? "infoTextBoxSelected" : ""} `}
+											onClick={() => showDetails(info[1], ind)}
+											key={info[1]}
+										>
+											<strong>{info[0]} </strong>
+										</span>
+									);
+								})}
+						</div>
 						{showDetail ? <div className="detailsStyled"> {showDetail}</div> : ""}
 					</div>
 				</div>

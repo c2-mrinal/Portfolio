@@ -3,21 +3,20 @@ import Nav from "react-bootstrap/Nav";
 
 function ContactBG() {
 	const ContactWrapperRef = useRef(null);
-	// const ContactWrapperRef = useRef(null);
-	// const [mouseX, setMouseX] = useState(0);
-	// const [mouseY, setMouseY] = useState(0);
-	// const [elementBubble, setElementBubble] = useState([]);
-	// let randomMovement = 5;
-	// let frequency = 5;
-	// let size = 60;
-	// let speed = 2;
-	// let burst = 50;
-	// let oldX;
-	// let oldY;
-	// let deltaX;
-	// let deltaY;
-	// let randX;
-	// let randY;
+	const [mouseX, setMouseX] = useState(0);
+	const [mouseY, setMouseY] = useState(0);
+	const [elementBubble, setElementBubble] = useState([]);
+	let randomMovement = 5;
+	let frequency = 5;
+	let size = 60;
+	let speed = 2;
+	let burst = 50;
+	let oldX;
+	let oldY;
+	let deltaX;
+	let deltaY;
+	let randX;
+	let randY;
 	// useEffect(() => {
 	// 	let bubbleData = elementBubble;
 
@@ -66,11 +65,6 @@ function ContactBG() {
 	// 	// }, 1000);
 	// 	return () => {};
 	// }, [mouseX, mouseY]);
-
-	// const handleMouseMove = (e) => {
-	// 	setMouseX(e.pageX);
-	// 	setMouseY(e.pageY);
-	// };
 
 	// const bubbleCreate = () => {
 	// 	const dimension = Math.random() * size;
@@ -137,13 +131,67 @@ function ContactBG() {
 	// 	bubbleClick();
 	// };
 
+	const bubbleCreate = () => {
+		const dimension = Math.random() * size;
+		const marginL = parseInt(mouseX - dimension) / 2 + "px";
+		const marginT = parseInt(mouseY - dimension) / 2 + "px";
+		console.log(dimension, marginL, marginT, elementBubble);
+		return (
+			<span
+				className="bubble"
+				style={{
+					position: "absolute",
+					width: dimension + "px",
+					height: dimension + "px",
+					marginLeft: marginL,
+					marginTop: marginT,
+					backgroundColor: getRandomColor(),
+				}}
+			></span>
+		);
+
+		// deltaX = mouseX / (10 / speed) + (Math.random() - 0.15) * randomMovement;
+		// deltaY = mouseY / (10 / speed) + (Math.random() - 0.15) * randomMovement;
+		// const bubbleNode = document.createElement("div");
+		// bubbleNode.classList.add("bubble");
+		// bubbleNode.setAttribute("data-x", deltaX);
+		// bubbleNode.setAttribute("data-y", deltaY);
+		// bubbleNode.style.position = "absolute";
+		// bubbleNode.style.width = dimension + "px";
+		// bubbleNode.style.height = dimension + "px";
+		// bubbleNode.style.marginLeft = parseInt(mouseX - dimension / 2) + "px";
+		// bubbleNode.style.margintop = parseInt(mouseY - dimension / 2) + "px";
+		// bubbleNode.style.backgroundColor = getRandomColor();
+		// ContactWrapperRef.current?.appendChild(bubbleNode);
+	};
+
+	const getRandomColor = () => {
+		const letters = "0123456789ABCDEF".split("");
+		let color = "#";
+		for (var i = 0; i < 6; i++) {
+			color += letters[Math.floor(Math.random() * 16)];
+		}
+		return color;
+	};
+
+	useEffect(() => {
+		const refCurrent = ContactWrapperRef.current;
+		refCurrent?.addEventListener("pointermove", onMove);
+		return () => refCurrent?.removeEventListener("pointermove", onMove);
+	}, []);
+
+	const onMove = ({ clientX, clientY }) => {
+		const posit = ContactWrapperRef.current?.getBoundingClientRect();
+		const x = clientX - posit.x;
+		const y = clientY - posit.y;
+	};
+
 	return (
 		<>
 			<div
 				className="cursorAnimation contactbg"
 				// onClick={handleClick}
-				// onMouseMove={handleMouseMove}
-				// ref={ContactWrapperRef}
+				ref={ContactWrapperRef}
 			>
 				{/* {elementBubble?.map(() => {
 				return bubbleCreate();

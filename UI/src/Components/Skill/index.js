@@ -6,6 +6,7 @@ const oneStar = `<i class="fa-solid fa-star"></i>`;
 
 function useWindowSize() {
 	const [size, setSize] = useState([0, 0]);
+	const [loading, setLoading] = useState(false);
 	useLayoutEffect(() => {
 		function updateSize() {
 			setSize([window.innerWidth, window.innerHeight]);

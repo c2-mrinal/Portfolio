@@ -5,9 +5,11 @@ import { useSelector, useDispatch } from "react-redux";
 import Educational from "./Educational";
 import Experiance from "./Experiance";
 import Extracurricular from "./Extracurricular";
+import Loader from "../../../../Shared/Loader";
 
 function RightPanel(props) {
 	const [data, setdata] = useState({});
+	const [loading, setLoading] = useState(false);
 
 	const dispatch = useDispatch();
 	const folderIs = useSelector((state) => state.folderIs || "");
@@ -17,11 +19,15 @@ function RightPanel(props) {
 		async function fetchMyAPI() {
 			const value = folderIs.value;
 			if (value && !folderData[value]) {
+				setLoading(true);
 				let response = await fetch(`/api/about/details/${value}`);
 				response = await response.json();
 				if (response.success) {
 					setdata(response.data);
 					storefolderDataUpdate(value, response.data);
+					setLoading(false);
+				} else {
+					setLoading(false);
 				}
 			} else {
 				setdata(folderData[value]);
@@ -52,7 +58,12 @@ function RightPanel(props) {
 		}
 	};
 
-	return <div>{detailPanel()}</div>;
+	return (
+		<>
+			<div>{detailPanel()}</div>
+			{loading && <Loader />}
+		</>
+	);
 }
 
 export default RightPanel;

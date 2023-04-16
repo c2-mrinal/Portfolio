@@ -7,15 +7,18 @@ import ContactBG from "./CursorComponents/ContactBG";
 import AboutBG from "./CursorComponents/AboutBG";
 import SkillBG from "./CursorComponents/SkillBG";
 import CareerBG from "./CursorComponents/CareerBG";
+import Loader from "../../Shared/Loader";
 
 function Intro(props) {
 	const [Downloading, setDownloading] = useState(false);
 	const [downloadSucess, setdownloadSucess] = useState(false);
-	const skillWrapperRef = useRef(null);
+	const [pointerComp, setPointerComp] = useState([false, false, false, false]);
+	const [loading, setLoading] = useState(false);
 
 	const downloadResume = async () => {
 		setDownloading(true);
 		setTimeout(async () => {
+			setLoading(true);
 			let response = await fetch("/api/resume");
 			response = await response.json();
 			if (response.success) {
@@ -24,8 +27,10 @@ function Intro(props) {
 				alink.click();
 				setdownloadSucess(true);
 				setTimeout(async () => setdownloadSucess(false), 4000);
+				setLoading(false);
 			} else {
 				setdownloadSucess(false);
+				setLoading(false);
 			}
 			setDownloading(false);
 		}, 1000);
@@ -67,21 +72,23 @@ function Intro(props) {
 					<h1> Developing the change U I need ...</h1>
 				</div>
 			</section>
-			<section className="row">
-				<div className="col-sm-3 col-lg-3">
-					<CareerBG />
+			<div className="cursorAnimationText">Move Your Cursor Below to have Some Fun</div>
+			<div className="row justify-content-start cursorAnimationSection">
+				<div className=" col-sm-12 col-md-6 col-lg-3">
+					<CareerBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
 				</div>
-				<div className="col-sm-3 col-lg-3" ref={skillWrapperRef}>
-					<SkillBG />
+				<div className=" col-sm-12 col-md-6 col-lg-3">
+					<SkillBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
 				</div>
-				<div className="col-sm-3 col-lg-3">
-					<AboutBG />
+				<div className=" col-sm-12 col-md-6 col-lg-3">
+					<AboutBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
 				</div>
-				<div className="col-sm-3 col-lg-3">
-					<ContactBG />
+				<div className="col-sm-12 col-md-6 col-lg-3">
+					<ContactBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
 				</div>
-			</section>
+			</div>
 			<Footer />
+			{loading && <Loader />}
 		</div>
 	);
 }
