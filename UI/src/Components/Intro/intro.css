@@ -343,7 +343,7 @@
 	position: relative;
 }
 
-.contactbg {
+.contactPointer {
 	background-color: rgb(0, 0, 0);
 	position: relative;
 }
@@ -377,7 +377,7 @@
 	animation: anim 20s infinite;
 	animation-delay: 3s;
 }
-.contactbg .introCursorButton {
+.contactPointer .introCursorButton {
 	animation: anim 30s infinite;
 	animation-delay: 4s;
 } */

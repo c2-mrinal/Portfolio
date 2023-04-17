@@ -14,6 +14,7 @@ const Timeline = lazy(() => import("./Components/Timeline"));
 const Contact = lazy(() => import("./Components/Contact"));
 const Skills = lazy(() => import("./Components/Skill"));
 const About = lazy(() => import("./Components/About"));
+const NotFound = lazy(() => import("./Shared/NotFound"));
 
 function App() {
 	return (
@@ -29,6 +30,7 @@ function App() {
 							<Route path="/about" element={<About />} />
 							<Route path="/skill" element={<Skills />} />
 							<Route path="/loader" element={<Loader />} />
+							<Route path="*" element={<NotFound />} />
 						</Routes>
 					</Suspense>
 				</BrowserRouter>

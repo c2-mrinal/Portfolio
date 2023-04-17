@@ -1,5 +1,7 @@
 .timelineCointainer {
-	margin: auto;
+	margin: 0px;
+	width: 100vw;
+	position: fixed;
 }
 
 .hg-80 {

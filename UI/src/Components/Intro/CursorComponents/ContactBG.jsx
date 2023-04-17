@@ -1,11 +1,14 @@
 import React, { useRef, useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
+import { Circle } from "../../../Shared/CircleRef";
 
-function ContactBG() {
+function ContactBG(props) {
+	const [pointerCircle, setPointerCircle] = useState([1]);
 	const ContactWrapperRef = useRef(null);
+	const circleRefs = useRef([]);
+
 	const [mouseX, setMouseX] = useState(0);
 	const [mouseY, setMouseY] = useState(0);
-	const [elementBubble, setElementBubble] = useState([]);
 	let randomMovement = 5;
 	let frequency = 5;
 	let size = 60;
@@ -18,26 +21,26 @@ function ContactBG() {
 	let randX;
 	let randY;
 	// useEffect(() => {
-	// 	let bubbleData = elementBubble;
+	// 	let bubbleData = pointerCircle;
 
 	// 	// setInterval(() => {
 	// 	// 	bubbleData?.shift();
-	// 	// 	setElementBubble(bubbleData);
+	// 	// 	setpointerCircle(bubbleData);
 	// 	// }, 3000);
 	// }, [mouseX, mouseY]);
 
 	// useEffect(() => {
-	// 	// setInterval(function () {
-	// 	// let bubbleData = elementBubble || [];
-	// 	// bubbleData.push(mouseX);
-	// 	// console.log(elementBubble, bubbleData, mouseX, mouseY);
-	// 	// setElementBubble(bubbleData);
+	// setInterval(function () {
+	// 	let bubbleData = pointerCircle || [];
+	// 	bubbleData.push(mouseX);
+	// 	setPointerCircle(bubbleData);
 	// 	bubbleCreate();
-	// 	// }, 200 / frequency);
-	// 	// setInterval(() => {
-	// 	// 	bubbleData?.shift();
-	// 	// 	setElementBubble(bubbleData);
-	// 	// }, 5000);
+	// }, 200 / frequency);
+	// setInterval(() => {
+	// 	let bubbleData = pointerCircle || [];
+	// 	bubbleData?.shift();
+	// 	setPointerCircle(bubbleData);
+	// }, 5000);
 
 	// 	// setInterval(function () {
 	// 	const bubbleCreated = document.getElementsByClassName("bubble");
@@ -70,7 +73,7 @@ function ContactBG() {
 	// 	const dimension = Math.random() * size;
 	// 	const marginL = parseInt(mouseX - dimension) / 2 + "px";
 	// 	const marginT = parseInt(mouseY - dimension) / 2 + "px";
-	// 	console.log(dimension, marginL, marginT, elementBubble);
+	// 	console.log(dimension, marginL, marginT, pointerCircle);
 	// 	// return (
 	// 	// 	<div
 	// 	// 		className="bubble"
@@ -130,39 +133,23 @@ function ContactBG() {
 	// const handleClick = () => {
 	// 	bubbleClick();
 	// };
+	// useEffect(() => {
+	// 	setInterval(function () {
+	// 		bubbleCreate();
+	// 	}, 200 / frequency);
+	// 	setInterval(() => {
+	// 		let bubbleData = pointerCircle;
+	// 		bubbleData?.shift();
+	// 		setPointerCircle(bubbleData);
+	// 	}, 100);
+	// });
 
 	const bubbleCreate = () => {
+		let bubbleIS = pointerCircle;
 		const dimension = Math.random() * size;
-		const marginL = parseInt(mouseX - dimension) / 2 + "px";
-		const marginT = parseInt(mouseY - dimension) / 2 + "px";
-		console.log(dimension, marginL, marginT, elementBubble);
-		return (
-			<span
-				className="bubble"
-				style={{
-					position: "absolute",
-					width: dimension + "px",
-					height: dimension + "px",
-					marginLeft: marginL,
-					marginTop: marginT,
-					backgroundColor: getRandomColor(),
-				}}
-			></span>
-		);
-
-		// deltaX = mouseX / (10 / speed) + (Math.random() - 0.15) * randomMovement;
-		// deltaY = mouseY / (10 / speed) + (Math.random() - 0.15) * randomMovement;
-		// const bubbleNode = document.createElement("div");
-		// bubbleNode.classList.add("bubble");
-		// bubbleNode.setAttribute("data-x", deltaX);
-		// bubbleNode.setAttribute("data-y", deltaY);
-		// bubbleNode.style.position = "absolute";
-		// bubbleNode.style.width = dimension + "px";
-		// bubbleNode.style.height = dimension + "px";
-		// bubbleNode.style.marginLeft = parseInt(mouseX - dimension / 2) + "px";
-		// bubbleNode.style.margintop = parseInt(mouseY - dimension / 2) + "px";
-		// bubbleNode.style.backgroundColor = getRandomColor();
-		// ContactWrapperRef.current?.appendChild(bubbleNode);
+		const backgroundColor = getRandomColor();
+		bubbleIS.push({ dimension, backgroundColor });
+		setPointerCircle(bubbleIS);
 	};
 
 	const getRandomColor = () => {
@@ -184,18 +171,29 @@ function ContactBG() {
 		const posit = ContactWrapperRef.current?.getBoundingClientRect();
 		const x = clientX - posit.x;
 		const y = clientY - posit.y;
+		props.setPointerComp([false, false, false, true]);
+		circleRefs.current.forEach((ref) => ref.moveTo(x, y));
+	};
+	const addCircleRef = (ref) => {
+		if (ref) {
+			circleRefs.current.push(ref);
+		}
 	};
 
 	return (
 		<>
 			<div
-				className="cursorAnimation contactbg"
+				className="cursorAnimation contactPointer"
 				// onClick={handleClick}
 				ref={ContactWrapperRef}
 			>
-				{/* {elementBubble?.map(() => {
-				return bubbleCreate();
-			})} */}
+				{pointerCircle.map((val, ind) => {
+					return (
+						<React.Fragment key={ind}>
+							<Circle size={10} ref={addCircleRef} delay={0} display={props.pointerComp[3] ? "block" : "none"} />
+						</React.Fragment>
+					);
+				})}
 			</div>
 
 			<Nav.Link className="careerPageDetail" href="/contact">
