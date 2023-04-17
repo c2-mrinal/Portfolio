@@ -24,7 +24,6 @@ function LeftPanel(props) {
 				folderSelected(response.data.defaultSelected);
 				setLoading(false);
 			} else {
-				console.log(response);
 				setLoading(false);
 			}
 		}

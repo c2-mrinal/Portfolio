@@ -1,0 +1,20 @@
+.notFound {
+	position: absolute;
+	width: 100vw;
+	height: calc(100% - 20%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	font-family: Marker Felt;
+	font-size: calc(3vw + 2vh);
+	overflow: hidden;
+}
+.notFoundEmoji {
+	font-size: calc(10vw + 3vh);
+}
+
+.contactLink :hover {
+	color: rgb(101, 98, 98);
+	letter-spacing: 0.05rem;
+}
