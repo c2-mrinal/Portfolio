@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
 
 // don't forget to register plugins
@@ -7,7 +7,19 @@ import "./timeline.css";
 
 function Timeline() {
 	gsap.registerPlugin(ScrollTrigger, Draggable, MotionPathPlugin);
-
+	const [Data, setData] = useState([]);
+	useEffect(() => {
+		async function fetchMyAPI() {
+			let response = await fetch(`/api/career`);
+			response = await response.json();
+			if (response.success) {
+				setData([...response.data]);
+			}
+		}
+		return () => {
+			fetchMyAPI();
+		};
+	}, []);
 	useEffect(() => {
 		const sections = gsap.utils.toArray(".container section");
 		const mask = document.querySelector(".mask");
@@ -61,7 +73,7 @@ function Timeline() {
 		});
 
 		return () => {};
-	}, []);
+	}, [Data]);
 
 	return (
 		<div className="timelineCointainer">
@@ -72,7 +84,7 @@ function Timeline() {
 					<div className="col-sm-6  shape3">
 						<div class="wrapper">
 							<div class="container scrollx">
-								<section class="sec1 pin">
+								{/* <section class="sec1 pin">
 									<span>Advanced</span>
 									<h1>Signify Elegance</h1>
 
@@ -122,7 +134,28 @@ function Timeline() {
 											amet urna. Urna egestas lorem.
 										</p>
 									</div>
-								</section>
+								</section> */}
+								{Data?.map((val, ind) => {
+									return (
+										<section className={`sec${ind + 1}  pin`}>
+											<span>Advanced</span>
+											<h1>{val.header}</h1>
+
+											<div className="col">
+												<p>
+													Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit
+													praesent arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem
+													morbi quis risus amet urna. Urna egestas lorem.
+												</p>
+												<p>
+													Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit
+													praesent arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem
+													morbi quis risus amet urna. Urna egestas lorem.
+												</p>
+											</div>
+										</section>
+									);
+								})}
 							</div>
 						</div>
 					</div>
