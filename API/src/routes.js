@@ -7,12 +7,12 @@ const {
 	aboutDetails,
 	resume,
 	resumeDownloader,
+	careerTimeline,
 } = require("../src/modules/controller/appController");
 
-const skillData = require("./modules/data/skills/skillData");
-const { folderData, aboutData } = require("./modules/data/about/aboutData");
 const { sendMail } = require("./modules/functions/SendMail");
 
+router.get("/career", careerTimeline);
 router.get("/skill/details", skillDetail);
 router.get("/about/folders", aboutFolder);
 router.get("/about/details/:folderIs", aboutDetails);
