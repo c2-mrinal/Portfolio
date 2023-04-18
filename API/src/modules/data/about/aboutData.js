@@ -462,6 +462,11 @@ const aboutData = {
 		about: `Developed a single-page Web-App using Vue-Cli and nodeJS.
 		The whole web app was based on API which makes the data more streamlined and reliable.
 		Learned a new technology VueJs. API devlopment using Json.`,
+		activity: [
+			{ img: "https://drive.google.com/uc?export=view&id=1AGXy6-sjhUF71FT_bY12SAY-YOxl25LB", name: "Fest" },
+			{ img: "https://drive.google.com/uc?export=view&id=1wDs2AaxepWR9bThJwD8QTd9W5NiQAn-S", name: "Garba" },
+			{ img: "https://drive.google.com/uc?export=view&id=1RwYbDKj3loWuwckGX-geqo0Zk7AM-5MW", name: "Learing" },
+		],
 	},
 	hobbie: [
 		{

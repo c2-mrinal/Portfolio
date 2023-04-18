@@ -3,6 +3,20 @@ const { folderData, aboutData } = require("../data/about/aboutData");
 const process = require("process");
 const fs = require("fs");
 const path = require("path");
+const { careerData } = require("../data/career/careerData");
+
+const careerTimeline = (req, res) => {
+	try {
+		if (careerData) {
+			res.status(200).json({ success: true, message: "Mrinal's Portolio Career Data", data: careerData });
+		} else if (!careerData) {
+			res.status(204).send({ success: true, message: "No Data Found for Mrinal's Portolio career", data: [] });
+		}
+	} catch (e) {
+		console.error(e);
+		res.status(500).end();
+	}
+};
 
 const skillDetail = (req, res) => {
 	try {
@@ -84,6 +98,7 @@ const resumeDownloader = (req, res) => {
 };
 
 module.exports = {
+	careerTimeline,
 	skillDetail,
 	aboutFolder,
 	aboutDetails,
