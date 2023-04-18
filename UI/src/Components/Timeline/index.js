@@ -78,91 +78,44 @@ function Timeline() {
 	return (
 		<div className="timelineCointainer">
 			<div className="timelineDetails">
-				<section class="timelineDetails d-flex hg-80">
-					<div className="col-sm-1  shape1">1</div>
-					<div className="col-sm-2  shape2">2</div>
-					<div className="col-sm-6  shape3">
-						<div class="wrapper">
-							<div class="container scrollx">
-								{/* <section class="sec1 pin">
-									<span>Advanced</span>
-									<h1>Signify Elegance</h1>
+				<div class="timelineDetails d-flex hg-80">
+					{Data?.map((val, ind) => {
+						return (
+							<>
+								{" "}
+								<div className="col-sm-1  shape1">1</div>
+								<div className="col-sm-2  shape2">
+									<span>{val.age}</span>
+								</div>
+								<div className="col-sm-6  shape3">
+									<div class="wrapper">
+										<div class="container scrollx">
+											<section className={`sec${ind + 1}  pin`}>
+												<span>Advanced</span>
+												<h1>{val.header}</h1>
 
-									<div class="col">
-										<p>
-											Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit praesent
-											arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis risus
-											amet urna. Urna egestas lorem.
-										</p>
-										<p>
-											Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit praesent
-											arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis risus
-											amet urna. Urna egestas lorem.
-										</p>
+												<div className="col">
+													<p>
+														Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit
+														praesent arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem
+														morbi quis risus amet urna. Urna egestas lorem.
+													</p>
+													<p>
+														Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit
+														praesent arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem
+														morbi quis risus amet urna. Urna egestas lorem.
+													</p>
+												</div>
+											</section>
+										</div>
 									</div>
-								</section>
-								<section class="sec2 pin">
-									<span class="anim">Advanced</span>
-									<h1 class="anim">Signify Elegance</h1>
-
-									<div class="col anim">
-										<p>
-											Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit praesent
-											arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis risus
-											amet urna. Urna egestas lorem.
-										</p>
-										<p>
-											Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit praesent
-											arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis risus
-											amet urna. Urna egestas lorem.
-										</p>
-									</div>
-								</section>
-								<section class="sec3 pin">
-									<span class="anim">Advanced</span>
-									<h1 class="anim">Signify Elegance</h1>
-
-									<div class="col anim">
-										<p>
-											Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit praesent
-											arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis risus
-											amet urna. Urna egestas lorem.
-										</p>
-										<p>
-											Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit praesent
-											arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis risus
-											amet urna. Urna egestas lorem.
-										</p>
-									</div>
-								</section> */}
-								{Data?.map((val, ind) => {
-									return (
-										<section className={`sec${ind + 1}  pin`}>
-											<span>Advanced</span>
-											<h1>{val.header}</h1>
-
-											<div className="col">
-												<p>
-													Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit
-													praesent arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem
-													morbi quis risus amet urna. Urna egestas lorem.
-												</p>
-												<p>
-													Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit sed massa turpis in. Sit
-													praesent arcu leo lectus pellentesque. Ornare elit orci morbi volutpat. Ut fermentum lorem
-													morbi quis risus amet urna. Urna egestas lorem.
-												</p>
-											</div>
-										</section>
-									);
-								})}
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-2  shape4">2</div>
-					<div className="col-sm-1  shape5">1</div>
-					<div></div>
-				</section>
+								</div>
+								<div className="col-sm-2  shape4">{val.year}</div>
+								<div className="col-sm-1  shape5">1</div>
+							</>
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);

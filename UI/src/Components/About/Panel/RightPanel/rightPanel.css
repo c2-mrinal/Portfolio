@@ -29,7 +29,7 @@
 }
 .infoTextBox {
 	font-family: "Font Awesome 6 Free";
-	font-size: 1.4vw;
+	font-size: 1.2vw;
 	margin: auto 1vw;
 	padding: 8px 12px;
 	align-items: center;
@@ -181,5 +181,11 @@
 	padding: 2.5rem;
 }
 .sectionBackground {
-	background: rgba(163, 226, 224, 0.556);
+	background: rgb(162, 153, 54);
+	background: radial-gradient(
+		circle,
+		rgba(162, 153, 54, 0.3996192226890757) 0%,
+		rgba(10, 121, 9, 0.4584427521008403) 28%,
+		rgba(0, 209, 255, 0.3071822478991597) 100%
+	);
 }

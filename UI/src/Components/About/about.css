@@ -10,8 +10,8 @@
 	top: 0;
 	left: 0;
 	overflow-x: hidden;
-	margin-top: 11vh;
-	padding-bottom: 12vh;
+	margin-top: 12.5vh;
+	padding-bottom: 12.5vh;
 	font-family: cursive;
 }
 .splitRight {
@@ -22,7 +22,8 @@
 	top: 0;
 	right: 0;
 	overflow-x: hidden;
-	margin-top: 11vh;
+	margin-top: 12.5vh;
+	padding-bottom: 12.5vh;
 }
 
 /* If you want the content centered horizontally and vertically */

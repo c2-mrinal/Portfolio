@@ -34,9 +34,10 @@
 }
 
 .resumeDownloadContainer {
-	float: right;
-	padding: 5rem;
-	margin: auto;
+	margin-left: auto;
+	margin-bottom: auto;
+	padding-right: 5vw;
+	padding-top: 15vh;
 	position: relative;
 	z-index: 11;
 }
@@ -58,8 +59,8 @@
 }
 
 .pointingArrow {
-	height: 25rem;
-	width: 20rem;
+	height: calc(15vh + 16vw);
+	width: calc(20vw + 10vh);
 }
 
 .isInverted {
@@ -71,7 +72,7 @@
 	font-family: font-file-82132;
 	position: absolute;
 	bottom: 0px;
-	padding: 0px 0px 10% 12%;
+	padding: 0px 0px 15vh 15vw;
 	color: aliceblue;
 	z-index: 11;
 }
@@ -79,14 +80,17 @@
 
 .btn-circle-download {
 	position: relative;
-	height: 5rem;
-	width: 6rem;
-	margin: auto auto auto 10rem;
-	border-radius: 100%;
-	background: #e8eaed;
+	height: calc(7vh + 4vw);
+	width: calc(7vh + 5vw);
+	margin-left: auto;
+	margin-right: 4vw;
+	border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%;
+	background: #d1d5da;
 	cursor: pointer;
 	overflow: hidden;
 	transition: all 0.2s ease;
+	box-shadow: 0 -2vmin 4vmin rgb(123, 176, 255) inset, 0 1vmin 4vmin rgb(155, 111, 243) inset,
+		0 -2vmin 7vmin rgb(78, 51, 227) inset;
 }
 .btn-circle-download:after {
 	content: "";
@@ -108,8 +112,9 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 5rem;
-	width: 6rem;
+	height: calc(7vh + 4vw);
+	width: calc(7vh + 5vw);
+	border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%;
 	stroke: none;
 	stroke-dasharray: 144;
 	stroke-dashoffset: 144;
@@ -118,22 +123,20 @@
 
 .btn-circle-download svg#arrow {
 	position: absolute;
-	top: 1rem;
-	left: 2rem;
-	height: 3rem;
-	width: 2rem;
-	stroke: #9098a9;
+	top: calc(2vh + 1vw);
+	left: calc(2vh + 2vw);
+	height: calc(4vh + 2vw);
+	width: calc(3vh + 2vw);
+	stroke: #ffffff;
 	transition: all 0.2s ease;
 }
 
 .btn-circle-download svg#check {
 	position: absolute;
-	top: 2rem;
-	left: 2.5rem;
-	top: 1rem;
-	left: 2rem;
-	height: 3rem;
-	width: 2rem;
+	top: calc(1vh + 2vw);
+	left: calc(2vh + 2vw);
+	height: calc(4vh + 2vw);
+	width: calc(3vh + 2vw);
 	stroke: white;
 	transform: scale(0);
 }
@@ -152,7 +155,7 @@
 	stroke: #0077ff;
 }
 .btn-circle-download.load #border {
-	stroke: #0077ff;
+	stroke: #b5f324;
 	stroke-dasharray: 144;
 	stroke-dashoffset: 0;
 }
@@ -200,8 +203,9 @@
 }
 
 .cursorAnimationText {
-	position: absolute;
-	margin-top: -4%;
+	position: relative;
+	/* margin-top: -4%; */
+	background: rgb(11, 11, 11);
 	text-align: center;
 	color: white;
 	font-size: 2rem;

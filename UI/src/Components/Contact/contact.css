@@ -52,11 +52,21 @@
 	top: 50%;
 	transform: translateY(-50%);
 	width: 100%;
+	text-align: center;
+}
+.contactBoxContent span {
+	margin: 10px auto;
 }
 .contactBoxContent h1,
 h2 {
 	margin: auto;
 	text-align: center;
+	font-family: cursive;
+	font-size: 4vw;
+	font-weight: 400;
+}
+i {
+	font-size: clamp(3.5rem, 7vw, 8vw);
 }
 .instagram {
 	color: #d6249f;
@@ -83,8 +93,9 @@ h2 {
 }
 
 .typewriter {
-	margin: 4em auto;
+	margin: calc(4vh + 2vw) auto;
 	cursor: pointer;
+	max-width: 22vw;
 	border-bottom: 0.2em solid rgba(211, 138, 138, 0.56);
 }
 
@@ -101,7 +112,8 @@ h2 {
 }
 
 .socialIcons {
-	margin: 4em auto;
+	margin: calc(4vh + 2vw) auto;
+	text-align: center;
 }
 
 @keyframes typing {
@@ -160,4 +172,32 @@ h2 {
 }
 .modelHeaderMenuConfirm:hover {
 	color: rgb(96, 231, 107);
+}
+.modelHeaderMenuDummy {
+	padding: 0px 0px 0px 20px;
+
+	margin-right: -5px !important;
+}
+.modelHeaderMenuDummy:hover {
+	color: #fdf497;
+}
+.alreadyMailSent {
+	min-height: 50vh;
+	text-align: center;
+	font-size: 1.5rem;
+	margin: auto 2rem;
+	transform: translate(0, 20%);
+}
+.resendMial {
+	font-weight: 600;
+}
+.resendMial:hover {
+	text-decoration: underline;
+	color: #0a66c2;
+	cursor: pointer;
+}
+.disabledLink {
+	pointer-events: none !important;
+	cursor: pointer !important;
+	opacity: 0.4;
 }

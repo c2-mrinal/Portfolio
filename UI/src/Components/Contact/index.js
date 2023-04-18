@@ -20,16 +20,16 @@ function Contact() {
 			<div className="contactBG">
 				<div className="contactBox ">
 					<div className="contactBoxContent ">
-						<div className=" d-flex justify-content-around">
-							<div>
+						<div className=" row">
+							<div className="col-sm-12 col-lg-6">
 								<h1>Mail</h1>
 								<div className="typewriter" onClick={handleMailPopup}>
 									<h1>Type...</h1>
 								</div>
 							</div>
-							<div>
+							<div className="col-sm-12 col-lg-6">
 								<h1>Social</h1>
-								<span className="socialIcons d-flex justify-content-between">
+								<div className="socialIcons d-flex justify-content-evenly">
 									<a href={"https://www.linkedin.com/in/mrinal-kasyap-695853171/"} target="_blank" title="Linkedin">
 										<span className="contactIcon linkedin">
 											<i class="fa-3x fa-brands fa-linkedin-in"></i>
@@ -45,7 +45,7 @@ function Contact() {
 											<i class="fa-3x fa-brands fa-instagram"></i>
 										</span>
 									</a>
-								</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -53,29 +53,35 @@ function Contact() {
 			</div>
 			<div className="contactBG">
 				<div className="contactBox">
-					<div className="contactBoxContent d-flex justify-content-center">
-						<div className=" d-flex justify-content-center">
+					<div className="contactBoxContent row justify-content-center">
+						<span className="col-sm-12 col-md-12 col-lg-3">
 							<a href={"https://github.com/c2-mrinal"} target="_blank" title="Github">
 								<span className="contactIcon github">
-									<i class=" fa-3x fa-brands fa-github"></i>
+									<i class="fa  fa-brands fa-github"></i>
 								</span>
 							</a>
+						</span>
+						<span className="col-sm-12 col-md-12 col-lg-3">
 							<a href={"https://stackoverflow.com/users/14725561/c2-mrinal"} target="_blank" title="Stack Overflow">
 								<span className="contactIcon stackoverflow">
-									<i className="fa  fa-3x fa-brands fa-stack-overflow"></i>
+									<i className="fa fa-brands fa-stack-overflow"></i>
 								</span>
 							</a>
+						</span>
+						<span className="col-sm-12 col-md-12 col-lg-3">
 							<a href={"https://www.hackerrank.com/mrinalspec"} target="_blank" title="Hacker Rank">
 								<span className="contactIcon hackerrank">
-									<i className="fa  fa-3x fa-brands fa-hackerrank"></i>
+									<i className="fa   fa-brands fa-hackerrank"></i>
 								</span>
 							</a>
+						</span>
+						<span className="col-sm-12 col-md-12 col-lg-3">
 							<a href={""}>
 								<span className="contactIcon github" title="Codepen">
-									<i className="fa  fa-3x fa-brands fa-codepen"></i>
+									<i className="fa   fa-brands fa-codepen"></i>
 								</span>
 							</a>
-						</div>
+						</span>
 					</div>
 				</div>
 			</div>
