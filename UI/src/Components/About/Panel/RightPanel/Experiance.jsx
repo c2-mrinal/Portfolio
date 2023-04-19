@@ -8,15 +8,15 @@ function Experiance(props) {
 			{data && (
 				<div className="experianceContainer">
 					<div className="experianceTop ">
-						<div className=" row">
-							<div className="col-xs-3 col-md-3 ">
+						<div className="  d-flex">
+							<div className="">
 								<span className="mg-10">
 									<a href={data.website}>
-										<img className="educationImage" src={data?.img} height="150" width="150" alt="" />
+										<img className="educationImage" src={data?.img} height="120" width="120" alt="" />
 									</a>
 								</span>
 							</div>
-							<div className="col-xs-7 col-md-7 comapnyNameContainer">
+							<div className=" comapnyNameContainer">
 								<span className="mg-10 companyLink">
 									<strong className="companyName"> {data.name}</strong>
 								</span>

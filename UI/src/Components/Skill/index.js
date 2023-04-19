@@ -211,7 +211,7 @@ function Skill(props) {
 				tooltip.style("visibility", "visible");
 			})
 			.on("mousemove", function (e, d) {
-				tooltip.style("top", "20%").style("left", "80%");
+				tooltip.style("top", "15%").style("left", "1%");
 			})
 			.on("mouseout", function (e, d) {
 				mouseOut(e, d);
@@ -274,7 +274,7 @@ function Skill(props) {
 				}
 			})
 			.attr("font-family", "SF-Pro-Display-Semibold")
-			.attr("font-size", "clamp(1rem, 5vw, 2rem)")
+			.attr("font-size", "calc(1vh + 1.3vw)")
 			.attr("font-weight", 800)
 			.text(function (d) {
 				return d.label;
@@ -329,19 +329,19 @@ function Skill(props) {
 	};
 	const showTooltip = (d) => {
 		return `<div class="bubble">
-		    <div class="bubbleTooltip">
-					<h5><strong class="bubbleStrong">Skill </strong><i class="${d.icon}" ></i></h5> 
-					<h4> ${d.label}</h4>
-				</div>
-		    <div class="bubbleTooltip">
-			<h5><strong class="bubbleStrong">Profency</strong><em>${d.experience ? `(since ${d.experience})` : ""}</em> </h5>
-			<h4><div>${stars(d.value)}</div></h4>
-				</div>
-		    <div class="bubbleTooltip">
-					<strong class="bubbleStrong">Description</strong>
-					<div>${d.description}</div>
-				</div>
-		    </div>`;
+					<div class="bubbleTooltip">
+							<h5><strong class="bubbleStrong">Skill </strong><i class="${d.icon}" ></i></h5> 
+							<h4> ${d.label}</h4>
+						</div>
+					<div class="bubbleTooltip">
+						<h5><strong class="bubbleStrong">Profency</strong><em>${d.experience ? `(since ${d.experience})` : ""}</em> </h5>
+						<h4><div>${stars(d.value)}</div></h4>
+					</div>
+					<div class="bubbleTooltip">
+						<h5><strong class="bubbleStrong">Description</strong></h5>
+						<h6><span>${d.description}</span></h6>
+					</div>
+				</div>`;
 	};
 
 	const stars = (val) => {
