@@ -184,7 +184,7 @@ const aboutData = {
 			["Location", "Gandhinagar - GJ"],
 		],
 		url: "https://www.daiict.ac.in/",
-		degreeImg: "https://drive.google.com/uc?export=view&id=18l920vtFCnuexA37Fhl-gxJ-5DPnPs0j",
+		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/MSc.png",
 		about: "Yet to be Updated",
 		term: "2019 - 2021",
 		projects: [
@@ -250,7 +250,7 @@ const aboutData = {
 			["Location", "Ranchi - JH"],
 		],
 		url: "https://www.bitmesra.ac.in/",
-		degreeImg: "https://drive.google.com/uc?export=view&id=1CF3e1LbDSFBrm48Fe8fz9k6ZinerNQps",
+		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/BCA.png",
 		about: "Yet to be Updated",
 		term: "2016 - 2019",
 		projects: [
@@ -293,7 +293,7 @@ const aboutData = {
 		],
 	},
 	intermediate: {
-		img: "https://drive.google.com/uc?export=view&id=1_gj_x8xsIAqRgkKl9VdhaQfqmhXXhzIU",
+		img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/ShreeChaitanya.png",
 		info: [
 			["School", " Sri Chaitanya techno School"],
 			["Qualification", " Intermediate "],
@@ -301,12 +301,12 @@ const aboutData = {
 			["Location", "Vishakapatnam - AP"],
 		],
 		url: "https://srichaitanyaschool.net/",
-		degreeImg: "https://drive.google.com/uc?export=view&id=1IFKnpqcCg7kj_k0GFx01aoCqWDoltAmo",
+		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/Intermediate.png",
 		about: "Yet to be Updated",
 		term: "2015 - 2013",
 	},
 	matriculation: {
-		img: "https://drive.google.com/uc?export=view&id=1SvusXKkHuc5rlygeAUECqOrfGqfSisxT",
+		img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/sunflowerSchool.jpeg",
 		info: [
 			["School", " Sun Flower Public School"],
 			["Qualification", " Intermediate "],
@@ -314,7 +314,7 @@ const aboutData = {
 			["Location", "Begusarai - BR"],
 		],
 		url: "http://sunflowerschool.in/",
-		degreeImg: "https://drive.google.com/uc?export=view&id=16XNZknsgGIH76UTkaT6T3DKN23-l0cAW",
+		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/Maticulation.png",
 		about: "Yet to be Updated",
 		term: "2011 - 2013",
 	},
@@ -353,9 +353,18 @@ const aboutData = {
     My role is to handle bug fixes and update the UI as needed for the story. And manage the
     entire AWS and Azure Instance deployment process.`,
 		activity: [
-			{ img: "https://drive.google.com/uc?export=view&id=10L8vFCF8cS1Pv_l5jtGB1iAP7GJQ44fz", name: "SPL Winner 2022" },
-			{ img: "https://drive.google.com/uc?export=view&id=1de364rT-2bytwkaRwScltTE2yd4aBEXW", name: "Team Lunch" },
-			{ img: "https://drive.google.com/uc?export=view&id=1zPalIPevwYHIcKEUKnEhW3_Eo3HqiHHg", name: "Festival" },
+			{
+				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/softwebSolutions/AEEE9DA7-264D-451B-B821-A166DA51.jpg",
+				name: "SPL Winner 2022",
+			},
+			{
+				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/softwebSolutions/PHOTO-2022-10-20-23-59-50.jpeg",
+				name: "Team Lunch",
+			},
+			{
+				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/softwebSolutions/IMG_9343.jpeg",
+				name: "Festival",
+			},
 		],
 	},
 	qmetry: {
@@ -396,9 +405,9 @@ const aboutData = {
       on a chrome extension for exploratory testing. And, I received a pat on the
       back for successfully completing a sprint without a problem`,
 		activity: [
-			{ img: "https://drive.google.com/uc?export=view&id=1ka8epI07mVydEqHdFAH5xwvGcFAGnK2_", name: "Festival" },
-			{ img: "https://drive.google.com/uc?export=view&id=1kjOh8oI8T5aOyATf40JQ6oAtuh0IsAch", name: "Team Lunch" },
-			{ img: "https://drive.google.com/uc?export=view&id=1wiuCui8I4VW4ATs9TJkhIANrYgf9zf0n", name: "Parting Gift" },
+			{ img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/qmetry/IMG_5780.jpeg", name: "Festival" },
+			{ img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/qmetry/Team_Lunch.jpeg", name: "Team Lunch" },
+			{ img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/qmetry/Gift.jpeg", name: "Parting Gift" },
 		],
 	},
 	magentaBI: {
@@ -435,9 +444,15 @@ const aboutData = {
     UI pages and updated the code base of many components. To improve the development of
     each UI component.`,
 		activity: [
-			{ img: "https://drive.google.com/uc?export=view&id=1L438k8NwkpxP02oiSCnxIKbTW4S5fQLA", name: "Team Trip" },
-			{ img: "https://drive.google.com/uc?export=view&id=1abB3GIvNvTOHAlMSVWH91sMJISIalvyz", name: "Brain Storming" },
-			{ img: "https://drive.google.com/uc?export=view&id=1KUx5LY_wBMuSZ2_l8Vv_OJCMULjHrrIk", name: "Team Trip" },
+			{
+				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/magenta/team+trip(1).jpeg",
+				name: "Team Trip",
+			},
+			{
+				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/magenta/Brain+storning.jpeg",
+				name: "Brain Storming",
+			},
+			{ img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/magenta/team+trip.jpeg", name: "Team Trip" },
 		],
 	},
 	daiict: {
@@ -463,9 +478,18 @@ const aboutData = {
 		The whole web app was based on API which makes the data more streamlined and reliable.
 		Learned a new technology VueJs. API devlopment using Json.`,
 		activity: [
-			{ img: "https://drive.google.com/uc?export=view&id=1AGXy6-sjhUF71FT_bY12SAY-YOxl25LB", name: "Fest" },
-			{ img: "https://drive.google.com/uc?export=view&id=1wDs2AaxepWR9bThJwD8QTd9W5NiQAn-S", name: "Garba" },
-			{ img: "https://drive.google.com/uc?export=view&id=1RwYbDKj3loWuwckGX-geqo0Zk7AM-5MW", name: "Learing" },
+			{
+				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/daiict/7E14067E-A3D3-4BA7-9F2D-D30A268E3C8F_1_201_a.jpeg",
+				name: "Fest",
+			},
+			{
+				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/daiict/7B01BF3D-FC46-4563-9B46-E82DA0C2CA10_1_201_a.jpeg",
+				name: "Garba",
+			},
+			{
+				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/daiict/28434664-447D-484B-87FA-A1705F9FAE50_1_201_a.jpeg",
+				name: "Learing",
+			},
 		],
 	},
 	hobbie: [
@@ -474,12 +498,12 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://drive.google.com/uc?export=view&id=1V8P-tZj_r3v9fCU1-t0wECzIPVedvkLe",
-					desc: "Qmetry",
+					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Hobbies/7613E935-4392-4E89-8936-2D8313479C6C_1_201_a.jpeg",
+					desc: "Cricket",
 				},
 				{
-					img: "https://drive.google.com/uc?export=view&id=1BluY-SJj4P_RdtEJj1fGRDoxX_mxiSGX",
-					desc: "Hacker Rank ",
+					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Hobbies/CE397531-1934-4053-8536-F218AC2335AB_1_201_a.jpeg",
+					desc: "Cricket ",
 				},
 			],
 		},
@@ -490,7 +514,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://drive.google.com/uc?export=view&id=1V8P-tZj_r3v9fCU1-t0wECzIPVedvkLe",
+					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Achievments/Pat_on_back.png",
 					desc: "Qmetry",
 				},
 			],
@@ -500,7 +524,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://drive.google.com/uc?export=view&id=1BluY-SJj4P_RdtEJj1fGRDoxX_mxiSGX",
+					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Achievments/Problem_solving_basics.png",
 					desc: "Hacker Rank ",
 				},
 			],
@@ -510,7 +534,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://drive.google.com/uc?export=view&id=1elQu0tj7Cc6LSFn9jpKs4SgZWBLougwr",
+					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Achievments/Javascript_basics.png",
 					desc: "Hacker Rank ",
 				},
 			],
