@@ -1,43 +1,44 @@
 .navBarBanner {
-  background: fixed;
-  position: fixed;
-  width: 100vw;
-  background-color: rgba(0, 255, 255, 0.082);
+	background: fixed;
+	width: 100vw;
+	background-color: rgba(0, 255, 255, 0.082);
 }
 .nav-container {
-  margin: 0;
-  padding: 0;
-  background-color: rgba(164, 58, 226, 0.089);
+	margin: 0;
+	padding: 0;
+	background-color: rgba(164, 58, 226, 0.089);
+}
+.navbar-brand img {
+	height: calc(3vw + 4vh);
+	width: calc(5vw + 5vh);
 }
 
 .Nav-Link {
-  text-decoration: none;
-  float: left;
-  display: block;
-  color: white;
-  font-size: 1.5rem;
-  font-family: "Courier New", Courier, monospace;
+	text-decoration: none;
+	float: left;
+	display: block;
+	color: white;
+	font-size: 1.5rem;
+	font-family: "Courier New", Courier, monospace;
 }
 
 .Nav-Link span {
-  padding: 0 30px;
-}
-
-.nav-container {
-  max-height: 100px;
+	padding: 0 30px;
+	font-size: calc(1.2vw + 1.2vh);
+	font-weight: 900;
 }
 
 .logo-img {
-  height: 60px;
-  width: 80px;
+	height: 60px;
+	width: 80px;
 }
 
 li a:hover:not(.active) {
-  /* background-color: rgba(88, 222, 226, 0.637); */
+	background-color: rgba(88, 222, 226, 0.637);
 }
 
 .active {
-  /* background-color: #0faa7b; */
-  font-weight: 400;
-  text-decoration: underline blue;
+	/* background-color: #0faa7b; */
+	font-weight: 400;
+	text-decoration: underline blue;
 }

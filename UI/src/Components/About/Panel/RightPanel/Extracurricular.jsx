@@ -14,15 +14,13 @@ export default function Extracurricular(props) {
 									<Carousel className="itemPlacement" controls={value.content?.length > 1 ? true : false}>
 										{value.content?.map((item, index) => {
 											return (
-												<React.Fragment key={index}>
-													<Carousel.Item>
-														<img className="d-block w-100 h-80 itemPlacement" src={item.img} alt={item.img} />
-														<Carousel.Caption>
-															<h3>{item.desc}</h3>
-															<p></p>
-														</Carousel.Caption>
-													</Carousel.Item>
-												</React.Fragment>
+												<Carousel.Item key={index}>
+													<img className="d-block w-100 h-80 itemPlacement" src={item.img} alt={item.img} />
+													<Carousel.Caption>
+														<h3>{item.desc}</h3>
+														<p></p>
+													</Carousel.Caption>
+												</Carousel.Item>
 											);
 										})}
 									</Carousel>

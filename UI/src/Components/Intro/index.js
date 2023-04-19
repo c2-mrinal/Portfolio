@@ -43,10 +43,10 @@ function Intro(props) {
 					<source src={backgroundMain} type="video/mp4" />
 				</video>
 			</div>
-			<section className=" intoSection">
+			<section className=" intoSection d-flex flex-direction-column">
 				<div className="resumeDownloadContainer">
 					<div
-						className={`btn-circle-download ${Downloading ? "load" : ""} ${downloadSucess ? "done" : ""}`}
+						className={`btn-circle-download  ${Downloading ? "load" : ""} ${downloadSucess ? "done" : ""}`}
 						onClick={downloadResume}
 						title={downloadSucess ? "Resume Dowloaded " : "Download Mrinal's Resume"}
 					>
@@ -58,7 +58,7 @@ function Intro(props) {
 							<polyline points="32.5 18.5 20 31 14.5 25.5"></polyline>
 						</svg>
 						<svg id="border" viewBox="0 0 48 48">
-							<path d="M24,1 L24,1 L24,1 C36.7025492,1 47,11.2974508 47,24 L47,24 L47,24 C47,36.7025492 36.7025492,47 24,47 L24,47 L24,47 C11.2974508,47 1,36.7025492 1,24 L1,24 L1,24 C1,11.2974508 11.2974508,1 24,1 L24,1 Z"></path>
+							<path d="M24,3 L24,3 L24,3 C36.7025492,3 49,11.2974508 49,24 L49,24 L49,25 C49,36.7025492 36.7025492,46 24,46 L24,46 L24,46 C11.2974508,45 0,36.7025492 0,24 L0,24 L0,20 C1,1.2974508 1.2974508,3 20,1 L24,3 Z"></path>
 						</svg>
 					</div>
 					<div>

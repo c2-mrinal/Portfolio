@@ -1,3 +1,11 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Courier New", Courier, monospace;
+}
 .rightPanel {
 	height: 100%;
 	padding: 2rem;
@@ -19,8 +27,8 @@
 	text-align: center;
 }
 .educationImage {
-	height: 150px;
-	width: 150px;
+	height: calc(10vh+10vw);
+	width: calc(10vh+10vw);
 	border-radius: 50%;
 }
 .infoTextContainer {
@@ -29,7 +37,7 @@
 }
 .infoTextBox {
 	font-family: "Font Awesome 6 Free";
-	font-size: 1.4vw;
+	font-size: 1.2vw;
 	margin: auto 1vw;
 	padding: 8px 12px;
 	align-items: center;
@@ -51,23 +59,19 @@
 	height: 700px;
 }
 
-.companyName {
-	font-size: larger;
-}
-
 .experianceTop {
-	font-size: clamp(1.5rem, 2.5rem, 3rem);
+	font-size: clamp(1rem, 4vw, 3rem);
 	margin: 2rem;
 }
 .companyLink {
-	font-size: clamp(1rem, 3rem, 3.5rem);
 	background: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
 	margin: auto;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 .comapnyNameContainer {
-	margin: auto 0;
+	display: flex;
+	margin: auto auto auto 1vw;
 }
 .companyLinkedin {
 	font-size: 0.7em;
@@ -181,5 +185,11 @@
 	padding: 2.5rem;
 }
 .sectionBackground {
-	background: rgba(163, 226, 224, 0.556);
+	background: rgb(162, 153, 54);
+	background: radial-gradient(
+		circle,
+		rgba(162, 153, 54, 0.3996192226890757) 0%,
+		rgba(10, 121, 9, 0.4584427521008403) 28%,
+		rgba(0, 209, 255, 0.3071822478991597) 100%
+	);
 }
