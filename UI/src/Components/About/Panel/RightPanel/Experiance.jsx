@@ -21,7 +21,7 @@ function Experiance(props) {
 									<strong className="companyName"> {data.name}</strong>
 								</span>
 								<span className="mg-10">
-									<a href={data.linkedin} target="_blank">
+									<a href={data.linkedin} target="_blank" rel="noreferrer">
 										<i className="fa-brands fa-linkedin companyLinkedin" title={`${data.name} Linkedin`}></i>
 									</a>
 								</span>
@@ -92,7 +92,7 @@ function Experiance(props) {
 								{data.activity?.map((val, ind) => {
 									return (
 										<li className="activityLI" key={ind}>
-											<img src={val.img} width="300" height="300" />
+											<img src={val.img} width="300" height="300" alt="Activies In Company" />
 											<p className="activityText">{val.name}</p>
 										</li>
 									);

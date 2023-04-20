@@ -30,17 +30,27 @@ function Contact() {
 							<div className="col-sm-12 col-lg-6">
 								<h1>Social</h1>
 								<div className="socialIcons d-flex justify-content-evenly">
-									<a href={"https://www.linkedin.com/in/mrinal-kasyap-695853171/"} target="_blank" title="Linkedin">
+									<a
+										href={"https://www.linkedin.com/in/mrinal-kasyap-695853171/"}
+										target="_blank"
+										rel="noreferrer"
+										title="Linkedin"
+									>
 										<span className="contactIcon linkedin">
 											<i class="fa-3x fa-brands fa-linkedin-in"></i>
 										</span>
 									</a>
-									<a href={""} target="_blank" title="Twitter">
+									<a href={""} target="_blank" rel="noreferrer" title="Twitter">
 										<span className="contactIcon twitter">
 											<i class="fa-3x fa-brands fa-twitter"></i>
 										</span>{" "}
 									</a>
-									<a href={""} target="_blank" title="Instagram">
+									<a
+										href={"https://instagram.com/c2_mrinal?igshid=YmMyMTA2M2Y="}
+										target="_blank"
+										rel="noreferrer"
+										title="Instagram"
+									>
 										<span className="contactIcon instagram">
 											<i class="fa-3x fa-brands fa-instagram"></i>
 										</span>
