@@ -69,12 +69,15 @@
 }
 
 .intoDesciption {
-	font-family: font-file-82132;
 	position: absolute;
 	bottom: 0px;
 	padding: 0px 0px 15vh 15vw;
 	color: aliceblue;
 	z-index: 11;
+}
+.intoDesciption h1 {
+	font-family: fantasy;
+	font-weight: 900;
 }
 /* download button */
 

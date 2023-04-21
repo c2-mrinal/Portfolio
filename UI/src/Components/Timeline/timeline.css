@@ -1,6 +1,7 @@
 .timelineCointainer {
 	margin: 0px;
 	width: 100vw;
+	margin-top: 20vh;
 	position: fixed;
 }
 
