@@ -343,9 +343,10 @@ const aboutData = {
 			ChartJS: "fa-solid fa-chart-simple",
 		},
 		notableWork: [
-			"Node and Express Code Modifications",
-			"New Device Authentication type created CA Signed Individual",
-			"",
+			"Modifications that improve the Node and Express code bases by removing code duplication and repetitions",
+			"CA Signed Individual has been added as a new authentication type for IOT devices.",
+			"Changed the code base from Azure to the AWS cloud platform.",
+			"Jira tickets were resolved in accordance with the sprint and priority.",
 		],
 		about: `Working as a ReactJS and NodeJS Developer on the product IOT Connect, where they
     demonstrate IOT device connectivity and various functionalities to perform on them (devices
