@@ -37,7 +37,8 @@ function Intro(props) {
 	};
 
 	return (
-		<div>
+		<>
+			{loading && <Loader />}
 			<div className="myVideo">
 				<video autoPlay muted loop className="videoDimension">
 					<source src={backgroundMain} type="video/mp4" />
@@ -73,23 +74,22 @@ function Intro(props) {
 				</div>
 			</section>
 			<div className="cursorAnimationText">Move Your Cursor Below to have Some Fun</div>
-			<div className="row justify-content-start cursorAnimationSection">
-				<div className=" col-sm-12 col-md-6 col-lg-3">
+			<div className="row justify-content-start ">
+				<div className=" col-sm-12 col-md-6 col-lg-3 cursorAnimationSection ">
 					<CareerBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
 				</div>
-				<div className=" col-sm-12 col-md-6 col-lg-3">
+				<div className=" col-sm-12 col-md-6 col-lg-3 cursorAnimationSection">
 					<SkillBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
 				</div>
-				<div className=" col-sm-12 col-md-6 col-lg-3">
+				<div className=" col-sm-12 col-md-6 col-lg-3 cursorAnimationSection">
 					<AboutBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
 				</div>
-				<div className="col-sm-12 col-md-6 col-lg-3">
+				<div className="col-sm-12 col-md-6 col-lg-3 cursorAnimationSection">
 					<ContactBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
 				</div>
 			</div>
 			<Footer />
-			{loading && <Loader />}
-		</div>
+		</>
 	);
 }
 

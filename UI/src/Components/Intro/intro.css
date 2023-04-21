@@ -69,12 +69,15 @@
 }
 
 .intoDesciption {
-	font-family: font-file-82132;
 	position: absolute;
 	bottom: 0px;
 	padding: 0px 0px 15vh 15vw;
 	color: aliceblue;
 	z-index: 11;
+}
+.intoDesciption h1 {
+	font-family: fantasy;
+	font-weight: 900;
 }
 /* download button */
 
@@ -269,12 +272,10 @@
 	} */
 }
 .cursorAnimationSection {
-	width: 100vw;
-	height: 100vh;
 	background-color: black;
 }
 
-.cursorAnimationSection.col-sm-3,
+.cursorAnimationSection .col-sm-3,
 .col-lg-3 {
 	margin: 0px;
 	padding: 0px;
