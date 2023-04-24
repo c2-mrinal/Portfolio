@@ -4,16 +4,27 @@ import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
 // don't forget to register plugins
 // gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin);
 import "./timeline.css";
+import Loader from "../../Shared/Loader";
 
 function Timeline() {
 	gsap.registerPlugin(ScrollTrigger, Draggable, MotionPathPlugin);
 	const [Data, setData] = useState([]);
+	const [loading, setLoading] = useState(false);
+
 	useEffect(() => {
 		async function fetchMyAPI() {
 			let response = await fetch(`/api/career`);
-			response = await response.json();
-			if (response.success) {
+			if (response?.ok) {
+				response = await response.json();
+			}
+
+			if (response.success && response.data) {
 				setData([...response.data]);
+
+				setLoading(false);
+			} else {
+				console.log(response.statusText || response.message);
+				setLoading(false);
 			}
 		}
 		return () => {
@@ -78,7 +89,7 @@ function Timeline() {
 	return (
 		<div className="timelineCointainer">
 			<div className="timelineDetails">
-				<div class="timelineDetails d-flex hg-80">
+				<div className="timelineDetails d-flex hg-80">
 					{Data?.map((val, ind) => {
 						return (
 							<>
@@ -88,8 +99,8 @@ function Timeline() {
 									<span>{val.age}</span>
 								</div>
 								<div className="col-sm-6  shape3">
-									<div class="wrapper">
-										<div class="container scrollx">
+									<div className="wrapper">
+										<div className="container scrollx">
 											<section className={`sec${ind + 1}  pin`}>
 												<span>Advanced</span>
 												<h1>{val.header}</h1>
@@ -117,6 +128,7 @@ function Timeline() {
 					})}
 				</div>
 			</div>
+			<>{loading && <Loader />}</>
 		</div>
 	);
 }

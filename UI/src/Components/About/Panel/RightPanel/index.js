@@ -21,7 +21,10 @@ function RightPanel(props) {
 			if (value && !folderData[value]) {
 				setLoading(true);
 				let response = await fetch(`/api/about/details/${value}`);
-				response = await response.json();
+
+				if (response?.ok) {
+					response = await response.json();
+				}
 				if (response.success) {
 					setdata(response.data);
 					storefolderDataUpdate(value, response.data);

@@ -7,7 +7,7 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
 		if (explorer && explorer.isOpen) {
 			setExpand(true);
 		}
-	}, explorer);
+	}, [explorer]);
 
 	const selectedAboutField = () => {
 		setExpand(!expand);
@@ -32,9 +32,9 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
 					{explorer?.isFolder && (
 						<>
 							{expand ? (
-								<i class="fa-solid fa-angles-down treeNodeSelected"></i>
+								<i className="fa-solid fa-angles-down treeNodeSelected"></i>
 							) : (
-								<i class="fa-solid fa-caret-right"></i>
+								<i className="fa-solid fa-caret-right"></i>
 							)}
 						</>
 					)}{" "}

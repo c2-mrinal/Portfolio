@@ -4,19 +4,19 @@ import LeftPanel from "./Panel/LeftPanel";
 import RightPanel from "./Panel/RightPanel";
 
 function About() {
-  const [selectedFolder, setSelectedFolder] = useState("");
+	const [selectedFolder, setSelectedFolder] = useState("");
 
-  return (
-    <div className="about-cointainer">
-      <div class="splitLeft ">
-        <LeftPanel selectFolder={setSelectedFolder} />
-      </div>
+	return (
+		<div className="about-cointainer">
+			<div className="splitLeft ">
+				<LeftPanel selectFolder={setSelectedFolder} />
+			</div>
 
-      <div class="splitRight">
-        <RightPanel selectedFolder={selectedFolder} />
-      </div>
-    </div>
-  );
+			<div className="splitRight">
+				<RightPanel selectedFolder={selectedFolder} />
+			</div>
+		</div>
+	);
 }
 
 export default About;

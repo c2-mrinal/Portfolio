@@ -18,12 +18,15 @@ function LeftPanel(props) {
 		async function fetchMyAPI() {
 			setLoading(true);
 			let response = await fetch(`/api/about/folders`);
-			response = await response.json();
-			if (response.success) {
+			if (response?.ok) {
+				response = await response.json();
+			}
+			if (response.success && response.data) {
 				setFolderData(response.data.folders);
 				folderSelected(response.data.defaultSelected);
 				setLoading(false);
 			} else {
+				console.log(response.statusText || response.message);
 				setLoading(false);
 			}
 		}
