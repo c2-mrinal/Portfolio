@@ -356,8 +356,8 @@ function ThreeDText() {
 
 	return (
 		<div>
-			<canvas class="webgl"></canvas>
-			<div class="page">
+			<canvas className="webgl"></canvas>
+			<div className="page">
 				<div style="color: #d6a15c;">HTML CSS</div>
 				<div style="color: #a54556;">JAVASCRIPT</div>
 				<div style="color: #87cf4e;">THREE.JS</div>

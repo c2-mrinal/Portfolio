@@ -37,12 +37,12 @@ function Contact() {
 										title="Linkedin"
 									>
 										<span className="contactIcon linkedin">
-											<i class="fa-3x fa-brands fa-linkedin-in"></i>
+											<i className="fa-3x fa-brands fa-linkedin-in"></i>
 										</span>
 									</a>
 									<a href={""} target="_blank" rel="noreferrer" title="Twitter">
 										<span className="contactIcon twitter">
-											<i class="fa-3x fa-brands fa-twitter"></i>
+											<i className="fa-3x fa-brands fa-twitter"></i>
 										</span>{" "}
 									</a>
 									<a
@@ -52,7 +52,7 @@ function Contact() {
 										title="Instagram"
 									>
 										<span className="contactIcon instagram">
-											<i class="fa-3x fa-brands fa-instagram"></i>
+											<i className="fa-3x fa-brands fa-instagram"></i>
 										</span>
 									</a>
 								</div>
@@ -67,7 +67,7 @@ function Contact() {
 						<span className="col-sm-12 col-md-12 col-lg-3">
 							<a href={"https://github.com/c2-mrinal"} target="_blank" title="Github">
 								<span className="contactIcon github">
-									<i class="fa  fa-brands fa-github"></i>
+									<i className="fa  fa-brands fa-github"></i>
 								</span>
 							</a>
 						</span>

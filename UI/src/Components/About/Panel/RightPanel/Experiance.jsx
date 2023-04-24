@@ -98,7 +98,7 @@ function Experiance(props) {
 									);
 								})}
 							</ul>
-							<div class="light"></div>
+							<div className="light"></div>
 						</div>
 						<div className="pg-20"></div>
 					</div>

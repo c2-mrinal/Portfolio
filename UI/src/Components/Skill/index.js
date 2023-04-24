@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import * as d3 from "d3";
 import "./skill.css";
+import Loader from "../../Shared/Loader";
 const halfStar = `<i class="fa-solid fa-star-half"></i>`;
 const oneStar = `<i class="fa-solid fa-star"></i>`;
 
 function useWindowSize() {
 	const [size, setSize] = useState([0, 0]);
-	const [loading, setLoading] = useState(false);
 	useLayoutEffect(() => {
 		function updateSize() {
 			setSize([window.innerWidth, window.innerHeight]);
@@ -22,12 +22,22 @@ function Skill(props) {
 	const [propWidth, propHeight] = useWindowSize();
 
 	const [Data, setData] = useState([]);
+	const [loading, setLoading] = useState(false);
+
 	useEffect(() => {
 		async function fetchMyAPI() {
 			let response = await fetch(`/api/skill/details`);
-			response = await response.json();
-			if (response.success) {
+			if (response?.ok) {
+				response = await response.json();
+			}
+
+			if (response.success && response.data) {
 				setData([...response.data]);
+
+				setLoading(false);
+			} else {
+				console.log(response.statusText || response.message);
+				setLoading(false);
 			}
 		}
 		return () => {
@@ -353,7 +363,12 @@ function Skill(props) {
 		return starList;
 	};
 
-	return <>{Data ? <svg ref={refNode} className="svgBody" /> : "NO Data Found"}</>;
+	return (
+		<>
+			{Data ? <svg ref={refNode} className="svgBody" /> : "NO Data Found"}
+			<>{loading && <Loader />}</>
+		</>
+	);
 }
 
 export default Skill;

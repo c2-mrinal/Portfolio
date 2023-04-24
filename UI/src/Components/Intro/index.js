@@ -20,7 +20,9 @@ function Intro(props) {
 		setTimeout(async () => {
 			setLoading(true);
 			let response = await fetch("/api/resume");
-			response = await response.json();
+			if (response?.ok) {
+				response = await response.json();
+			}
 			if (response.success) {
 				let alink = document.createElement("a");
 				alink.href = response.data.url;
