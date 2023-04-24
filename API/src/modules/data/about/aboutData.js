@@ -394,9 +394,12 @@ const aboutData = {
 			ChartJS: "fa-solid fa-chart-simple",
 		},
 		notableWork: [
-			"Chart Drill Down Report",
-			"Virtualisiation of Html elements",
-			"Chrome Extension Modification as per latest V8 engine manefist version",
+			"Understanding Jira colud, Jira Server, and Jira Confluence workFlow and API data flow.",
+			"Complete Atlassian Kit for JIRA knowledge and implementation in 'Qmerty Test Management for Jira'.",
+			"On-page document viewer for many uploaded text files.",
+			"By developing custom functionality on ChartJS, created chart drill down report (in tabular view).",
+			"Converted on DOM HTML element rendering to  virtualized element for Folder tree Directory.",
+			"Chrome Extension Modification by the most recent V8 engine manager version and service worker (implemented using core Javascript, jQuery, and Backbone JS).",
 		],
 		about: `QMetry is a product-based firm that sells numerous test management products (QTM ,
       QTM4J, and QAS). As a react developer, I was given the opportunity to join the QTM4J UI
