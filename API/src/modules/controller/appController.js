@@ -7,11 +7,10 @@ const { careerData } = require("../data/career/careerData");
 
 const careerTimeline = (req, res) => {
 	try {
-		if (careerData) {
-			res.status(200).json({ success: true, message: "Mrinal's Portolio Career Data", data: careerData });
-		} else if (!careerData) {
-			res.status(204).send({ success: true, message: "No Data Found for Mrinal's Portolio career", data: [] });
-		}
+		const apiData = careerData
+			? { status: 200, success: true, message: "Mrinal's Portolio Career Data", data: careerData }
+			: { status: 204, success: true, message: "No Data Found for Mrinal's Portolio career" };
+		res.status(200).json(apiData);
 	} catch (e) {
 		console.error(e);
 		res.status(500).end();
@@ -20,11 +19,10 @@ const careerTimeline = (req, res) => {
 
 const skillDetail = (req, res) => {
 	try {
-		if (skillData) {
-			res.status(200).json({ success: true, message: "Mrinal's Portolio Skills List", data: skillData });
-		} else if (!skillData) {
-			res.status(204).send({ success: true, message: "No Data Found for Mrinal's Portolio Skills List", data: [] });
-		}
+		const apiData = skillData
+			? { status: 200, success: true, message: "Mrinal's Portolio Skills List", data: skillData }
+			: { status: 204, success: true, message: "No Data Found for Mrinal's Portolio Skills List" };
+		res.status(200).json(apiData);
 	} catch (e) {
 		console.error(e);
 		res.status(500).end();
@@ -33,11 +31,10 @@ const skillDetail = (req, res) => {
 
 const aboutFolder = (req, res) => {
 	try {
-		if (folderData) {
-			res.status(200).send({ success: true, message: "Mrinal's Portolio About List", data: folderData });
-		} else if (!folderData) {
-			res.status(204).send({ success: true, message: "No Data Found for Mrinal's Portolio About List", data: [] });
-		}
+		const apiData = folderData
+			? { status: 200, success: true, message: "Mrinal's Portolio About List", data: folderData }
+			: { status: 204, success: true, message: "No Data Found for Mrinal's Portolio About List" };
+		res.status(200).json(apiData);
 	} catch (e) {
 		console.error(e);
 		res.status(500).end();
@@ -48,13 +45,18 @@ const aboutDetails = (req, res) => {
 	try {
 		const data = aboutData[req.params.folderIs];
 		if (data) {
-			res.status(200).send({ success: true, message: "Mrinal's Portolio About Folder  Details", data: data });
-		} else if (!aboutData) {
 			res
-				.status(204)
-				.send({ success: true, message: "No Data Found for Mrinal's Portolio About Folder Details", data: [] });
+				.status(200)
+				.send({ status: 200, success: true, message: "Mrinal's Portolio About Folder  Details", data: data });
+		} else if (!aboutData) {
+			res.status(204).send({
+				status: 204,
+				success: true,
+				message: "No Data Found for Mrinal's Portolio About Folder Details",
+				data: [],
+			});
 		} else if (aboutData && !data) {
-			res.status(400).send({ success: false, message: "No Data Found", data: [] });
+			res.status(400).send({ status: 400, success: false, message: "No Data Found", data: [] });
 		}
 	} catch (e) {
 		console.error(e);
@@ -64,19 +66,15 @@ const aboutDetails = (req, res) => {
 const resume = (req, res) => {
 	try {
 		const URL = process.env.URL;
-		if (URL) {
-			res.status(200).send({
-				success: true,
-				message: "Mrinal's Portolio Resume Download",
-				data: { url: `${URL}/api/resume/download` },
-			});
-		} else if (!URL) {
-			res.status(204).send({
-				success: true,
-				message: "No URL Found for Mrinal's Portolio Resume Download",
-				data: [],
-			});
-		}
+		const apiData = URL
+			? {
+					status: 200,
+					success: true,
+					message: "Mrinal's Portolio Resume Download",
+					data: { url: `${URL}/api/resume/download` },
+			  }
+			: { status: 204, success: true, message: "No URL Found for Mrinal's Portolio Resume Download" };
+		res.status(200).json(apiData);
 	} catch (e) {
 		console.error(e);
 		res.status(500).end();
@@ -89,7 +87,7 @@ const resumeDownloader = (req, res) => {
 		if (file) {
 			res.status(200).download(file);
 		} else {
-			res.status(204).send("");
+			res.status(200).send({ status: 204, success: true, message: "Something Went Wrong!! No Resume to Download" });
 		}
 	} catch (e) {
 		console.error(e);
