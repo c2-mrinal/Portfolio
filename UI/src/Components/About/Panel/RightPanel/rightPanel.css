@@ -1,3 +1,6 @@
+* {
+	font-size: calc(0.8rem + 0.5vw);
+}
 h1,
 h2,
 h3,
@@ -9,6 +12,7 @@ h6 {
 .rightPanel {
 	height: 100%;
 	padding: 2rem;
+	padding-top: 0;
 	width: 97%;
 }
 .rightPanel div {
@@ -26,6 +30,9 @@ h6 {
 	margin: auto;
 	text-align: center;
 }
+.educationHeaderContainer em {
+	text-align: center;
+}
 .educationImage {
 	height: calc(10vh+10vw);
 	width: calc(10vh+10vw);
@@ -35,10 +42,12 @@ h6 {
 	margin: 1rem auto;
 	padding: 0px 1rem;
 }
+
 .infoTextBox {
 	font-family: "Font Awesome 6 Free";
-	font-size: 1.2vw;
-	margin: auto 1vw;
+	font-size: clamp(1rem, calc(0.8rem + 0.5vw), 3rem);
+	max-width: 100%;
+	margin: 1vh 1vw;
 	padding: 8px 12px;
 	align-items: center;
 	border: solid 0.5vw #ececec;
@@ -48,6 +57,13 @@ h6 {
 	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.15);
 	-webkit-appearance: none; /* show none  */
 }
+.infoTextBox::after {
+	margin-bottom: 1rem;
+}
+.infoTextBox strong {
+	font-size: clamp(0.5rem, calc(0.5vh + 0.5vw), 3rem);
+	font-weight: bold;
+}
 .infoTextBoxSelected {
 	color: #eda371;
 	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.15),
@@ -55,8 +71,13 @@ h6 {
 }
 
 .degreeImgContainer {
-	width: 800px;
-	height: 700px;
+	max-width: 80vw;
+	margin: auto;
+	align-content: center;
+	text-align: center;
+}
+.degreeImgContainer img {
+	border: solid 0.2rem darkgrey;
 }
 
 .experianceTop {
@@ -89,21 +110,28 @@ h6 {
 }
 
 .skillSection {
-	padding: 2rem;
+	padding: 0.5rem 2rem;
 }
 .mgr-5 {
 	margin-right: 5px;
 }
 .detailsStyled {
 	margin: 30px auto;
-	font-size: 2vw;
+	font-size: clamp(1rem, calc(0.8rem + 0.5vw), 3rem);
 	font-family: monospace;
 	font-weight: 600;
 	text-align: initial;
 	padding-left: 1rem;
 }
-.skillSection h2 {
-	padding: 0.7rem 1rem;
+.companyName {
+	font-size: calc(3vw + 1rem);
+}
+h2 strong {
+	font-size: calc(1vw + 1rem);
+}
+.skillSection h2 strong {
+	padding: 0.7rem 0;
+	font-size: calc(1vw + 1rem);
 }
 
 .activityUL {
@@ -192,4 +220,18 @@ h6 {
 		rgba(10, 121, 9, 0.4584427521008403) 28%,
 		rgba(0, 209, 255, 0.3071822478991597) 100%
 	);
+}
+
+.notableWorks {
+	margin: 0;
+	padding: 0 1rem;
+	font-family: "Bradley Hand";
+}
+.notableWorks li {
+	padding: 1vh 0;
+}
+
+.notableWorks li::marker {
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='14' viewBox='0 0 50 50'%3E%3Cpath d='M46.4 16.2c-2.3-2.3-5.4-3.5-8.4-4.5-.5-.2-1.1-.3-1.6-.5-1.6-1.6-3.7-2.8-6.2-3.2-1-.2-1.9.1-2.5.6-.9-.3-1.8-.6-2.7-.8-3.2-1-6.4-1.8-9.5-.1-1 .5-1.9 1.2-2.7 2-6.4 1.4-11.7 5-12.4 12.7C0 27 1.9 31.5 4.9 34.9c.1.6.2 1.1.4 1.7 1 3.2 3.3 5.7 6.7 6.5 2.7.6 5.4-.2 7.9-1.2 3.3.4 6.7.3 9.9 0 6.5-.7 13.3-2.8 17.1-8.5 3.6-5.2 4-12.6-.5-17.2zm-17.3.9c2.1.4 4 1.7 4.7 3.8 0 .5-.1 1.1-.2 1.6-.3 1.4-.8 2.6-1.6 3.7-.7.2-1.5.1-2.3-.4-.8-.4-1.6-1-2.2-1.6-.4-.4-1.2-1.7-1.6-1.9 3.4 1.3 5.1-3 3.2-5.2zm-11.6 9.7c.2-1.9 1.1-3.9 2.3-5.5-.4 2.1.3 4.2 1.7 6 1.3 1.7 3.1 3.2 5 4.2-.2.1-.4.2-.6.4-.1 0-.1.1-.2.1-3.9.2-8.7-.8-8.2-5.2zm-6.4 3.1c.1.3.1.7.2 1 .2.6.4 1.2.7 1.8-.4-.2-.7-.5-1-.7.1-.8.1-1.4.1-2.1zm31.2-1.3c-.9 1.7-2.1 3.1-3.7 4.1 2-2.1 3.4-4.7 4-7.6.2-.7.3-1.4.3-2.1.6 1.5.5 3.3-.6 5.6z'/%3E%3C/svg%3E")
+		" ";
 }

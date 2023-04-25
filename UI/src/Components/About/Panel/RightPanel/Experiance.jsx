@@ -11,7 +11,7 @@ function Experiance(props) {
 						<div className="  d-flex">
 							<div className="">
 								<span className="mg-10">
-									<a href={data.website}>
+									<a href={data.website} target="_blank">
 										<img className="educationImage" src={data?.img} height="120" width="120" alt="" />
 									</a>
 								</span>
@@ -75,14 +75,15 @@ function Experiance(props) {
 						<h2>
 							<strong>Notable Works</strong>
 						</h2>
-						<div className="">
-							<ul>
+						<div>
+							<ul className="notableWorks">
 								{data.notableWork?.map((val, ind) => {
 									return <li key={ind}>{val}</li>;
 								})}
 							</ul>
 						</div>
 					</div>
+
 					<div className="row skillSection">
 						<h2>
 							<strong>Activities</strong>

@@ -17,3 +17,11 @@
 	font-weight: 600;
 	color: rgb(42, 109, 224);
 }
+.folderListDiplay {
+	display: block;
+	background-color: rgb(250, 250, 250);
+	height: 100%;
+}
+.folderListHide {
+	display: none;
+}
