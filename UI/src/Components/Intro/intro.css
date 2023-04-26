@@ -159,7 +159,7 @@
 }
 .btn-circle-download.load #border {
 	stroke: #b5f324;
-	stroke-dasharray: 144;
+	stroke-dasharray: 150;
 	stroke-dashoffset: 0;
 }
 .btn-circle-download.done {
@@ -211,7 +211,6 @@
 	background: rgb(11, 11, 11);
 	text-align: center;
 	color: white;
-	font-size: 2rem;
 	font-family: cursive;
 	width: 100vw;
 }
