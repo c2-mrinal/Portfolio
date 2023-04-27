@@ -10,19 +10,17 @@ function Header() {
 	return (
 		<>
 			<Navbar className="nav-container fixed-top" expand="lg">
-				<Container className="justify-content-between">
+				<Navbar.Brand className="navbar-brand" href="/">
+					<img className="logo-img" src={Logo} alt="Logo" />
+				</Navbar.Brand>
+				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+				<Container className="justify-content-end">
 					<Nav>
-						<Navbar.Brand className="navbar-brand" href="/">
-							<img className="logo-img" src={Logo} alt="Logo" />
-						</Navbar.Brand>
-					</Nav>
-					<Nav>
-						<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 						<Navbar.Collapse id="responsive-navbar-nav">
 							<Nav className=" flex-grow-1 Nav-Link ">
-								<Nav.Link href="/career">
-									<span>Career</span>
-								</Nav.Link>
+								<span>
+									<Nav.Link href="/career">Career</Nav.Link>
+								</span>
 								<span>
 									<Nav.Link href="/skill">Skills</Nav.Link>
 								</span>

@@ -2,6 +2,9 @@
 	position: absolute;
 	margin-top: 100px;
 }
+.splitBottomspacing {
+	height: 20vh;
+}
 .splitLeft {
 	height: 100%;
 	position: fixed;
@@ -10,7 +13,6 @@
 	left: 0;
 	overflow-x: hidden;
 	margin-top: 12.5vh;
-	padding-bottom: 12.5vh;
 	font-family: cursive;
 }
 .splitLeftWidth20 {
@@ -52,8 +54,8 @@
 }
 .collapseSplitLeft {
 	position: absolute;
-	right: 5px;
-	top: 0;
+	right: 10px;
+	top: 5px;
 }
 .collapseSplitLeft i {
 	font-size: 1.5rem;

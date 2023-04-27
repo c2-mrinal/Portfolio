@@ -77,6 +77,9 @@ function Intro(props) {
 			</section>
 			<div className="cursorAnimationText">Move Your Cursor Below to have Some Fun</div>
 			<div className="row justify-content-start ">
+				<div className="col-sm-12 col-md-6 col-lg-3 cursorAnimationSection">
+					<ContactBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
+				</div>
 				<div className=" col-sm-12 col-md-6 col-lg-3 cursorAnimationSection ">
 					<CareerBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
 				</div>
@@ -85,9 +88,6 @@ function Intro(props) {
 				</div>
 				<div className=" col-sm-12 col-md-6 col-lg-3 cursorAnimationSection">
 					<AboutBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
-				</div>
-				<div className="col-sm-12 col-md-6 col-lg-3 cursorAnimationSection">
-					<ContactBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
 				</div>
 			</div>
 			<Footer />
