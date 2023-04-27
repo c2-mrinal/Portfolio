@@ -49,6 +49,8 @@ function LeftPanel(props) {
 			{FolderData.Website && (
 				<Folder explorer={FolderData.Website} selectedFolder={selectedFolder} folderSelected={folderSelected} />
 			)}
+			<div className="splitBottomspacing"></div>
+
 			{loading && <Loader />}
 		</div>
 	);

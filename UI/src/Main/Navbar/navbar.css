@@ -42,3 +42,24 @@ li a:hover:not(.active) {
 	font-weight: 400;
 	text-decoration: underline blue;
 }
+
+.nav-container {
+}
+.navbar-brand {
+	margin: 0 15px;
+}
+.navbar-toggler {
+	margin: 0 15px !important;
+}
+.nav-container .justify-content-end {
+	margin-right: -2vw;
+}
+.nav-container .container {
+	/* border-top: 1px solid grey; */
+}
+.flex-grow-1 {
+	/* background-color: blueviolet; */
+}
+.flex-grow-1 span a {
+	font-size: calc(1rem + 1vw);
+}

@@ -42,6 +42,7 @@ function About() {
 
 			<div className="splitRight">
 				<RightPanel selectedFolder={selectedFolder} />
+				<div className="splitBottomspacing"></div>
 			</div>
 		</div>
 	);
