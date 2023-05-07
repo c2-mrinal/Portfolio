@@ -42,13 +42,15 @@ function LeftPanel(props) {
 
 	const showNode = (data) => {};
 	return (
-		<div>
+		<div className={`${props.display ? "folderListDiplay" : "folderListHide"}`}>
 			{FolderData.Mrinal && (
 				<Folder explorer={FolderData.Mrinal} selectedFolder={selectedFolder} folderSelected={folderSelected} />
 			)}
 			{FolderData.Website && (
 				<Folder explorer={FolderData.Website} selectedFolder={selectedFolder} folderSelected={folderSelected} />
 			)}
+			<div className="splitBottomspacing"></div>
+
 			{loading && <Loader />}
 		</div>
 	);

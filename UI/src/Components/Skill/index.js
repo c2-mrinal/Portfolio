@@ -365,6 +365,11 @@ function Skill(props) {
 
 	return (
 		<>
+			<div className="containerbackground">
+				<div className="drop1">Click & Drag </div>
+				<div className="drop2">Over Skill Bubble</div>
+				<div className="drop3"> to have some fun !!</div>
+			</div>
 			{Data ? <svg ref={refNode} className="svgBody" /> : "NO Data Found"}
 			<>{loading && <Loader />}</>
 		</>

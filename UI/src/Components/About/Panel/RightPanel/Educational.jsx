@@ -33,7 +33,7 @@ export default function Educational(props) {
 						</div>
 					</div>
 					<div className="col-sm-12 col-md-9 infoTextContainer">
-						<div className="d-flex justify-content-start">
+						<div className="">
 							{data &&
 								data.info?.map((info, ind) => {
 									!showDetail && ind === 0 && showDetails(info[1], ind);
@@ -110,7 +110,6 @@ export default function Educational(props) {
 					</section>
 				</div>
 			</div>
-			<div className="pg-5"></div>
 		</div>
 	);
 }

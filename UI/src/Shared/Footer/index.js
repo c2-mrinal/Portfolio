@@ -7,7 +7,7 @@ function Footer() {
 			<footer className="text-center text-lg-start text-white" style={{ backgroundColor: "#3e4551" }}>
 				<div className="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
 					© {currentYear} Copyright:
-					<a className="text-white" href="www.mrinalkasyap.com">
+					<a className="text-white" href="https://mrinalkasyap.com" target="_blank" rel="noopener noreferrer">
 						MrinalKasyap.com
 					</a>
 					, All rights reserved.
