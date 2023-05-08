@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import "./navbar.css";
 import Logo from "../../image/LOGO.png";
@@ -7,6 +7,17 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
 function Header() {
+	const [pathOrigin, setPathOrigin] = useState(true);
+	useEffect(() => {
+		const path = window.location.pathname;
+		if (path.length > 1) {
+			setPathOrigin(false);
+		} else {
+			setPathOrigin(true);
+		}
+		return () => {};
+	}, [window.location.href]);
+
 	return (
 		<>
 			<Navbar className="nav-container fixed-top" expand="lg">
@@ -17,18 +28,26 @@ function Header() {
 				<Container className="justify-content-end">
 					<Nav>
 						<Navbar.Collapse id="responsive-navbar-nav">
-							<Nav className=" flex-grow-1 Nav-Link ">
+							<Nav className={`flex-grow-1 Nav-Link `}>
 								<span>
-									<Nav.Link href="/career">Career</Nav.Link>
+									<Nav.Link href="/career" className={`${pathOrigin ? "fontColorWhite" : ""}`}>
+										Career
+									</Nav.Link>
 								</span>
 								<span>
-									<Nav.Link href="/skill">Skills</Nav.Link>
+									<Nav.Link href="/skill" className={`${pathOrigin ? "fontColorWhite" : ""}`}>
+										Skills
+									</Nav.Link>
 								</span>
 								<span>
-									<Nav.Link href="/about">About</Nav.Link>
+									<Nav.Link href="/about" className={`${pathOrigin ? "fontColorWhite" : ""}`}>
+										About
+									</Nav.Link>
 								</span>
 								<span>
-									<Nav.Link href="/contact">Contact</Nav.Link>
+									<Nav.Link href="/contact" className={`${pathOrigin ? "fontColorWhite" : ""}`}>
+										Contact
+									</Nav.Link>
 								</span>
 							</Nav>
 						</Navbar.Collapse>

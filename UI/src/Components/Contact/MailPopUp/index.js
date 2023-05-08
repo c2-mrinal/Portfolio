@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import Input from "../../../Shared/Input";
 import Loader from "../../../Shared/Loader";
-// import SendIcon from "@material-ui/icons/Send";
-// import CloseIcon from "@material-ui/icons/Close";
-// import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-// import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
 function MailPopUp(props) {
 	const [RecentMail, setRecentMail] = useState(false);
@@ -32,8 +28,6 @@ function MailPopUp(props) {
 			} else {
 				setRecentMail(false);
 			}
-
-			console.log(localStorageDate, prevDate, newDate, diff);
 		};
 	}, [props]);
 
@@ -100,27 +94,30 @@ function MailPopUp(props) {
 			<Modal show={props.show} onHide={props.hide}>
 				<Modal.Header>
 					<div>
-						<span onClick={props.hide} title="Close" className="modelHeaderMenuAlert">
-							<i className="fa-2x fa-solid fa-xmark"></i>{" "}
+						<span onClick={props.hide} title="Close" className="modelHeaderMenuAlert modelIcons">
+							<i className="fa fa-solid fa-xmark"></i>{" "}
 						</span>
 					</div>
-					<div className="modelHeaderMenu">
+					<div className="modelHeaderMenu d-flex">
 						<span
 							onClick={cancelMail}
 							title="Discard"
-							className={`${!RecentMail ? "disabledLink" : ""} modelHeaderMenuAlert`}
+							className={`${!RecentMail ? "disabledLink" : ""} modelHeaderMenuAlert modelIcons`}
 						>
-							<i className=" fa-2x fa-solid fa-trash"></i>
+							<i className=" fa fa-solid fa-trash"></i>
 						</span>
 						<span
 							onClick={sendMail}
 							title="Send"
-							className={`${!RecentMail ? "disabledLink" : ""} modelHeaderMenuConfirm`}
+							className={`${!RecentMail ? "disabledLink" : ""} modelHeaderMenuConfirm modelIcons`}
 						>
-							<i className="fa-2x fa-solid fa-paper-plane"></i>
+							<i className="fa fa-solid fa-paper-plane"></i>
 						</span>
-						<span title="Its Dummy : )" className={`${!RecentMail ? "disabledLink" : ""} modelHeaderMenuDummy`}>
-							<i className=" fa-2x fa-solid fa-ellipsis-vertical"></i>{" "}
+						<span
+							title="Its Dummy : )"
+							className={`${!RecentMail ? "disabledLink" : ""} modelHeaderMenuDummy modelIcons`}
+						>
+							<i className=" fa fa-solid fa-ellipsis-vertical"></i>{" "}
 						</span>
 					</div>
 				</Modal.Header>
@@ -171,7 +168,7 @@ function MailPopUp(props) {
 									id="message"
 									type="text"
 									name="Message"
-									placeholder="Compose Message"
+									placeholder="Compose Message ..."
 									value={MailData.message}
 									onChange={handleChange}
 									required={true}
