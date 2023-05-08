@@ -78,6 +78,7 @@
 .intoDesciption h1 {
 	font-family: fantasy;
 	font-weight: 900;
+	font-size: calc(0.7rem + 1.5vw);
 }
 /* download button */
 
