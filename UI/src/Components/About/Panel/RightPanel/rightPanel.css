@@ -190,7 +190,7 @@ h2 strong {
 	padding: 5rem;
 }
 .etcSection {
-	height: 90vh;
+	max-height: 840px;
 	max-width: 100%;
 }
 .carouselContainer {
@@ -200,25 +200,61 @@ h2 strong {
 	align-items: center;
 }
 .itemPlacement {
-	width: 70vw;
-	height: 70vh;
+	max-width: 70vw;
+	max-height: 70vh;
+	border-radius: 20px;
 }
+.itemPlacement h3 {
+	color: rgb(59, 57, 57);
+	font-weight: 600;
+	background: #ececec3d;
+}
+.itemPlacement p {
+	font-size: clamp(10px, 2vw, 0.7rem);
+	color: black;
+	width: 100%;
+	border-radius: 10px;
+	background: rgba(165, 217, 228, 0.2);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.carousel-caption {
+	position: absolute;
+	left: 0;
+	bottom: 1vh;
+	width: 100%;
+	padding: 0 5vw;
+	opacity: 0;
+	transition: 500ms ease-in-out;
+}
+
+.carousel-item:hover .carousel-caption {
+	opacity: 1;
+}
+
 .maxImageHeight {
 	max-height: 60vh !important;
 }
 
 .itemHeader {
-	font-size: clamp(1.5rem, 2.5rem, 3rem);
+	font-family: "Monaco";
+	font-size: clamp(0.7vw, 3vw, 3rem);
 	font-weight: 600;
-	padding: 2.5rem;
+	padding: 0.5rem;
+	margin-left: 1.5rem;
 }
 .sectionBackground {
 	background: rgb(162, 153, 54);
+	border-radius: 10px;
 	background: radial-gradient(
 		circle,
-		rgba(162, 153, 54, 0.3996192226890757) 0%,
-		rgba(10, 121, 9, 0.4584427521008403) 28%,
-		rgba(0, 209, 255, 0.3071822478991597) 100%
+		rgba(162, 153, 54, 0.149) 0%,
+		rgba(11, 121, 9, 0.15) 28%,
+		rgba(0, 208, 255, 0.097) 100%
 	);
 }
 

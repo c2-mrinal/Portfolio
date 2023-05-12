@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import "./navbar.css";
 import Logo from "../../image/LOGO.png";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import allActions from "../../actions";
 
 function Header() {
 	const [pathOrigin, setPathOrigin] = useState(true);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		const deviceTypeTouch =
+			"ontouchstart" in window || window.navigator.maxTouchPoints > 0 || window.navigator.msMaxTouchPoints > 0;
+		dispatch(allActions.deviceType(deviceTypeTouch));
+	}, []);
 	useEffect(() => {
 		const path = window.location.pathname;
 		if (path.length > 1) {

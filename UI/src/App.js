@@ -1,7 +1,8 @@
-import React, { lazy, Suspense, useLayoutEffect, useState } from "react";
+import React, { lazy, Suspense, useLayoutEffect, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
+
 import Header from "./Main/Navbar";
 import Loader from "./Shared/Loader";
 import configureStore from "./Store/store";
@@ -15,6 +16,7 @@ const Contact = lazy(() => import("./Components/Contact"));
 const Skills = lazy(() => import("./Components/Skill"));
 const About = lazy(() => import("./Components/About"));
 const NotFound = lazy(() => import("./Shared/NotFound"));
+const UnderProgress = lazy(() => import("./Shared/UnderProgress"));
 
 function App() {
 	return (
@@ -25,7 +27,7 @@ function App() {
 					<Suspense fallback={<Loader />}>
 						<Routes className="headerPlaced">
 							<Route path="/" element={<Intro />} />
-							<Route path="/career" element={<Timeline />} />
+							<Route path="/career" element={<UnderProgress />} />
 							<Route path="/contact" element={<Contact />} />
 							<Route path="/about" element={<About />} />
 							<Route path="/skill" element={<Skills />} />

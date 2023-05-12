@@ -18,8 +18,11 @@
 	border-radius: 9px;
 	border: #d6d2d2 solid 4px;
 }
+.bubbleTooltip h6 {
+	font-size: clamp(calc(1vw + 1vh), 1rem, 2rem);
+}
 .bubbleTooltip h5 {
-	font-size: calc(1vw + 1vh);
+	font-size: calc(1vw + 2vh);
 }
 .bubbleTooltip h4 {
 	font-size: calc(1vw + 2vh);
