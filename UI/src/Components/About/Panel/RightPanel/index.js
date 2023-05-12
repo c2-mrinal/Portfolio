@@ -6,6 +6,7 @@ import Educational from "./Educational";
 import Experiance from "./Experiance";
 import Extracurricular from "./Extracurricular";
 import Loader from "../../../../Shared/Loader";
+import UnderProgress from "../../../../Shared/UnderProgress";
 
 function RightPanel(props) {
 	const [data, setdata] = useState({});
@@ -52,9 +53,13 @@ function RightPanel(props) {
 			case 3:
 				return <Extracurricular data={data} />;
 			case 4:
-				return <Educational data={data} />;
+				return <UnderProgress />;
 			case 5:
-				return <Educational data={data} />;
+				return <UnderProgress />;
+			case 6:
+				return <UnderProgress />;
+			case 7:
+				return <UnderProgress />;
 
 			default:
 				break;

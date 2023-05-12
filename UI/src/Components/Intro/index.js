@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./intro.css";
+import { useSelector } from "react-redux";
 import invertedArrowPointing from "../../image/invertedArrowPointing.gif";
 import backgroundMain from "../../image/backgroundMain.mp4";
 import Footer from "../../Shared/Footer";
@@ -14,6 +15,9 @@ function Intro(props) {
 	const [downloadSucess, setdownloadSucess] = useState(false);
 	const [pointerComp, setPointerComp] = useState([false, false, false, false]);
 	const [loading, setLoading] = useState(false);
+	const isTouchDevice = useSelector((state) => {
+		return state.deviceTypeTouch || false;
+	});
 
 	const downloadResume = async () => {
 		setDownloading(true);
@@ -75,7 +79,7 @@ function Intro(props) {
 					<h1> Developing the change U I need ...</h1>
 				</div>
 			</section>
-			<div className="cursorAnimationText">Move Your Cursor Below to have Some Fun</div>
+			{!isTouchDevice && <div className="cursorAnimationText">Move Your Cursor Below to have Some Fun</div>}
 			<div className="row justify-content-start ">
 				<div className="col-sm-12 col-md-6 col-lg-3 cursorAnimationSection">
 					<ContactBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
