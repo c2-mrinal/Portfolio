@@ -26,7 +26,7 @@ const folderData = {
 							items: [],
 						},
 						{
-							name: "MagentaBi",
+							name: "Magenta Connect",
 							isFolder: false,
 							value: "magentaBI",
 							category: 2,
@@ -185,7 +185,8 @@ const aboutData = {
 		],
 		url: "https://www.daiict.ac.in/",
 		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/MSc.png",
-		about: "Yet to be Updated",
+		about:
+			"During my time at Dhirubhai Ambani Institute of Information and Communication Technology (DAIICT) pursuing my MSc IT, I had a fulfilling experience. The college offered a well-structured curriculum that provided in-depth knowledge in various IT domains. The faculty members were knowledgeable and supportive, guiding us throughout our academic journey. I also had the pleasure of making lifelong friends who shared my passion for technology. The college environment fostered a sense of camaraderie and encouraged collaboration. Overall, my experience at DAIICT was enriching, and I am grateful for the education and friendships I gained during my time there.",
 		term: "2019 - 2021",
 		projects: [
 			{
@@ -251,7 +252,8 @@ const aboutData = {
 		],
 		url: "https://www.bitmesra.ac.in/",
 		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/BCA.png",
-		about: "Yet to be Updated",
+		about:
+			"During my time at Birla Institute of Technology - Mesra (BIT) pursuing my BCA, I had a transformative experience. It was at BIT that I embarked on my software development journey, working on various projects that honed my skills. One project that stands out is my work on the Jharkhand Tourism application, where I applied my knowledge to create an engaging and user-friendly platform. Additionally, I joined the college society DEBSOC, participating in extracurricular activities that further enriched my college experience. BIT became a turning point in my life, as I learned valuable lessons and gained practical insights that continue to shape my career.",
 		term: "2016 - 2019",
 		projects: [
 			{
@@ -302,7 +304,8 @@ const aboutData = {
 		],
 		url: "https://srichaitanyaschool.net/",
 		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/Intermediate.jpg",
-		about: "Yet to be Updated",
+		about:
+			"During my time at Sri Chaitanya Techno School for my intermediate education, I had a memorable experience. The school provided a strong foundation in subjects such as Physics, Chemistry, Math, English, and Physical Education. The teachers were highly knowledgeable and dedicated, offering guidance and support to ensure our academic success. I actively participated in various extracurricular activities, such as sports and cultural events, which helped me develop teamwork and leadership skills. Sri Chaitanya Techno School played a pivotal role in shaping my academic growth and fostering a well-rounded personality. I am grateful for the valuable education and fond memories I gained during my high school years.",
 		term: "2015 - 2013",
 	},
 	matriculation: {
@@ -315,7 +318,8 @@ const aboutData = {
 		],
 		url: "http://sunflowerschool.in/",
 		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/maticulation.png",
-		about: "Yet to be Updated",
+		about:
+			"During my time at Sunflower Public School, where I pursued my matriculation education under the CBSE board, I had a fulfilling academic journey. The school provided a well-rounded education, emphasizing not only on core subjects like Science, Math, English, Sanskrit, and Social Science but also promoting extracurricular activities. The dedicated faculty members were supportive and encouraged a conducive learning environment. Participating in various school events, competitions, and clubs enhanced my overall growth and development. Sunflower Public School played a significant role in shaping my educational foundation and fostering a love for learning that continues to drive me forward in my academic and personal pursuits.",
 		term: "2011 - 2013",
 	},
 	softwebSolutions: {
@@ -348,11 +352,11 @@ const aboutData = {
 			"Changed the code base from Azure to the AWS cloud platform.",
 			"Jira tickets were resolved in accordance with the sprint and priority.",
 		],
-		about: `Working as a ReactJS and NodeJS Developer on the product IOT Connect, where they
-    demonstrate IOT device connectivity and various functionalities to perform on them (devices
-    like edge , gateway, sphere and more)
-    My role is to handle bug fixes and update the UI as needed for the story. And manage the
-    entire AWS and Azure Instance deployment process.`,
+		about: `In my role as a ReactJS and NodeJS Developer, I am part of the team working on the IOT Connect product. This product showcases connectivity and diverse functionalities for IOT devices, including edge devices, gateways, spheres, and more. My responsibilities involve resolving bugs, updating the UI to align with the requirements of each user story, and overseeing the deployment process for AWS and Azure instances.
+
+		Within the IOT Connect project, I contribute to the seamless operation and user experience by ensuring bug-free code and implementing necessary UI enhancements. Additionally, I am responsible for managing the deployment of instances on both AWS and Azure platforms, ensuring smooth and efficient deployment procedures.
+		
+		Working on IOT Connect has provided me with valuable experience in working with cutting-edge technologies and handling complex functionalities.`,
 		activity: [
 			{
 				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/softwebSolutions/AEEE9DA7-264D-451B-B821-A166DA51.jpg",
@@ -401,13 +405,7 @@ const aboutData = {
 			"Converted on DOM HTML element rendering to  virtualized element for Folder tree Directory.",
 			"Chrome Extension Modification by the most recent V8 engine manager version and service worker (implemented using core Javascript, jQuery, and Backbone JS).",
 		],
-		about: `QMetry is a product-based firm that sells numerous test management products (QTM ,
-      QTM4J, and QAS). As a react developer, I was given the opportunity to join the QTM4J UI
-      team. QTM4J is an Atlassian Jira integration for test management and exploratory testing.
-      My responsibilities as a UI developer include improving the code base, troubleshooting the
-      product for any tickets that are produced, adding new features to the product, and working
-      on a chrome extension for exploratory testing. And, I received a pat on the
-      back for successfully completing a sprint without a problem`,
+		about: `As a react developer, I joined the QTM4J UI team at QMetry, a product-based firm offering test management products like QTM, QTM4J, and QAS. QTM4J integrates with Atlassian Jira for test management and exploratory testing. In my role as a UI developer, I enhance the codebase, address product tickets, introduce new features, and develop a chrome extension for exploratory testing. I was commended for successfully completing a problem-free sprint. These responsibilities have provided valuable experience, allowing me to contribute to the improvement of QTM4J and support efficient test management processes.`,
 		activity: [
 			{ img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/qmetry/IMG_5780.jpeg", name: "Festival" },
 			{ img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/qmetry/Team_Lunch.jpeg", name: "Team Lunch" },
@@ -415,7 +413,7 @@ const aboutData = {
 		],
 	},
 	magentaBI: {
-		name: "Qmetry",
+		name: "Magenta Connect",
 		designation: "Web Developer",
 		department: "MagentaBI",
 		startDate: "Dec 2020",
@@ -478,9 +476,7 @@ const aboutData = {
 			NodeJS: "fa-brands fa-node",
 		},
 		notableWork: ["1", "2", "3"],
-		about: `Developed a single-page Web-App using Vue-Cli and nodeJS.
-		The whole web app was based on API which makes the data more streamlined and reliable.
-		Learned a new technology VueJs. API devlopment using Json.`,
+		about: `I created a single-page Web App utilizing Vue-Cli and NodeJS, with the entire application relying on an API for streamlined and reliable data handling. This project provided an opportunity to learn VueJs, a new technology, and develop APIs using JSON. Through this experience, I gained valuable knowledge in building dynamic web applications and honed my skills in working with VueJs and API development.`,
 		activity: [
 			{
 				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/daiict/7E14067E-A3D3-4BA7-9F2D-D30A268E3C8F_1_201_a.jpeg",
@@ -503,11 +499,13 @@ const aboutData = {
 			content: [
 				{
 					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Hobbies/7613E935-4392-4E89-8936-2D8313479C6C_1_201_a.jpeg",
-					desc: "Cricket",
+					header: "Cricket",
+					desc: "Passionately swinging bats, chasing boundaries, fielding with precision—cricket ignites my spirit, connecting me to camaraderie, skill, and sheer exhilaration.",
 				},
 				{
 					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Hobbies/CE397531-1934-4053-8536-F218AC2335AB_1_201_a.jpeg",
-					desc: "Cricket ",
+					header: "Cricket",
+					desc: "Passionately swinging bats, chasing boundaries, fielding with precision—cricket ignites my spirit, connecting me to camaraderie, skill, and sheer exhilaration.",
 				},
 			],
 		},
