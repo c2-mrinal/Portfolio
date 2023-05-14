@@ -52,17 +52,19 @@ function RightPanel(props) {
 				return <Experiance data={data} />;
 			case 3:
 				return <Extracurricular data={data} />;
-			case 4:
-				return <UnderProgress />;
-			case 5:
-				return <UnderProgress />;
-			case 6:
-				return <UnderProgress />;
-			case 7:
-				return <UnderProgress />;
+			// case 4:
+			// 	return <UnderProgress />;
+			// case 5:
+			// 	return <UnderProgress />;
+			// case 6:
+			// 	return <UnderProgress />;
+			// case 7:
+			// 	return <UnderProgress />;
+			// case 8:
+			// 	return <UnderProgress />;
 
 			default:
-				break;
+				return <UnderProgress />;
 		}
 	};
 
