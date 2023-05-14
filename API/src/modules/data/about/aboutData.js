@@ -100,28 +100,14 @@ const folderData = {
 					isFolder: true,
 					items: [
 						{
-							name: "Work-Flow",
+							name: "UI Work-Flow",
 							value: "front_workflow",
 							isFolder: false,
 							category: 4,
 							items: [],
 						},
 						{
-							name: "Library",
-							value: "front_library",
-							isFolder: false,
-							category: 5,
-							items: [],
-						},
-						{
-							name: "Directory Architecture",
-							value: "front_dirArchi",
-							category: 6,
-							isFolder: false,
-							items: [],
-						},
-						{
-							name: "Performance",
+							name: "UI Performance",
 							value: "front_perform",
 							category: 7,
 							isFolder: false,
@@ -134,31 +120,30 @@ const folderData = {
 					isFolder: true,
 					items: [
 						{
-							name: "Work-Flow",
+							name: "API Work-Flow",
 							value: "back_workflow",
 							isFolder: false,
 							category: 4,
 							items: [],
 						},
 						{
-							name: "Library",
-							value: "back_library",
-							isFolder: false,
-							category: 5,
-							items: [],
-						},
-						{
-							name: "Directory Architecture",
-							value: "back_dirArchi",
-							category: 6,
-							isFolder: false,
-							items: [],
-						},
-						{
-							name: "Performance",
+							name: "API Performance",
 							value: "back_perform",
 							category: 7,
 							isFolder: false,
+							items: [],
+						},
+					],
+				},
+				{
+					name: "Depolyment",
+					isFolder: true,
+					items: [
+						{
+							name: "Work-Flow",
+							value: "depoly_workflow",
+							isFolder: false,
+							category: 4,
 							items: [],
 						},
 					],
