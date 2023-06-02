@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./contact.css";
 import MailPopUp from "./MailPopUp";
+import arrowPointing from "../../image/ArrowPointing.gif";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {
 //   faLinkedinIn,
@@ -61,6 +62,11 @@ function Contact() {
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+					<div className="downArrow">
+						<div className="downArrowContainer">
+							<img src={arrowPointing} className="pointingArrow" alt="error" />
 						</div>
 					</div>
 				</section>
