@@ -208,3 +208,15 @@ i {
 	font-size: calc(1.5vw + 0.5vh);
 	cursor: pointer;
 }
+.downArrow {
+	position: absolute;
+	width: 100vw;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+}
+.pointingArrow {
+	height: calc(10vh + 5vw);
+	width: calc(20vw + 20vh);
+	transform: rotate(180deg);
+}

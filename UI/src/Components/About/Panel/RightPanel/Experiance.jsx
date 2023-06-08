@@ -12,7 +12,7 @@ function Experiance(props) {
 							<div className="">
 								<span className="mg-10">
 									<a href={data.website} target="_blank">
-										<img className="educationImage" src={data?.img} height="120" width="120" alt="" />
+										<img className="educationImage" src={data?.img} height="120" width="120" alt="" loading="lazy" />
 									</a>
 								</span>
 							</div>
@@ -93,7 +93,7 @@ function Experiance(props) {
 								{data.activity?.map((val, ind) => {
 									return (
 										<li className="activityLI" key={ind}>
-											<img src={val.img} width="300" height="300" alt="Activies In Company" />
+											<img src={val.img} width="300" height="300" alt="Activies In Company" loading="lazy" />
 											<p className="activityText">{val.name}</p>
 										</li>
 									);
