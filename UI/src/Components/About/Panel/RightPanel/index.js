@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./rightPanel.css";
 import allActions from "../../../../actions";
 import { useSelector, useDispatch } from "react-redux";
@@ -11,6 +11,7 @@ import UnderProgress from "../../../../Shared/UnderProgress";
 function RightPanel(props) {
 	const [data, setdata] = useState({});
 	const [loading, setLoading] = useState(false);
+	const scrollToRef = useRef(null);
 
 	const dispatch = useDispatch();
 	const folderIs = useSelector((state) => state.folderIs || "");
@@ -38,6 +39,7 @@ function RightPanel(props) {
 			}
 		}
 		fetchMyAPI();
+		scrollToRef.current.scrollIntoView();
 	}, [folderIs.value]);
 
 	const storefolderDataUpdate = (key, data) => {
@@ -70,6 +72,7 @@ function RightPanel(props) {
 
 	return (
 		<>
+			<div ref={scrollToRef}></div>
 			<div>{detailPanel()}</div>
 			{loading && <Loader />}
 		</>

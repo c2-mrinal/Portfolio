@@ -25,7 +25,7 @@ export default function Educational(props) {
 					<div className="col-sm-12 col-md-3 educationHeaderContainer">
 						<div>
 							<a href={data.url}>
-								<img className="educationImage" src={data?.img} height="150" width="150" alt="" />
+								<img className="educationImage" src={data?.img} height="150" width="150" alt="" loading="lazy" />
 							</a>
 						</div>
 						<div>
@@ -102,7 +102,7 @@ export default function Educational(props) {
 					<section>
 						{data.degreeImg ? (
 							<div className="degreeImgContainer">
-								<img className="h-100 w-100" src={data.degreeImg} alt="marksheet" />
+								<img className="h-100 w-100" src={data.degreeImg} alt="marksheet" loading="lazy" />
 							</div>
 						) : (
 							""
