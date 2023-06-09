@@ -311,9 +311,9 @@ function Skill(props) {
 		d.fx = null;
 		d.fy = null;
 	};
-	let handleResize = () => {
-		createBubblePlot(graphdata);
-	};
+	// let handleResize = () => {
+	// 	createBubblePlot(graphdata);
+	// };
 
 	useEffect(() => {
 		// createBubblePlot(graphdata);

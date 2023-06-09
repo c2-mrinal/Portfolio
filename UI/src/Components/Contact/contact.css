@@ -1,12 +1,18 @@
+.main {
+	height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+}
 .contactContainer {
 	scroll-behavior: smooth;
 }
-.contactContainer section {
+.contactContainer > section {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	scroll-snap-align: center;
 	justify-content: center;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
 }
 .contactBG {
 	display: flex;
