@@ -40,7 +40,6 @@ function LeftPanel(props) {
 		}
 	};
 
-	const showNode = (data) => {};
 	return (
 		<div className={`${props.display ? "folderListDiplay" : "folderListHide"}`}>
 			{FolderData.Mrinal && (

@@ -1,9 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import { Circle } from "../../../Shared/CircleRef";
 
 function SkillBG(props) {
-	const [pointerCircle, setPointerCircle] = useState([0.1, 0.2, 0.3, 0.4, 0.5]);
+	const pointerCircle = [0.1, 0.2, 0.3, 0.4, 0.5];
 
 	const SkillWrapperRef = useRef();
 	const circleRefs = useRef([]);

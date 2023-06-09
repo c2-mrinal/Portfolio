@@ -1,9 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import { Circle } from "../../../Shared/CircleRef";
 
 function ContactBG(props) {
-	const [pointerCircle, setPointerCircle] = useState([1]);
+	const pointerCircle = [1];
 	const ContactWrapperRef = useRef(null);
 	const circleRefs = useRef([]);
 

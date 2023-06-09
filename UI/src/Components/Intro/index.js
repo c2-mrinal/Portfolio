@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import "./intro.css";
 import { useSelector } from "react-redux";
 import invertedArrowPointing from "../../image/invertedArrowPointing.gif";

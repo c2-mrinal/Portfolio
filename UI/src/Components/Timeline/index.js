@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
 
-// don't forget to register plugins
-// gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin);
 import "./timeline.css";
 import Loader from "../../Shared/Loader";
 
@@ -18,7 +16,7 @@ function Timeline() {
 				response = await response.json();
 			}
 
-			if (response.success && response.data) {
+			if (response?.success && response?.data) {
 				setData([...response.data]);
 
 				setLoading(false);

@@ -5,7 +5,7 @@ export default function Extracurricular(props) {
 	const [Data, setData] = useState({});
 	useEffect(() => {
 		setData(props);
-	}, [props.data]);
+	}, [props]);
 
 	return (
 		<div>
