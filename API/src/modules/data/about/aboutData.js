@@ -528,13 +528,74 @@ const aboutData = {
 		},
 	],
 	front_workflow: {
-		img: "",
-		info: [],
+		header: "Workflow",
+		data: [],
 		about: "",
 	},
 	front_library: {
-		img: "",
-		info: [],
+		header: "Library",
+		data: [
+			{
+				name: "React",
+				desc: "",
+				url: "https://react.dev/",
+			},
+			{
+				name: "Bootstrap",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "D3",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "GSAP",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "React-Dom",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "React-Redux",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "React-Router",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "React-Router-Dom",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "React-Scripts",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "Redux",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "Redux-Thunk",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "FontAwsome",
+				desc: "",
+				url: "",
+			},
+		],
 		about: "",
 	},
 	front_dirArchi: {
@@ -553,8 +614,29 @@ const aboutData = {
 		about: "",
 	},
 	back_library: {
-		img: "",
-		info: [],
+		header: "Library",
+		data: [
+			{
+				name: "Body-Parser",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "Dot Env",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "Express Js",
+				desc: "",
+				url: "",
+			},
+			{
+				name: "Node Mailer",
+				desc: "",
+				url: "",
+			},
+		],
 		about: "",
 	},
 	back_dirArchi: {
