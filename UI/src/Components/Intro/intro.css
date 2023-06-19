@@ -76,10 +76,26 @@
 	z-index: 11;
 }
 .intoDesciption h1 {
+	position: relative;
+	min-width: calc(45vw);
+
 	font-family: fantasy;
 	font-weight: 900;
-	font-size: calc(0.7rem + 1.5vw);
+	font-size: calc(0.7rem + 3.5vw);
 }
+.intoDesciption span:hover {
+	position: relative;
+	font-size: calc(1rem + 2.5vw);
+	/* cursor: zoom-in; */
+	text-transform: uppercase;
+	z-index: 100;
+	-webkit-animation: scale 1s linear;
+	-moz-animation: scale 1s linear;
+	animation: scale 1s linear;
+	transform-origin: 50% 50%;
+	animation-fill-mode: forwards;
+}
+
 /* download button */
 
 .btn-circle-download {

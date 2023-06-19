@@ -73,10 +73,82 @@ function Intro(props) {
 					</div>
 				</div>
 				<div className="intoDesciption">
-					<h1>Hello !</h1>
-					<h1> I am Mrinal Kasyap</h1>
-					<h1> JavaScript Developer</h1>
-					<h1> Developing the change U I need ...</h1>
+					<h1>
+						<span>H</span>
+						<span>e</span>
+						<span>l</span>
+						<span>l</span>
+						<span>o</span>
+						<span> !</span>
+					</h1>
+					<h1>
+						<span> I</span>
+						<span> a</span>
+						<span>m</span>
+						<span> M</span>
+						<span>r</span>
+						<span>i</span>
+						<span>n</span>
+						<span>a</span>
+						<span>l</span>
+						<span> K</span>
+						<span>a</span>
+						<span>s</span>
+						<span>y</span>
+						<span>a</span>
+						<span>p</span>
+					</h1>
+					<h1>
+						<span>J</span>
+						<span>a</span>
+						<span>v</span>
+						<span>a</span>
+						<span>S</span>
+						<span>c</span>
+						<span>r</span>
+						<span>i</span>
+						<span>p</span>
+						<span>t</span>
+						<span> D</span>
+						<span>e</span>
+						<span>v</span>
+						<span>e</span>
+						<span>l</span>
+						<span>o</span>
+						<span>p</span>
+						<span>e</span>
+						<span>r</span>
+					</h1>
+					<h1>
+						<span>D</span>
+						<span>e</span>
+						<span>v</span>
+						<span>e</span>
+						<span>l</span>
+						<span>o</span>
+						<span>p</span>
+						<span>i</span>
+						<span>n</span>
+						<span>g</span>
+						<span> t</span>
+						<span>h</span>
+						<span>e</span>
+						<span> c</span>
+						<span>h</span>
+						<span>a</span>
+						<span>n</span>
+						<span>g</span>
+						<span>e</span>
+						<span> U</span>
+						<span>&</span>
+						<span>I</span>
+						<span> n</span>
+						<span>e</span>
+						<span>e</span>
+						<span>d</span>
+						<span>s</span>
+						<span> ...</span>
+					</h1>
 				</div>
 			</section>
 			{!isTouchDevice && <div className="cursorAnimationText">Move Your Cursor Below to have Some Fun</div>}
