@@ -7,6 +7,8 @@ import Experiance from "./Experiance";
 import Extracurricular from "./Extracurricular";
 import Loader from "../../../../Shared/Loader";
 import UnderProgress from "../../../../Shared/UnderProgress";
+import Workflow from "./Workflow";
+import Library from "./Library";
 
 function RightPanel(props) {
 	const [data, setdata] = useState({});
@@ -54,10 +56,10 @@ function RightPanel(props) {
 				return <Experiance data={data} />;
 			case 3:
 				return <Extracurricular data={data} />;
-			// case 4:
-			// 	return <UnderProgress />;
-			// case 5:
-			// 	return <UnderProgress />;
+			case 4:
+				return <Workflow data={data} />;
+			case 5:
+				return <Library data={data} />;
 			// case 6:
 			// 	return <UnderProgress />;
 			// case 7:
