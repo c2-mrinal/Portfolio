@@ -1,12 +1,18 @@
+.main {
+	height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+}
 .contactContainer {
 	scroll-behavior: smooth;
 }
-.contactContainer section {
+.contactContainer > section {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	scroll-snap-align: center;
 	justify-content: center;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
 }
 .contactBG {
 	display: flex;
@@ -207,4 +213,16 @@ i {
 .modelIcons i {
 	font-size: calc(1.5vw + 0.5vh);
 	cursor: pointer;
+}
+.downArrow {
+	position: absolute;
+	width: 100vw;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+}
+.pointingArrow {
+	height: calc(10vh + 5vw);
+	width: calc(20vw + 20vh);
+	transform: rotate(180deg);
 }

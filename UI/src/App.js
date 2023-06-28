@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Intro = lazy(() => import("./Components/Intro"));
-const Timeline = lazy(() => import("./Components/Timeline"));
+// const Timeline = lazy(() => import("./Components/Timeline"));
 const Contact = lazy(() => import("./Components/Contact"));
 const Skills = lazy(() => import("./Components/Skill"));
 const About = lazy(() => import("./Components/About"));

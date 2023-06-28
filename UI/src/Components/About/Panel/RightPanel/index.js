@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./rightPanel.css";
 import allActions from "../../../../actions";
 import { useSelector, useDispatch } from "react-redux";
@@ -7,10 +7,13 @@ import Experiance from "./Experiance";
 import Extracurricular from "./Extracurricular";
 import Loader from "../../../../Shared/Loader";
 import UnderProgress from "../../../../Shared/UnderProgress";
+import Workflow from "./Workflow";
+import Library from "./Library";
 
 function RightPanel(props) {
 	const [data, setdata] = useState({});
 	const [loading, setLoading] = useState(false);
+	const scrollToRef = useRef(null);
 
 	const dispatch = useDispatch();
 	const folderIs = useSelector((state) => state.folderIs || "");
@@ -38,6 +41,7 @@ function RightPanel(props) {
 			}
 		}
 		fetchMyAPI();
+		scrollToRef.current.scrollIntoView();
 	}, [folderIs.value]);
 
 	const storefolderDataUpdate = (key, data) => {
@@ -53,21 +57,24 @@ function RightPanel(props) {
 			case 3:
 				return <Extracurricular data={data} />;
 			case 4:
-				return <UnderProgress />;
+				return <Workflow data={data} />;
 			case 5:
-				return <UnderProgress />;
-			case 6:
-				return <UnderProgress />;
-			case 7:
-				return <UnderProgress />;
+				return <Library data={data} />;
+			// case 6:
+			// 	return <UnderProgress />;
+			// case 7:
+			// 	return <UnderProgress />;
+			// case 8:
+			// 	return <UnderProgress />;
 
 			default:
-				break;
+				return <UnderProgress />;
 		}
 	};
 
 	return (
 		<>
+			<div ref={scrollToRef}></div>
 			<div>{detailPanel()}</div>
 			{loading && <Loader />}
 		</>

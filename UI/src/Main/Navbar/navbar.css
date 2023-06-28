@@ -66,5 +66,8 @@ li a:hover:not(.active) {
 	/* background-color: blueviolet; */
 }
 .flex-grow-1 span a {
-	font-size: calc(1rem + 1vw);
+	font-size: calc(0.8rem + 0.8vw);
+}
+.navbar-toggler {
+	border: var(--bs-border-width) solid rgba(104, 211, 194, 254) !important;
 }

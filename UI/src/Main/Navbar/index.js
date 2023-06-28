@@ -24,7 +24,7 @@ function Header() {
 			setPathOrigin(true);
 		}
 		return () => {};
-	}, [window.location.href]);
+	}, []);
 
 	return (
 		<>
