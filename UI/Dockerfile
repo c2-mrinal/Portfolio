@@ -2,12 +2,10 @@
 FROM node:14 AS Production
 
 # Set environment variable
-
-# ENV PORT=3000
 ENV NODE_ENV=production
 
 # Set the working directory inside the container
-WORKDIR /urs/src/app
+WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
@@ -25,4 +23,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Start the React app
-CMD ["sh","-c","npm run start:production"]
+CMD ["sh", "-c", "npm run start:production"]

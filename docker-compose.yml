@@ -1,39 +1,31 @@
 version: '3'
 services:
   node-app:
-      container_name: portfolio-api
-      restart: unless-stopped
-      image: portfolio-api-prod:1.0.0
-      build:
-        context: API
-        dockerfile: Dockerfile
-      ports:
-        - '8080:8080'
-      # volumes:
-      #   - ./node-app:/app
-      # networks: 
-      #   - shared-network
-      environment:
-        - PORT=8080
-      command: npm start
+    container_name: portfolio-api
+    restart: unless-stopped
+    image: portfolio/portfolio-api-prod:1.0.0
+    build:
+      context: API
+      target: production
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    environment:
+      - PORT=8080
+    command: npm start
 
   react-app:
-      container_name: portfolio-ui
-      restart: unless-stopped
-      image: portfolio-ui-prod:1.0.0
-      build:
-        context: UI
-        dockerfile: Dockerfile
-      ports:
-        - '3000:3000'
-      # networks: 
-      #   - shared-network
-      # volumes:
-      #   - ./react-app:/app
-      environment:
-        - PORT=3000
-      depends_on: 
-        - node-app
-      command: npm start
-
- 
+    container_name: portfolio-ui
+    restart: unless-stopped
+    image: portfolio/portfolio-ui-prod:1.0.0
+    build:
+      context: UI
+      target: production
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+    depends_on:
+      - node-app
+    command: npm start

@@ -1,8 +1,15 @@
 const express = require("express");
+const cors = require("cors");
 const appRoutes = require("./src/routes.js");
 require("dotenv").config();
 
 const app = express();
+app.use(
+	cors({
+		origin: "https://localhost:3000",
+	})
+);
+
 const path = require("path");
 const Port = process.env.PORT;
 const publicDirPath = path.join(__dirname, "../src");

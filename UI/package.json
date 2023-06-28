@@ -1,7 +1,7 @@
 {
   "name": "biodata",
   "version": "0.1.0",
-  "proxy": "http://localhost:8080",
+  "proxy": "http://host.docker.internal:8080",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:production": "react-scripts start",
+    "start:production": "react-scripts start --ignore client",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
