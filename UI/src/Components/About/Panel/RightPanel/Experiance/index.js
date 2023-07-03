@@ -1,5 +1,5 @@
 import React from "react";
-import "./rightPanel.css";
+import "../rightPanel.css";
 
 function Experiance(props) {
 	const { data } = props;

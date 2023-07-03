@@ -2,13 +2,18 @@ import React, { useState, useEffect, useRef } from "react";
 import "./rightPanel.css";
 import allActions from "../../../../actions";
 import { useSelector, useDispatch } from "react-redux";
+// import Educational from "./RightPanel/Educational";
+// import Experiance from "./RightPanel/Experiance";
+// import Extracurricular from "./RightPanel/Extracurricular";
+// import Workflow from "./RightPanel/Workflow";
+// import Library from "./RightPanel/Library";
+import Loader from "../../../../Shared/Loader";
+import UnderProgress from "../../../../Shared/UnderProgress";
 import Educational from "./Educational";
 import Experiance from "./Experiance";
 import Extracurricular from "./Extracurricular";
-import Loader from "../../../../Shared/Loader";
-import UnderProgress from "../../../../Shared/UnderProgress";
-import Workflow from "./Workflow";
 import Library from "./Library";
+import Workflow from "./Workflow";
 
 function RightPanel(props) {
 	const [data, setdata] = useState({});
