@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./rightPanel.css";
+import "../rightPanel.css";
 
 export default function Educational(props) {
 	const { data } = props;
