@@ -34,8 +34,8 @@ h6 {
 	text-align: center;
 }
 .educationImage {
-	height: calc(10vh+10vw);
-	width: calc(10vh+10vw);
+	height: calc(10vh + 10vw);
+	width: calc(10vh + 10vw);
 	border-radius: 50%;
 }
 .infoTextContainer {
@@ -280,7 +280,7 @@ h2 strong {
 
 .card-header {
 	font-weight: 900;
-	font-size: clamp(0.7vw, calc(0.7rem+ 2vw), 3rem);
+	font-size: clamp(0.7vw, calc(0.7rem + 2vw), 3rem);
 }
 .libCard {
 	margin: 2vh;
