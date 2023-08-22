@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./intro.css";
 import { useSelector } from "react-redux";
 import invertedArrowPointing from "../../image/invertedArrowPointing.gif";
-import backgroundMain from "../../image/backgroundMain.mp4";
 import Footer from "../../Shared/Footer";
 import ContactBG from "./CursorComponents/ContactBG";
 import AboutBG from "./CursorComponents/AboutBG";
