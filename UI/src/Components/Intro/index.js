@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./intro.css";
 import { useSelector } from "react-redux";
 import invertedArrowPointing from "../../image/invertedArrowPointing.gif";
-import backgroundMain from "../../image/backgroundMain.mp4";
 import Footer from "../../Shared/Footer";
 import ContactBG from "./CursorComponents/ContactBG";
 import AboutBG from "./CursorComponents/AboutBG";
@@ -47,7 +46,10 @@ function Intro(props) {
 			{loading && <Loader />}
 			<div className="myVideo">
 				<video autoPlay muted loop className="videoDimension">
-					<source src={backgroundMain} type="video/mp4" />
+					<source
+						src={"https://drive.google.com/uc?export=view&id=1WKIIMwcY-2GKVUcVjCi_IRQYkascvyna"}
+						type="video/mp4"
+					/>
 				</video>
 			</div>
 			<section className=" intoSection d-flex flex-direction-column">
