@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./intro.css";
 import { useSelector } from "react-redux";
-import invertedArrowPointing from "../../image/invertedArrowPointing.gif";
 import Footer from "../../Shared/Footer";
 import ContactBG from "./CursorComponents/ContactBG";
 import AboutBG from "./CursorComponents/AboutBG";
@@ -10,34 +9,36 @@ import CareerBG from "./CursorComponents/CareerBG";
 import Loader from "../../Shared/Loader";
 
 function Intro(props) {
-	const [Downloading, setDownloading] = useState(false);
-	const [downloadSucess, setdownloadSucess] = useState(false);
+	const [downloading, setDownloading] = useState(false);
+	const [downloadSuccess, setDownloadSuccess] = useState(false);
 	const [pointerComp, setPointerComp] = useState([false, false, false, false]);
 	const [loading, setLoading] = useState(false);
-	const isTouchDevice = useSelector((state) => {
-		return state.deviceTypeTouch || false;
-	});
+	const isTouchDevice = useSelector((state) => state.deviceTypeTouch || false);
 
 	const downloadResume = async () => {
 		setDownloading(true);
 		setTimeout(async () => {
 			setLoading(true);
-			let response = await fetch("/api/resume");
-			if (response?.ok) {
-				response = await response.json();
-			}
-			if (response.success) {
-				let alink = document.createElement("a");
-				alink.href = response.data.url;
-				alink.click();
-				setdownloadSucess(true);
-				setTimeout(async () => setdownloadSucess(false), 4000);
+			try {
+				let response = await fetch("/api/resume");
+				if (response?.ok) {
+					response = await response.json();
+				}
+				if (response.success) {
+					let alink = document.createElement("a");
+					alink.href = response.data.url;
+					alink.click();
+					setDownloadSuccess(true);
+					setTimeout(() => setDownloadSuccess(false), 4000);
+				} else {
+					console.log(response.statusText || response.message);
+				}
+			} catch (error) {
+				console.error("An error occurred:", error);
+			} finally {
 				setLoading(false);
-			} else {
-				setdownloadSucess(false);
-				setLoading(false);
+				setDownloading(false);
 			}
-			setDownloading(false);
 		}, 1000);
 	};
 
@@ -55,9 +56,9 @@ function Intro(props) {
 			<section className=" intoSection d-flex flex-direction-column">
 				<div className="resumeDownloadContainer">
 					<div
-						className={`btn-circle-download  ${Downloading ? "load" : ""} ${downloadSucess ? "done" : ""}`}
+						className={`btn-circle-download  ${downloading ? "load" : ""} ${downloadSuccess ? "done" : ""}`}
 						onClick={downloadResume}
-						title={downloadSucess ? "Resume Dowloaded " : "Download Mrinal's Resume"}
+						title={downloadSuccess ? "Resume Dowloaded " : "Download Mrinal's Resume"}
 					>
 						<svg id="arrow" viewBox="17 14 14 20">
 							<path d="M24,15 L24,32"></path>
@@ -71,7 +72,11 @@ function Intro(props) {
 						</svg>
 					</div>
 					<div>
-						<img src={invertedArrowPointing} className="pointingArrow" alt="error" />
+						<img
+							src={"https://drive.google.com/uc?export=view&id=1DogaiT31_9vkDL6nlXe1qsSr47svQPZE"}
+							className="pointingArrow"
+							alt="error"
+						/>
 					</div>
 				</div>
 				<div className="intoDesciption">
@@ -168,7 +173,7 @@ function Intro(props) {
 					<AboutBG pointerComp={pointerComp} setPointerComp={setPointerComp} />
 				</div>
 			</div>
-			<Footer />
+			<Footer />{" "}
 		</>
 	);
 }

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useLayoutEffect, useEffect } from "react";
+import React, { lazy, Suspense } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";

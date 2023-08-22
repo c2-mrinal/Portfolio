@@ -26,23 +26,29 @@ function Skill(props) {
 
 	useEffect(() => {
 		async function fetchMyAPI() {
-			let response = await fetch(`/api/skill/details`);
-			if (response?.ok) {
-				response = await response.json();
-			}
+			try {
+				let response = await fetch(`/api/skill/details`);
 
-			if (response.success && response.data) {
-				setData([...response.data]);
+				if (!response.ok) {
+					throw new Error(`Failed to fetch data: ${response.statusText}`);
+				}
 
-				setLoading(false);
-			} else {
-				console.log(response.statusText || response.message);
+				let responseData = await response.json();
+
+				if (responseData.success && responseData.data) {
+					setData([...responseData.data]);
+				} else {
+					console.log(responseData.statusText || responseData.message);
+				}
+			} catch (error) {
+				console.error("An error occurred while fetching data:", error);
+			} finally {
 				setLoading(false);
 			}
 		}
-		return () => {
-			fetchMyAPI();
-		};
+
+		setLoading(true);
+		fetchMyAPI();
 	}, []);
 
 	const Margin = {
