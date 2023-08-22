@@ -2,9 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
 	entry: "./src/index.js",
-	mode: "development", // or 'production'
+	mode: "production", // or 'production'
 	output: {
-		path: path.join(__dirname, "/dist"),
+		path: path.join(__dirname, "/build"),
 		filename: "bundle.js",
 	},
 	devServer: {
@@ -18,20 +18,25 @@ module.exports = {
 				exclude: /node_modules/,
 				use: {
 					loader: "babel-loader",
-					options: {
-						presets: ["@babel/preset-react", "@babel/preset-env"],
-					},
 				},
 			},
 			{
-				test: /\.css$/,
-				use: ["style-loader", "css-loader"],
+				test: /\.(sa|sc|c)ss$/,
+				use: ["style-loader", "css-loader", "sass-loader"],
 			},
 			{
-				test: /\.(jpe?g|png|gif|svg)$/i,
+				test: /\.(woff|woff2|eot|ttf)$/,
 				loader: "file-loader",
 				options: {
-					name: "/public/icons/[name].[ext]",
+					name: "[name].[ext]",
+					outputPath: "fonts/",
+				},
+			},
+			{
+				test: /\.(jpe?g|png|gif)$/i,
+				loader: "file-loader",
+				options: {
+					name: "public/icons/[name].[ext]",
 				},
 			},
 			{
@@ -42,6 +47,34 @@ module.exports = {
 						options: {
 							name: "[name].[ext]",
 						},
+					},
+				],
+			},
+			{
+				test: /\.svg$/,
+				oneOf: [
+					{
+						resourceQuery: /icon/,
+						use: [
+							{
+								loader: "file-loader",
+								options: {
+									name: "public/icons/[name].[ext]",
+								},
+							},
+						],
+					},
+					{
+						use: [
+							{
+								loader: "url-loader",
+								options: {
+									limit: 8192,
+									name: "[name].[ext]",
+									outputPath: "images/",
+								},
+							},
+						],
 					},
 				],
 			},

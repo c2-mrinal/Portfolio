@@ -47,7 +47,10 @@ function Intro(props) {
 			{loading && <Loader />}
 			<div className="myVideo">
 				<video autoPlay muted loop className="videoDimension">
-					<source src={backgroundMain} type="video/mp4" />
+					<source
+						src={"https://drive.google.com/uc?export=view&id=1WKIIMwcY-2GKVUcVjCi_IRQYkascvyna"}
+						type="video/mp4"
+					/>
 				</video>
 			</div>
 			<section className=" intoSection d-flex flex-direction-column">
