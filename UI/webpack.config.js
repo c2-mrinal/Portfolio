@@ -1,15 +1,24 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
-	entry: "./src/index.js",
-	mode: "production", // or 'production'
+	entry: "./src/index.js", // Entry point for your app
 	output: {
-		path: path.join(__dirname, "/build"),
-		filename: "bundle.js",
+		path: path.resolve(__dirname, "build"), // The bundle output path
+		filename: "bundle.js", // The name of the bundle
+		publicPath: "/", // Public path for assets (useful for routing)
 	},
+	resolve: {
+		extensions: [".js", ".jsx"], // Allow importing .js and .jsx files without extensions
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: "public/index.html",
+		}),
+	],
 	devServer: {
-		compress: true,
-		disableHostCheck: true,
+		port: 3333,
+		historyApiFallback: true,
 	},
 	module: {
 		rules: [
@@ -80,13 +89,4 @@ module.exports = {
 			},
 		],
 	},
-	resolve: {
-		modules: ["node_modules"],
-		extensions: [".js", ".jsx", ".html"],
-	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			template: path.join(__dirname, "/public/index.html"),
-		}),
-	],
 };
