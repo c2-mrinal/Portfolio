@@ -88,6 +88,14 @@ function MailPopUp(props) {
 	const errorInMail = (msg) => {
 		return <div className="errorMail">{msg}</div>;
 	};
+	const copyContent = async () => {
+		try {
+			await navigator.clipboard.writeText("mrinalspec@gmail.com");
+			console.log("Content copied to clipboard");
+		} catch (err) {
+			console.error("Failed to copy: ", err);
+		}
+	};
 
 	return (
 		<div>
@@ -134,6 +142,7 @@ function MailPopUp(props) {
 										onChange={handleChange}
 										disabled={true}
 									/>
+									<i className="fa fa-copy copyClipboard" onClick={copyContent} title="Copy Mail ID"></i>
 								</div>
 
 								<div>
