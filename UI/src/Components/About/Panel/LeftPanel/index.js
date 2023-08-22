@@ -15,22 +15,29 @@ function LeftPanel(props) {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		async function fetchMyAPI() {
+		const fetchMyAPI = async () => {
 			setLoading(true);
-			let response = await fetch(`/api/about/folders`);
-			if (response?.ok) {
-				response = await response.json();
-			}
-			if (response.success && response.data) {
-				setFolderData(response.data.folders);
-				folderSelected(response.data.defaultSelected);
+			try {
+				const response = await fetch(`/api/about/folders`);
+				if (response.ok) {
+					const responseData = await response.json();
+					if (responseData.success && responseData.data) {
+						setFolderData(responseData.data.folders);
+						folderSelected(responseData.data.defaultSelected);
+					} else {
+						console.log(responseData.statusText || responseData.message);
+					}
+				} else {
+					console.log("Network error");
+				}
+			} catch (error) {
+				console.error("An error occurred:", error);
+			} finally {
 				setLoading(false);
-			} else {
-				console.log(response.statusText || response.message);
-				setLoading(false);
 			}
-		}
-		return () => fetchMyAPI();
+		};
+
+		fetchMyAPI();
 	}, []);
 
 	const folderSelected = (data) => {

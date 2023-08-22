@@ -11,24 +11,31 @@ function Timeline() {
 
 	useEffect(() => {
 		async function fetchMyAPI() {
-			let response = await fetch(`/api/career`);
-			if (response?.ok) {
-				response = await response.json();
-			}
+			try {
+				setLoading(true);
+				let response = await fetch(`/api/career`);
 
-			if (response?.success && response?.data) {
-				setData([...response.data]);
+				if (!response.ok) {
+					throw new Error(`Failed to fetch data: ${response.statusText}`);
+				}
 
-				setLoading(false);
-			} else {
-				console.log(response.statusText || response.message);
+				let responseData = await response.json();
+
+				if (responseData.success) {
+					setData([...responseData.data]);
+				} else {
+					throw new Error(responseData.message || "API response unsuccessful");
+				}
+			} catch (error) {
+				console.error("An error occurred while fetching data:", error);
+			} finally {
 				setLoading(false);
 			}
 		}
-		return () => {
-			fetchMyAPI();
-		};
+
+		fetchMyAPI();
 	}, []);
+
 	useEffect(() => {
 		const sections = gsap.utils.toArray(".container section");
 		const mask = document.querySelector(".mask");

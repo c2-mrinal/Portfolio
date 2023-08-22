@@ -28,23 +28,30 @@ function RightPanel(props) {
 		async function fetchMyAPI() {
 			const value = folderIs.value;
 			if (value && !folderData[value]) {
-				setLoading(true);
-				let response = await fetch(`/api/about/details/${value}`);
+				try {
+					setLoading(true);
+					let response = await fetch(`/api/about/details/${value}`);
 
-				if (response?.ok) {
-					response = await response.json();
-				}
-				if (response.success) {
-					setdata(response.data);
-					storefolderDataUpdate(value, response.data);
-					setLoading(false);
-				} else {
+					if (!response.ok) {
+						throw new Error(`Failed to fetch data: ${response.statusText}`);
+					}
+
+					let responseData = await response.json();
+
+					if (responseData.success) {
+						setdata(responseData.data);
+						storefolderDataUpdate(value, responseData.data);
+					}
+				} catch (error) {
+					console.error("An error occurred while fetching data:", error);
+				} finally {
 					setLoading(false);
 				}
 			} else {
 				setdata(folderData[value]);
 			}
 		}
+
 		fetchMyAPI();
 		scrollToRef.current.scrollIntoView();
 	}, [folderIs.value]);
