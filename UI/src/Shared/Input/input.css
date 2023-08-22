@@ -29,7 +29,7 @@
 .form__label {
 	position: absolute;
 	top: 18px;
-	left: -1em;
+	left: -0.5rem;
 	display: block;
 	transition: 0.2s;
 	font-size: calc(1.5vw + 1vh);

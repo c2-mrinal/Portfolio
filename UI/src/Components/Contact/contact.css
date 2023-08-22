@@ -211,7 +211,7 @@ i {
 	opacity: 0.4;
 }
 .modelIcons i {
-	font-size: calc(1.5vw + 0.5vh);
+	font-size: calc(1rem + 1vw + 0.5vh);
 	cursor: pointer;
 }
 .downArrow {
@@ -225,4 +225,15 @@ i {
 	height: calc(10vh + 5vw);
 	width: calc(20vw + 20vh);
 	transform: rotate(180deg);
+}
+.copyClipboard {
+	cursor: pointer;
+	position: absolute;
+	/* left: auto; */
+	right: calc(2rem + 1vw);
+	top: 7vh;
+	font-size: calc(1.5vh + 1.5vw);
+}
+.copyClipboard:hover {
+	color: #76c773;
 }
