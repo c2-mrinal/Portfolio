@@ -344,15 +344,15 @@ const aboutData = {
 		Working on IOT Connect has provided me with valuable experience in working with cutting-edge technologies and handling complex functionalities.`,
 		activity: [
 			{
-				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/softwebSolutions/AEEE9DA7-264D-451B-B821-A166DA51.jpg",
+				img: "https://drive.google.com/uc?export=view&id=1yANirVF7uTFirZn0rNXXrkG25iBgveRD",
 				name: "SPL Winner 2022",
 			},
 			{
-				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/softwebSolutions/PHOTO-2022-10-20-23-59-50.jpeg",
+				img: "https://drive.google.com/uc?export=view&id=1Ikm3YxWF6zGexV3G-F8WSTAi45ut53UG",
 				name: "Team Lunch",
 			},
 			{
-				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/softwebSolutions/IMG_9343.jpeg",
+				img: "https://drive.google.com/uc?export=view&id=1ig5O15sw-jQvblYQHq5uDVsQPLgJBobd",
 				name: "Festival",
 			},
 		],
@@ -392,9 +392,9 @@ const aboutData = {
 		],
 		about: `As a react developer, I joined the QTM4J UI team at QMetry, a product-based firm offering test management products like QTM, QTM4J, and QAS. QTM4J integrates with Atlassian Jira for test management and exploratory testing. In my role as a UI developer, I enhance the codebase, address product tickets, introduce new features, and develop a chrome extension for exploratory testing. I was commended for successfully completing a problem-free sprint. These responsibilities have provided valuable experience, allowing me to contribute to the improvement of QTM4J and support efficient test management processes.`,
 		activity: [
-			{ img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/qmetry/IMG_5780.jpeg", name: "Festival" },
-			{ img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/qmetry/Team_Lunch.jpeg", name: "Team Lunch" },
-			{ img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/qmetry/Gift.jpeg", name: "Parting Gift" },
+			{ img: "https://drive.google.com/uc?export=view&id=17Cy8nEWLq2YgXabCW61cqwPr-U4GFDiC", name: "Festival" },
+			{ img: "https://drive.google.com/uc?export=view&id=1-EWKywch1qyWg1okXJueRic3tkzGx7g9", name: "Team Lunch" },
+			{ img: "https://drive.google.com/uc?export=view&id=1z6Sjn912St794EZwziCb-2_V6BaIByEG", name: "Parting Gift" },
 		],
 	},
 	magentaBI: {
@@ -432,14 +432,14 @@ const aboutData = {
     each UI component.`,
 		activity: [
 			{
-				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/magenta/team+trip(1).jpeg",
+				img: "https://drive.google.com/uc?export=view&id=1_ixjr5CSjwqtPOrgiCC9HLIS_tgLMoA9",
 				name: "Team Trip",
 			},
 			{
-				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/magenta/Brain+storning.jpeg",
+				img: "https://drive.google.com/uc?export=view&id=1wq5nIXtRMym_LI0GNYPuRWbI0toso7lI",
 				name: "Brain Storming",
 			},
-			{ img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/magenta/team+trip.jpeg", name: "Team Trip" },
+			{ img: "https://drive.google.com/uc?export=view&id=1td_GV2IAyFR_N9mZXSyZbFerrh-jmW_V", name: "Team Dinner" },
 		],
 	},
 	daiict: {
@@ -464,15 +464,15 @@ const aboutData = {
 		about: `I created a single-page Web App utilizing Vue-Cli and NodeJS, with the entire application relying on an API for streamlined and reliable data handling. This project provided an opportunity to learn VueJs, a new technology, and develop APIs using JSON. Through this experience, I gained valuable knowledge in building dynamic web applications and honed my skills in working with VueJs and API development.`,
 		activity: [
 			{
-				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/daiict/7E14067E-A3D3-4BA7-9F2D-D30A268E3C8F_1_201_a.jpeg",
+				img: "https://drive.google.com/uc?export=view&id=1tbwSb-eeIQjDd0EQIKreHxheUnSf2XDw",
 				name: "Fest",
 			},
 			{
-				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/daiict/7B01BF3D-FC46-4563-9B46-E82DA0C2CA10_1_201_a.jpeg",
+				img: "https://drive.google.com/uc?export=view&id=1DwEqHM06C1KZOOAwdfzpUfE_4YKNO9BG",
 				name: "Garba",
 			},
 			{
-				img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/daiict/28434664-447D-484B-87FA-A1705F9FAE50_1_201_a.jpeg",
+				img: "https://drive.google.com/uc?export=view&id=1SOwK8MC75CbmoL4akodNFvXL_xsVjFDc",
 				name: "Learing",
 			},
 		],
@@ -480,17 +480,26 @@ const aboutData = {
 	hobbie: [
 		{
 			section: "Sports",
-			expire: "",
 			content: [
 				{
-					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Hobbies/7613E935-4392-4E89-8936-2D8313479C6C_1_201_a.jpeg",
+					img: "https://drive.google.com/uc?export=view&id=1Je2nvw4BkkRZNiQ7K4TglZjGkG31Rwre",
 					header: "Cricket",
 					desc: "Passionately swinging bats, chasing boundaries, fielding with precision—cricket ignites my spirit, connecting me to camaraderie, skill, and sheer exhilaration.",
 				},
 				{
-					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Hobbies/CE397531-1934-4053-8536-F218AC2335AB_1_201_a.jpeg",
+					img: "https://drive.google.com/uc?export=view&id=1tCX_nnKMQvMlLXKIVI8Gmf6atHH4ZVjT",
 					header: "Cricket",
 					desc: "Passionately swinging bats, chasing boundaries, fielding with precision—cricket ignites my spirit, connecting me to camaraderie, skill, and sheer exhilaration.",
+				},
+			],
+		},
+		{
+			section: "Reading",
+			content: [
+				{
+					img: "https://drive.google.com/uc?export=view&id=1ynMNwz4lGk9HCUg9K-Q_-Z-Lm4uMxR5X",
+					header: "History",
+					desc: "Passionate reader with a love for words, exploring worlds through books, and unraveling stories with each page turned.",
 				},
 			],
 		},
@@ -501,7 +510,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Achievments/Pat_on_back.png",
+					img: "https://drive.google.com/uc?export=view&id=1HVTHPywPP6qhgBeTMnAdOtQ6FKZH4Ift",
 					desc: "Qmetry",
 				},
 			],
@@ -511,7 +520,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Achievments/Problem_solving_basics.png",
+					img: "https://drive.google.com/uc?export=view&id=1F79Mw_myyipxjJEaTrCUwMrR2npQomqu",
 					desc: "Hacker Rank ",
 				},
 			],
@@ -521,7 +530,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Achievments/Javascript_basics.png",
+					img: "https://drive.google.com/uc?export=view&id=12d9exIbsXrbJMZg_RZ_f4nxzo5KpvZRN",
 					desc: "Hacker Rank ",
 				},
 			],
