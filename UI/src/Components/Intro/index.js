@@ -7,6 +7,7 @@ import AboutBG from "./CursorComponents/AboutBG";
 import SkillBG from "./CursorComponents/SkillBG";
 import CareerBG from "./CursorComponents/CareerBG";
 import Loader from "../../Shared/Loader";
+import { useProgressiveImage } from "../../Shared/CustomHooks";
 
 function Intro(props) {
 	const [downloading, setDownloading] = useState(false);
@@ -14,6 +15,10 @@ function Intro(props) {
 	const [pointerComp, setPointerComp] = useState([false, false, false, false]);
 	const [loading, setLoading] = useState(false);
 	const isTouchDevice = useSelector((state) => state.deviceTypeTouch || false);
+	const pointerImage = useProgressiveImage(
+		"https://drive.google.com/uc?export=view&id=1DogaiT31_9vkDL6nlXe1qsSr47svQPZE"
+	);
+	const intoBGVid = useProgressiveImage("https://drive.google.com/uc?export=view&id=1WKIIMwcY-2GKVUcVjCi_IRQYkascvyna");
 
 	const downloadResume = async () => {
 		setDownloading(true);
@@ -47,10 +52,7 @@ function Intro(props) {
 			{loading && <Loader />}
 			<div className="myVideo">
 				<video autoPlay muted loop className="videoDimension">
-					<source
-						src={"https://drive.google.com/uc?export=view&id=1WKIIMwcY-2GKVUcVjCi_IRQYkascvyna"}
-						type="video/mp4"
-					/>
+					<source src={intoBGVid} type="video/mp4" />
 				</video>
 			</div>
 			<section className=" intoSection d-flex flex-direction-column">
@@ -73,8 +75,9 @@ function Intro(props) {
 					</div>
 					<div>
 						<img
-							src={"https://drive.google.com/uc?export=view&id=1DogaiT31_9vkDL6nlXe1qsSr47svQPZE"}
+							src={pointerImage}
 							className="pointingArrow"
+							style={{ display: `${pointerImage ? "block" : "none"}` }}
 							alt="error"
 						/>
 					</div>
