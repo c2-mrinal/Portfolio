@@ -26,7 +26,7 @@
   "scripts": {
     "start": "PORT=3333 react-scripts start",
     "serve": "webpack serve --mode development",
-    "build": "webpack --mode production && (cd ../API && npm install)"
+    "build": "PORT=3333 webpack --mode production "
   },
   "eslintConfig": {
     "extends": [
