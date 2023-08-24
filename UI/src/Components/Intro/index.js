@@ -55,7 +55,7 @@ function Intro(props) {
 					<source src={intoBGVid} type="video/mp4" />
 				</video>
 			</div>
-			<section className=" intoSection d-flex flex-direction-column">
+			<section className=" intoSection ">
 				<div className="resumeDownloadContainer">
 					<div
 						className={`btn-circle-download  ${downloading ? "load" : ""} ${downloadSuccess ? "done" : ""}`}
@@ -82,82 +82,74 @@ function Intro(props) {
 						/>
 					</div>
 				</div>
-				<div className="intoDesciption">
-					<h1>
-						<span>H</span>
-						<span>e</span>
-						<span>l</span>
-						<span>l</span>
-						<span>o</span>
-						<span> !</span>
+				<div className="intoDesciption ">
+					<h1 className="introHeader1">
+						{["h", "e", "l", "l", "o", "", "!"].map((val, ind) => {
+							return (
+								<span className={"text" + ind} style={{ left: `${ind * 3.5}vw` }}>
+									{" "}
+									{val}{" "}
+								</span>
+							);
+						})}
 					</h1>
-					<h1>
-						<span> I</span>
-						<span> a</span>
-						<span>m</span>
-						<span> M</span>
-						<span>r</span>
-						<span>i</span>
-						<span>n</span>
-						<span>a</span>
-						<span>l</span>
-						<span> K</span>
-						<span>a</span>
-						<span>s</span>
-						<span>y</span>
-						<span>a</span>
-						<span>p</span>
+					<h1 className="introHeader2">
+						{["I", "", "a", "m", "", "M", "r", "i", "n", "a", "l", "", "K", "a", "s", "y", "a", "p"].map((val, ind) => {
+							return (
+								<span className="" style={{ left: `${[6, 7].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw` }}>
+									{val}
+								</span>
+							);
+						})}
 					</h1>
-					<h1>
-						<span>J</span>
-						<span>a</span>
-						<span>v</span>
-						<span>a</span>
-						<span>S</span>
-						<span>c</span>
-						<span>r</span>
-						<span>i</span>
-						<span>p</span>
-						<span>t</span>
-						<span> D</span>
-						<span>e</span>
-						<span>v</span>
-						<span>e</span>
-						<span>l</span>
-						<span>o</span>
-						<span>p</span>
-						<span>e</span>
-						<span>r</span>
+					<h1 className="introHeader3">
+						{["m", "e", "r", "n", "", "D", "e", "v", "e", "l", "o", "p", "e", "r"].map((val, ind) => {
+							return (
+								<span className="" style={{ left: `${[1].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw` }}>
+									{val}
+								</span>
+							);
+						})}
 					</h1>
-					<h1>
-						<span>D</span>
-						<span>e</span>
-						<span>v</span>
-						<span>e</span>
-						<span>l</span>
-						<span>o</span>
-						<span>p</span>
-						<span>i</span>
-						<span>n</span>
-						<span>g</span>
-						<span> t</span>
-						<span>h</span>
-						<span>e</span>
-						<span> c</span>
-						<span>h</span>
-						<span>a</span>
-						<span>n</span>
-						<span>g</span>
-						<span>e</span>
-						<span> U</span>
-						<span>&</span>
-						<span>I</span>
-						<span> n</span>
-						<span>e</span>
-						<span>e</span>
-						<span>d</span>
-						<span>s</span>
-						<span> ...</span>
+					<h1 className="introHeader4">
+						{[
+							"D",
+							"e",
+							"v",
+							"e",
+							"l",
+							"o",
+							"p",
+							"i",
+							"n",
+							"g",
+							"",
+							"t",
+							"h",
+							"e",
+							"",
+							"c",
+							"h",
+							"a",
+							"n",
+							"g",
+							"e",
+						].map((val, ind) => {
+							return (
+								<span className="" style={{ left: `${ind * 3.5}vw` }}>
+									{val}
+								</span>
+							);
+						})}
+					</h1>
+					<h1 className="introHeader5">
+						{["U", "&", "I", "", "n", "e", "e", "d", "s", ". . ."].map((val, ind) => {
+							return (
+								<span className={"text" + ind} style={{ left: `${ind * 3.5}vw` }}>
+									{val}
+								</span>
+							);
+						})}
 					</h1>
 				</div>
 			</section>

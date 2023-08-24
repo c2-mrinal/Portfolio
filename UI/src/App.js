@@ -9,7 +9,7 @@ import configureStore from "./Store/store";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
+import "./Shared/Fonts/fonts.css";
 const Intro = lazy(() => import("./Components/Intro"));
 // const Timeline = lazy(() => import("./Components/Timeline"));
 const Contact = lazy(() => import("./Components/Contact"));
