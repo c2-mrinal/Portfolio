@@ -100,7 +100,21 @@ li a:hover:not(.active) {
 	font-size: clamp(0.5rem, calc(1vh + 2vw), 1.6rem);
 	font-weight: 800;
 	font-family: "Courier New", Courier, monospace;
-	color: rgb(38, 38, 38);
+	color: radial-gradient(
+		circle,
+		#f3ff66,
+		#ffdf6f,
+		#ffc391,
+		#ffb4b6,
+		#ffb0cf,
+		#f1b8e6,
+		#ddc2f6,
+		#c7ccff,
+		#a0dbff,
+		#6ceaff,
+		#47f7ff,
+		#65ffdb
+	);
 }
 .menuList0 {
 	margin: 1vh auto;
@@ -134,9 +148,6 @@ li a:hover:not(.active) {
 	left: -100px;
 
 	animation: slideInFromRight 0.7s ease-in-out;
-}
-.menuList1.reverse {
-	animation: slideOutToRight 0.5s ease-in forwards;
 }
 
 @keyframes slideInFromRight {

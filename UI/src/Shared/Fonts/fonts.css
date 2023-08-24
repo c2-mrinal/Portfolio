@@ -1,0 +1,4 @@
+@font-face {
+	font-family: "Bungee-Regular"; /* Replace 'YourFontFamilyName' with the actual font name */
+	src: url("./Bungee-Regular.ttf") format("truetype"); /* Add additional 'src' lines for other font file formats if necessary */
+}
