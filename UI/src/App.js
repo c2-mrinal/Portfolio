@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./Shared/Fonts/fonts.css";
 const Intro = lazy(() => import("./Components/Intro"));
-// const Timeline = lazy(() => import("./Components/Timeline"));
+const Timeline = lazy(() => import("./Components/Timeline"));
 const Contact = lazy(() => import("./Components/Contact"));
 const Skills = lazy(() => import("./Components/Skill"));
 const About = lazy(() => import("./Components/About"));
@@ -27,7 +27,7 @@ function App() {
 					<Suspense fallback={<Loader />}>
 						<Routes className="headerPlaced">
 							<Route path="/" element={<Intro />} />
-							<Route path="/career" element={<UnderProgress />} />
+							<Route path="/career" element={<Timeline />} />
 							<Route path="/contact" element={<Contact />} />
 							<Route path="/about" element={<About />} />
 							<Route path="/skill" element={<Skills />} />

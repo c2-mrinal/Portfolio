@@ -18,7 +18,7 @@ function Intro(props) {
 	const pointerImage = useProgressiveImage(
 		"https://drive.google.com/uc?export=view&id=1DogaiT31_9vkDL6nlXe1qsSr47svQPZE"
 	);
-	const intoBGVid = useProgressiveImage("https://drive.google.com/uc?export=view&id=1WKIIMwcY-2GKVUcVjCi_IRQYkascvyna");
+	const intoBGVid = useProgressiveImage("");
 
 	const downloadResume = async () => {
 		setDownloading(true);
@@ -52,7 +52,10 @@ function Intro(props) {
 			{loading && <Loader />}
 			<div className="myVideo">
 				<video autoPlay muted loop className="videoDimension">
-					<source src={intoBGVid} type="video/mp4" />
+					<source
+						src={"https://drive.google.com/uc?export=view&id=1WKIIMwcY-2GKVUcVjCi_IRQYkascvyna"}
+						type="video/mp4"
+					/>
 				</video>
 			</div>
 			<section className=" intoSection ">
