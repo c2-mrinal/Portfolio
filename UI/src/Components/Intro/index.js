@@ -7,6 +7,8 @@ import AboutBG from "./CursorComponents/AboutBG";
 import SkillBG from "./CursorComponents/SkillBG";
 import CareerBG from "./CursorComponents/CareerBG";
 import Loader from "../../Shared/Loader";
+import pointerGif from "../../image/invertedArrowPointing.gif";
+
 import { useProgressiveImage } from "../../Shared/CustomHooks";
 
 function Intro(props) {
@@ -15,10 +17,8 @@ function Intro(props) {
 	const [pointerComp, setPointerComp] = useState([false, false, false, false]);
 	const [loading, setLoading] = useState(false);
 	const isTouchDevice = useSelector((state) => state.deviceTypeTouch || false);
-	const pointerImage = useProgressiveImage(
-		"https://drive.google.com/uc?export=view&id=1DogaiT31_9vkDL6nlXe1qsSr47svQPZE"
-	);
-	const intoBGVid = useProgressiveImage("");
+	const pointerImage = useProgressiveImage(pointerGif);
+	const intoBGVid = useProgressiveImage("https://drive.google.com/uc?export=view&id=1WKIIMwcY-2GKVUcVjCi_IRQYkascvyna");
 
 	const downloadResume = async () => {
 		setDownloading(true);
@@ -51,11 +51,8 @@ function Intro(props) {
 		<>
 			{loading && <Loader />}
 			<div className="myVideo">
-				<video autoPlay muted loop className="videoDimension">
-					<source
-						src={"https://drive.google.com/uc?export=view&id=1WKIIMwcY-2GKVUcVjCi_IRQYkascvyna"}
-						type="video/mp4"
-					/>
+				<video autoPlay muted loop className="videoDimension" style={{ display: `${intoBGVid ? "block" : "none"}` }}>
+					<source src={intoBGVid} type="video/mp4" />
 				</video>
 			</div>
 			<section className=" intoSection ">
@@ -89,7 +86,7 @@ function Intro(props) {
 					<h1 className="introHeader1">
 						{["h", "e", "l", "l", "o", "", "!"].map((val, ind) => {
 							return (
-								<span className={"text" + ind} style={{ left: `${ind * 3.5}vw` }}>
+								<span className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
 									{" "}
 									{val}{" "}
 								</span>
@@ -99,7 +96,12 @@ function Intro(props) {
 					<h1 className="introHeader2">
 						{["I", "", "a", "m", "", "M", "r", "i", "n", "a", "l", "", "K", "a", "s", "y", "a", "p"].map((val, ind) => {
 							return (
-								<span className="" style={{ left: `${[6, 7].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw` }}>
+								<span
+									className=""
+									style={{
+										left: `calc( ${ind * 0.2}rem + ${[6, 7].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw)`,
+									}}
+								>
 									{val}
 								</span>
 							);
@@ -108,7 +110,10 @@ function Intro(props) {
 					<h1 className="introHeader3">
 						{["m", "e", "r", "n", "", "D", "e", "v", "e", "l", "o", "p", "e", "r"].map((val, ind) => {
 							return (
-								<span className="" style={{ left: `${[1].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw` }}>
+								<span
+									className=""
+									style={{ left: `calc( ${ind * 0.2}rem + ${[1].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw)` }}
+								>
 									{val}
 								</span>
 							);
@@ -139,7 +144,7 @@ function Intro(props) {
 							"e",
 						].map((val, ind) => {
 							return (
-								<span className="" style={{ left: `${ind * 3.5}vw` }}>
+								<span className="" style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
 									{val}
 								</span>
 							);
@@ -148,7 +153,7 @@ function Intro(props) {
 					<h1 className="introHeader5">
 						{["U", "&", "I", "", "n", "e", "e", "d", "s", ". . ."].map((val, ind) => {
 							return (
-								<span className={"text" + ind} style={{ left: `${ind * 3.5}vw` }}>
+								<span className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
 									{val}
 								</span>
 							);
