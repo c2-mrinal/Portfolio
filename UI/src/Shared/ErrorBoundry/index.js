@@ -17,11 +17,7 @@ class ErrorBoundary extends Component {
 
 	render() {
 		if (this.state.hasError) {
-			return (
-				<div>
-					<NotFound />
-				</div>
-			);
+			return <div>{this.props.hide ? "" : <NotFound />}</div>;
 		}
 
 		return this.props.children;
