@@ -10,6 +10,7 @@ import configureStore from "./Store/store";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./Shared/Fonts/fonts.css";
+import ErrorBoundary from "./Shared/ErrorBoundry";
 const Intro = lazy(() => import("./Components/Intro"));
 const Timeline = lazy(() => import("./Components/Timeline"));
 const Contact = lazy(() => import("./Components/Contact"));
@@ -26,13 +27,62 @@ function App() {
 					<Header />
 					<Suspense fallback={<Loader />}>
 						<Routes className="headerPlaced">
-							<Route path="/" element={<Intro />} />
-							<Route path="/career" element={<Timeline />} />
-							<Route path="/contact" element={<Contact />} />
-							<Route path="/about" element={<About />} />
-							<Route path="/skill" element={<Skills />} />
-							<Route path="/loader" element={<Loader />} />
-							<Route path="*" element={<NotFound />} />
+							<Route
+								path="/"
+								element={
+									<ErrorBoundary>
+										<Intro />
+									</ErrorBoundary>
+								}
+							/>
+							<Route
+								path="/career"
+								element={
+									<ErrorBoundary>
+										<Timeline />
+									</ErrorBoundary>
+								}
+							/>
+							<Route
+								path="/contact"
+								element={
+									<ErrorBoundary>
+										<Contact />
+									</ErrorBoundary>
+								}
+							/>
+							<Route
+								path="/about"
+								element={
+									<ErrorBoundary>
+										<About />
+									</ErrorBoundary>
+								}
+							/>
+							<Route
+								path="/skill"
+								element={
+									<ErrorBoundary>
+										<Skills />
+									</ErrorBoundary>
+								}
+							/>
+							<Route
+								path="/loader"
+								element={
+									<ErrorBoundary>
+										<Loader />
+									</ErrorBoundary>
+								}
+							/>
+							<Route
+								path="*"
+								element={
+									<ErrorBoundary>
+										<NotFound />
+									</ErrorBoundary>
+								}
+							/>
 						</Routes>
 					</Suspense>
 				</BrowserRouter>

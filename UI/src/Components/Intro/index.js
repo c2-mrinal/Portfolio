@@ -86,7 +86,12 @@ function Intro(props) {
 					<h1 className="introHeader1">
 						{["h", "e", "l", "l", "o", "", "!"].map((val, ind) => {
 							return (
-								<span className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
+								<span
+									key={ind}
+									className={"text" + ind}
+									key={ind}
+									style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}
+								>
 									{" "}
 									{val}{" "}
 								</span>
@@ -98,6 +103,7 @@ function Intro(props) {
 							return (
 								<span
 									className=""
+									key={ind}
 									style={{
 										left: `calc( ${ind * 0.2}rem + ${[6, 7].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw)`,
 									}}
@@ -112,6 +118,7 @@ function Intro(props) {
 							return (
 								<span
 									className=""
+									key={ind}
 									style={{ left: `calc( ${ind * 0.2}rem + ${[1].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw)` }}
 								>
 									{val}
@@ -144,7 +151,7 @@ function Intro(props) {
 							"e",
 						].map((val, ind) => {
 							return (
-								<span className="" style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
+								<span key={ind} className="" style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
 									{val}
 								</span>
 							);
@@ -153,7 +160,7 @@ function Intro(props) {
 					<h1 className="introHeader5">
 						{["U", "&", "I", "", "n", "e", "e", "d", "s", ". . ."].map((val, ind) => {
 							return (
-								<span className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
+								<span key={ind} className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
 									{val}
 								</span>
 							);
