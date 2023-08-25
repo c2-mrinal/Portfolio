@@ -53,6 +53,10 @@
 .pointingArrow {
 	height: calc(15vh + 16vw);
 	width: calc(20vw + 10vh);
+	position: relative;
+	margin-top: -3vw;
+	margin-left: auto;
+	margin-right: 0vw;
 }
 
 .isInverted {
@@ -222,12 +226,6 @@
 	width: 100vw;
 }
 
-@media only screen and (max-width: 1200px) {
-}
-@media only screen and (max-width: 600px) {
-}
-@media only screen and (max-width: 425px) {
-}
 .cursorAnimationSection {
 	background-color: black;
 }
@@ -456,17 +454,17 @@
 	background-image: radial-gradient(
 		circle,
 		#f3ff66,
-		#ffdf6f,
+		#d5ae1f,
 		#ffc391,
-		#ffb4b6,
+		#a989e8,
 		#ffb0cf,
 		#f1b8e6,
 		#ddc2f6,
 		#c7ccff,
-		#a0dbff,
-		#6ceaff,
-		#47f7ff,
-		#65ffdb
+		#d7f987,
+		#87efa3,
+		#7beda0,
+		#80e280
 	);
 	margin-bottom: 20px;
 	background-size: 200% 200%;
@@ -519,4 +517,51 @@
 	font-size: calc(0.6rem + 1vw);
 	margin: 2vh 0 0 1vw;
 	transform: rotate(-33deg);
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+	.intoDesciption .introHeader1 {
+		margin-top: calc(-28vh);
+	}
+	.intoDesciption .introHeader2 {
+		margin-top: calc(-21vh);
+	}
+	.intoDesciption .introHeader3 {
+		margin-top: calc(-14vh);
+	}
+	.intoDesciption .introHeader4 {
+		margin-top: calc(-7vh);
+	}
+	.intoDesciption .introHeader6 {
+		margin-top: calc(0vw);
+	}
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 768px) {
+	.intoDesciption .introHeader1 {
+		margin-top: calc(-20vh);
+	}
+	.intoDesciption .introHeader2 {
+		margin-top: calc(-15vh);
+	}
+	.intoDesciption .introHeader3 {
+		margin-top: calc(-10vh);
+	}
+	.intoDesciption .introHeader4 {
+		margin-top: calc(-5vh);
+	}
+	.intoDesciption .introHeader6 {
+		margin-top: calc(0vw);
+	}
+	.introHeader5 .text1 {
+		margin: 1vh 0 0 1vw;
+	}
+	.introHeader5 .text9 {
+		width: 15vw;
+	}
+	.intoDesciption {
+		/* padding: 0px 0px 10vh 10vw; */
+		padding-left: 3vw;
+	}
 }
