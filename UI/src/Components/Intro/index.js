@@ -7,9 +7,9 @@ import AboutBG from "./CursorComponents/AboutBG";
 import SkillBG from "./CursorComponents/SkillBG";
 import CareerBG from "./CursorComponents/CareerBG";
 import Loader from "../../Shared/Loader";
+import IntroSection from "./IntroSection";
 
 import { useProgressiveImage } from "../../Shared/CustomHooks";
-import IntroSection from "./IntroSection";
 import ErrorBoundary from "../../Shared/ErrorBoundry";
 
 function Intro(props) {
