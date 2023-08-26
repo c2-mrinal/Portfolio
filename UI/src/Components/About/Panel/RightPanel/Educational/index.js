@@ -21,35 +21,36 @@ export default function Educational(props) {
 	return (
 		<div>
 			<div className="">
-				<div className="educationHeader row">
-					<div className="col-sm-12 col-md-3 educationHeaderContainer">
-						<div>
-							<a href={data.url}>
-								<img className="educationImage" src={data?.img} height="150" width="150" alt="" loading="lazy" />
-							</a>
+				<div className="educationHeader">
+					<div className="infoTextContainer">
+						<div className="col-sm-12 col-md-3 educationHeaderContainer">
+							<div>
+								<a href={data.url}>
+									<img className="educationImage" src={data?.img} height="150" width="150" alt="" loading="lazy" />
+								</a>
+							</div>
+							<div>
+								<em>{` ( ${data.term} ) `}</em>
+							</div>
 						</div>
-						<div>
-							<em>{` ( ${data.term} ) `}</em>
-						</div>
-					</div>
-					<div className="col-sm-12 col-md-9 infoTextContainer">
-						<div className="">
+
+						<div className="infoSwitchTab">
 							{data &&
 								data.info?.map((info, ind) => {
 									!showDetail && ind === 0 && showDetails(info[1], ind);
 									return (
-										<span
+										<div
 											className={`infoTextBox ${selectedIndex === ind ? "infoTextBoxSelected" : ""} `}
 											onClick={() => showDetails(info[1], ind)}
 											key={info[1]}
 										>
 											<strong>{info[0]} </strong>
-										</span>
+										</div>
 									);
 								})}
 						</div>
-						{showDetail ? <div className="detailsStyled"> {showDetail}</div> : ""}
 					</div>
+					{showDetail ? <div className="detailsStyled"> {showDetail}</div> : ""}
 				</div>
 				<div className="card-body rightPanel">
 					{data.about ? (
@@ -72,7 +73,7 @@ export default function Educational(props) {
 								{data.projects.map((data, ind) => {
 									return (
 										<React.Fragment key={ind}>
-											<h4>
+											<h4 className="eduProjHeader">
 												<strong>{data.name}</strong>
 											</h4>
 											<div>{data.description}</div>
