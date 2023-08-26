@@ -460,7 +460,11 @@ const aboutData = {
 			ExpressJS: "fa-brands fa-square-js",
 			NodeJS: "fa-brands fa-node",
 		},
-		notableWork: ["1", "2", "3"],
+		notableWork: [
+			"Developed Vue.js single-page web app, showcasing adaptability to new technologies.",
+			"Integrated APIs for efficient data handling, demonstrating backend development skills.",
+			"Gained hands-on experience in web development during summer internship, using Vue.js, Express.js, and Node.js.",
+		],
 		about: `I created a single-page Web App utilizing Vue-Cli and NodeJS, with the entire application relying on an API for streamlined and reliable data handling. This project provided an opportunity to learn VueJs, a new technology, and develop APIs using JSON. Through this experience, I gained valuable knowledge in building dynamic web applications and honed my skills in working with VueJs and API development.`,
 		activity: [
 			{
