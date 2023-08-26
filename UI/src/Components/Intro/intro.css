@@ -1,11 +1,6 @@
-/* .backgroundImage{
-    background-image: url("../../image/backgroundMain.mp4");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-} */
+#bg-video::-webkit-media-controls-start-playback-button {
+	display: none;
+}
 .myVideo {
 	position: absolute;
 	top: 0;
@@ -36,7 +31,7 @@
 .resumeDownloadContainer {
 	margin-left: auto;
 	margin-bottom: auto;
-	padding-right: 5vw;
+	padding-right: 10vw;
 	padding-top: 15vh;
 	position: relative;
 	z-index: 11;
@@ -61,32 +56,35 @@
 .pointingArrow {
 	height: calc(15vh + 16vw);
 	width: calc(20vw + 10vh);
+	position: relative;
+	margin-top: -3vw;
+	margin-left: auto;
+	margin-right: 0vw;
 }
 
 .isInverted {
-	-webkit-filter: invert(1);
-	filter: invert(1);
+	/* -webkit-filter: invert(1);
+	filter: invert(1); */
 }
 
 .intoDesciption {
 	position: absolute;
 	bottom: 0px;
-	padding: 0px 0px 15vh 15vw;
-	color: aliceblue;
+	padding: 0px 0px 10vh 10vw;
+	color: #d3c3fadb;
 	z-index: 11;
 }
 .intoDesciption h1 {
 	position: relative;
 	min-width: calc(45vw);
-
-	font-family: fantasy;
+	font-family: "Bungee-Regular";
 	font-weight: 900;
-	font-size: calc(0.7rem + 3.5vw);
+	font-size: calc(0.7rem + 3vw);
 }
-.intoDesciption span:hover {
+/* .intoDesciption span:hover {
 	position: relative;
 	font-size: calc(1rem + 2.5vw);
-	/* cursor: zoom-in; */
+	cursor: zoom-in;
 	text-transform: uppercase;
 	z-index: 100;
 	-webkit-animation: scale 1s linear;
@@ -94,7 +92,7 @@
 	animation: scale 1s linear;
 	transform-origin: 50% 50%;
 	animation-fill-mode: forwards;
-}
+} */
 
 /* download button */
 
@@ -224,121 +222,83 @@
 
 .cursorAnimationText {
 	position: relative;
-	/* margin-top: -4%; */
 	background: rgb(11, 11, 11);
 	text-align: center;
 	color: white;
 	font-family: cursive;
 	width: 100vw;
 }
+.cursorAniContainer {
+	display: grid;
+	grid-template-columns: repeat(2, 50vw);
+}
 
-/* media Query for Page */
-@media only screen and (max-width: 1200px) {
-	/*Tablets [601px -> 1200px]*/
-}
-@media only screen and (max-width: 600px) {
-	/*Big smartphones [426px -> 600px]*/
-}
-@media only screen and (max-width: 425px) {
-	/* .btn-circle-download {
-		position: relative;
-		height: 4rem;
-		width: 4rem;
-		margin: auto 1rem auto auto;
-		border-radius: 100%;
-		background: #e8eaed;
-		cursor: pointer;
-		overflow: hidden;
-		transition: all 0.2s ease;
-	}
-	.btn-circle-download svg#border {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 5rem;
-		width: 6rem;
-		stroke: none;
-		stroke-dasharray: 144;
-		stroke-dashoffset: 144;
-		transition: all 0.9s linear;
-	}
-	.btn-circle-download svg#arrow {
-		position: absolute;
-		top: 1rem;
-		left: 2rem;
-		height: 3rem;
-		width: 2rem;
-		stroke: #9098a9;
-		transition: all 0.2s ease;
-	}
-	.btn-circle-download svg#check {
-		position: absolute;
-		top: 2rem;
-		left: 2.5rem;
-		top: 1rem;
-		left: 2rem;
-		height: 3rem;
-		width: 2rem;
-		stroke: white;
-		transform: scale(0);
-	}
-	.pointingArrow {
-		height: 15rem;
-		width: 10rem;
-	} */
-}
 .cursorAnimationSection {
-	background-color: black;
+	height: 50vh;
+	background-color: rgb(0, 0, 0);
 }
 
-.cursorAnimationSection .col-sm-3,
+/* .cursorAnimationSection .col-sm-3,
 .col-lg-3 {
 	margin: 0px;
 	padding: 0px;
+} */
+.ca1 {
+	border-right: 5px solid rgb(188, 188, 246);
 }
-
+.ca2 {
+}
+.ca3 {
+	border-top: 5px solid rgb(188, 188, 246);
+	border-right: 5px solid rgb(188, 188, 246);
+}
+.ca4 {
+	border-top: 5px solid rgb(188, 188, 246);
+}
 .cursorAnimation {
-	height: 100vh;
+	max-height: 50vh;
 	width: 100%;
 	cursor: none;
 }
-.cursorAnimation {
-	height: 100vh;
-	width: 100%;
-}
+
 .cursorBubbleAnimation {
 	margin: 0px;
 	padding: 0px;
-	height: 100vh;
+	height: 50vh;
 	width: 100%;
 }
-
-.careerPageDetail {
-	display: inline-block;
+.pageDetail {
 	position: relative;
-	top: -50%;
-	left: 35%;
+	text-align: center;
+	align-items: center;
+	margin: auto;
+	height: 100%;
+	top: -70%;
 }
+.pageDetail h3 {
+	color: black;
+	font-weight: 900;
+}
+
 .skillPageDetail {
-	display: inline-block;
-	position: relative;
-	top: -50%;
-	left: 35%;
+	/* display: inline-block; */
+	/* position: relative; */
+	/* top: -50%;
+	left: 35%; */
 }
 .aboutPageDetail {
-	display: inline-block;
-	position: relative;
-	top: -50%;
-	left: 35%;
+	/* display: inline-block; */
+	/* position: relative; */
+	/* top: -50%;
+	left: 35%; */
 }
 .contactPageDetail {
-	display: inline-block;
-	position: relative;
-	top: -50%;
-	left: 35%;
+	/* display: inline-block; */
+	/* position: relative; */
+	/* top: -50%;
+	left: 35%; */
 }
 .trail {
-	/* className for the trail elements */
 	position: absolute;
 	height: 10px;
 	width: 10px;
@@ -347,26 +307,15 @@
 	cursor: none;
 }
 
-.careerbg {
-	background-color: rgb(0, 0, 0);
+.cursorbg {
+	background-color: #28282b;
 	position: relative;
 	cursor: none;
-}
-
-.skillbg {
-	background-color: rgb(0, 0, 0);
-	position: relative;
-	cursor: none;
-}
-
-.aboutbg {
-	background-color: rgb(0, 0, 0);
-	position: relative;
 }
 
 .contactPointer {
 	background-color: rgb(0, 0, 0);
-	position: relative;
+	/* positio/n: relative; */
 }
 .bubble {
 	border-radius: 50%;
@@ -379,144 +328,133 @@
 	border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%;
 	box-shadow: 0 -2vmin 4vmin LightPink inset, 0 1vmin 4vmin MediumPurple inset, 0 -2vmin 7vmin purple inset;
 	content: "";
-	filter: drop-shadow(0 0 3vmin Thistle) drop-shadow(0 5vmin 4vmin Orchid)
-		drop-shadow(2vmin -2vmin 15vmin MediumSlateBlue) drop-shadow(0 0 7vmin MediumOrchid);
-	height: 8rem;
-	width: 8rem;
+	height: calc(3rem + 4vw + 2vh);
+	width: calc(3rem + 4vw + 2vh);
 	cursor: pointer;
 	z-index: 20;
-}
-/* .careerPageDetail .introCursorButton {
-	animation: anim 20s infinite;
-	animation-delay: 1s;
-} */
-/* .skillbg .introCursorButton {
-	animation: anim 20s infinite;
-	animation-delay: 2s;
-}
-.aboutbg .introCursorButton {
-	animation: anim 20s infinite;
-	animation-delay: 3s;
-}
-.contactPointer .introCursorButton {
-	animation: anim 30s infinite;
-	animation-delay: 4s;
-} */
-
-@keyframes anim {
-	0%,
-	100% {
-		border-radius: 30% 70% 70% 30% / 30% 52% 48% 70%;
-		box-shadow: 0 -2vmin 4vmin LightPink inset, 0 -4vmin 4vmin MediumPurple inset, 0 -2vmin 7vmin purple inset;
-	}
-
-	10% {
-		border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
-	}
-
-	20% {
-		border-radius: 67% 33% 47% 53% / 37% 20% 80% 63%;
-	}
-
-	30% {
-		border-radius: 39% 61% 47% 53% / 37% 40% 60% 63%;
-		box-shadow: 0 -4vmin 8vmin hotpink inset, -1vmin -2vmin 6vmin LightPink inset,
-			-1vmin -2vmin 4vmin MediumPurple inset, 1vmin 4vmin 8vmin purple inset;
-	}
-
-	40% {
-		border-radius: 39% 61% 82% 18% / 74% 40% 60% 26%;
-	}
-
-	50% {
-		border-radius: 100%;
-		box-shadow: 0 4vmin 16vmin hotpink inset, 0 2vmin 5vmin LightPink inset, 0 4vmin 4vmin MediumPurple inset,
-			0 6vmin 8vmin purple inset;
-	}
-
-	60% {
-		border-radius: 50% 50% 53% 47% / 72% 69% 31% 28%;
-	}
-
-	70% {
-		border-radius: 50% 50% 53% 47% / 26% 22% 78% 74%;
-		box-shadow: 1vmin 1vmin 8vmin LightPink inset, 2vmin -1vmin 4vmin MediumPurple inset,
-			-1vmin -1vmin 16vmin purple inset;
-	}
-
-	80% {
-		border-radius: 50% 50% 53% 47% / 26% 69% 31% 74%;
-	}
-
-	90% {
-		border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
-	}
+	color: black;
+	font-weight: 700;
 }
 
-/* career cursor animation */
-
-.careerCursor {
-	width: 20px;
-	height: 20px;
-	border: 10px solid rgba(50, 243, 60, 0.8);
-	border-radius: 50%;
+.intoDesciption h1 {
 	position: absolute;
-	transition-duration: 200ms;
-	transition-timing-function: ease-out;
-	animation: careerCursor-animate 550ms infinite alternate;
 }
-
-.careerCursor::after {
-	content: "";
-	width: 40px;
-	height: 40px;
-	border: 15px solid rgba(50, 243, 60, 0.2);
-	border-radius: 50%;
+.intoDesciption span {
+	text-transform: uppercase;
+	cursor: grabbing;
 	position: absolute;
-	top: -25px;
-	left: -25px;
-	animation: careerCursor-animate-2 550ms infinite alternate;
+	background-color: rgb(155, 111, 243);
+	background-image: radial-gradient(
+		circle,
+		#f3ff66,
+		#d5ae1f,
+		#ffc391,
+		#a989e8,
+		#ffb0cf,
+		#f1b8e6,
+		#ddc2f6,
+		#c7ccff,
+		#d7f987,
+		#87efa3,
+		#7beda0,
+		#80e280
+	);
+	margin-bottom: 20px;
+	background-size: 200% 200%;
+	animation: vroomRainbow 2s ease-in-out infinite;
+	background-clip: text;
+	-webkit-background-clip: text;
+	transition: all 0.1s ease-in-out;
 }
-.careerCursor--expand {
-	animation: careerCursor-animate-3 550ms forwards;
-	border: 10px solid rgb(1, 60, 4);
-}
-
-.careerCursor--expand::after {
-	border: 15px solid rgba(1, 60, 4, 0.3);
-}
-
-@keyframes careerCursor-animate {
-	from {
-		transform: scale(1);
-	}
-
-	to {
-		transform: scale(1.5);
-	}
-}
-
-@keyframes careerCursor-animate-2 {
-	from {
-		transform: scale(1);
-	}
-
-	to {
-		transform: scale(0.3);
-	}
+.intoDesciption span:hover {
+	transform: scale(1.7);
+	color: rgba(0, 0, 0, 0);
 }
 
-@keyframes careerCursor-animate-3 {
+@keyframes vroomRainbow {
 	0% {
-		transform: scale(1);
+		background-position: 0 0;
 	}
-
-	50% {
-		transform: scale(3);
+	20% {
+		background-position: 20% 0;
 	}
-
+	40% {
+		background-position: 40% 0;
+	}
+	60% {
+		background-position: 100% 0;
+	}
+	80% {
+		background-position: 50% 0;
+	}
 	100% {
-		transform: scale(1);
-		opacity: 0;
+		background-position: 0% 0;
+	}
+}
+.intoDesciption .introHeader1 {
+	margin-top: -40vh;
+}
+.intoDesciption .introHeader2 {
+	margin-top: -30vh;
+}
+.intoDesciption .introHeader3 {
+	margin-top: -20vh;
+}
+.intoDesciption .introHeader4 {
+	margin-top: -10vh;
+}
+.intoDesciption .introHeader6 {
+	margin-top: 0vh;
+}
+.introHeader5 .text1 {
+	font-size: calc(0.6rem + 1vw);
+	margin: 2vh 0 0 1vw;
+	transform: rotate(-33deg);
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+	.intoDesciption .introHeader1 {
+		margin-top: calc(-28vh);
+	}
+	.intoDesciption .introHeader2 {
+		margin-top: calc(-21vh);
+	}
+	.intoDesciption .introHeader3 {
+		margin-top: calc(-14vh);
+	}
+	.intoDesciption .introHeader4 {
+		margin-top: calc(-7vh);
+	}
+	.intoDesciption .introHeader6 {
+		margin-top: calc(0vw);
+	}
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 768px) {
+	.intoDesciption .introHeader1 {
+		margin-top: calc(-20vh);
+	}
+	.intoDesciption .introHeader2 {
+		margin-top: calc(-15vh);
+	}
+	.intoDesciption .introHeader3 {
+		margin-top: calc(-10vh);
+	}
+	.intoDesciption .introHeader4 {
+		margin-top: calc(-5vh);
+	}
+	.intoDesciption .introHeader6 {
+		margin-top: calc(0vw);
+	}
+	.introHeader5 .text1 {
+		margin: 1vh 0 0 1vw;
+	}
+	.introHeader5 .text9 {
+		width: 15vw;
+	}
+	.intoDesciption {
+		/* padding: 0px 0px 10vh 10vw; */
+		padding-left: 3vw;
 	}
 }

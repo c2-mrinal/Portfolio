@@ -1,86 +1,145 @@
-.timelineCointainer {
-	margin: 0px;
-	width: 100vw;
-	margin-top: 20vh;
-	position: fixed;
+.containers {
+	width: 600vw;
+	height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
 }
 
-.hg-80 {
-	height: 70vh;
-	border: 1px dashed black;
+.firstContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: yellow;
 }
+
+.lastContainer {
+	display: flex;
+	height: 100vh;
+	background: yellow;
+}
+
+.panel {
+	width: 100vw;
+	height: 100vh;
+}
+.textContainer {
+	position: absolute;
+	display: flex;
+	height: 60vh;
+	width: 100vw;
+	top: 20%;
+}
+
+.timeLineFrame {
+	width: 100vw;
+	z-index: 5;
+	height: 60vh;
+	width: 100vw;
+	position: fixed;
+	display: flex;
+	top: 20%;
+	overflow: hidden;
+
+	/* background-color: white; */
+}
+.contain1,
+.contain4,
+.contain5 {
+	z-index: 1;
+	background-color: white;
+}
+.contain2 {
+	width: 12%;
+	background-color: white;
+}
+.contain3 {
+	width: 60%;
+	/* background-color: white; */
+}
+
 .shape1 {
+	/* z-index: 5; */
 	height: 100%;
 	background-color: aqua;
-
-	-webkit-clip-path: polygon(0 60%, 0 40%, 99% 98%, 70% 98%);
-	clip-path: polygon(0 70%, 0 40%, 100% 98%, 40% 98%);
+	-webkit-clip-path: polygon(0 70%, 0 42%, 100% 100%, 50% 100%);
+	clip-path: polygon(0 70%, 0 42%, 100% 100%, 50% 100%);
 }
 .shape2 {
+	z-index: 1;
+	/* background-color: azure; */
 	height: 100%;
-	background-color: aqua;
-	-webkit-clip-path: polygon(70% 2%, 98% 2%, 30% 98%, 2% 98%);
-	clip-path: polygon(70% 2%, 98% 2%, 30% 98%, 2% 98%);
+	background-color: rgba(0, 255, 255, 0.257);
+	-webkit-clip-path: polygon(75% 0, 100% 0, 25% 100%, 0 100%);
+	clip-path: polygon(75% 0, 100% 0, 25% 100%, 0 100%);
 }
 .shape3 {
+	z-index: 5;
 	height: 100%;
-	/* background-color: aqua;
-	-webkit-clip-path: polygon(0 8%, 10% 0, 100% 91%, 89% 100%);
-	clip-path: polygon(0 8%, 10% 0, 100% 91%, 89% 100%); */
+	background-color: rgba(0, 255, 255, 0.257);
+	-webkit-clip-path: polygon(0 0, 12% 0, 100% 100%, 88% 100%);
+	clip-path: polygon(0 0, 12% 0, 100% 100%, 88% 100%);
 }
 .shape4 {
+	/* z-index: 5; */
 	height: 100%;
-	background-color: aqua;
-	-webkit-clip-path: polygon(70% 2%, 98% 2%, 30% 98%, 2% 98%);
-	clip-path: polygon(70% 2%, 98% 2%, 30% 98%, 2% 98%);
+	background-color: rgba(0, 255, 255, 0.257);
+	-webkit-clip-path: polygon(75% 0, 100% 0, 25% 100%, 0 100%);
+	clip-path: polygon(75% 0, 100% 0, 25% 100%, 0 100%);
 }
 .shape5 {
 	height: 100%;
 	background-color: aqua;
-	-webkit-clip-path: polygon(0 2%, 50% 2%, 100% 30%, 100% 60%);
-	clip-path: polygon(0 2%, 50% 2%, 100% 30%, 100% 60%);
+	-webkit-clip-path: polygon(0 0, 50% 0, 100% 36%, 100% 69%);
+	clip-path: polygon(0 0, 50% 0, 100% 36%, 100% 69%);
 }
-
-.wrapper {
-	overflow-x: hidden;
-	position: relative;
+.textContainer .t2 {
+	z-index: 1;
+	position: absolute;
+	left: 14vw;
 }
-
-.container {
-	overflow-x: hidden;
-	overflow-y: hidden;
-	display: flex;
-	width: 300vw;
+.t2 .textRotated {
+	z-index: 10;
+	font-size: clamp(1rem, calc(0.5rem + 2vw), 2rem);
+	font-weight: 900;
+	transform: rotate(-70deg);
 }
-.container .col {
-	display: flex;
-	gap: 3em;
+.textContainer .t3 {
+	left: 20vw;
+	z-index: 11;
+	display: grid;
+	align-items: center;
+	text-align: justify;
+	grid-gap: 2vh;
+	margin: auto;
+	z-index: 6;
+	color: black;
+	margin-left: 17vw;
+	padding: 1rem;
 }
-.container .col p {
-	font-size: 0.8rem;
+.textContainer .t4 {
+	position: absolute;
+	z-index: 111;
+	transform: rotate(-70deg);
+	right: 3vw;
+	font-size: clamp(1rem, calc(0.5rem + 2vw), 2rem);
+	font-weight: 900;
 }
-.container section {
-	width: 100vw;
-	padding: 20vw 10vw;
+.textAbout {
+	font-size: calc(1vh + 1vw);
+	text-align: center;
 }
-.container section h1 {
-	font-size: 3rem;
-	margin: 0;
+.textHeader {
+	text-align: center;
+	font-weight: 900;
 }
-.container section p {
-	font-size: 1.2rem;
-	width: 50vw;
+.textHeader i {
+	font-size: calc(0.2rem + 0.8vw);
 }
-.container section ul {
-	list-style-type: none;
-	display: flex;
-	gap: 3em;
-	width: 100%;
-	height: 300px;
-	padding: 0;
+.textDetail {
+	font-size: clamp(0.6rem, calc(0.4rem + 1vw), 1.5rem);
 }
-.container section ul li {
-	background: white;
-	border-radius: 0.3em;
-	flex-grow: 1;
+.textDetail a {
+	text-decoration: none;
 }

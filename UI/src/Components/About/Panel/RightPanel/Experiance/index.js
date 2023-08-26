@@ -8,7 +8,7 @@ function Experiance(props) {
 			{data && (
 				<div className="experianceContainer">
 					<div className="experianceTop ">
-						<div className="  d-flex">
+						<div className="expAlign">
 							<div className="">
 								<span className="mg-10">
 									<a href={data.website} target="_blank" rel="noreferrer">

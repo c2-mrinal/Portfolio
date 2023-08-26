@@ -34,11 +34,10 @@ module.exports = {
 				use: ["style-loader", "css-loader", "sass-loader"],
 			},
 			{
-				test: /\.(woff|woff2|eot|ttf)$/,
-				loader: "file-loader",
-				options: {
-					name: "[name].[ext]",
-					outputPath: "fonts/",
+				test: /\.(woff2?|ttf|eot)(\?v=\w+)?$/,
+				type: "asset/resource",
+				generator: {
+					filename: "fonts/[name][ext][query]",
 				},
 			},
 			{

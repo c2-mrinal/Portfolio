@@ -6,7 +6,6 @@
 .nav-container {
 	margin: 0;
 	padding: 0;
-	background-color: rgba(168, 103, 222, 0.222);
 }
 .navbar-brand img {
 	height: calc(3vw + 4vh);
@@ -68,6 +67,116 @@ li a:hover:not(.active) {
 .flex-grow-1 span a {
 	font-size: calc(0.8rem + 0.8vw);
 }
-.navbar-toggler {
-	border: var(--bs-border-width) solid rgba(104, 211, 194, 254) !important;
+
+.collapseMenuContainer {
+	position: absolute;
+	top: 0;
+	min-width: 80px;
+	min-height: 80px;
+	height: calc(4vw + 5vh);
+	width: calc(5vw + 5vh);
+	background-color: rgba(240, 248, 255, 0.579);
+	border-radius: 5% 10% 0% 80%;
+	text-align: center;
+	cursor: pointer;
+	padding: 20px;
+}
+.menuContainerExpand {
+	animation: slideInFromLeft 1s ease-out forwards;
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+@keyframes slideInFromLeft {
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.menuIcon {
+	position: fixed;
+	right: 1vw;
+	top: 0;
+	z-index: 100;
+	margin-top: 2vh;
+	height: clamp(1rem, calc(1rem + 2vw + 1vh), 3rem);
+	max-width: 4rem;
+}
+.menuListContainer {
+	top: 0vh;
+	right: 4vw;
+	position: absolute;
+}
+.menuListContainer a {
+	font-size: clamp(0.5rem, calc(1vh + 2vw), 1.6rem);
+	font-weight: 800;
+	font-family: "Courier New", Courier, monospace;
+	color: radial-gradient(
+		circle,
+		#f3ff66,
+		#ffdf6f,
+		#ffc391,
+		#ffb4b6,
+		#ffb0cf,
+		#f1b8e6,
+		#ddc2f6,
+		#c7ccff,
+		#a0dbff,
+		#6ceaff,
+		#47f7ff,
+		#65ffdb
+	);
+}
+.menuList0 {
+	margin: 1vh auto;
+	margin-left: 2vw;
+	left: -100px;
+	animation: slideInFromRight 0.2s ease-in-out;
+}
+.menuList1 {
+	margin: 1vh auto;
+	margin-left: 0vw;
+	left: -100px;
+	animation: slideInFromRight 0.3s ease-in-out;
+}
+.menuList2 {
+	margin: 1vh auto;
+	margin-left: 2vw;
+	left: -100px;
+
+	animation: slideInFromRight 0.4s ease-in-out;
+}
+.menuList3 {
+	margin: 1vh auto;
+	margin-left: 4vw;
+	left: -100px;
+
+	animation: slideInFromRight 0.6s ease-in-out;
+}
+.menuList4 {
+	margin: 1vh auto;
+	margin-left: 7vw;
+	left: -100px;
+
+	animation: slideInFromRight 0.7s ease-in-out;
+}
+
+@keyframes slideInFromRight {
+	0% {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes slideOutToRight {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(100%);
+	}
 }
