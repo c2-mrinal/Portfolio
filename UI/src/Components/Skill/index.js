@@ -67,7 +67,7 @@ function Skill(props) {
 	useEffect(() => {
 		simulation = d3.forceSimulation();
 
-		Data.forEach((d) => {
+		Data?.forEach((d) => {
 			if (d.value) {
 				d.size = +d.value * 20;
 				d.size < 1 ? (d.radius = 1) : (d.radius = d.size);
