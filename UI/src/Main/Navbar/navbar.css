@@ -81,6 +81,18 @@ li a:hover:not(.active) {
 	cursor: pointer;
 	padding: 20px;
 }
+.menuContainerExpand {
+	animation: slideInFromLeft 1s ease-out forwards;
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+@keyframes slideInFromLeft {
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
 
 .menuIcon {
 	position: fixed;
