@@ -65,7 +65,7 @@ const aboutDetails = (req, res) => {
 };
 const resume = (req, res) => {
 	try {
-		const URL = process.env.URL;
+		const URL = process.env.URL || "http://localhost:8080";
 		const apiData = URL
 			? {
 					status: 200,
