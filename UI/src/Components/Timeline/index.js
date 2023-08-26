@@ -78,6 +78,7 @@ export default function Scene() {
 			detail: `I attended Sunflower Public School for my CBSE matriculation. It offered a comprehensive education, focusing on subjects like Science, Math, and extracurricular activities. The committed teachers and diverse opportunities boosted my growth. Participating in events and clubs enriched my learning. The school greatly shaped my foundation and passion for education.`,
 			redirecting: "",
 		},
+		{},
 	]);
 	const [loading, setLoading] = useState(false);
 	useEffect(() => {
@@ -165,7 +166,7 @@ export default function Scene() {
 								<div className="textContainer">
 									<div className="col-sm-1 t1"></div>
 									<div className="col-sm-2 t2" ref={panelRef}>
-										<div className="textRotated">{val.timeLine}</div>
+										{/* <div className="textRotated">{val.timeLine}</div> */}
 									</div>
 									<div className="col-sm-6 t3 ">
 										<h2 className="textHeader">

@@ -45,13 +45,20 @@
 	/* background-color: white; */
 }
 .contain1,
-/* .contain2, */
-/* .contain4, */
+.contain4,
 .contain5 {
 	z-index: 1;
-
 	background-color: white;
 }
+.contain2 {
+	width: 12%;
+	background-color: white;
+}
+.contain3 {
+	width: 60%;
+	/* background-color: white; */
+}
+
 .shape1 {
 	/* z-index: 5; */
 	height: 100%;
@@ -125,6 +132,7 @@
 }
 .textHeader {
 	text-align: center;
+	font-weight: 900;
 }
 .textHeader i {
 	font-size: calc(0.2rem + 0.8vw);
