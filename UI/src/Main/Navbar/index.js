@@ -10,6 +10,7 @@ import allActions from "../../actions";
 function Header() {
 	const [pathOrigin, setPathOrigin] = useState(true);
 	const [showMenu, setShowMenu] = useState(false);
+	const [showAnimate, setShowAnimate] = useState(false);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -34,16 +35,13 @@ function Header() {
 					<img className="logo-img" src={Logo} alt="Logo" />
 				</Navbar.Brand>
 				<Container className="justify-content-end">
-					<div
-						className={`collapseMenuContainer ${showMenu ? "menuContainerExpand" : ""}`}
-						onClick={() => setShowMenu(!showMenu)}
-					>
+					<div className={`collapseMenuContainer `} onClick={() => setShowMenu(!showMenu)}>
 						<svg
 							version="1.0"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 573.000000 495.000000"
 							preserveAspectRatio="xMidYMid meet"
-							className="menuIcon"
+							className={`menuIcon ${showMenu ? "" : "menuContainerExpand"}`}
 						>
 							<g transform="translate(0.000000,495.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
 								<path

@@ -1,3 +1,6 @@
+#bg-video::-webkit-media-controls-start-playback-button {
+	display: none;
+}
 .myVideo {
 	position: absolute;
 	top: 0;
@@ -60,15 +63,15 @@
 }
 
 .isInverted {
-	-webkit-filter: invert(1);
-	filter: invert(1);
+	/* -webkit-filter: invert(1);
+	filter: invert(1); */
 }
 
 .intoDesciption {
 	position: absolute;
 	bottom: 0px;
 	padding: 0px 0px 10vh 10vw;
-	color: aliceblue;
+	color: #d3c3fadb;
 	z-index: 11;
 }
 .intoDesciption h1 {
@@ -225,56 +228,75 @@
 	font-family: cursive;
 	width: 100vw;
 }
-
-.cursorAnimationSection {
-	background-color: black;
+.cursorAniContainer {
+	display: grid;
+	grid-template-columns: repeat(2, 50vw);
 }
 
-.cursorAnimationSection .col-sm-3,
+.cursorAnimationSection {
+	height: 50vh;
+	background-color: rgb(0, 0, 0);
+}
+
+/* .cursorAnimationSection .col-sm-3,
 .col-lg-3 {
 	margin: 0px;
 	padding: 0px;
+} */
+.ca1 {
+	border-right: 5px solid rgb(188, 188, 246);
 }
-
+.ca2 {
+}
+.ca3 {
+	border-top: 5px solid rgb(188, 188, 246);
+	border-right: 5px solid rgb(188, 188, 246);
+}
+.ca4 {
+	border-top: 5px solid rgb(188, 188, 246);
+}
 .cursorAnimation {
-	height: 100vh;
+	max-height: 50vh;
 	width: 100%;
 	cursor: none;
 }
-.cursorAnimation {
-	height: 100vh;
-	width: 100%;
-}
+
 .cursorBubbleAnimation {
 	margin: 0px;
 	padding: 0px;
-	height: 100vh;
+	height: 50vh;
 	width: 100%;
 }
-
-.careerPageDetail {
-	display: inline-block;
+.pageDetail {
 	position: relative;
-	top: -50%;
-	left: 35%;
+	text-align: center;
+	align-items: center;
+	margin: auto;
+	height: 100%;
+	top: -70%;
 }
+.pageDetail h3 {
+	color: black;
+	font-weight: 900;
+}
+
 .skillPageDetail {
-	display: inline-block;
-	position: relative;
-	top: -50%;
-	left: 35%;
+	/* display: inline-block; */
+	/* position: relative; */
+	/* top: -50%;
+	left: 35%; */
 }
 .aboutPageDetail {
-	display: inline-block;
-	position: relative;
-	top: -50%;
-	left: 35%;
+	/* display: inline-block; */
+	/* position: relative; */
+	/* top: -50%;
+	left: 35%; */
 }
 .contactPageDetail {
-	display: inline-block;
-	position: relative;
-	top: -50%;
-	left: 35%;
+	/* display: inline-block; */
+	/* position: relative; */
+	/* top: -50%;
+	left: 35%; */
 }
 .trail {
 	position: absolute;
@@ -285,26 +307,15 @@
 	cursor: none;
 }
 
-.careerbg {
-	background-color: rgb(0, 0, 0);
+.cursorbg {
+	background-color: #28282b;
 	position: relative;
 	cursor: none;
-}
-
-.skillbg {
-	background-color: rgb(0, 0, 0);
-	position: relative;
-	cursor: none;
-}
-
-.aboutbg {
-	background-color: rgb(0, 0, 0);
-	position: relative;
 }
 
 .contactPointer {
 	background-color: rgb(0, 0, 0);
-	position: relative;
+	/* positio/n: relative; */
 }
 .bubble {
 	border-radius: 50%;
@@ -317,80 +328,12 @@
 	border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%;
 	box-shadow: 0 -2vmin 4vmin LightPink inset, 0 1vmin 4vmin MediumPurple inset, 0 -2vmin 7vmin purple inset;
 	content: "";
-	filter: drop-shadow(0 0 3vmin Thistle) drop-shadow(0 5vmin 4vmin Orchid)
-		drop-shadow(2vmin -2vmin 15vmin MediumSlateBlue) drop-shadow(0 0 7vmin MediumOrchid);
-	height: 8rem;
-	width: 8rem;
+	height: calc(3rem + 4vw + 2vh);
+	width: calc(3rem + 4vw + 2vh);
 	cursor: pointer;
 	z-index: 20;
-}
-
-/* career cursor animation */
-
-.careerCursor {
-	width: 20px;
-	height: 20px;
-	border: 10px solid rgba(50, 243, 60, 0.8);
-	border-radius: 50%;
-	position: absolute;
-	transition-duration: 200ms;
-	transition-timing-function: ease-out;
-	animation: careerCursor-animate 550ms infinite alternate;
-}
-
-.careerCursor::after {
-	content: "";
-	width: 40px;
-	height: 40px;
-	border: 15px solid rgba(50, 243, 60, 0.2);
-	border-radius: 50%;
-	position: absolute;
-	top: -25px;
-	left: -25px;
-	animation: careerCursor-animate-2 550ms infinite alternate;
-}
-.careerCursor--expand {
-	animation: careerCursor-animate-3 550ms forwards;
-	border: 10px solid rgb(1, 60, 4);
-}
-
-.careerCursor--expand::after {
-	border: 15px solid rgba(1, 60, 4, 0.3);
-}
-
-@keyframes careerCursor-animate {
-	from {
-		transform: scale(1);
-	}
-
-	to {
-		transform: scale(1.5);
-	}
-}
-
-@keyframes careerCursor-animate-2 {
-	from {
-		transform: scale(1);
-	}
-
-	to {
-		transform: scale(0.3);
-	}
-}
-
-@keyframes careerCursor-animate-3 {
-	0% {
-		transform: scale(1);
-	}
-
-	50% {
-		transform: scale(3);
-	}
-
-	100% {
-		transform: scale(1);
-		opacity: 0;
-	}
+	color: black;
+	font-weight: 700;
 }
 
 .intoDesciption h1 {
