@@ -106,7 +106,6 @@ function Intro(props) {
 					</div>
 				</div>
 			</ErrorBoundary>
-			{/* <Footer />{" "} */}
 		</>
 	);
 }
