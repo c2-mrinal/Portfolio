@@ -14,7 +14,7 @@ function Intro(props) {
 	const [pointerComp, setPointerComp] = useState(0);
 	const [loading, setLoading] = useState(false);
 	const isTouchDevice = useSelector((state) => state.deviceTypeTouch || false);
-	const intoBGVid = useProgressiveImage(IntroBg);
+	const intoBGVid = useProgressiveImage("https://drive.google.com/uc?export=view&id=1ouzS9lCe5fs7qzsSL0GokjZYNMXSz93O");
 
 	const downloadResume = async () => {
 		setDownloading(true);
@@ -48,7 +48,7 @@ function Intro(props) {
 			{loading && <Loader />}
 			<div className="myVideo">
 				<video id="bg-video" autoPlay muted loop className="videoDimension">
-					<source src={IntroBg} type="video/mp4" />
+					<source src={intoBGVid ? intoBGVid : IntroBg} type="video/mp4" />
 				</video>
 			</div>
 			<ErrorBoundary hide={true}>
