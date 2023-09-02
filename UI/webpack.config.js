@@ -1,15 +1,24 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
-	entry: "./src/index.js",
-	mode: "development", // or 'production'
+	entry: "./src/index.js", // Entry point for your app
 	output: {
-		path: path.join(__dirname, "/dist"),
-		filename: "bundle.js",
+		path: path.resolve(__dirname, "build"), // The bundle output path
+		filename: "bundle.js", // The name of the bundle
+		publicPath: "/", // Public path for assets (useful for routing)
 	},
+	resolve: {
+		extensions: [".js", ".jsx"], // Allow importing .js and .jsx files without extensions
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: "public/index.html",
+		}),
+	],
 	devServer: {
-		compress: true,
-		disableHostCheck: true,
+		port: 3333,
+		historyApiFallback: true,
 	},
 	module: {
 		rules: [
@@ -18,20 +27,24 @@ module.exports = {
 				exclude: /node_modules/,
 				use: {
 					loader: "babel-loader",
-					options: {
-						presets: ["@babel/preset-react", "@babel/preset-env"],
-					},
 				},
 			},
 			{
-				test: /\.css$/,
-				use: ["style-loader", "css-loader"],
+				test: /\.(sa|sc|c)ss$/,
+				use: ["style-loader", "css-loader", "sass-loader"],
 			},
 			{
-				test: /\.(jpe?g|png|gif|svg)$/i,
+				test: /\.(woff2?|ttf|eot)(\?v=\w+)?$/,
+				type: "asset/resource",
+				generator: {
+					filename: "fonts/[name][ext][query]",
+				},
+			},
+			{
+				test: /\.(jpe?g|png|gif)$/i,
 				loader: "file-loader",
 				options: {
-					name: "/public/icons/[name].[ext]",
+					name: "public/icons/[name].[ext]",
 				},
 			},
 			{
@@ -45,15 +58,34 @@ module.exports = {
 					},
 				],
 			},
+			{
+				test: /\.svg$/,
+				oneOf: [
+					{
+						resourceQuery: /icon/,
+						use: [
+							{
+								loader: "file-loader",
+								options: {
+									name: "public/icons/[name].[ext]",
+								},
+							},
+						],
+					},
+					{
+						use: [
+							{
+								loader: "url-loader",
+								options: {
+									limit: 8192,
+									name: "[name].[ext]",
+									outputPath: "images/",
+								},
+							},
+						],
+					},
+				],
+			},
 		],
 	},
-	resolve: {
-		modules: ["node_modules"],
-		extensions: [".js", ".jsx", ".html"],
-	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			template: path.join(__dirname, "/public/index.html"),
-		}),
-	],
 };

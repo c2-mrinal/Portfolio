@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 import "./contact.css";
 import MailPopUp from "./MailPopUp";
-import arrowPointing from "../../image/ArrowPointing.gif";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faLinkedinIn,
-//   faInstagram,
-//   faTwitter,
-//   faGithub,
-// } from "@fortawesome/free-solid-svg-brands";
 
 function Contact() {
 	const [DisplayMailPopup, setDisplayMailPopup] = useState(false);
@@ -66,7 +58,11 @@ function Contact() {
 					</div>
 					<div className="downArrow">
 						<div className="downArrowContainer">
-							<img src={arrowPointing} className="pointingArrow" alt="error" />
+							<img
+								src={"https://drive.google.com/uc?export=view&id=1DogaiT31_9vkDL6nlXe1qsSr47svQPZE"}
+								className="pointingArrow"
+								alt="error"
+							/>
 						</div>
 					</div>
 				</section>

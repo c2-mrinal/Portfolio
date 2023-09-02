@@ -14,19 +14,22 @@ h6 {
 	padding: 2rem;
 	padding-top: 0;
 	width: 97%;
+	text-align: justify;
 }
 .rightPanel div {
-	padding: 1rem 0;
+	padding: 1vh 0;
 }
 .rightPanel h2 {
 	padding: 0.7rem 0;
 }
 .educationHeader {
-	margin: 2rem;
-	border-radius: 5px;
-	background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+	margin: 1rem;
+	min-height: 26vh;
+	border-radius: 10px;
+	background-image: linear-gradient(95.2deg, rgb(53, 231, 190) 26.8%, rgb(189, 153, 232) 64%);
 }
 .educationHeaderContainer {
+	width: 100%;
 	margin: auto;
 	text-align: center;
 }
@@ -34,13 +37,25 @@ h6 {
 	text-align: center;
 }
 .educationImage {
-	height: calc(10vh+10vw);
-	width: calc(10vh+10vw);
-	border-radius: 50%;
+	height: calc(10vw);
+	width: calc(10vw);
+	border-radius: 30%;
 }
+.eduProjHeader {
+	text-align: end;
+	text-decoration: overline;
+}
+
 .infoTextContainer {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	width: 100%;
 	margin: 1rem auto;
 	padding: 0px 1rem;
+}
+.infoSwitchTab {
+	display: flex;
+	height: 11vh;
 }
 
 .infoTextBox {
@@ -65,7 +80,8 @@ h6 {
 	font-weight: bold;
 }
 .infoTextBoxSelected {
-	color: #eda371;
+	color: #f37c2d;
+	font-weight: 900;
 	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.15),
 		inset -10px -10px 15px rgba(255, 255, 255, 0.5), inset 10px 10px 15px rgba(70, 70, 70, 0.15);
 }
@@ -81,26 +97,31 @@ h6 {
 }
 
 .experianceTop {
-	font-size: clamp(1rem, 4vw, 3rem);
-	margin: 2rem;
+	font-size: clamp(1rem, 3vw, 2rem);
+	margin: 0 calc(1vw + 1vh) calc(0.5vw + 0.5vh);
+}
+.expAlign {
+	display: flex;
+	margin-left: 2rem;
 }
 .companyLink {
-	background: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+	background: linear-gradient(95.2deg, rgb(107, 48, 233) 26.8%, rgb(5, 134, 193) 64%);
 	margin: auto;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 .comapnyNameContainer {
 	display: flex;
-	margin: auto auto auto 1vw;
+	margin-left: 3vw;
 }
 .companyLinkedin {
 	font-size: 0.7em;
 }
 .experianceDetailContainer {
-	margin: 2rem;
+	margin: 1rem 2rem;
 }
 .overviewSide {
+	text-align: justify;
 	padding: 0px;
 }
 .roleSide {
@@ -110,21 +131,22 @@ h6 {
 }
 
 .skillSection {
-	padding: 0.5rem 2rem;
+	padding: 3vh 2rem;
+	text-align: justify;
 }
 .mgr-5 {
 	margin-right: 5px;
 }
 .detailsStyled {
-	margin: 30px auto;
+	margin: 2vh 0 auto;
 	font-size: clamp(1rem, calc(0.8rem + 0.5vw), 3rem);
 	font-family: monospace;
 	font-weight: 600;
-	text-align: initial;
-	padding-left: 1rem;
+	margin-top: -10vh;
+	padding-left: 21vw;
 }
 .companyName {
-	font-size: calc(3vw + 1rem);
+	font-size: calc(2vw + 1rem);
 }
 h2 strong {
 	font-size: calc(1vw + 1rem);
@@ -280,7 +302,7 @@ h2 strong {
 
 .card-header {
 	font-weight: 900;
-	font-size: clamp(0.7vw, calc(0.7rem+ 2vw), 3rem);
+	font-size: clamp(0.7vw, calc(0.7rem + 2vw), 3rem);
 }
 .libCard {
 	margin: 2vh;
@@ -295,3 +317,52 @@ h2 strong {
 	font-size: 0.6rem;
 }
 /* libray component END  */
+
+@media (min-width: 768px) and (max-width: 1200px) {
+	.detailsStyled {
+		margin-top: -5vh;
+		margin-left: 5vw;
+	}
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 768px) {
+	.infoTextContainer {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+	}
+	.educationHeader {
+		display: flex;
+		flex-direction: column;
+		min-height: 40vh;
+	}
+	.infoTextContainer {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+	}
+	.infoSwitchTab {
+		flex-direction: column;
+	}
+	.infoTextBox {
+		max-width: 35vw;
+		min-width: 10vw;
+		padding: 1vh;
+		text-align: center;
+		margin-left: auto;
+	}
+	.detailsStyled {
+		padding: 0;
+		margin: 0;
+		width: 70vw;
+		margin-top: 5vh;
+		margin-left: 5vw;
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 520px) {
+	.detailsStyled {
+		width: 90vw;
+		margin-top: 20vh;
+		margin-left: 4vw;
+	}
+}
