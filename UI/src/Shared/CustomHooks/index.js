@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const useMyFirstHook = (input) => {
 	console.log("customHook", input);
@@ -6,15 +6,17 @@ const useMyFirstHook = (input) => {
 };
 
 const useProgressiveImage = (src) => {
-	const [sourceLoaded, setSourceLoaded] = useState(null);
+	const sourceLoadedRef = useRef(null);
 
 	useEffect(() => {
 		const img = new Image();
 		img.src = src;
-		img.onload = () => setSourceLoaded(src);
+		img.onload = () => {
+			sourceLoadedRef.current = src;
+		};
 	}, [src]);
 
-	return sourceLoaded;
+	return sourceLoadedRef.current;
 };
 
 export { useMyFirstHook, useProgressiveImage };

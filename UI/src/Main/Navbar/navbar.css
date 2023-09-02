@@ -10,6 +10,8 @@
 .navbar-brand img {
 	height: calc(3vw + 4vh);
 	width: calc(5vw + 5vh);
+	min-height: 4rem;
+	min-width: 5rem;
 }
 
 .Nav-Link {
