@@ -227,7 +227,7 @@ i {
 	transform: rotate(180deg);
 }
 .copyClipboard {
-	cursor: pointer;
+	cursor: copy;
 	position: absolute;
 	/* left: auto; */
 	right: calc(2rem + 1vw);

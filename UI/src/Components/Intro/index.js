@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./intro.css";
 import { useSelector } from "react-redux";
 import Loader from "../../Shared/Loader";
@@ -14,7 +14,7 @@ function Intro(props) {
 	const [pointerComp, setPointerComp] = useState(0);
 	const [loading, setLoading] = useState(false);
 	const isTouchDevice = useSelector((state) => state.deviceTypeTouch || false);
-	const intoBGVid = useProgressiveImage("https://drive.google.com/uc?export=view&id=1ouzS9lCe5fs7qzsSL0GokjZYNMXSz93O");
+	// const intoBGVid = useProgressiveImage("https://drive.google.com/uc?export=view&id=1ouzS9lCe5fs7qzsSL0GokjZYNMXSz93O");
 
 	const downloadResume = async () => {
 		setDownloading(true);
@@ -42,13 +42,15 @@ function Intro(props) {
 			}
 		}, 1000);
 	};
-
 	return (
 		<>
 			{loading && <Loader />}
 			<div className="myVideo">
-				<video id="bg-video" autoPlay muted loop className="videoDimension">
-					<source src={intoBGVid ? intoBGVid : IntroBg} type="video/mp4" />
+				<video id="bg-video" autoPlay loop muted playsinline className="videoDimension">
+					<source
+						src={"https://drive.google.com/uc?export=view&id=1ouzS9lCe5fs7qzsSL0GokjZYNMXSz93O"}
+						type="video/mp4"
+					/>
 				</video>
 			</div>
 			<ErrorBoundary hide={true}>

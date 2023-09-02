@@ -1,5 +1,5 @@
-#bg-video::-webkit-media-controls-start-playback-button {
-	display: none;
+video::-webkit-media-controls-play-button {
+	display: none !important;
 }
 .myVideo {
 	position: absolute;
@@ -60,6 +60,7 @@
 	margin-top: -3vw;
 	margin-left: auto;
 	margin-right: 0vw;
+	user-select: none;
 }
 
 .isInverted {
@@ -346,18 +347,15 @@
 	background-color: rgb(155, 111, 243);
 	background-image: radial-gradient(
 		circle,
-		#f3ff66,
-		#d5ae1f,
-		#ffc391,
-		#a989e8,
-		#ffb0cf,
-		#f1b8e6,
-		#ddc2f6,
-		#c7ccff,
-		#d7f987,
-		#87efa3,
-		#7beda0,
-		#80e280
+		#845ec2,
+		#2c73d2,
+		#0081cf,
+		#389cc1,
+		#008e9b,
+		#33e3c9,
+		#096485,
+		#2cc5d3,
+		#48dac4
 	);
 	margin-bottom: 20px;
 	background-size: 200% 200%;
@@ -365,6 +363,7 @@
 	background-clip: text;
 	-webkit-background-clip: text;
 	transition: all 0.1s ease-in-out;
+	user-select: none;
 }
 .intoDesciption span:hover {
 	transform: scale(1.7);
