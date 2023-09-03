@@ -2,3 +2,8 @@
 	font-family: "Bungee-Regular"; /* Replace 'YourFontFamilyName' with the actual font name */
 	src: url("./Bungee-Regular.ttf") format("truetype"); /* Add additional 'src' lines for other font file formats if necessary */
 }
+
+@font-face {
+	font-family: "natual-font"; /* Replace 'YourFontFamilyName' with the actual font name */
+	src: url("./natual-font.ttf") format("truetype"); /* Add additional 'src' lines for other font file formats if necessary */
+}
