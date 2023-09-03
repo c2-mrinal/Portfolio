@@ -71,16 +71,16 @@ video::-webkit-media-controls-play-button {
 .intoDesciption {
 	position: absolute;
 	bottom: 0px;
-	padding: 0px 0px 10vh 10vw;
+	padding: 0px 0px 10vh 5vw;
 	color: #d3c3fadb;
 	z-index: 11;
 }
 .intoDesciption h1 {
 	position: relative;
 	min-width: calc(45vw);
-	font-family: "Bungee-Regular";
+	font-family: "natual-font";
 	font-weight: 900;
-	font-size: calc(0.7rem + 3vw);
+	font-size: calc(0.7rem + 1.7vw);
 }
 /* .intoDesciption span:hover {
 	position: relative;
@@ -341,7 +341,9 @@ video::-webkit-media-controls-play-button {
 	position: absolute;
 }
 .intoDesciption span {
+	min-width: 2vw;
 	text-transform: uppercase;
+	text-align: center;
 	cursor: grabbing;
 	position: absolute;
 	background-color: rgb(155, 111, 243);
@@ -391,40 +393,53 @@ video::-webkit-media-controls-play-button {
 	}
 }
 .intoDesciption .introHeader1 {
-	margin-top: -40vh;
+	margin-top: -48vh;
 }
 .intoDesciption .introHeader2 {
-	margin-top: -30vh;
+	margin-top: -40vh;
 }
 .intoDesciption .introHeader3 {
-	margin-top: -20vh;
+	margin-top: -32vh;
 }
 .intoDesciption .introHeader4 {
-	margin-top: -10vh;
+	margin-top: -24vh;
+}
+.intoDesciption .introHeader5 {
+	margin-top: -16vh;
 }
 .intoDesciption .introHeader6 {
+	margin-top: -8vh;
+}
+.intoDesciption .introHeader7 {
 	margin-top: 0vh;
 }
-.introHeader5 .text1 {
+
+.introHeader7 .text1 {
 	font-size: calc(0.6rem + 1vw);
-	margin: 2vh 0 0 1vw;
+	margin: 2px 0 0 3px;
 	transform: rotate(-33deg);
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
 	.intoDesciption .introHeader1 {
-		margin-top: calc(-28vh);
+		margin-top: calc(-42vh);
 	}
 	.intoDesciption .introHeader2 {
-		margin-top: calc(-21vh);
+		margin-top: calc(-35vh);
 	}
 	.intoDesciption .introHeader3 {
-		margin-top: calc(-14vh);
+		margin-top: calc(-28vh);
 	}
 	.intoDesciption .introHeader4 {
-		margin-top: calc(-7vh);
+		margin-top: calc(-21vh);
+	}
+	.intoDesciption .introHeader5 {
+		margin-top: calc(-14vh);
 	}
 	.intoDesciption .introHeader6 {
+		margin-top: calc(-7vh);
+	}
+	.intoDesciption .introHeader7 {
 		margin-top: calc(0vw);
 	}
 }
@@ -432,25 +447,38 @@ video::-webkit-media-controls-play-button {
 }
 @media only screen and (max-width: 768px) {
 	.intoDesciption .introHeader1 {
-		margin-top: calc(-20vh);
+		margin-top: calc(-30vh);
 	}
 	.intoDesciption .introHeader2 {
-		margin-top: calc(-15vh);
+		margin-top: calc(-25vh);
 	}
 	.intoDesciption .introHeader3 {
-		margin-top: calc(-10vh);
+		margin-top: calc(-20vh);
 	}
 	.intoDesciption .introHeader4 {
-		margin-top: calc(-5vh);
+		margin-top: calc(-15vh);
+	}
+	.intoDesciption .introHeader5 {
+		margin-top: calc(-10vh);
 	}
 	.intoDesciption .introHeader6 {
+		margin-top: calc(-5vh);
+	}
+	.intoDesciption .introHeader7 {
 		margin-top: calc(0vw);
+	}
+
+	.intoDesciption h1 {
+		font-size: calc(0.5rem + 1.4vw);
 	}
 	.introHeader5 .text1 {
 		margin: 1vh 0 0 1vw;
 	}
 	.introHeader5 .text9 {
 		width: 15vw;
+	}
+	.intoDesciption span {
+		min-width: 4vw;
 	}
 	.intoDesciption {
 		/* padding: 0px 0px 10vh 10vw; */
