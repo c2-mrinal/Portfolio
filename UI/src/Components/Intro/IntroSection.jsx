@@ -35,9 +35,9 @@ function IntroSection(props) {
 			</div>
 			<div className="intoDesciption ">
 				<h1 className="introHeader1">
-					{["h", "e", "l", "l", "o", "", "!"].map((val, ind) => {
+					{"hey there,curious minds".split("").map((val, ind) => {
 						return (
-							<span key={ind} className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
+							<span key={ind} className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 2}vw)` }}>
 								{" "}
 								{val}{" "}
 							</span>
@@ -45,13 +45,13 @@ function IntroSection(props) {
 					})}
 				</h1>
 				<h1 className="introHeader2">
-					{["I", "", "a", "m", "", "M", "r", "i", "n", "a", "l", "", "K", "a", "s", "y", "a", "p"].map((val, ind) => {
+					{"and creative souls !".split("").map((val, ind) => {
 						return (
 							<span
 								className=""
 								key={ind}
 								style={{
-									left: `calc( ${ind * 0.2}rem + ${[6, 7].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw)`,
+									left: `calc( ${ind * 0.2}rem + ${[6, 7].includes(ind) ? ind * 2.5 + 0.2 : ind * 2.5}vw)`,
 								}}
 							>
 								{val}
@@ -60,12 +60,12 @@ function IntroSection(props) {
 					})}
 				</h1>
 				<h1 className="introHeader3">
-					{["m", "e", "r", "n", "", "D", "e", "v", "e", "l", "o", "p", "e", "r"].map((val, ind) => {
+					{"I'm Mrinal Kasyap,".split("").map((val, ind) => {
 						return (
 							<span
 								className=""
 								key={ind}
-								style={{ left: `calc( ${ind * 0.2}rem + ${[1].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw)` }}
+								style={{ left: `calc( ${ind * 0.2}rem + ${[].includes(ind) ? ind * 2.5 + 0.3 : ind * 2.5}vw)` }}
 							>
 								{val}
 							</span>
@@ -73,20 +73,40 @@ function IntroSection(props) {
 					})}
 				</h1>
 				<h1 className="introHeader4">
-					{["D", "e", "v", "e", "l", "o", "p", "i", "n", "g", "", "t", "h", "e", "", "c", "h", "a", "n", "g", "e"].map(
-						(val, ind) => {
-							return (
-								<span key={ind} className="" style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
-									{val}
-								</span>
-							);
-						}
-					)}
+					{"your friendly neighborhood".split("").map((val, ind) => {
+						return (
+							<span
+								className=""
+								key={ind}
+								style={{ left: `calc( ${ind * 0.2}rem + ${[].includes(ind) ? ind * 2.5 + 0.3 : ind * 2.5}vw)` }}
+							>
+								{val}
+							</span>
+						);
+					})}
 				</h1>
 				<h1 className="introHeader5">
-					{["U", "&", "I", "", "n", "e", "e", "d", "s", ". . ."].map((val, ind) => {
+					{"Mern Developer on a mission ".split("").map((val, ind) => {
 						return (
-							<span key={ind} className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
+							<span key={ind} className="" style={{ left: `calc( ${ind * 0.2}rem + ${ind * 2.5}vw)` }}>
+								{val}
+							</span>
+						);
+					})}
+				</h1>
+				<h1 className="introHeader6">
+					{"to create the change ".split("").map((val, ind) => {
+						return (
+							<span key={ind} className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 2.5}vw)` }}>
+								{val}
+							</span>
+						);
+					})}
+				</h1>
+				<h1 className="introHeader7">
+					{"U&I crave ...".split("").map((val, ind) => {
+						return (
+							<span key={ind} className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 2.5}vw)` }}>
 								{val}
 							</span>
 						);
