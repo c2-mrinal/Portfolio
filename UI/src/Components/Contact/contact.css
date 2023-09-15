@@ -3,6 +3,10 @@
 	overflow-y: scroll;
 	scroll-snap-type: y mandatory;
 }
+textarea {
+	resize: none;
+	font-size: 1.2rem;
+}
 .contactContainer {
 	scroll-behavior: smooth;
 }
@@ -145,7 +149,7 @@ i {
 
 .errorMail {
 	color: red;
-	font-size: 1ßem;
+	font-size: 1rem;
 	margin: auto auto auto 15%;
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
@@ -211,7 +215,7 @@ i {
 	opacity: 0.4;
 }
 .modelIcons i {
-	font-size: calc(1rem + 1vw + 0.5vh);
+	font-size: calc(1rem + 0.5vw + 0.5vh);
 	cursor: pointer;
 }
 .downArrow {
@@ -236,4 +240,13 @@ i {
 }
 .copyClipboard:hover {
 	color: #76c773;
+}
+@media (max-width: 560px) {
+	.modelContainer {
+		display: grid !important;
+		align-items: center;
+	}
+	.errorMail {
+		font-size: 0.6rem;
+	}
 }

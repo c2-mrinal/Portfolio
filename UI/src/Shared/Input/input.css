@@ -7,7 +7,7 @@
 
 .form__field {
 	font-family: inherit;
-	width: 100%;
+	width: 90%;
 	border: 0;
 	margin-left: 3em;
 	border-bottom: 2px solid #9b9b9b;
@@ -22,7 +22,7 @@
 	color: transparent;
 }
 .form__field:placeholder-shown ~ .form__label {
-	font-size: calc(1.5vw + 1vh);
+	font-size: calc(0.5rem + 1vw);
 	cursor: text;
 	top: 20px;
 }
@@ -32,7 +32,7 @@
 	left: -0.5rem;
 	display: block;
 	transition: 0.2s;
-	font-size: calc(1.5vw + 1vh);
+	font-size: calc(1vw + 1vh);
 	color: #9b9b9b;
 }
 .form__field:focus {
@@ -47,7 +47,7 @@
 .form__field:focus ~ .form__label {
 	position: absolute;
 	top: 25px;
-	left: -1.25em;
+	left: -0.8rem;
 	display: block;
 	transition: 0.2s;
 	font-size: 1rem;

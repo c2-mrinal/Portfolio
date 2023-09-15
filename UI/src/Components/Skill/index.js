@@ -5,12 +5,13 @@ import Loader from "../../Shared/Loader";
 
 const halfStar = `<i class="fa-solid fa-star-half"></i>`;
 const oneStar = `<i class="fa-solid fa-star"></i>`;
-
+const heightS = window.innerHeight;
+const widthS = window.innerWidth;
 function useWindowSize() {
 	const [size, setSize] = useState([0, 0]);
 	useLayoutEffect(() => {
 		function updateSize() {
-			setSize([window.innerWidth, window.innerHeight]);
+			setSize([widthS, heightS]);
 		}
 		window.addEventListener("resize", updateSize);
 		updateSize();
@@ -25,8 +26,8 @@ function Skill({ onMouseOver, onMouseOut }) {
 	const [loading, setLoading] = useState(false);
 	const [svgRoatate, setSvgRoatate] = useState(-34);
 	const svgCode = `
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1500">
-				<rect fill="#8CBF8C" width="2000" height="1500" />
+	<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 3600 3000">
+				<rect fill="#8CBF8C" />
 				<defs>
 					<radialGradient id="a" gradientUnits="objectBoundingBox">
 						<stop offset="0" stop-color="#FFFFFF" />
@@ -93,6 +94,7 @@ function Skill({ onMouseOver, onMouseOut }) {
 		maxHeight: "100vh",
 		zIndex: "-2",
 		overflow: "hidden",
+		minHeight: "98vh",
 	};
 	useEffect(() => {
 		const updateState = () => {
@@ -232,8 +234,8 @@ function Skill({ onMouseOver, onMouseOut }) {
 					.forceCollide()
 					.strength(0.5)
 					.radius((d) => {
-						// const adjustedHeight = height - width > 50 ? height - (height - width) + 50 : height;
-						const aspectRatio = width > height ? width / height / 2 : height / width / 2;
+						const adjustedHeight = height - width > 50 ? height - (height - width) + 50 : height;
+						const aspectRatio = width > adjustedHeight ? width / adjustedHeight / 2 : adjustedHeight / width / 2;
 						return aspectRatio * d.radius + NodePadding;
 					})
 					.iterations(1)

@@ -109,7 +109,7 @@ function MailPopUp(props) {
 
 	return (
 		<div>
-			<Modal show={props.show} onHide={props.hide}>
+			<Modal show={props.show} onHide={props.hide} className="modelContainer">
 				<Modal.Header>
 					<div>
 						<span onClick={props.hide} title="Close" className="modelHeaderMenuAlert modelIcons">
@@ -187,7 +187,7 @@ function MailPopUp(props) {
 									id="message"
 									type="text"
 									name="Message"
-									placeholder="Compose Message ..."
+									placeholder="Write a Message ..."
 									value={MailData.message}
 									onChange={handleChange}
 									required={true}
