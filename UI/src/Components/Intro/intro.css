@@ -1,6 +1,9 @@
 video::-webkit-media-controls-play-button {
 	display: none !important;
 }
+h1 {
+	width: 100vw;
+}
 .myVideo {
 	position: absolute;
 	top: 0;
@@ -54,12 +57,13 @@ video::-webkit-media-controls-play-button {
 }
 
 .pointingArrow {
-	height: calc(15vh + 16vw);
-	width: calc(20vw + 10vh);
+	height: calc(10vh + 8vw);
+	width: calc(12vw + 5vh);
 	position: relative;
-	margin-top: -3vw;
+	margin-top: 5vw;
 	margin-left: auto;
-	margin-right: 0vw;
+	margin-right: 10vw;
+	-webkit-user-select: none;
 	user-select: none;
 }
 
@@ -72,8 +76,9 @@ video::-webkit-media-controls-play-button {
 	position: absolute;
 	bottom: 0px;
 	padding: 0px 0px 10vh 5vw;
-	color: #d3c3fadb;
+	color: #e9e0ffdb;
 	z-index: 11;
+	width: 100%;
 }
 .intoDesciption h1 {
 	position: relative;
@@ -393,24 +398,31 @@ video::-webkit-media-controls-play-button {
 	}
 }
 .intoDesciption .introHeader1 {
+	width: 100vw;
 	margin-top: -48vh;
 }
 .intoDesciption .introHeader2 {
+	width: 100vw;
 	margin-top: -40vh;
 }
 .intoDesciption .introHeader3 {
+	width: 100vw;
 	margin-top: -32vh;
 }
 .intoDesciption .introHeader4 {
+	width: 100vw;
 	margin-top: -24vh;
 }
 .intoDesciption .introHeader5 {
+	width: 100vw;
 	margin-top: -16vh;
 }
 .intoDesciption .introHeader6 {
+	width: 100vw;
 	margin-top: -8vh;
 }
 .intoDesciption .introHeader7 {
+	width: 100vw;
 	margin-top: 0vh;
 }
 
