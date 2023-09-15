@@ -71,7 +71,7 @@ const resume = (req, res) => {
 					status: 200,
 					success: true,
 					message: "Mrinal's Portolio Resume Download",
-					data: { url: `${URL}/api/resume/download` },
+					data: { url: `${req.protocol}://${req.get("host")}/api/resume/download` },
 			  }
 			: { status: 204, success: true, message: "No URL Found for Mrinal's Portolio Resume Download" };
 		res.status(200).json(apiData);
