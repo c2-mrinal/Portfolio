@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import * as d3 from "d3";
 import "./skill.css";
 import Loader from "../../Shared/Loader";
+import Modal from "react-bootstrap/Modal";
 
 const halfStar = `<i class="fa-solid fa-star-half"></i>`;
 const oneStar = `<i class="fa-solid fa-star"></i>`;
@@ -24,6 +25,7 @@ function Skill({ onMouseOver, onMouseOut }) {
 	const [windowWidth, windowHeight] = useWindowSize();
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const [showAlert, setShowAlert] = useState(false);
 	const [svgRoatate, setSvgRoatate] = useState(-34);
 	const svgCode = `
 	<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 3600 3000">
@@ -92,9 +94,10 @@ function Skill({ onMouseOver, onMouseOut }) {
 		backgroundRepeat: "no-repeat",
 		backgroundSize: "cover",
 		maxHeight: "100vh",
-		zIndex: "-2",
+		zIndex: "1",
+		height: heightS,
+		widthS: widthS,
 		overflow: "hidden",
-		minHeight: "98vh",
 	};
 	useEffect(() => {
 		const updateState = () => {
@@ -129,6 +132,9 @@ function Skill({ onMouseOver, onMouseOut }) {
 
 				if (responseData.success && responseData.data) {
 					setData([...responseData.data]);
+					setTimeout(() => {
+						handlePopup();
+					}, 2000);
 				} else {
 					console.log(responseData.statusText || responseData.message);
 				}
@@ -211,9 +217,9 @@ function Skill({ onMouseOver, onMouseOut }) {
 			.select("body")
 			.append("div")
 			.style("position", "absolute")
-			.style("z-index", "10")
+			.style("z-index", "2")
 			.style("visibility", "hidden")
-			.text((d) => `${d && d.value}`);
+			.text((d) => `${d && d.value ? d.value : ""}`);
 
 		const nodeg = d3
 			.select(refNode.current)
@@ -254,7 +260,7 @@ function Skill({ onMouseOver, onMouseOut }) {
 			.append("circle")
 			.attr("r", (d) => {
 				const adjustedHeight = height - width > 50 ? height - (height - width) + 50 : height;
-				const aspectRatio = width > height ? width / height / 2 : height / width / 2;
+				const aspectRatio = width > adjustedHeight ? width / adjustedHeight / 2 : adjustedHeight / width / 2;
 				return aspectRatio * d.radius;
 			})
 			.attr("fill", (d) => {
@@ -286,9 +292,10 @@ function Skill({ onMouseOver, onMouseOut }) {
 			})
 			.attr("cx", (d) => d.x)
 			.attr("cy", (d) => d.y)
+			.style("z-index", "5")
 			.on("mouseover", function (e, d) {
 				mouseOver(e, d);
-				tooltip.html(showTooltip(d));
+				tooltip.html(d.label && d !== "undefined" ? showTooltip(d) : "");
 				tooltip.style("visibility", "visible");
 			})
 			.on("mousemove", function (e, d) {
@@ -319,6 +326,7 @@ function Skill({ onMouseOver, onMouseOut }) {
 				}
 			})
 			.attr("fill", "#000000")
+			.style("z-index", "5")
 			.attr("fill-opacity", "0");
 
 		const nodetxt = nodeg.selectAll("text").data(data).enter();
@@ -441,17 +449,21 @@ function Skill({ onMouseOver, onMouseOut }) {
 		return starList;
 	};
 
+	const handlePopup = () => {
+		setShowAlert(!showAlert);
+	};
 	return (
 		<div style={divStyle}>
-			{/* {data.length > 0 && (
-				<div className="containerbackground">
-					<div className="drop1">Click & Drag </div>
-					<div className="drop2">Over Skill Bubble</div>
-					<div className="drop3"> to have some fun !!</div>
-				</div>
-			)} */}
 			{data.length > 0 ? <svg ref={refNode} className="svgBody" /> : "NO Data Found"}
 			{loading && <Loader />}
+			<Modal show={showAlert} onHide={setShowAlert} className="modelContainer">
+				<Modal.Body>
+					<h5> Hover/Tap over Bubble for more Detail on Skill &#x1F913; </h5>
+					<h5> Drag bubble to play with them &#128515;</h5>
+					<h6 onClick={handlePopup}>close</h6>
+					<div className="pointingTri"></div>
+				</Modal.Body>
+			</Modal>
 		</div>
 	);
 }

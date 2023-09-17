@@ -32,11 +32,9 @@ h1 {
 }
 
 .resumeDownloadContainer {
-	margin-left: auto;
-	margin-bottom: auto;
-	padding-right: 10vw;
-	padding-top: 15vh;
-	position: relative;
+	right: 12vw;
+	top: 15vh;
+	position: absolute;
 	z-index: 11;
 }
 
@@ -58,18 +56,11 @@ h1 {
 
 .pointingArrow {
 	height: calc(10vh + 8vw);
-	width: calc(12vw + 5vh);
-	position: relative;
+	position: absolute;
 	margin-top: 5vw;
-	margin-left: auto;
-	margin-right: 10vw;
+	right: 10vw;
 	-webkit-user-select: none;
 	user-select: none;
-}
-
-.isInverted {
-	/* -webkit-filter: invert(1);
-	filter: invert(1); */
 }
 
 .intoDesciption {
@@ -78,7 +69,6 @@ h1 {
 	padding: 0px 0px 10vh 5vw;
 	color: #e9e0ffdb;
 	z-index: 11;
-	width: 100%;
 }
 .intoDesciption h1 {
 	position: relative;

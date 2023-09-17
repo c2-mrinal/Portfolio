@@ -1,11 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 
-function IntroBgSvg({ cursorPosition, width, height }) {
-	const x = cursorPosition.x || 400,
-		y = cursorPosition.y || 700;
+function useMouseMove() {
+	const [mouseX, setMouseX] = React.useState(0);
+	const [mouseY, setMouseY] = React.useState(0);
+
+	const onMouseMove = React.useCallback((e) => {
+		setMouseX(e.clientX);
+		setMouseY(e.clientY);
+	}, []);
+
+	return { mouseX, mouseY, onMouseMove };
+}
+
+function IntroBgSvg({ width, height }) {
+	const WrapperRef = useRef(null);
+	const { mouseX, mouseY, onMouseMove } = useMouseMove();
+
+	const x = mouseX || 400,
+		y = mouseY || 700;
+
+	useEffect(() => {
+		const refCurrent = WrapperRef.current;
+		refCurrent?.addEventListener("pointermove", onMouseMove);
+		return () => refCurrent?.removeEventListener("pointermove", onMouseMove);
+	}, [onMouseMove]);
 
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width={width} height={height} viewBox="0 0 1422 800">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			version="1.1"
+			width={width}
+			height={height}
+			viewBox="0 0 1422 800"
+			ref={WrapperRef}
+		>
 			<defs>
 				<linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="ccchaos-grad">
 					<stop stopColor="hsl(197, 85%, 55%)" stopOpacity="1" offset="0%"></stop>
