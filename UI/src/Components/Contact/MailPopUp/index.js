@@ -83,7 +83,9 @@ function MailPopUp(props) {
 				});
 
 				if (rawResponse.ok) {
+					cancelMail();
 					localStorage.setItem("lastMailSent", new Date());
+					setRecentMail(true);
 				} else {
 					console.error("Failed to send email:", rawResponse.statusText);
 				}
@@ -197,18 +199,21 @@ function MailPopUp(props) {
 						</>
 					) : (
 						<div className="alreadyMailSent">
-							<p>You've already sent an email within the past six hours. You are free to wait for my response. </p>
+							<h1>
+								<i className="fa-solid fa-envelope-circle-check" style={{ color: "#6ad920" }}></i>
+							</h1>
+							<p>You've recently sent an email in the last six hours. Please feel free to await my response.</p>
 							<p>
-								If you still want to send another email,{" "}
+								Should you wish to send another email, you may do so by{" "}
 								<span
 									className="resendMial"
 									onClick={() => {
 										setRecentMail(true);
 									}}
 								>
-									click here
+									clicking here
 								</span>
-								.{" "}
+								.
 							</p>
 						</div>
 					)}
