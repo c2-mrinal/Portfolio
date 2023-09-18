@@ -21,8 +21,7 @@ router.get("/resume/download", resumeDownloader);
 
 router.post("/sendMail", (req, res) => {
 	try {
-		sendMail(req.body);
-		res.send("ok done");
+		sendMail(res, req.body);
 	} catch (e) {
 		console.error(e);
 		res.status(500).end("errors");

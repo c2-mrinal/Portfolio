@@ -14,7 +14,6 @@ function Intro(props) {
 	const [downloadSuccess, setDownloadSuccess] = useState(false);
 	const [pointerComp, setPointerComp] = useState(0);
 	const [loading, setLoading] = useState(false);
-	const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 	const isTouchDevice = useSelector((state) => state.deviceTypeTouch || false);
 	const WrapperRef = useRef(null);
 
@@ -44,24 +43,12 @@ function Intro(props) {
 			}
 		}, 1000);
 	};
-	const onMove = ({ clientX, clientY }) => {
-		const rect = WrapperRef.current.getBoundingClientRect();
-		const x = clientX - rect.left;
-		const y = clientY - rect.top;
-		setCursorPosition({ x, y });
-	};
-
-	useEffect(() => {
-		const refCurrent = WrapperRef.current;
-		refCurrent?.addEventListener("mousemove", onMove);
-		return () => refCurrent?.removeEventListener("mousemove", onMove);
-	}, []);
 
 	return (
 		<>
 			{loading && <Loader />}
 			<div className="myVideo">
-				<IntroBgSvg cursorPosition={cursorPosition} width={width} height={height} />
+				<IntroBgSvg width={width} height={height} />
 			</div>
 			<ErrorBoundary hide={true}>
 				<div ref={WrapperRef}>

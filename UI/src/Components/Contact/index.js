@@ -14,7 +14,7 @@ function Contact() {
 				<section>
 					<div className="contactBG">
 						<div className="contactBox ">
-							<div className="contactBoxContent ">
+							<div className="contactBoxContent row justify-content-around">
 								<div className=" row">
 									<div className="col-sm-12 col-lg-6">
 										<h1>Mail</h1>
@@ -24,31 +24,23 @@ function Contact() {
 									</div>
 									<div className="col-sm-12 col-lg-6">
 										<h1>Social</h1>
-										<div className="socialIcons d-flex justify-content-evenly">
-											<a
-												href={"https://www.linkedin.com/in/mrinal-kasyap-695853171/"}
-												target="_blank"
-												rel="noreferrer"
-												title="Linkedin"
-											>
-												<span className="contactIcon linkedin">
+										<div className="socialIcons d-flex justify-content-around">
+											<a href={"https://www.linkedin.com/in/mrinal-kasyap-695853171/"} target="_blank" rel="noreferrer">
+												<div className="contactIcon linkedin">
 													<i className="fa fa-brands fa-linkedin-in"></i>
-												</span>
+													<div className="iconHandle">LINKEDIN</div>
+												</div>
 											</a>
-											<a href={"https://twitter.com/mrinal_kasyap"} target="_blank" rel="noreferrer" title="Twitter">
-												<span className="contactIcon twitter">
-													<i className="fa fa-brands fa-twitter"></i>
-												</span>{" "}
-											</a>
-											<a
-												href={"https://instagram.com/c2_mrinal?igshid=YmMyMTA2M2Y="}
-												target="_blank"
-												rel="noreferrer"
-												title="Instagram"
-											>
-												<span className="contactIcon instagram">
+											<a href={"https://instagram.com/c2_mrinal?igshid=YmMyMTA2M2Y="} target="_blank" rel="noreferrer">
+												<div className="contactIcon instagram">
 													<i className="fa fa-brands fa-instagram"></i>
-												</span>
+													<div className="iconHandle">INSTAGRAM</div>
+												</div>
+											</a>
+											<a href={"https://twitter.com/mrinal_kasyap"} target="_blank" rel="noreferrer">
+												<div className="contactIcon twitter">
+													<i className="fa-brands fa-square-x-twitter"></i> <div className="iconHandle">TWITTER</div>
+												</div>{" "}
 											</a>
 										</div>
 									</div>
@@ -69,45 +61,39 @@ function Contact() {
 				<section>
 					<div className="contactBG">
 						<div className="contactBox">
-							<div className="contactBoxContent row justify-content-center">
-								<span className="col-sm-12 col-md-12 col-lg-3">
-									<a href={"https://github.com/c2-mrinal"} target="_blank" rel="noreferrer" title="Github">
-										<span className="contactIcon github">
+							<div className="contactBoxContent workIcon row justify-content-around">
+								<div className="col-sm-12 col-md-6 col-lg-3">
+									<a href={"https://github.com/c2-mrinal"} target="_blank" rel="noreferrer">
+										<div className="contactIcon github">
 											<i className="fa fa-brands fa-github"></i>
-										</span>
+											<div className="iconHandle">GITHUB</div>
+										</div>
 									</a>
-								</span>
-								<span className="col-sm-12 col-md-12 col-lg-3">
-									<a
-										href={"https://stackoverflow.com/users/14725561/c2-mrinal"}
-										rel="noreferrer"
-										target="_blank"
-										title="Stack Overflow"
-									>
-										<span className="contactIcon stackoverflow">
+								</div>
+								<div className="col-sm-12 col-md-6 col-lg-3">
+									<a href={"https://stackoverflow.com/users/14725561/c2-mrinal"} rel="noreferrer" target="_blank">
+										<div className="contactIcon stackoverflow">
 											<i className="fa fa-brands fa-stack-overflow"></i>
-										</span>
+											<div className="iconHandle">STACKOVERFLOW</div>
+										</div>
 									</a>
-								</span>
-								<span className="col-sm-12 col-md-12 col-lg-3">
-									<a
-										href={"https://www.hackerrank.com/mrinalspec"}
-										target="_blank"
-										rel="noreferrer"
-										title="Hacker Rank"
-									>
-										<span className="contactIcon hackerrank">
+								</div>
+								<div className="col-sm-12 col-md-6 col-lg-3">
+									<a href={"https://www.hackerrank.com/mrinalspec"} target="_blank" rel="noreferrer">
+										<div className="contactIcon hackerrank">
 											<i className="fa fa-brands fa-hackerrank"></i>
-										</span>
+											<div className="iconHandle">HACKERRANK</div>
+										</div>
 									</a>
-								</span>
-								<span className="col-sm-12 col-md-12 col-lg-3">
-									<a href={"https://codepen.io/c2-mrinal"} target="_blank" rel="noreferrer" title="Codepen">
-										<span className="contactIcon github" title="Codepen">
+								</div>
+								<div className="col-sm-12 col-md-6 col-lg-3">
+									<a href={"https://codepen.io/c2-mrinal"} target="_blank" rel="noreferrer">
+										<div className="contactIcon github">
 											<i className="fa fa-brands fa-codepen"></i>
-										</span>
+											<div className="iconHandle">CODEPEN</div>
+										</div>
 									</a>
-								</span>
+								</div>
 							</div>
 						</div>
 					</div>
