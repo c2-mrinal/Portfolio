@@ -150,11 +150,17 @@
 }
 
 .modal-content {
-	background-color: #a6b7ca;
-	border-top: 2px solid silver;
-	border-left: 2px solid silver;
+	background: #076585; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #fff, #076585); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to left,
+		#fff,
+		#076585
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border-top: 2px solid rgb(164, 164, 164);
+	border-left: 2px solid rgb(133, 133, 133);
 	border-radius: 0;
-	border-bottom: 0.6rem solid rgb(127, 124, 118);
+	border-bottom: 0.6rem solid rgb(144, 143, 143);
 	border-right: 0.6rem solid rgb(90, 86, 78);
 	-webkit-box-shadow: 11px 13px 20px -5px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 11px 13px 20px -5px rgba(0, 0, 0, 0.75);
@@ -169,9 +175,11 @@
 	height: 0;
 	border-left: 2rem solid transparent;
 	border-right: 2rem solid transparent;
-	border-top: 2rem solid rgb(127, 124, 118);
+	border-top: 2rem solid rgb(144, 143, 143);
 }
 .modal-content h5 {
+	margin: auto 2vw;
+	font-size: 1.3rem;
 	text-align: center;
 	padding: 1vh 0;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
