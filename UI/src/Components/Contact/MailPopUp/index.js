@@ -81,7 +81,6 @@ function MailPopUp(props) {
 					},
 					body: JSON.stringify(MailData),
 				});
-
 				if (rawResponse.ok) {
 					cancelMail();
 					localStorage.setItem("lastMailSent", new Date());
@@ -93,6 +92,7 @@ function MailPopUp(props) {
 		} catch (error) {
 			console.error("An error occurred while sending email:", error);
 		} finally {
+			cancelMail();
 			setLoading(false);
 		}
 	};
