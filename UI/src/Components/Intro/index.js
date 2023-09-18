@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import "./intro.css";
 import { useSelector } from "react-redux";
 import Loader from "../../Shared/Loader";
 import IntroSection from "./IntroSection";
-import IntroBg from "../../image/IntroBg.mp4";
-import { useProgressiveImage } from "../../Shared/CustomHooks";
 import ErrorBoundary from "../../Shared/ErrorBoundry";
 import CursorComponent from "./CursorComponents/CursorComponent";
+import IntroBgSvg from "../../Shared/SVG/IntroBgSvg";
 
+const width = window.innerWidth;
+const height = window.innerHeight;
 function Intro(props) {
 	const [downloading, setDownloading] = useState(false);
 	const [downloadSuccess, setDownloadSuccess] = useState(false);
 	const [pointerComp, setPointerComp] = useState(0);
 	const [loading, setLoading] = useState(false);
 	const isTouchDevice = useSelector((state) => state.deviceTypeTouch || false);
-	const intoBGVid = useProgressiveImage(IntroBg);
+	const WrapperRef = useRef(null);
 
 	const downloadResume = async () => {
 		setDownloading(true);
@@ -47,12 +48,12 @@ function Intro(props) {
 		<>
 			{loading && <Loader />}
 			<div className="myVideo">
-				<video id="bg-video" autoPlay muted loop className="videoDimension">
-					<source src={IntroBg} type="video/mp4" />
-				</video>
+				<IntroBgSvg width={width} height={height} />
 			</div>
 			<ErrorBoundary hide={true}>
-				<IntroSection downloading={downloading} downloadSuccess={downloadSuccess} downloadResume={downloadResume} />
+				<div ref={WrapperRef}>
+					<IntroSection downloading={downloading} downloadSuccess={downloadSuccess} downloadResume={downloadResume} />
+				</div>
 			</ErrorBoundary>
 			<ErrorBoundary hide={true}>
 				{!isTouchDevice && <div className="cursorAnimationText">Move Your Cursor Below to have Some Fun</div>}
@@ -106,7 +107,6 @@ function Intro(props) {
 					</div>
 				</div>
 			</ErrorBoundary>
-			{/* <Footer />{" "} */}
 		</>
 	);
 }

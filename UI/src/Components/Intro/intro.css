@@ -1,5 +1,8 @@
-#bg-video::-webkit-media-controls-start-playback-button {
-	display: none;
+video::-webkit-media-controls-play-button {
+	display: none !important;
+}
+h1 {
+	width: 100vw;
 }
 .myVideo {
 	position: absolute;
@@ -29,11 +32,9 @@
 }
 
 .resumeDownloadContainer {
-	margin-left: auto;
-	margin-bottom: auto;
-	padding-right: 10vw;
-	padding-top: 15vh;
-	position: relative;
+	right: 12vw;
+	top: 15vh;
+	position: absolute;
 	z-index: 11;
 }
 
@@ -54,32 +55,27 @@
 }
 
 .pointingArrow {
-	height: calc(15vh + 16vw);
-	width: calc(20vw + 10vh);
-	position: relative;
-	margin-top: -3vw;
-	margin-left: auto;
-	margin-right: 0vw;
-}
-
-.isInverted {
-	/* -webkit-filter: invert(1);
-	filter: invert(1); */
+	height: calc(10vh + 8vw);
+	position: absolute;
+	margin-top: 5vw;
+	right: 10vw;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 .intoDesciption {
 	position: absolute;
 	bottom: 0px;
-	padding: 0px 0px 10vh 10vw;
+	padding: 0px 0px 10vh 5vw;
 	color: #d3c3fadb;
 	z-index: 11;
 }
 .intoDesciption h1 {
 	position: relative;
 	min-width: calc(45vw);
-	font-family: "Bungee-Regular";
+	font-family: "natual-font";
 	font-weight: 900;
-	font-size: calc(0.7rem + 3vw);
+	font-size: calc(0.7rem + 1.7vw);
 }
 /* .intoDesciption span:hover {
 	position: relative;
@@ -340,24 +336,23 @@
 	position: absolute;
 }
 .intoDesciption span {
+	min-width: 2vw;
 	text-transform: uppercase;
+	text-align: center;
 	cursor: grabbing;
 	position: absolute;
 	background-color: rgb(155, 111, 243);
 	background-image: radial-gradient(
 		circle,
-		#f3ff66,
-		#d5ae1f,
-		#ffc391,
-		#a989e8,
-		#ffb0cf,
-		#f1b8e6,
-		#ddc2f6,
-		#c7ccff,
-		#d7f987,
-		#87efa3,
-		#7beda0,
-		#80e280
+		#845ec2,
+		#2c73d2,
+		#0081cf,
+		#389cc1,
+		#008e9b,
+		#33e3c9,
+		#096485,
+		#2cc5d3,
+		#48dac4
 	);
 	margin-bottom: 20px;
 	background-size: 200% 200%;
@@ -365,6 +360,7 @@
 	background-clip: text;
 	-webkit-background-clip: text;
 	transition: all 0.1s ease-in-out;
+	user-select: none;
 }
 .intoDesciption span:hover {
 	transform: scale(1.7);
@@ -392,40 +388,60 @@
 	}
 }
 .intoDesciption .introHeader1 {
-	margin-top: -40vh;
+	width: 100vw;
+	margin-top: -48vh;
 }
 .intoDesciption .introHeader2 {
-	margin-top: -30vh;
+	width: 100vw;
+	margin-top: -40vh;
 }
 .intoDesciption .introHeader3 {
-	margin-top: -20vh;
+	width: 100vw;
+	margin-top: -32vh;
 }
 .intoDesciption .introHeader4 {
-	margin-top: -10vh;
+	width: 100vw;
+	margin-top: -24vh;
+}
+.intoDesciption .introHeader5 {
+	width: 100vw;
+	margin-top: -16vh;
 }
 .intoDesciption .introHeader6 {
+	width: 100vw;
+	margin-top: -8vh;
+}
+.intoDesciption .introHeader7 {
+	width: 100vw;
 	margin-top: 0vh;
 }
-.introHeader5 .text1 {
+
+.introHeader7 .text1 {
 	font-size: calc(0.6rem + 1vw);
-	margin: 2vh 0 0 1vw;
+	margin: 2px 0 0 3px;
 	transform: rotate(-33deg);
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
 	.intoDesciption .introHeader1 {
-		margin-top: calc(-28vh);
+		margin-top: calc(-42vh);
 	}
 	.intoDesciption .introHeader2 {
-		margin-top: calc(-21vh);
+		margin-top: calc(-35vh);
 	}
 	.intoDesciption .introHeader3 {
-		margin-top: calc(-14vh);
+		margin-top: calc(-28vh);
 	}
 	.intoDesciption .introHeader4 {
-		margin-top: calc(-7vh);
+		margin-top: calc(-21vh);
+	}
+	.intoDesciption .introHeader5 {
+		margin-top: calc(-14vh);
 	}
 	.intoDesciption .introHeader6 {
+		margin-top: calc(-7vh);
+	}
+	.intoDesciption .introHeader7 {
 		margin-top: calc(0vw);
 	}
 }
@@ -433,25 +449,38 @@
 }
 @media only screen and (max-width: 768px) {
 	.intoDesciption .introHeader1 {
-		margin-top: calc(-20vh);
+		margin-top: calc(-30vh);
 	}
 	.intoDesciption .introHeader2 {
-		margin-top: calc(-15vh);
+		margin-top: calc(-25vh);
 	}
 	.intoDesciption .introHeader3 {
-		margin-top: calc(-10vh);
+		margin-top: calc(-20vh);
 	}
 	.intoDesciption .introHeader4 {
-		margin-top: calc(-5vh);
+		margin-top: calc(-15vh);
+	}
+	.intoDesciption .introHeader5 {
+		margin-top: calc(-10vh);
 	}
 	.intoDesciption .introHeader6 {
+		margin-top: calc(-5vh);
+	}
+	.intoDesciption .introHeader7 {
 		margin-top: calc(0vw);
+	}
+
+	.intoDesciption h1 {
+		font-size: calc(0.5rem + 1.4vw);
 	}
 	.introHeader5 .text1 {
 		margin: 1vh 0 0 1vw;
 	}
 	.introHeader5 .text9 {
 		width: 15vw;
+	}
+	.intoDesciption span {
+		min-width: 4vw;
 	}
 	.intoDesciption {
 		/* padding: 0px 0px 10vh 10vw; */

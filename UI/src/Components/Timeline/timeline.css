@@ -5,21 +5,6 @@
 	flex-wrap: wrap;
 }
 
-.firstContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background: yellow;
-}
-
-.lastContainer {
-	display: flex;
-	height: 100vh;
-	background: yellow;
-}
-
 .panel {
 	width: 100vw;
 	height: 100vh;
@@ -31,32 +16,100 @@
 	width: 100vw;
 	top: 20%;
 }
-
+.pin-spacer {
+	z-index: 1 !important;
+}
+.headerTextContainer {
+	z-index: auto;
+}
 .timeLineFrame {
 	width: 100vw;
-	z-index: 5;
 	height: 60vh;
 	width: 100vw;
 	position: fixed;
 	display: flex;
 	top: 20%;
-	overflow: hidden;
+}
 
+.timelineBgOver div {
+	z-index: 11;
+	position: fixed;
+	top: 20%;
+	height: 60vh;
+	width: 7.5%;
 	/* background-color: white; */
 }
+.bgover1 {
+	/* position: relative; */
+	left: 0;
+}
+.bgover2 {
+	right: 0;
+	/* position: relative; */
+}
+
 .contain1,
-.contain4,
 .contain5 {
-	z-index: 1;
+	z-index: 11 !important;
 	background-color: white;
 }
 .contain2 {
-	width: 12%;
-	background-color: white;
-}
-.contain3 {
-	width: 60%;
+	/* width: 5%; */
 	/* background-color: white; */
+}
+.contain4 {
+	/* margin: auto;
+	text-align: center; */
+	/* width: 60%; */
+}
+.wapper1,
+.wapper2,
+.wapper3,
+.wapper4 {
+	position: relative;
+	height: calc(0.7rem + 7vh + 5vw);
+	width: calc(7vw + 3vh);
+	color: aqua;
+}
+.wapper1,
+.wapper3 {
+	position: absolute;
+	top: 101%;
+
+	transform: rotate(180deg);
+}
+.wapper2,
+.wapper4 {
+	top: -30%;
+}
+.wapper1 {
+	left: 4%;
+}
+.wapper2 {
+	left: 75%;
+}
+
+.wapper3 {
+	/* top: 12%; */
+	right: 20.5%;
+}
+
+.wapper4 {
+	right: 50%;
+}
+
+.careerHeaderText h3 {
+	font-weight: 900;
+	font-family: "Bungee-Regular";
+	text-align: center;
+}
+
+.chtStart {
+	margin: 65% 90%;
+}
+
+.chtEnd {
+	margin: 33% 90%;
 }
 
 .shape1 {
@@ -79,7 +132,7 @@
 	height: 100%;
 	background-color: rgba(0, 255, 255, 0.257);
 	-webkit-clip-path: polygon(0 0, 12% 0, 100% 100%, 88% 100%);
-	clip-path: polygon(0 0, 12% 0, 100% 100%, 88% 100%);
+	clip-path: polygon(0 0, 9% 0, 100% 100%, 91% 100%);
 }
 .shape4 {
 	/* z-index: 5; */
@@ -88,22 +141,47 @@
 	-webkit-clip-path: polygon(75% 0, 100% 0, 25% 100%, 0 100%);
 	clip-path: polygon(75% 0, 100% 0, 25% 100%, 0 100%);
 }
+
 .shape5 {
 	height: 100%;
 	background-color: aqua;
 	-webkit-clip-path: polygon(0 0, 50% 0, 100% 36%, 100% 69%);
 	clip-path: polygon(0 0, 50% 0, 100% 36%, 100% 69%);
 }
+
 .textContainer .t2 {
 	z-index: 1;
+	min-width: 25%;
 	position: absolute;
-	left: 14vw;
+	left: 4.5vw;
+	margin-top: 20vh;
+	font-family: "Bungee-Regular";
 }
+
 .t2 .textRotated {
 	z-index: 10;
 	font-size: clamp(1rem, calc(0.5rem + 2vw), 2rem);
 	font-weight: 900;
 	transform: rotate(-70deg);
+	opacity: 0;
+	transform: translateY(-50px);
+	animation: appear 1s ease-in 1s forwards;
+}
+
+@keyframes appear {
+	0% {
+		transform: rotate(-70deg);
+		transform-origin: top;
+		top: -200%;
+		opacity: 0;
+	}
+
+	100% {
+		transform: rotate(-70deg);
+		transform-origin: top;
+		top: 0;
+		opacity: 1;
+	}
 }
 .textContainer .t3 {
 	left: 20vw;
@@ -122,9 +200,11 @@
 	position: absolute;
 	z-index: 111;
 	transform: rotate(-70deg);
-	right: 3vw;
+	right: 7vw;
+	margin-top: 20vh;
 	font-size: clamp(1rem, calc(0.5rem + 2vw), 2rem);
 	font-weight: 900;
+	font-family: "Bungee-Regular";
 }
 .textAbout {
 	font-size: calc(1vh + 1vw);
@@ -133,6 +213,7 @@
 .textHeader {
 	text-align: center;
 	font-weight: 900;
+	font-size: calc(1rem + 3vw);
 }
 .textHeader i {
 	font-size: calc(0.2rem + 0.8vw);
@@ -142,4 +223,7 @@
 }
 .textDetail a {
 	text-decoration: none;
+}
+.opacityNone {
+	opacity: 0;
 }

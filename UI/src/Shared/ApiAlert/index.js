@@ -30,7 +30,7 @@ export function APIBanner(props) {
 export const apiBanner = (status, text) => {
 	return (
 		<div>
-			"<APIBanner status={status} text={text} />"
+			<APIBanner status={status} text={text} />
 		</div>
 	);
 };

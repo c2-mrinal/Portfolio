@@ -81,9 +81,10 @@ function MailPopUp(props) {
 					},
 					body: JSON.stringify(MailData),
 				});
-
 				if (rawResponse.ok) {
+					cancelMail();
 					localStorage.setItem("lastMailSent", new Date());
+					setRecentMail(true);
 				} else {
 					console.error("Failed to send email:", rawResponse.statusText);
 				}
@@ -91,6 +92,7 @@ function MailPopUp(props) {
 		} catch (error) {
 			console.error("An error occurred while sending email:", error);
 		} finally {
+			cancelMail();
 			setLoading(false);
 		}
 	};
@@ -109,7 +111,7 @@ function MailPopUp(props) {
 
 	return (
 		<div>
-			<Modal show={props.show} onHide={props.hide}>
+			<Modal show={props.show} onHide={props.hide} className="modelContainer">
 				<Modal.Header>
 					<div>
 						<span onClick={props.hide} title="Close" className="modelHeaderMenuAlert modelIcons">
@@ -187,7 +189,7 @@ function MailPopUp(props) {
 									id="message"
 									type="text"
 									name="Message"
-									placeholder="Compose Message ..."
+									placeholder="Write a Message ..."
 									value={MailData.message}
 									onChange={handleChange}
 									required={true}
@@ -197,18 +199,21 @@ function MailPopUp(props) {
 						</>
 					) : (
 						<div className="alreadyMailSent">
-							<p>You've already sent an email within the past six hours. You are free to wait for my response. </p>
+							<h1>
+								<i className="fa-solid fa-envelope-circle-check" style={{ color: "#6ad920" }}></i>
+							</h1>
+							<p>You've recently sent an email in the last six hours. Please feel free to await my response.</p>
 							<p>
-								If you still want to send another email,{" "}
+								Should you wish to send another email, you may do so by{" "}
 								<span
 									className="resendMial"
 									onClick={() => {
 										setRecentMail(true);
 									}}
 								>
-									click here
+									clicking here
 								</span>
-								.{" "}
+								.
 							</p>
 						</div>
 					)}
