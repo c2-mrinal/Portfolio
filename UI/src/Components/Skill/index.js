@@ -458,8 +458,16 @@ function Skill({ onMouseOver, onMouseOut }) {
 			{loading && <Loader />}
 			<Modal show={showAlert} onHide={setShowAlert} className="modelContainer">
 				<Modal.Body>
-					<h5> Hover over the bubble to explore additional skill details &#x1F913; </h5>
-					<h5> Drag the bubble to interact and have fun with them &#128515;</h5>
+					<ul className="alert-ul">
+						<li>
+							<span className="alert-emoji">&#x1F913;</span>
+							<span>Hover over the bubble to explore additional skill details.</span>
+						</li>
+						<li>
+							<span className="alert-emoji">&#128515;</span>
+							<span>Drag the bubble to interact and have fun with them.</span>
+						</li>
+					</ul>
 					<h6 onClick={handlePopup}>close</h6>
 					<div className="pointingTri"></div>
 				</Modal.Body>

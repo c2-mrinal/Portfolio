@@ -150,18 +150,17 @@
 }
 
 .modal-content {
-	background: #076585; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to left, #fff, #076585); /* Chrome 10-25, Safari 5.1-6 */
+	background: rgb(207, 93, 32);
 	background: linear-gradient(
-		to left,
-		#fff,
-		#076585
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		333deg,
+		rgba(207, 93, 32, 0.9456735819327731) 0%,
+		rgba(219, 226, 99, 0.7809764530812324) 100%
+	);
 	border-top: 2px solid rgb(164, 164, 164);
 	border-left: 2px solid rgb(133, 133, 133);
 	border-radius: 0;
-	border-bottom: 0.6rem solid rgb(144, 143, 143);
-	border-right: 0.6rem solid rgb(90, 86, 78);
+	border-bottom: 0.4rem solid rgb(115, 84, 20);
+	border-right: 0.6rem solid rgb(90, 60, 1);
 	-webkit-box-shadow: 11px 13px 20px -5px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 11px 13px 20px -5px rgba(0, 0, 0, 0.75);
 	box-shadow: 11px 13px 20px -5px rgba(0, 0, 0, 0.75);
@@ -175,22 +174,42 @@
 	height: 0;
 	border-left: 2rem solid transparent;
 	border-right: 2rem solid transparent;
-	border-top: 2rem solid rgb(144, 143, 143);
+	border-top: 2rem solid rgb(115, 84, 20);
 }
 .modal-content h5 {
 	margin: auto 2vw;
 	font-size: 1.3rem;
-	text-align: center;
+	text-align: left;
 	padding: 1vh 0;
-	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-	font-weight: 600;
-	letter-spacing: 1px;
+	font-family: fantasy;
+	font-weight: 900;
+	letter-spacing: 3px;
 }
 
 .modal-content h6 {
 	text-align: end;
 	cursor: pointer;
-	color: rgb(135, 89, 4);
+	color: #cadcef;
 	letter-spacing: 1px;
 	font-weight: 700;
+}
+.alert-ul {
+	width: 100%;
+	margin: auto;
+}
+.alert-ul li {
+	/* width: 100%; */
+	display: flex;
+	flex: 1 4;
+	margin: 1rem auto;
+}
+.alert-ul li span {
+	margin: auto;
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	font-weight: 600;
+	text-align: justify;
+}
+.alert-emoji {
+	padding: 0 1rem;
+	font-size: calc(1rem + 1.5vw);
 }
