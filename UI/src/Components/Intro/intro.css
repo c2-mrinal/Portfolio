@@ -1,14 +1,13 @@
 video::-webkit-media-controls-play-button {
 	display: none !important;
 }
-h1 {
-	width: 100vw;
-}
+
 .myVideo {
 	position: absolute;
 	top: 0;
 	height: 100%;
 	width: 100%;
+	max-width: 100vw;
 	z-index: 9;
 	overflow: hidden;
 }
@@ -388,31 +387,31 @@ h1 {
 	}
 }
 .intoDesciption .introHeader1 {
-	width: 100vw;
+	/* width: 100vw; */
 	margin-top: -48vh;
 }
 .intoDesciption .introHeader2 {
-	width: 100vw;
+	/* width: 100vw; */
 	margin-top: -40vh;
 }
 .intoDesciption .introHeader3 {
-	width: 100vw;
+	/* width: 100vw; */
 	margin-top: -32vh;
 }
 .intoDesciption .introHeader4 {
-	width: 100vw;
+	/* width: 100vw; */
 	margin-top: -24vh;
 }
 .intoDesciption .introHeader5 {
-	width: 100vw;
+	/* width: 100vw; */
 	margin-top: -16vh;
 }
 .intoDesciption .introHeader6 {
-	width: 100vw;
+	/* width: 100vw; */
 	margin-top: -8vh;
 }
 .intoDesciption .introHeader7 {
-	width: 100vw;
+	/* width: 100vw; */
 	margin-top: 0vh;
 }
 
