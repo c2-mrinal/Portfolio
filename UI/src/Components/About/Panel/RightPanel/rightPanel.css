@@ -318,6 +318,76 @@ h2 strong {
 }
 /* libray component END  */
 
+/* workflow start */
+.pages {
+	width: 100%;
+}
+.workFlowContainer {
+	min-height: calc(100vh - 13.5vh);
+	background-color: aqua;
+	display: flex;
+	align-items: center;
+	margin: auto;
+}
+.flowleft {
+	width: 40%;
+	margin: auto;
+	color: #ffffff;
+}
+.flowleft i {
+	width: 100%;
+	text-align: center;
+	padding: 0 0 2vh 0;
+	margin: auto auto 2vh;
+	font-size: calc(1rem + 5vw);
+}
+.flowleft h3 {
+	margin: auto;
+	width: 70%;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 900;
+	font-family: Impact, Helvetica Inserat, Bitstream Vera Sans Bold, Arial, sans serif;
+}
+
+.flowright {
+	width: 60%;
+	/* -webkit-filter: invert(100%);
+	filter: invert(100%); */
+	font-family: Lucida Sans, Helvetica, Arial, sans-serif;
+	list-style-type: none;
+}
+.dependenciesList {
+	font-size: calc(0.7rem + 1vw);
+}
+.flowright li {
+	width: 90%;
+	text-align: justify;
+	font-weight: 800;
+	padding: 2vh 0;
+}
+.dependenciesList li {
+	font-size: calc(0.4rem + 0.7vw);
+	text-align: start;
+	padding: 3px 0;
+	font-weight: 400;
+}
+.dependenciesList strong {
+	font-size: calc(0.3rem + 0.6vw);
+}
+.dependenciesList em {
+	font-size: calc(0.2rem + 1vw);
+}
+.workFlowContainer:nth-child(even) {
+	flex-direction: row-reverse;
+}
+.workFlowContainer:nth-child(even) {
+	.flowright li {
+		margin: auto;
+	}
+}
+
+/* workflow end */
 @media (min-width: 768px) and (max-width: 1200px) {
 	.detailsStyled {
 		margin-top: -5vh;
@@ -359,7 +429,29 @@ h2 strong {
 		text-align: center;
 	}
 }
-@media only screen and (max-width: 520px) {
+@media (max-width: 520px) {
+	.workFlowContainer {
+		display: grid;
+	}
+
+	.flowleft {
+		width: 100%;
+		display: flex;
+		align-items: center;
+	}
+	.flowleft i {
+		width: 40%;
+	}
+	.flowleft h3 {
+		width: 60%;
+	}
+	.flowright {
+		margin: auto;
+		width: 80%;
+	}
+	.flowright li {
+		margin: auto;
+	}
 	.detailsStyled {
 		width: 90vw;
 		margin-top: 20vh;
