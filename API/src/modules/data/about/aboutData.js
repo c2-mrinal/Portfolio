@@ -542,89 +542,175 @@ const aboutData = {
 	],
 	front_workflow: {
 		header: "Workflow",
-		data: [],
-		about: "",
-	},
-	front_library: {
-		header: "Library",
 		data: [
 			{
-				name: "React",
-				desc: "",
-				url: "https://react.dev/",
+				icon: "fa-solid fa-timeline",
+				header: "Development Duration",
+				desc: [
+					" It took a total of 4 months to develop the portfolio from scratch, with the first month dedicated to planning and design, and the subsequent 3 months focused on development, testing, and deployment.",
+					"Project kickoff, goal setting, and requirements.",
+					"Design system development and prototyping.",
+					"Simultaneous section development.",
+					"Interactive features, animations, and Node API integration.",
+					"Comprehensive testing, optimization, and deployment.",
+				],
 			},
 			{
-				name: "Bootstrap",
-				desc: "",
-				url: "",
+				icon: "fa-solid fa-box-open",
+				header: "Dependencies",
+				desc: [
+					"Carefully selected dependencies to optimize UI performance and maintain control over design and functionality.",
+					"Key dependencies include:",
+				],
+				list: [
+					{ "Font Awesome Icons": "Used for high-quality and scalable icons." },
+					{ "Redux Toolkit": "Streamlined state management for a responsive and efficient UI." },
+					{ Bootstrap: "Employed for its responsive grid system and UI components." },
+					{ "D3 Library": "Leveraged for creating interactive and data-driven visualizations." },
+					{ "GSAP (GreenSock Animation Platform)": "Powering fluid animations and smooth transitions." },
+					{ "React and Related Libraries": "For building a dynamic and interactive user interface." },
+					{ "Redux and Redux Thunk": "Managing complex application state seamlessly." },
+					{ "React Router": " Enabling smooth and intuitive navigation within the portfolio." },
+					{ "Web Vitals": " Ensured top-notch performance and user experience." },
+				],
 			},
 			{
-				name: "D3",
-				desc: "",
-				url: "",
+				icon: "fa-regular fa-hand-pointer",
+				header: "Home Page - Cursor Animations",
+				desc: [
+					"Crafted a captivating home page that responds to cursor movements.",
+					"Implemented subtle yet engaging hover effects for interactive elements.",
+					"Enabled users to download your resume with a user-friendly functionality.",
+					"Leveraged window event listeners to orchestrate cursor-based animations, providing a unique and immersive user experience.",
+				],
 			},
 			{
-				name: "GSAP",
-				desc: "",
-				url: "",
+				icon: "fa-solid fa-dna",
+				header: "Career Page - Horizontal Timeline",
+				desc: [
+					"Developed a visually striking career page centered around a horizontal timeline.",
+					"Users can smoothly scroll through your professional journey, providing a concise yet comprehensive overview of your career milestones.",
+					"Utilized the GSAP library to create seamless horizontal scrolling animations, enhancing the storytelling aspect of this page.",
+				],
 			},
 			{
-				name: "React-Dom",
-				desc: "",
-				url: "",
+				icon: "fa-solid fa-bullseye",
+				header: "Skill Page - Interactive Bubbles",
+				desc: [
+					"Designed a skill showcase page featuring dynamic and interactive skill bubbles.",
+					"Allowed users to freely interact with and drag skill bubbles across the screen.",
+					"Implemented informative tooltips for in-depth skill exploration.",
+					"Utilized the D3 library for creating visually appealing and data-rich skill representations, making it an engaging and informative section.",
+				],
 			},
 			{
-				name: "React-Redux",
-				desc: "",
-				url: "",
+				icon: "fa-regular fa-address-card",
+				header: "About Page - Detailed Profile",
+				desc: [
+					"Constructed a comprehensive 'About Me' page offering a deep dive into your background.",
+					"Sections include your professional experience, educational achievements, personal interests and hobbies, notable accomplishments, and insights about your portfolio website.",
+					"Designed a user-friendly folder tree structure for effortless navigation, with dynamic data rendering and the ability to explore your profile details in a structured manner.",
+				],
 			},
 			{
-				name: "React-Router",
-				desc: "",
-				url: "",
+				icon: "fa-solid fa-envelopes-bulk",
+				header: "Contact Page - Seamless Communication",
+				desc: [
+					"Facilitated direct and convenient communication through the Contact Page.",
+					"Equipped with comprehensive contact information, including various channels for connecting with you.",
+					"Seamlessly integrated a mail feature using a Node API, ensuring a smooth and responsive user experience when reaching out.",
+				],
 			},
 			{
-				name: "React-Router-Dom",
-				desc: "",
-				url: "",
-			},
-			{
-				name: "React-Scripts",
-				desc: "",
-				url: "",
-			},
-			{
-				name: "Redux",
-				desc: "",
-				url: "",
-			},
-			{
-				name: "Redux-Thunk",
-				desc: "",
-				url: "",
-			},
-			{
-				name: "FontAwsome",
-				desc: "",
-				url: "",
+				icon: "",
+				header: "",
+				desc: ["", "", ""],
 			},
 		],
-		about: "",
 	},
-	front_dirArchi: {
-		img: "",
-		info: [],
-		about: "",
-	},
+
 	front_perform: {
 		img: "",
 		info: [],
 		about: "",
 	},
 	back_workflow: {
-		img: "",
-		info: [],
-		about: "",
+		header: "Workflow",
+		data: [
+			{
+				icon: "fa-solid fa-timeline",
+				header: "Development Duration",
+				desc: [
+					" It took a total of 4 months to develop the portfolio from scratch, with the first month dedicated to planning and design, and the subsequent 3 months focused on development, testing, and deployment.",
+					"Project kickoff, goal setting, and requirements.",
+					"Design system development and prototyping.",
+					"Simultaneous section development.",
+					"Interactive features, animations, and Node API integration.",
+					"Comprehensive testing, optimization, and deployment.",
+				],
+			},
+			{
+				icon: "fa-solid fa-box-open",
+				header: "Dependencies",
+				desc: [
+					"Carefully selected dependencies to optimize UI performance and maintain control over design and functionality.",
+					"Key dependencies include:",
+				],
+				list: [
+					{ "body-parser": "Simplifying handling of HTTP request bodies in your Node.js backend." },
+					{ dotenv: "Loading environment variables from a .env file for secure configuration." },
+					{ express: "Building robust and scalable APIs for your Node.js backend." },
+					{ nodemailer: "Facilitating email communication and integration in your Node.js application." },
+				],
+			},
+			{
+				icon: "fa-regular fa-hand-pointer",
+				header: "Home Page - Cursor Animations",
+				desc: [
+					"Crafted a captivating home page that responds to cursor movements.",
+					"Implemented subtle yet engaging hover effects for interactive elements.",
+					"Enabled users to download your resume with a user-friendly functionality.",
+					"Leveraged window event listeners to orchestrate cursor-based animations, providing a unique and immersive user experience.",
+				],
+			},
+			{
+				icon: "fa-solid fa-dna",
+				header: "Career Page - Horizontal Timeline",
+				desc: [
+					"Developed a visually striking career page centered around a horizontal timeline.",
+					"Users can smoothly scroll through your professional journey, providing a concise yet comprehensive overview of your career milestones.",
+					"Utilized the GSAP library to create seamless horizontal scrolling animations, enhancing the storytelling aspect of this page.",
+				],
+			},
+			{
+				icon: "fa-solid fa-bullseye",
+				header: "Skill Page - Interactive Bubbles",
+				desc: [
+					"Designed a skill showcase page featuring dynamic and interactive skill bubbles.",
+					"Allowed users to freely interact with and drag skill bubbles across the screen.",
+					"Implemented informative tooltips for in-depth skill exploration.",
+					"Utilized the D3 library for creating visually appealing and data-rich skill representations, making it an engaging and informative section.",
+				],
+			},
+			{
+				icon: "fa-regular fa-address-card",
+				header: "About Page - Detailed Profile",
+				desc: [
+					"Constructed a comprehensive 'About Me' page offering a deep dive into your background.",
+					"Sections include your professional experience, educational achievements, personal interests and hobbies, notable accomplishments, and insights about your portfolio website.",
+					"Designed a user-friendly folder tree structure for effortless navigation, with dynamic data rendering and the ability to explore your profile details in a structured manner.",
+				],
+			},
+			{
+				icon: "fa-solid fa-envelopes-bulk",
+				header: "Contact Page - Seamless Communication",
+				desc: [
+					"Facilitated direct and convenient communication through the Contact Page.",
+					"Equipped with comprehensive contact information, including various channels for connecting with you.",
+					"Seamlessly integrated a mail feature using a Node API, ensuring a smooth and responsive user experience when reaching out.",
+				],
+			},
+		],
 	},
 	back_library: {
 		header: "Library",
@@ -661,6 +747,71 @@ const aboutData = {
 		img: "",
 		info: [],
 		about: "",
+	},
+	depoly_workflow: {
+		header: "Workflow",
+		data: [
+			{
+				icon: "fa-brands fa-github",
+				header: "Version Control with GitHub",
+				desc: [
+					"Develop your React front-end and Node.js back-end code locally.",
+					"Use Git for version control.",
+					"Create a GitHub repository to host your project.",
+				],
+			},
+			{
+				icon: "fa-solid fa-spinner",
+				header: "Continuous Integration (CI) Pipeline",
+				desc: [
+					"Set up a CI pipeline using a service like GitHub Actions .",
+					"Define CI configuration files to automate the build and test processes for both React and Node.js applications.",
+					"Trigger CI builds on each commit or pull request to ensure code quality.",
+				],
+			},
+			{
+				icon: "fa-brands fa-docker",
+				header: "Containerization with Docker",
+				desc: [
+					"Create Dockerfiles for both your React and Node.js applications.",
+					"Build Docker images for each component, ensuring all dependencies are included.",
+					"Push these images to a container registry (e.g., Docker Hub or GitHub Container Registry).",
+				],
+			},
+			{
+				icon: "fa-solid fa-bars-staggered",
+				header: "Heroku for Staging Environment",
+				desc: [
+					"Create separate Heroku apps for staging and production environments.",
+					"Set up Heroku pipelines to manage the deployment stages.",
+					"Configure automatic deployments from your GitHub repository to the staging Heroku app whenever changes are pushed to a specific branch (e.g., main).",
+				],
+			},
+			{
+				icon: "fa-solid fa-bug",
+				header: "Testing and Quality Assurance",
+				desc: [
+					"Implement testing suites for both front-end and back-end code.",
+					"Run automated tests as part of your CI/CD pipeline to catch regressions early.",
+				],
+			},
+			{
+				icon: "fa-brands fa-product-hunt",
+				header: "Heroku for Production Environment",
+				desc: [
+					"Configure automatic deployments to the production Heroku app upon successful staging tests or manually through a release process.",
+					"Set environment variables for sensitive information (e.g., API keys, database credentials) securely in Heroku.",
+				],
+			},
+			{
+				icon: "fa-brands fa-google",
+				header: "Domain Management with Google Domains",
+				desc: [
+					"Purchase a domain name or use an existing one from Google Domains.",
+					"Set up DNS records to point to your Heroku production app's custom domain.",
+				],
+			},
+		],
 	},
 };
 
