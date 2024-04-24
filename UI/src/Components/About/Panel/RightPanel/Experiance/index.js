@@ -84,25 +84,27 @@ function Experiance(props) {
 						</div>
 					</div>
 
-					<div className="row skillSection">
-						<h2>
-							<strong>Activities</strong>
-						</h2>
-						<div className="">
-							<ul className="activityUL">
-								{data.activity?.map((val, ind) => {
-									return (
-										<li className="activityLI" key={ind}>
-											<img src={val.img} width="300" height="300" alt="Activies In Company" loading="lazy" />
-											<p className="activityText">{val.name}</p>
-										</li>
-									);
-								})}
-							</ul>
-							<div className="light"></div>
+					{data.activity?.length > 0 && (
+						<div className="row skillSection">
+							<h2>
+								<strong>Activities</strong>
+							</h2>
+							<div className="">
+								<ul className="activityUL">
+									{data.activity?.map((val, ind) => {
+										return (
+											<li className="activityLI" key={ind}>
+												<img src={val.img} width="300" height="300" alt="Activies In Company" loading="lazy" />
+												<p className="activityText">{val.name}</p>
+											</li>
+										);
+									})}
+								</ul>
+								<div className="light"></div>
+							</div>
+							<div className="pg-20"></div>
 						</div>
-						<div className="pg-20"></div>
-					</div>
+					)}
 				</div>
 			)}
 		</>

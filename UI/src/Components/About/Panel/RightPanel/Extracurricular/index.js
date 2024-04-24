@@ -26,8 +26,8 @@ export default function Extracurricular(props) {
 												<Carousel.Item key={index}>
 													<img
 														className="d-block w-100 h-80 itemPlacement"
-														src={item.img}
-														alt={item.img}
+														src="https://portfolio-mrinalkasayp.s3.ap-south-1.amazonaws.com/Achievments/Pat_on_back.png"
+														alt={"Image Broken"}
 														loading="lazy"
 													/>
 													<Carousel.Caption>
