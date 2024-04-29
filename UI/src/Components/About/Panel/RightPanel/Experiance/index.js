@@ -20,11 +20,13 @@ function Experiance(props) {
 								<span className="mg-10 companyLink">
 									<strong className="companyName"> {data.name}</strong>
 								</span>
-								<span className="mg-10">
-									<a href={data.linkedin} target="_blank" rel="noreferrer">
-										<i className="fa-brands fa-linkedin companyLinkedin" title={`${data.name} Linkedin`}></i>
-									</a>
-								</span>
+								{data?.linkedin && (
+									<span className="mg-10">
+										<a href={data.linkedin} target="_blank" rel="noreferrer">
+											<i className="fa-brands fa-linkedin companyLinkedin" title={`${data.name} Linkedin`}></i>
+										</a>
+									</span>
+								)}
 							</div>
 						</div>
 					</div>

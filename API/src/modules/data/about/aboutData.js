@@ -168,9 +168,9 @@ const folderData = {
 		},
 	},
 	defaultSelected: {
-		name: "Softweb Solutions",
+		name: "Vrooms",
 		isFolder: false,
-		value: "softwebSolutions",
+		value: "vrooms",
 		category: 2,
 	},
 };
@@ -357,7 +357,7 @@ const aboutData = {
 			"Changed the code base from Azure to the AWS cloud platform.",
 			"Jira tickets were resolved in accordance with the sprint and priority.",
 		],
-		about: `Vrooms is a dynamic platform poised to redefine the landscape of real estate transactions, seamlessly connecting brokers with customers to streamline estate leads and deals. Co-founded by industry visionaries, [Your Name] and Piyush Mishra, Vrooms operates across a network spanning multiple cities, including Lucknow, Kolkata, Ahmedabad, Delhi, and Kanpur.
+		about: `Vrooms is a dynamic platform poised to redefine the landscape of real estate transactions, seamlessly connecting brokers with customers to streamline estate leads and deals. Co-founded by industry visionaries, Mrinal Kasyap (Me) and Piyush Mishra, Vrooms operates across a network spanning multiple cities, including Lucknow, Kolkata, Ahmedabad, Delhi, and Kanpur.
 
 		At Vrooms, we recognize the inherent challenges in navigating the real estate market. With our innovative approach, we bridge the gap between brokers and customers, fostering efficient communication and facilitating successful transactions. Our platform empowers users with comprehensive tools and resources, enabling them to explore, negotiate, and finalize deals with confidence.
 		
