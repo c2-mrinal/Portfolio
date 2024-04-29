@@ -24,12 +24,7 @@ export default function Extracurricular(props) {
 										{value.content?.map((item, index) => {
 											return (
 												<Carousel.Item key={index}>
-													<img
-														className="d-block w-100 h-80 itemPlacement"
-														src={item.img}
-														alt={item.img}
-														loading="lazy"
-													/>
+													<img className="d-block w-100 h-80 itemPlacement" src={item.img} alt={""} loading="lazy" />
 													<Carousel.Caption>
 														<h3>{item.header}</h3>
 														<p>{item.desc}</p>
