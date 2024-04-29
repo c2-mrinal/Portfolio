@@ -335,7 +335,7 @@ const aboutData = {
 		endDate: "present",
 		website: "www.vrooms.in",
 		linkedin: "",
-		img: "",
+		img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Company/vroomsIcon.jpeg",
 		skills: {
 			Html5: "fa-brands fa-html5",
 			Css3: "fa-brands fa-css3-alt",
