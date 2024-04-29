@@ -1,3 +1,5 @@
+const { fetchImageFromServer } = require("../../common/comon");
+
 const folderData = {
 	folders: {
 		Mrinal: {
@@ -11,6 +13,20 @@ const folderData = {
 					isFolder: true,
 					isOpen: true,
 					items: [
+						{
+							name: "VROOMS",
+							isFolder: false,
+							value: "vrooms",
+							category: 2,
+							items: [],
+						},
+						{
+							name: "FreeLance",
+							isFolder: false,
+							value: "freelance",
+							category: 2,
+							items: [],
+						},
 						{
 							name: "Softweb Solutions",
 							isFolder: false,
@@ -307,6 +323,109 @@ const aboutData = {
 			"During my time at Sunflower Public School, where I pursued my matriculation education under the CBSE board, I had a fulfilling academic journey. The school provided a well-rounded education, emphasizing not only on core subjects like Science, Math, English, Sanskrit, and Social Science but also promoting extracurricular activities. The dedicated faculty members were supportive and encouraged a conducive learning environment. Participating in various school events, competitions, and clubs enhanced my overall growth and development. Sunflower Public School played a significant role in shaping my educational foundation and fostering a love for learning that continues to drive me forward in my academic and personal pursuits.",
 		term: "2011 - 2013",
 	},
+	vrooms: {
+		name: "Vrooms",
+		designation: "Co-Founder - Teach Lead",
+		department: "",
+		startDate: "2021",
+		endDate: "present",
+		website: "www.vrooms.in",
+		linkedin: "",
+		img: "",
+		skills: {
+			Html5: "fa-brands fa-html5",
+			Css3: "fa-brands fa-css3-alt",
+			ReactJS: "fa-brands fa-react ",
+			ReduxJS: "fa-brands fa-react",
+			Debugging: "fa-solid fa-bug ",
+			Bootstrap: "fa-brands fa-bootstrap",
+			JavaScript: "fa-brands fa-square-js",
+			"Rest API": "fa-solid fa-gear",
+			ExpressJS: "fa-brands fa-square-js",
+			NodeJS: "fa-brands fa-node",
+			MongoDB: "fa-sharp fa-solid fa-database",
+			"Agile Development": "fa-regular fa-circle",
+			ChartJS: "fa-solid fa-chart-simple",
+		},
+		notableWork: [
+			"Modifications that improve the Node and Express code bases by removing code duplication and repetitions",
+			"CA Signed Individual has been added as a new authentication type for IOT devices.",
+			"Changed the code base from Azure to the AWS cloud platform.",
+			"Jira tickets were resolved in accordance with the sprint and priority.",
+		],
+		about: `Vrooms is a dynamic platform poised to redefine the landscape of real estate transactions, seamlessly connecting brokers with customers to streamline estate leads and deals. Co-founded by industry visionaries, [Your Name] and Piyush Mishra, Vrooms operates across a network spanning multiple cities, including Lucknow, Kolkata, Ahmedabad, Delhi, and Kanpur.
+
+		At Vrooms, we recognize the inherent challenges in navigating the real estate market. With our innovative approach, we bridge the gap between brokers and customers, fostering efficient communication and facilitating successful transactions. Our platform empowers users with comprehensive tools and resources, enabling them to explore, negotiate, and finalize deals with confidence.
+		
+		What sets Vrooms apart is our unwavering commitment to customer satisfaction and industry excellence. By harnessing cutting-edge technology and leveraging our extensive network, we deliver unparalleled value to both brokers and customers alike. Whether you're a seasoned broker or a prospective homeowner, Vrooms is your trusted partner every step of the way.
+		`,
+		// activity: [
+		// 	{
+		// 		img: "https://drive.google.com/uc?export=view&id=1yANirVF7uTFirZn0rNXXrkG25iBgveRD",
+		// 		name: "SPL Winner 2022",
+		// 	},
+		// 	{
+		// 		img: "https://drive.google.com/uc?export=view&id=1Ikm3YxWF6zGexV3G-F8WSTAi45ut53UG",
+		// 		name: "Team Lunch",
+		// 	},
+		// 	{
+		// 		img: "https://drive.google.com/uc?export=view&id=1ig5O15sw-jQvblYQHq5uDVsQPLgJBobd",
+		// 		name: "Festival",
+		// 	},
+		// ],
+	},
+
+	freelance: {
+		name: "FreeLancer",
+		designation: "MERN Developer",
+		department: "",
+		startDate: "Apr 2023",
+		endDate: "Present",
+		website: "",
+		linkedin: "",
+		img: "https://d6xcmfyh68wv8.cloudfront.net/learn-content/uploads/2020/11/freelancer_earn-scaled.jpg",
+		skills: {
+			Html5: "fa-brands fa-html5",
+			Css3: "fa-brands fa-css3-alt",
+			ReactJS: "fa-brands fa-react ",
+			ReduxJS: "fa-brands fa-react",
+			Debugging: "fa-solid fa-bug ",
+			Bootstrap: "fa-brands fa-bootstrap",
+			JavaScript: "fa-brands fa-square-js",
+			"Rest API": "fa-solid fa-gear",
+			ExpressJS: "fa-brands fa-square-js",
+			NodeJS: "fa-brands fa-node",
+			MongoDB: "fa-sharp fa-solid fa-database",
+			"Agile Development": "fa-regular fa-circle",
+			ChartJS: "fa-solid fa-chart-simple",
+		},
+		notableWork: [
+			"Enhanced key pages of a pharmaceutical software platform as a freelance MERN developer at Zonvoir.",
+			"Developed responsive pages and components for a fintech platform at STIC Soft, boosting versatility and user experience.",
+			"Successfully collaborated with startups and high-end product companies, delivering tailored solutions as a freelance MERN developer.",
+			"Utilized problem-solving skills and a client-centric approach to overcome challenges and ensure project success.",
+		],
+		about: `With a diverse portfolio spanning from small startups to high-end products, I bring extensive experience as a MERN (MongoDB, Express.js, React.js, Node.js) developer. At Zonvoir, I collaborated as a freelancer, enhancing a pharmaceutical software by developing key pages, thereby elevating the platform's functionality.
+
+		Additionally, at STIC Soft, I played a pivotal role in the development of responsive pages and components for a fintech platform. My contributions significantly enhanced the platform's versatility and user experience.
+		
+		With a keen eye for detail and a commitment to excellence, I consistently deliver tailored solutions that meet the unique needs of each client. My expertise in the MERN stack enables me to tackle diverse challenges, ensuring the success of every project I undertake.
+		`,
+		// activity: [
+		// 	{
+		// 		img: "https://drive.google.com/uc?export=view&id=1yANirVF7uTFirZn0rNXXrkG25iBgveRD",
+		// 		name: "SPL Winner 2022",
+		// 	},
+		// 	{
+		// 		img: "https://drive.google.com/uc?export=view&id=1Ikm3YxWF6zGexV3G-F8WSTAi45ut53UG",
+		// 		name: "Team Lunch",
+		// 	},
+		// 	{
+		// 		img: "https://drive.google.com/uc?export=view&id=1ig5O15sw-jQvblYQHq5uDVsQPLgJBobd",
+		// 		name: "Festival",
+		// 	},
+		// ],
+	},
 	softwebSolutions: {
 		name: "Softweb Solutions",
 		designation: "Technical Analyst",
@@ -344,7 +463,7 @@ const aboutData = {
 		Working on IOT Connect has provided me with valuable experience in working with cutting-edge technologies and handling complex functionalities.`,
 		activity: [
 			{
-				img: "https://drive.google.com/uc?export=view&id=1yANirVF7uTFirZn0rNXXrkG25iBgveRD",
+				img: "https://images.pexels.com/photos/22614136/pexels-photo-22614136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
 				name: "SPL Winner 2022",
 			},
 			{
@@ -392,9 +511,15 @@ const aboutData = {
 		],
 		about: `As a react developer, I joined the QTM4J UI team at QMetry, a product-based firm offering test management products like QTM, QTM4J, and QAS. QTM4J integrates with Atlassian Jira for test management and exploratory testing. In my role as a UI developer, I enhance the codebase, address product tickets, introduce new features, and develop a chrome extension for exploratory testing. I was commended for successfully completing a problem-free sprint. These responsibilities have provided valuable experience, allowing me to contribute to the improvement of QTM4J and support efficient test management processes.`,
 		activity: [
-			{ img: "https://drive.google.com/uc?export=view&id=17Cy8nEWLq2YgXabCW61cqwPr-U4GFDiC", name: "Festival" },
-			{ img: "https://drive.google.com/uc?export=view&id=1-EWKywch1qyWg1okXJueRic3tkzGx7g9", name: "Team Lunch" },
-			{ img: "https://drive.google.com/uc?export=view&id=1z6Sjn912St794EZwziCb-2_V6BaIByEG", name: "Parting Gift" },
+			{ img: "https://images.pexels.com/photos/22614135/pexels-photo-22614135.jpeg", name: "Festival" },
+			{
+				img: "https://images.pexels.com/photos/22614137/pexels-photo-22614137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+				name: "Team Lunch",
+			},
+			{
+				img: "https://images.pexels.com/photos/22614134/pexels-photo-22614134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+				name: "Parting Gift",
+			},
 		],
 	},
 	magentaBI: {
@@ -436,7 +561,7 @@ const aboutData = {
 				name: "Team Trip",
 			},
 			{
-				img: "https://drive.google.com/uc?export=view&id=1wq5nIXtRMym_LI0GNYPuRWbI0toso7lI",
+				img: "https://images.pexels.com/photos/22613995/pexels-photo-22613995.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
 				name: "Brain Storming",
 			},
 			{ img: "https://drive.google.com/uc?export=view&id=1td_GV2IAyFR_N9mZXSyZbFerrh-jmW_V", name: "Team Dinner" },
@@ -476,7 +601,7 @@ const aboutData = {
 				name: "Garba",
 			},
 			{
-				img: "https://drive.google.com/uc?export=view&id=1SOwK8MC75CbmoL4akodNFvXL_xsVjFDc",
+				img: "",
 				name: "Learing",
 			},
 		],
@@ -486,7 +611,7 @@ const aboutData = {
 			section: "Sports",
 			content: [
 				{
-					img: "https://drive.google.com/uc?export=view&id=1Je2nvw4BkkRZNiQ7K4TglZjGkG31Rwre",
+					img: fetchImageFromServer(""),
 					header: "Cricket",
 					desc: "Passionately swinging bats, chasing boundaries, fielding with precision—cricket ignites my spirit, connecting me to camaraderie, skill, and sheer exhilaration.",
 				},
@@ -514,7 +639,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://drive.google.com/uc?export=view&id=1HVTHPywPP6qhgBeTMnAdOtQ6FKZH4Ift",
+					img: fetchImageFromServer("https://images.pexels.com/photos/22614499/pexels-photo-22614499.jpeg"),
 					desc: "Qmetry",
 				},
 			],
@@ -524,7 +649,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://drive.google.com/uc?export=view&id=1F79Mw_myyipxjJEaTrCUwMrR2npQomqu",
+					img: "https://images.pexels.com/photos/22614500/pexels-photo-22614500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
 					desc: "Hacker Rank ",
 				},
 			],
@@ -534,7 +659,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://drive.google.com/uc?export=view&id=12d9exIbsXrbJMZg_RZ_f4nxzo5KpvZRN",
+					img: "https://images.pexels.com/photos/22614488/pexels-photo-22614488.jpeg",
 					desc: "Hacker Rank ",
 				},
 			],
