@@ -185,7 +185,8 @@ const aboutData = {
 			["Location", "Gandhinagar - GJ"],
 		],
 		url: "https://www.daiict.ac.in/",
-		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/MSc.png",
+		// degreeImg:
+		// 	"https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Achievments/Javascript_basics.png",
 		about:
 			"During my time at Dhirubhai Ambani Institute of Information and Communication Technology (DAIICT) pursuing my MSc IT, I had a fulfilling experience. The college offered a well-structured curriculum that provided in-depth knowledge in various IT domains. The faculty members were knowledgeable and supportive, guiding us throughout our academic journey. I also had the pleasure of making lifelong friends who shared my passion for technology. The college environment fostered a sense of camaraderie and encouraged collaboration. Overall, my experience at DAIICT was enriching, and I am grateful for the education and friendships I gained during my time there.",
 		term: "2019 - 2021",
@@ -252,7 +253,8 @@ const aboutData = {
 			["Location", "Ranchi - JH"],
 		],
 		url: "https://www.bitmesra.ac.in/",
-		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/BCA.png",
+		// degreeImg:
+		// 	"https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Achievments/Javascript_basics.png",
 		about:
 			"During my time at Birla Institute of Technology - Mesra (BIT) pursuing my BCA, I had a transformative experience. It was at BIT that I embarked on my software development journey, working on various projects that honed my skills. One project that stands out is my work on the Jharkhand Tourism application, where I applied my knowledge to create an engaging and user-friendly platform. Additionally, I joined the college society DEBSOC, participating in extracurricular activities that further enriched my college experience. BIT became a turning point in my life, as I learned valuable lessons and gained practical insights that continue to shape my career.",
 		term: "2016 - 2019",
@@ -296,7 +298,7 @@ const aboutData = {
 		],
 	},
 	intermediate: {
-		img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/ShreeChaitanya.png",
+		img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Degree/chitanta.png",
 		info: [
 			["School", " Sri Chaitanya techno School"],
 			["Qualification", " Intermediate "],
@@ -304,13 +306,14 @@ const aboutData = {
 			["Location", "Vishakapatnam - AP"],
 		],
 		url: "https://srichaitanyaschool.net/",
-		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/Intermediate.jpg",
+		// degreeImg:
+		// 	"https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Achievments/Javascript_basics.png",
 		about:
 			"During my time at Sri Chaitanya Techno School for my intermediate education, I had a memorable experience. The school provided a strong foundation in subjects such as Physics, Chemistry, Math, English, and Physical Education. The teachers were highly knowledgeable and dedicated, offering guidance and support to ensure our academic success. I actively participated in various extracurricular activities, such as sports and cultural events, which helped me develop teamwork and leadership skills. Sri Chaitanya Techno School played a pivotal role in shaping my academic growth and fostering a well-rounded personality. I am grateful for the valuable education and fond memories I gained during my high school years.",
 		term: "2015 - 2013",
 	},
 	matriculation: {
-		img: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/sunflowerSchool.jpeg",
+		img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Degree/sunflowerSchool.png",
 		info: [
 			["School", " Sun Flower Public School"],
 			["Qualification", " Intermediate "],
@@ -318,7 +321,8 @@ const aboutData = {
 			["Location", "Begusarai - BR"],
 		],
 		url: "http://sunflowerschool.in/",
-		degreeImg: "https://portfolio--image.s3.eu-north-1.amazonaws.com/About/Educational/maticulation.png",
+		// degreeImg:
+		// 	"https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Achievments/Javascript_basics.png",
 		about:
 			"During my time at Sunflower Public School, where I pursued my matriculation education under the CBSE board, I had a fulfilling academic journey. The school provided a well-rounded education, emphasizing not only on core subjects like Science, Math, English, Sanskrit, and Social Science but also promoting extracurricular activities. The dedicated faculty members were supportive and encouraged a conducive learning environment. Participating in various school events, competitions, and clubs enhanced my overall growth and development. Sunflower Public School played a significant role in shaping my educational foundation and fostering a love for learning that continues to drive me forward in my academic and personal pursuits.",
 		term: "2011 - 2013",
@@ -463,15 +467,15 @@ const aboutData = {
 		Working on IOT Connect has provided me with valuable experience in working with cutting-edge technologies and handling complex functionalities.`,
 		activity: [
 			{
-				img: "https://images.pexels.com/photos/22614136/pexels-photo-22614136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/softwebSolutions/AEEE9DA7-264D-451B-B821-A166DA5100A6_1_201_a.jpeg",
 				name: "SPL Winner 2022",
 			},
 			{
-				img: "https://drive.google.com/uc?export=view&id=1Ikm3YxWF6zGexV3G-F8WSTAi45ut53UG",
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/softwebSolutions/PHOTO-2022-10-20-23-59-50.jpeg",
 				name: "Team Lunch",
 			},
 			{
-				img: "https://drive.google.com/uc?export=view&id=1ig5O15sw-jQvblYQHq5uDVsQPLgJBobd",
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/softwebSolutions/IMG_9343.jpeg",
 				name: "Festival",
 			},
 		],
@@ -511,13 +515,16 @@ const aboutData = {
 		],
 		about: `As a react developer, I joined the QTM4J UI team at QMetry, a product-based firm offering test management products like QTM, QTM4J, and QAS. QTM4J integrates with Atlassian Jira for test management and exploratory testing. In my role as a UI developer, I enhance the codebase, address product tickets, introduce new features, and develop a chrome extension for exploratory testing. I was commended for successfully completing a problem-free sprint. These responsibilities have provided valuable experience, allowing me to contribute to the improvement of QTM4J and support efficient test management processes.`,
 		activity: [
-			{ img: "https://images.pexels.com/photos/22614135/pexels-photo-22614135.jpeg", name: "Festival" },
 			{
-				img: "https://images.pexels.com/photos/22614137/pexels-photo-22614137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/qmetry/IMG_5780.jpeg",
+				name: "Festival",
+			},
+			{
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/qmetry/Team_Lunch.jpeg",
 				name: "Team Lunch",
 			},
 			{
-				img: "https://images.pexels.com/photos/22614134/pexels-photo-22614134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/qmetry/Gift.jpeg",
 				name: "Parting Gift",
 			},
 		],
@@ -557,14 +564,17 @@ const aboutData = {
     each UI component.`,
 		activity: [
 			{
-				img: "https://drive.google.com/uc?export=view&id=1_ixjr5CSjwqtPOrgiCC9HLIS_tgLMoA9",
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/magenta/625C8CC4-61EA-4F05-944E-CA585BEF021E_1_105_c.jpeg",
 				name: "Team Trip",
 			},
 			{
-				img: "https://images.pexels.com/photos/22613995/pexels-photo-22613995.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/magenta/DC66BDC3-0BC5-40EA-9264-03C3037DDAB1_1_105_c.jpeg",
 				name: "Brain Storming",
 			},
-			{ img: "https://drive.google.com/uc?export=view&id=1td_GV2IAyFR_N9mZXSyZbFerrh-jmW_V", name: "Team Dinner" },
+			{
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/magenta/DE60C5DE-A6A9-47AE-A375-1CCA60FA77D8_1_105_c.jpeg",
+				name: "Team Dinner",
+			},
 		],
 	},
 	daiict: {
@@ -593,15 +603,15 @@ const aboutData = {
 		about: `I created a single-page Web App utilizing Vue-Cli and NodeJS, with the entire application relying on an API for streamlined and reliable data handling. This project provided an opportunity to learn VueJs, a new technology, and develop APIs using JSON. Through this experience, I gained valuable knowledge in building dynamic web applications and honed my skills in working with VueJs and API development.`,
 		activity: [
 			{
-				img: "https://drive.google.com/uc?export=view&id=1tbwSb-eeIQjDd0EQIKreHxheUnSf2XDw",
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/DAIICT/7E14067E-A3D3-4BA7-9F2D-D30A268E3C8F_1_105_c.jpeg",
 				name: "Fest",
 			},
 			{
-				img: "https://drive.google.com/uc?export=view&id=1DwEqHM06C1KZOOAwdfzpUfE_4YKNO9BG",
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/DAIICT/7B01BF3D-FC46-4563-9B46-E82DA0C2CA10_1_201_a.jpeg",
 				name: "Garba",
 			},
 			{
-				img: "",
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/DAIICT/10642.JPEG",
 				name: "Learing",
 			},
 		],
@@ -611,12 +621,12 @@ const aboutData = {
 			section: "Sports",
 			content: [
 				{
-					img: fetchImageFromServer(""),
+					img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Hobbies/2D14BB1A-05CB-4765-BC1D-5E5D8233A518_1_105_c.jpeg",
 					header: "Cricket",
 					desc: "Passionately swinging bats, chasing boundaries, fielding with precision—cricket ignites my spirit, connecting me to camaraderie, skill, and sheer exhilaration.",
 				},
 				{
-					img: "https://drive.google.com/uc?export=view&id=1tCX_nnKMQvMlLXKIVI8Gmf6atHH4ZVjT",
+					img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Hobbies/52041D6B-B7BF-42C9-8C8F-7E0650849B11_1_105_c.jpeg",
 					header: "Cricket",
 					desc: "Passionately swinging bats, chasing boundaries, fielding with precision—cricket ignites my spirit, connecting me to camaraderie, skill, and sheer exhilaration.",
 				},
@@ -626,7 +636,7 @@ const aboutData = {
 			section: "Reading",
 			content: [
 				{
-					img: "https://drive.google.com/uc?export=view&id=1ynMNwz4lGk9HCUg9K-Q_-Z-Lm4uMxR5X",
+					img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Hobbies/book__reading.jpeg",
 					header: "History",
 					desc: "Passionate reader with a love for words, exploring worlds through books, and unraveling stories with each page turned.",
 				},
@@ -639,7 +649,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: fetchImageFromServer("https://images.pexels.com/photos/22614499/pexels-photo-22614499.jpeg"),
+					img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Achievments/Pat_on_back.png",
 					desc: "Qmetry",
 				},
 			],
@@ -649,7 +659,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://images.pexels.com/photos/22614500/pexels-photo-22614500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+					img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Achievments/Problem_solving_basics.png",
 					desc: "Hacker Rank ",
 				},
 			],
@@ -659,7 +669,7 @@ const aboutData = {
 			expire: "",
 			content: [
 				{
-					img: "https://images.pexels.com/photos/22614488/pexels-photo-22614488.jpeg",
+					img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Achievments/Javascript_basics.png",
 					desc: "Hacker Rank ",
 				},
 			],
