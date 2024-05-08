@@ -43,7 +43,7 @@ function Header() {
 							preserveAspectRatio="xMidYMid meet"
 							className={`menuIcon ${showMenu ? "" : "menuContainerExpand"}`}
 						>
-							<g transform="translate(0.000000,495.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+							<g transform="translate(0.000000,495.000000) scale(0.100000,-0.100000)" fill="#7A5B84" stroke="none">
 								<path
 									d="M1055 3885 c-152 -53 -158 -297 -8 -361 48 -21 3657 -21 3706 0 156
 65 142 320 -20 365 -26 8 -592 11 -1838 11 -1519 -1 -1806 -3 -1840 -15z"

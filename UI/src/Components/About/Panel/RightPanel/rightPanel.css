@@ -26,7 +26,7 @@ h6 {
 	margin: 1rem;
 	min-height: 26vh;
 	border-radius: 10px;
-	background-image: linear-gradient(95.2deg, rgb(53, 231, 190) 26.8%, rgb(189, 153, 232) 64%);
+	background-image: linear-gradient(95.2deg, #a9e9dfb9 26.8%, #a274b2 64%);
 }
 .educationHeaderContainer {
 	width: 100%;
@@ -61,10 +61,8 @@ h6 {
 .infoTextBox {
 	font-family: "Font Awesome 6 Free";
 	font-size: clamp(1rem, calc(0.8rem + 0.5vw), 3rem);
-	max-width: 100%;
 	margin: 1vh 1vw;
 	padding: 8px 12px;
-	align-items: center;
 	border: solid 0.5vw #ececec;
 	border-radius: 20px;
 	outline: none;
@@ -105,7 +103,8 @@ h6 {
 	margin-left: 2rem;
 }
 .companyLink {
-	background: linear-gradient(95.2deg, rgb(107, 48, 233) 26.8%, rgb(5, 134, 193) 64%);
+	background: linear-gradient(95.2deg, #bf98cb 26.8%, #7a5b84 64%);
+	font-family: "natural-font";
 	margin: auto;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
