@@ -150,17 +150,13 @@
 }
 
 .modal-content {
-	background: rgb(207, 93, 32);
-	background: linear-gradient(
-		333deg,
-		rgba(207, 93, 32, 0.9456735819327731) 0%,
-		rgba(219, 226, 99, 0.7809764530812324) 100%
-	);
-	border-top: 2px solid rgb(164, 164, 164);
-	border-left: 2px solid rgb(133, 133, 133);
+	background: #98ded2b9;
+	background: linear-gradient(333deg, #98ded2b9 0%, rgba(219, 226, 99, 0.7809764530812324) 100%);
+	border-top: 2px solid #98ded2b9;
+	border-left: 2px solid #98ded2b9;
 	border-radius: 0;
-	border-bottom: 0.4rem solid rgb(115, 84, 20);
-	border-right: 0.6rem solid rgb(90, 60, 1);
+	border-bottom: 0.4rem solid #28433fb9;
+	border-right: 0.6rem solid #254c46b9;
 	-webkit-box-shadow: 11px 13px 20px -5px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 11px 13px 20px -5px rgba(0, 0, 0, 0.75);
 	box-shadow: 11px 13px 20px -5px rgba(0, 0, 0, 0.75);
@@ -174,7 +170,7 @@
 	height: 0;
 	border-left: 2rem solid transparent;
 	border-right: 2rem solid transparent;
-	border-top: 2rem solid rgb(115, 84, 20);
+	border-top: 2rem solid #0f2723b9;
 }
 .modal-content h5 {
 	margin: auto 2vw;
