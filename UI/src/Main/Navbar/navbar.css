@@ -77,7 +77,7 @@ li a:hover:not(.active) {
 	min-height: 80px;
 	height: calc(4vw + 5vh);
 	width: calc(5vw + 5vh);
-	background-color: rgba(240, 248, 255, 0.579);
+	background-color: #98ded2b9;
 	border-radius: 5% 10% 0% 80%;
 	text-align: center;
 	cursor: pointer;
