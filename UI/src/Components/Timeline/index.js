@@ -4,7 +4,6 @@ import { useLayoutEffect, useState, useEffect, useRef, useMemo } from "react";
 import Loader from "../../Shared/Loader";
 import "./timeline.css";
 import TimeLineSvg from "../../Shared/SVG/TimeLineSvg";
-import TimeLineShape1 from "../../Shared/SVG/TimeLineShape1";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,7 +52,7 @@ export default function Scene() {
 	};
 	const memoizedSetIsPanelActive = useMemo(
 		(active) => {
-			console.log("view", active);
+			// console.log("view", active);
 			return setViewSlide(active);
 		},
 
@@ -98,34 +97,6 @@ export default function Scene() {
 		};
 	});
 
-	useEffect(() => {
-		// Attach event listener to the scroll container
-		clearTimeout(scrollTimeout);
-
-		// Set a new timeout to execute after scrolling stops
-		scrollTimeout = setTimeout(() => {
-			// Your code to execute after scrolling has stopped
-			console.log("Scrolling has stopped");
-		}, 200); // Adjust the delay as needed (e.g., 200ms)
-
-		// Cancel the previous timeout if scroll event fires again quickly
-		clearTimeout(scrollTimeout);
-
-		const handleScroll = () => {
-			// Your scroll event handling code here
-			if (currentScrollIndex !== viewSlide) {
-				// setViewSlide(currentScrollIndex);
-			}
-			console.log("Scroll event detected!");
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-			clearTimeout(scrollTimeout);
-		};
-	}, []);
-
 	return (
 		<>
 			<div className="" ref={componentRef}>
@@ -134,15 +105,15 @@ export default function Scene() {
 						return (
 							<div className={`panel`}>
 								<div className="textContainer">
-									<div className="col-sm-1 t1"></div>
-									<div className="col-sm-2 t2" ref={(el) => (panelYearRef.current[ind] = el)}>
+									<div className="col-smm-1 t1"></div>
+									<div className="col-smm-2 t2 " ref={panelYearRef}>
 										<div className="textRotated subClass">{val.age}</div>
 									</div>
-									<div className="col-sm-6 t3 ">
+									<div className="col-smm-6 t3 ">
 										<h2 className={`textHeader ${currentScrollIndex === ind ? "showpanelHeader" : "hidepanelHeader"}`}>
 											{val.header}
 											{"  "}
-											<a href="/career" target="_blank" rel="noreferrer">
+											<a href={`/about/${val.value}`} target="_blank" rel="noreferrer">
 												<i className="fa fa-external-link" aria-hidden="true"></i>
 											</a>
 										</h2>
@@ -151,8 +122,8 @@ export default function Scene() {
 										</div>
 										<div className="textDetail">{val.detail}</div>
 									</div>
-									<div className="col-sm-2 t4">{val.year}</div>
-									<div className="col-sm-1 t5"></div>
+									<div className="col-smm-2 t4">{val.year}</div>
+									<div className="col-smm-1 t5"></div>
 								</div>
 							</div>
 						);
@@ -160,51 +131,46 @@ export default function Scene() {
 				</div>
 			</div>
 			<div className="timeLineFrame headerTextContainer">
-				<div className="col-sm-1 contain1">
+				<div className="col-smm-1 contain1">
 					<div className="careerHeaderText chtStart">
-						<h3>C</h3>
-						<h3>A</h3>
-						<h3>R</h3>
-						<h3>E</h3>
-						<h3>E</h3>
-						<h3>R</h3>
+						<h3>CAREER</h3>
 					</div>
 					<TimeLineSvg className="wapper1" />
 				</div>
-				<div className="col-sm-2 contain2">
+				<div className="col-smm-2 contain2">
 					{" "}
 					<TimeLineSvg className="wapper2" />
 				</div>
-				<div className="col-sm-6 contain3"></div>
-				<div className="col-sm-2 contain4">
-					<div className="careerHeaderText chtEnd">
-						<h3>T</h3>
-						<h3>I</h3>
-						<h3>M</h3>
-						<h3>E</h3>
-						<h3>L</h3>
-						<h3>I</h3>
-						<h3>N</h3>
-						<h3>E</h3>
-					</div>
+				<div className="col-smm-6 contain3"></div>
+				<div className="col-smm-2 contain4">
 					<TimeLineSvg className="wapper3" />
 				</div>
-				<div className="col-sm-1 contain5">
+				<div className="col-smm-1 contain5">
+					<div className="careerHeaderText chtEnd">
+						<h3>TIMELINE</h3>
+					</div>
 					<TimeLineSvg className="wapper4" />
 				</div>
 			</div>
-			<div className="timeLineFrame">
-				<div className="col-sm-1 shape1"></div>
-				<div className="col-sm-2 shape2"></div>
-				<div className="col-sm-6 shape3"></div>
-				<div className="col-sm-2 shape4"></div>
-				<div className="col-sm-1 shape5"></div>
-			</div>
+
 			<div className="timelineBgOver">
-				<div className="bgover1">
-					<TimeLineShape1 fill={"black"} />
-				</div>
+				<div className="bgover1"></div>
 				<div className="bgover2"></div>
+			</div>
+			<div className="timeLineFrame">
+				<div className="col-smm-1 ">
+					<div className=" shape1"></div>
+				</div>
+				<div className="col-smm-2 bgWhite">
+					<div className=" shape2"></div>
+				</div>
+				<div className="col-smm-6 shape3"></div>
+				<div className="col-smm-2 bgWhite">
+					<div className=" shape4"></div>
+				</div>
+				<div className="col-smm-1 bgWhite">
+					<div className=" shape5"></div>
+				</div>
 			</div>
 			<>{loading && <Loader />}</>
 		</>

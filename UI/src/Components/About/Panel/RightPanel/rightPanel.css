@@ -26,7 +26,7 @@ h6 {
 	margin: 1rem;
 	min-height: 26vh;
 	border-radius: 10px;
-	background-image: linear-gradient(95.2deg, rgb(53, 231, 190) 26.8%, rgb(189, 153, 232) 64%);
+	background-image: linear-gradient(95.2deg, #a9e9dfb9 26.8%, #a274b2 64%);
 }
 .educationHeaderContainer {
 	width: 100%;
@@ -61,10 +61,8 @@ h6 {
 .infoTextBox {
 	font-family: "Font Awesome 6 Free";
 	font-size: clamp(1rem, calc(0.8rem + 0.5vw), 3rem);
-	max-width: 100%;
 	margin: 1vh 1vw;
 	padding: 8px 12px;
-	align-items: center;
 	border: solid 0.5vw #ececec;
 	border-radius: 20px;
 	outline: none;
@@ -105,7 +103,8 @@ h6 {
 	margin-left: 2rem;
 }
 .companyLink {
-	background: linear-gradient(95.2deg, rgb(107, 48, 233) 26.8%, rgb(5, 134, 193) 64%);
+	background: linear-gradient(95.2deg, #bf98cb 26.8%, #7a5b84 64%);
+	font-family: "natural-font";
 	margin: auto;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -224,6 +223,8 @@ h2 strong {
 .itemPlacement {
 	max-width: 70vw;
 	max-height: 70vh;
+	min-height: 300px;
+	min-width: none;
 	border-radius: 20px;
 }
 .itemPlacement h3 {
@@ -318,6 +319,76 @@ h2 strong {
 }
 /* libray component END  */
 
+/* workflow start */
+.pages {
+	width: 100%;
+}
+.workFlowContainer {
+	min-height: calc(100vh - 13.5vh);
+	background-color: aqua;
+	display: flex;
+	align-items: center;
+	margin: auto;
+}
+.flowleft {
+	width: 40%;
+	margin: auto;
+	color: #ffffff;
+}
+.flowleft i {
+	width: 100%;
+	text-align: center;
+	padding: 0 0 2vh 0;
+	margin: auto auto 2vh;
+	font-size: calc(1rem + 5vw);
+}
+.flowleft h3 {
+	margin: auto;
+	width: 70%;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 900;
+	font-family: Impact, Helvetica Inserat, Bitstream Vera Sans Bold, Arial, sans serif;
+}
+
+.flowright {
+	width: 60%;
+	/* -webkit-filter: invert(100%);
+	filter: invert(100%); */
+	font-family: Lucida Sans, Helvetica, Arial, sans-serif;
+	list-style-type: none;
+}
+.dependenciesList {
+	font-size: calc(0.7rem + 1vw);
+}
+.flowright li {
+	width: 90%;
+	text-align: justify;
+	font-weight: 800;
+	padding: 2vh 0;
+}
+.dependenciesList li {
+	font-size: calc(0.4rem + 0.7vw);
+	text-align: start;
+	padding: 3px 0;
+	font-weight: 400;
+}
+.dependenciesList strong {
+	font-size: calc(0.3rem + 0.6vw);
+}
+.dependenciesList em {
+	font-size: calc(0.2rem + 1vw);
+}
+.workFlowContainer:nth-child(even) {
+	flex-direction: row-reverse;
+}
+.workFlowContainer:nth-child(even) {
+	.flowright li {
+		margin: auto;
+	}
+}
+
+/* workflow end */
 @media (min-width: 768px) and (max-width: 1200px) {
 	.detailsStyled {
 		margin-top: -5vh;
@@ -359,7 +430,29 @@ h2 strong {
 		text-align: center;
 	}
 }
-@media only screen and (max-width: 520px) {
+@media (max-width: 520px) {
+	.workFlowContainer {
+		display: grid;
+	}
+
+	.flowleft {
+		width: 100%;
+		display: flex;
+		align-items: center;
+	}
+	.flowleft i {
+		width: 40%;
+	}
+	.flowleft h3 {
+		width: 60%;
+	}
+	.flowright {
+		margin: auto;
+		width: 80%;
+	}
+	.flowright li {
+		margin: auto;
+	}
 	.detailsStyled {
 		width: 90vw;
 		margin-top: 20vh;

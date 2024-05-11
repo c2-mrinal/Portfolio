@@ -2,11 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import "./rightPanel.css";
 import allActions from "../../../../actions";
 import { useSelector, useDispatch } from "react-redux";
-// import Educational from "./RightPanel/Educational";
-// import Experiance from "./RightPanel/Experiance";
-// import Extracurricular from "./RightPanel/Extracurricular";
-// import Workflow from "./RightPanel/Workflow";
-// import Library from "./RightPanel/Library";
 import Loader from "../../../../Shared/Loader";
 import UnderProgress from "../../../../Shared/UnderProgress";
 import Educational from "./Educational";
@@ -72,13 +67,6 @@ function RightPanel(props) {
 				return <Workflow data={data} />;
 			case 5:
 				return <Library data={data} />;
-			// case 6:
-			// 	return <UnderProgress />;
-			// case 7:
-			// 	return <UnderProgress />;
-			// case 8:
-			// 	return <UnderProgress />;
-
 			default:
 				return <UnderProgress />;
 		}

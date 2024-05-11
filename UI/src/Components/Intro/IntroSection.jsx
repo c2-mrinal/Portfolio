@@ -13,9 +13,19 @@ function IntroSection(props) {
 					onClick={props.downloadResume}
 					title={props.downloadSuccess ? "Resume Dowloaded " : "Download Mrinal's Resume"}
 				>
-					<svg id="arrow" viewBox="17 14 14 20">
-						<path d="M24,15 L24,32"></path>
-						<polyline points="30 27 24 33 18 27"></polyline>
+					<svg id="arrow" viewBox="0 0  24 24">
+						<path
+							d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15"
+							strokeWidth="1.5"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						/>
+						<path
+							d="M12 3V16M12 16L16 11.625M12 16L8 11.625"
+							strokeWidth="1.5"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						/>
 					</svg>
 					<svg id="check" viewBox="13 17 21 15">
 						<polyline points="32.5 18.5 20 31 14.5 25.5"></polyline>
@@ -26,18 +36,18 @@ function IntroSection(props) {
 				</div>
 				<div>
 					<img
-						src={pointerImage}
+						src={pointerGif}
 						className="pointingArrow"
-						style={{ display: `${pointerImage ? "block" : "none"}` }}
+						style={{ display: `${pointerGif ? "block" : "none"}` }}
 						alt="error"
 					/>
 				</div>
 			</div>
 			<div className="intoDesciption ">
 				<h1 className="introHeader1">
-					{["h", "e", "l", "l", "o", "", "!"].map((val, ind) => {
+					{"hey there,curious minds".split("").map((val, ind) => {
 						return (
-							<span key={ind} className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
+							<span key={ind} className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 2}vw)` }}>
 								{" "}
 								{val}{" "}
 							</span>
@@ -45,13 +55,13 @@ function IntroSection(props) {
 					})}
 				</h1>
 				<h1 className="introHeader2">
-					{["I", "", "a", "m", "", "M", "r", "i", "n", "a", "l", "", "K", "a", "s", "y", "a", "p"].map((val, ind) => {
+					{"and creative souls !".split("").map((val, ind) => {
 						return (
 							<span
 								className=""
 								key={ind}
 								style={{
-									left: `calc( ${ind * 0.2}rem + ${[6, 7].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw)`,
+									left: `calc( ${ind * 0.2}rem + ${[6, 7].includes(ind) ? ind * 2.5 + 0.2 : ind * 2.5}vw)`,
 								}}
 							>
 								{val}
@@ -60,12 +70,12 @@ function IntroSection(props) {
 					})}
 				</h1>
 				<h1 className="introHeader3">
-					{["m", "e", "r", "n", "", "D", "e", "v", "e", "l", "o", "p", "e", "r"].map((val, ind) => {
+					{"I'm Mrinal Kasyap,".split("").map((val, ind) => {
 						return (
 							<span
 								className=""
 								key={ind}
-								style={{ left: `calc( ${ind * 0.2}rem + ${[1].includes(ind) ? ind * 3.5 + 0.5 : ind * 3.5}vw)` }}
+								style={{ left: `calc( ${ind * 0.2}rem + ${[].includes(ind) ? ind * 2.5 + 0.3 : ind * 2.5}vw)` }}
 							>
 								{val}
 							</span>
@@ -73,20 +83,40 @@ function IntroSection(props) {
 					})}
 				</h1>
 				<h1 className="introHeader4">
-					{["D", "e", "v", "e", "l", "o", "p", "i", "n", "g", "", "t", "h", "e", "", "c", "h", "a", "n", "g", "e"].map(
-						(val, ind) => {
-							return (
-								<span key={ind} className="" style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
-									{val}
-								</span>
-							);
-						}
-					)}
+					{"your friendly neighborhood".split("").map((val, ind) => {
+						return (
+							<span
+								className=""
+								key={ind}
+								style={{ left: `calc( ${ind * 0.2}rem + ${[].includes(ind) ? ind * 2.5 + 0.3 : ind * 2.5}vw)` }}
+							>
+								{val}
+							</span>
+						);
+					})}
 				</h1>
 				<h1 className="introHeader5">
-					{["U", "&", "I", "", "n", "e", "e", "d", "s", ". . ."].map((val, ind) => {
+					{"Mern Developer on a mission ".split("").map((val, ind) => {
 						return (
-							<span key={ind} className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 3.5}vw)` }}>
+							<span key={ind} className="" style={{ left: `calc( ${ind * 0.2}rem + ${ind * 2.5}vw)` }}>
+								{val}
+							</span>
+						);
+					})}
+				</h1>
+				<h1 className="introHeader6">
+					{"to create the change ".split("").map((val, ind) => {
+						return (
+							<span key={ind} className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 2.5}vw)` }}>
+								{val}
+							</span>
+						);
+					})}
+				</h1>
+				<h1 className="introHeader7">
+					{"U&I crave ...".split("").map((val, ind) => {
+						return (
+							<span key={ind} className={"text" + ind} style={{ left: `calc( ${ind * 0.2}rem + ${ind * 2.5}vw)` }}>
 								{val}
 							</span>
 						);

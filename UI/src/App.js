@@ -58,7 +58,16 @@ function App() {
 										<About />
 									</ErrorBoundary>
 								}
-							/>
+							>
+								<Route
+									path=":folder"
+									element={
+										<ErrorBoundary>
+											<About />
+										</ErrorBoundary>
+									}
+								></Route>
+							</Route>
 							<Route
 								path="/skill"
 								element={

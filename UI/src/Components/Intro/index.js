@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import "./intro.css";
 import { useSelector } from "react-redux";
 import Loader from "../../Shared/Loader";
 import IntroSection from "./IntroSection";
-import IntroBg from "../../image/IntroBg.mp4";
-import { useProgressiveImage } from "../../Shared/CustomHooks";
 import ErrorBoundary from "../../Shared/ErrorBoundry";
 import CursorComponent from "./CursorComponents/CursorComponent";
+import IntroBgSvg from "../../Shared/SVG/IntroBgSvg";
 
+const width = window.innerWidth;
+const height = window.innerHeight;
 function Intro(props) {
 	const [downloading, setDownloading] = useState(false);
 	const [downloadSuccess, setDownloadSuccess] = useState(false);
 	const [pointerComp, setPointerComp] = useState(0);
 	const [loading, setLoading] = useState(false);
 	const isTouchDevice = useSelector((state) => state.deviceTypeTouch || false);
-	// const intoBGVid = useProgressiveImage("https://drive.google.com/uc?export=view&id=1ouzS9lCe5fs7qzsSL0GokjZYNMXSz93O");
+	const WrapperRef = useRef(null);
 
 	const downloadResume = async () => {
 		setDownloading(true);
@@ -42,19 +43,17 @@ function Intro(props) {
 			}
 		}, 1000);
 	};
+
 	return (
 		<>
 			{loading && <Loader />}
 			<div className="myVideo">
-				<video id="bg-video" autoPlay loop muted playsinline className="videoDimension">
-					<source
-						src={"https://drive.google.com/uc?export=view&id=1ouzS9lCe5fs7qzsSL0GokjZYNMXSz93O"}
-						type="video/mp4"
-					/>
-				</video>
+				<IntroBgSvg width={width} height={height} />
 			</div>
 			<ErrorBoundary hide={true}>
-				<IntroSection downloading={downloading} downloadSuccess={downloadSuccess} downloadResume={downloadResume} />
+				<div ref={WrapperRef}>
+					<IntroSection downloading={downloading} downloadSuccess={downloadSuccess} downloadResume={downloadResume} />
+				</div>
 			</ErrorBoundary>
 			<ErrorBoundary hide={true}>
 				{!isTouchDevice && <div className="cursorAnimationText">Move Your Cursor Below to have Some Fun</div>}
