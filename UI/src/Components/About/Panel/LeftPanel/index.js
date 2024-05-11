@@ -7,10 +7,14 @@ import "./leftPanel.css";
 import Loader from "../../../../Shared/Loader";
 
 function LeftPanel(props) {
+	const path = window.location.pathname.split("/");
+
 	const [FolderData, setFolderData] = useState({});
 	const [loading, setLoading] = useState(false);
 
-	const selectedFolder = useSelector((state) => state.folderIs);
+	const selectedFolder = useSelector((state) => {
+		return state.folderIs;
+	});
 
 	const dispatch = useDispatch();
 
@@ -18,7 +22,11 @@ function LeftPanel(props) {
 		const fetchMyAPI = async () => {
 			setLoading(true);
 			try {
-				const response = await fetch(`/api/about/folders`);
+				let url = `/api/about/folders`;
+				if (path[2]) {
+					url += "/" + path[2];
+				}
+				const response = await fetch(url);
 				if (response.ok) {
 					const responseData = await response.json();
 					if (responseData.success && responseData.data) {

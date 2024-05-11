@@ -24,7 +24,7 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
 	return (
 		<div>
 			<div
-				className={`folderTreeExpandable ${selectedFolder.name === explorer.name ? "treeNodeSelected" : ""}`}
+				className={`folderTreeExpandable ${selectedFolder.value === explorer.value ? "treeNodeSelected" : ""}`}
 				onClick={selectedAboutField}
 			>
 				<span className="folderTreeNode">
