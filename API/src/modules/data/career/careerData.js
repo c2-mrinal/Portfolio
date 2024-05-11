@@ -1,3 +1,5 @@
+const { getCurrentYear } = require("../../common/comon");
+
 const yearAge = (year) => {
 	const currentYear = new Date().getFullYear();
 	const res = currentYear - year;
@@ -11,18 +13,38 @@ const yearAge = (year) => {
 };
 const careerData = [
 	{
+		year: 2024,
+		age: getCurrentYear(new Date().getFullYear()),
+		header: "Vrooms",
+		url: "https://www.vrooms.in/",
+		about: "Co-Founded( Sept, 2021 - Present )",
+		detail: `Vrooms revolutionizes real estate by connecting brokers and customers across Lucknow, Kolkata, Ahmedabad, Delhi, and Kanpur. We tackle market challenges with innovative solutions, empowering seamless transactions through advanced tools and unwavering commitment to satisfaction. Your trusted partner in navigating the real estate journey.`,
+		name: "Vrooms",
+		value: "vrooms",
+	},
+	{
+		year: 2024,
+		age: getCurrentYear(2024),
+		header: "Freelance",
+		url: "https://www.nourl.com/",
+		about: "Self Employed ( May, 2023 - Present )",
+		detail: `I'm an experienced MERN developer with a diverse portfolio. At Zonvoir, I enhanced a pharmaceutical software, and at STIC Soft, I improved a fintech platform, delivering tailored solutions for each client.`,
+		name: "Freelance",
+		value: "freelance",
+	},
+	{
 		year: 2023,
-		age: "This year",
+		age: getCurrentYear(2023),
 		header: "Softweb Solutions",
 		url: "https://www.softwebsolutions.com/",
 		about: "Technical Analyst, IOT Connect ( Sept, 2022 - Apr, 2023 )",
-		detail: `I work as a ReactJS and NodeJS Developer on IOT Coßnnect. I enhance UI, fix bugs, and manage AWS and Azure deployment. I ensure seamless operation by eliminating bugs and enhancing UI. I deploy instances on AWS and Azure for efficiency. My work involves cutting-edge tech and complex functionalities, improving code quality, adding CA Signed Individual authentication, migrating from Azure to AWS, and resolving Jira tickets.`,
+		detail: `I work as a ReactJS and NodeJS Developer on IOT Connect. I enhance UI, fix bugs, and manage AWS and Azure deployment. I ensure seamless operation by eliminating bugs and enhancing UI. I deploy instances on AWS and Azure for efficiency. My work involves cutting-edge tech and complex functionalities, improving code quality, adding CA Signed Individual authentication, migrating from Azure to AWS, and resolving Jira tickets.`,
 		name: "Softweb Solutions",
 		value: "softwebSolutions",
 	},
 	{
 		year: 2022,
-		age: "Two year back",
+		age: getCurrentYear(2022),
 		header: "Qmetry",
 		url: "https://www.qmetry.com/",
 		about: "Associate UI Developer, QTM4J ( June, 2021 - Sept, 2022 )",
@@ -32,7 +54,7 @@ const careerData = [
 	},
 	{
 		year: 2021,
-		age: "Three year back",
+		age: getCurrentYear(2021),
 		header: "Magenta Connect",
 		url: "https://www.magentabi.com/",
 		about: "Web Developer, MagentaBI ( Dec, 2020 - June, 2021 )",
@@ -42,9 +64,9 @@ const careerData = [
 	},
 	{
 		year: 2021,
+		age: getCurrentYear(2021),
 		header: "DAIICT",
 		url: "https://www.daiict.ac.in/",
-		age: "Three year back ",
 		about: "Masters of Science Information Technology ( 2019 - 2021 )",
 		detail: `While pursuing my MSc IT at DAIICT, I enjoyed a comprehensive curriculum and supportive faculty. Collaborating with tech-savvy peers and building lifelong friendships enhanced my learning experience. The college nurtured camaraderie and teamwork, providing an enriching education in various IT domains.`,
 		name: "Masters",
@@ -52,7 +74,7 @@ const careerData = [
 	},
 	{
 		year: 2019,
-		age: "Four year back",
+		age: getCurrentYear(2019),
 		url: "https://www.bitmesra.ac.in/",
 		header: "Birla Institute of Technology, Mesra",
 		about: "Bachelor of Computer Applications ( 2016 - 2019 ) ",
@@ -62,7 +84,7 @@ const careerData = [
 	},
 	{
 		year: 2015,
-		age: "Eight year back",
+		age: getCurrentYear(2015),
 		header: "Sri Chaitanya techno School",
 		url: "https://srichaitanyaschool.net/",
 		about: "Intermediate ( 2015 - 2013 )",
@@ -72,7 +94,7 @@ const careerData = [
 	},
 	{
 		year: 2013,
-		age: "Ten year back",
+		age: getCurrentYear(2013),
 		header: "Sun Flower Public School",
 		url: "http://sunflowerschool.in/",
 		about: "Matriculation ( 2011 - 2013 )",
@@ -80,7 +102,6 @@ const careerData = [
 		name: "Matriculation",
 		value: "matriculation",
 	},
-	{},
 ];
 
 module.exports = { careerData };

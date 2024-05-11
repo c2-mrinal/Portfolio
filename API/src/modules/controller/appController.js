@@ -1,5 +1,5 @@
 const { skillData } = require("../data/skills/skillData");
-const { folderData, aboutData } = require("../data/about/aboutData");
+const { folderList, folderData, aboutData } = require("../data/about/aboutData");
 const process = require("process");
 const fs = require("fs");
 const path = require("path");
@@ -35,6 +35,28 @@ const aboutFolder = (req, res) => {
 			? { status: 200, success: true, message: "Mrinal's Portolio About List", data: folderData }
 			: { status: 204, success: true, message: "No Data Found for Mrinal's Portolio About List" };
 		res.status(200).json(apiData);
+	} catch (e) {
+		console.error(e);
+		res.status(500).end();
+	}
+};
+const aboutFolderSelected = (req, res) => {
+	try {
+		const defVal = req.params.default;
+		if (Object.keys(folderList).includes(defVal)) {
+			let folData = folderData;
+			folData.defaultSelected = {
+				isFolder: false,
+				value: defVal,
+				category: folderList[defVal],
+			};
+			const apiData = folderData
+				? { status: 200, success: true, message: "Mrinal's Portolio About List", data: folData }
+				: { status: 204, success: true, message: "No Data Found for Mrinal's Portolio About List" };
+			res.status(200).json(apiData);
+		} else {
+			aboutFolder(req, res);
+		}
 	} catch (e) {
 		console.error(e);
 		res.status(500).end();
@@ -99,6 +121,7 @@ module.exports = {
 	careerTimeline,
 	skillDetail,
 	aboutFolder,
+	aboutFolderSelected,
 	aboutDetails,
 	resume,
 	resumeDownloader,

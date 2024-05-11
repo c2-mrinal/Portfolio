@@ -4,6 +4,7 @@ const path = require("path");
 const {
 	skillDetail,
 	aboutFolder,
+	aboutFolderSelected,
 	aboutDetails,
 	resume,
 	resumeDownloader,
@@ -15,6 +16,7 @@ const { sendMail } = require("./modules/functions/SendMail");
 router.get("/career", careerTimeline);
 router.get("/skill/details", skillDetail);
 router.get("/about/folders", aboutFolder);
+router.get("/about/folders/:default", aboutFolderSelected);
 router.get("/about/details/:folderIs", aboutDetails);
 router.get("/resume", resume);
 router.get("/resume/download", resumeDownloader);

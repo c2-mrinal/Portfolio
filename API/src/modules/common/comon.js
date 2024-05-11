@@ -18,5 +18,39 @@ async function fetchImageFromServer(uriLink) {
 		return null;
 	}
 }
+function getCurrentYear(val) {
+	let words = new Array();
+	const date = new Date();
+	let yr = date.getFullYear();
+	let n = yr - val;
+	const ones = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+	const tens = [
+		"ten",
+		"eleven",
+		"twelve",
+		"thirteen",
+		"fourteen",
+		"fifteen",
+		"sixteen",
+		"seventeen",
+		"eighteen",
+		"nineteen",
+	];
+	const twenties = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+	if (n == 0) {
+		return "This Year";
+	}
+	if (n < 10) {
+		return ones[n] + " Year Back";
+	} else if (n < 100) {
+		if (n < 20) {
+			return tens[n - 10] + " Year Back";
+		} else {
+			words.push(twenties[Math.floor(n / 10) - 2]);
+			words.push(ones[n % 10]);
+			return words.join("-") + " Year Back";
+		}
+	}
+}
 
-module.exports = { fetchImageFromServer };
+module.exports = { fetchImageFromServer, getCurrentYear };
