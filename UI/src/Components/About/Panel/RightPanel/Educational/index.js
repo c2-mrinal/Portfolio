@@ -25,12 +25,12 @@ export default function Educational(props) {
 					<div className="infoTextContainer">
 						<div className="col-sm-12 col-md-3 educationHeaderContainer">
 							<div>
-								<a href={data.url}>
+								<a href={data?.url}>
 									<img className="educationImage" src={data?.img} height="150" width="150" alt="" loading="lazy" />
 								</a>
 							</div>
 							<div>
-								<em>{` ( ${data.term} ) `}</em>
+								<em>{` ( ${data?.term} ) `}</em>
 							</div>
 						</div>
 
@@ -53,7 +53,7 @@ export default function Educational(props) {
 					{showDetail ? <div className="detailsStyled"> {showDetail}</div> : ""}
 				</div>
 				<div className="card-body rightPanel">
-					{data.about ? (
+					{data?.about ? (
 						<div>
 							<h2 className="card-title">
 								<strong>About</strong>
@@ -70,13 +70,13 @@ export default function Educational(props) {
 									{" "}
 									<strong>Projects</strong>
 								</h2>
-								{data.projects.map((data, ind) => {
+								{data?.projects.map((data, ind) => {
 									return (
 										<React.Fragment key={ind}>
 											<h4 className="eduProjHeader">
 												<strong>{data.name}</strong>
 											</h4>
-											<div>{data.description}</div>
+											<div>{data?.description}</div>
 											<div>
 												<span>
 													<strong>Stacked Used: </strong>
@@ -101,7 +101,7 @@ export default function Educational(props) {
 						)}
 					</div>
 					<section>
-						{data.degreeImg ? (
+						{data?.degreeImg ? (
 							<div className="degreeImgContainer">
 								<img className="h-100 w-100" src={data.degreeImg} alt="marksheet" loading="lazy" />
 							</div>

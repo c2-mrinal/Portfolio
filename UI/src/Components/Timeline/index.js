@@ -4,7 +4,6 @@ import { useLayoutEffect, useState, useEffect, useRef, useMemo } from "react";
 import Loader from "../../Shared/Loader";
 import "./timeline.css";
 import TimeLineSvg from "../../Shared/SVG/TimeLineSvg";
-import TimeLineShape1 from "../../Shared/SVG/TimeLineShape1";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,7 +52,7 @@ export default function Scene() {
 	};
 	const memoizedSetIsPanelActive = useMemo(
 		(active) => {
-			console.log("view", active);
+			// console.log("view", active);
 			return setViewSlide(active);
 		},
 
@@ -114,7 +113,7 @@ export default function Scene() {
 										<h2 className={`textHeader ${currentScrollIndex === ind ? "showpanelHeader" : "hidepanelHeader"}`}>
 											{val.header}
 											{"  "}
-											<a href="/career" target="_blank" rel="noreferrer">
+											<a href={`/about/${val.value}`} target="_blank" rel="noreferrer">
 												<i className="fa fa-external-link" aria-hidden="true"></i>
 											</a>
 										</h2>
@@ -155,9 +154,7 @@ export default function Scene() {
 			</div>
 
 			<div className="timelineBgOver">
-				<div className="bgover1">
-					<TimeLineShape1 fill={"black"} />
-				</div>
+				<div className="bgover1"></div>
 				<div className="bgover2"></div>
 			</div>
 			<div className="timeLineFrame">

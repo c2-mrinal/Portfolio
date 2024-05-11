@@ -1,5 +1,25 @@
 const { fetchImageFromServer } = require("../../common/comon");
 
+const folderList = {
+	vrooms: 2,
+	freelance: 2,
+	softwebSolutions: 2,
+	qmetry: 2,
+	magentaBI: 2,
+	daiict: 2,
+	master: 1,
+	bachlor: 1,
+	intermediate: 1,
+	matriculation: 1,
+	hobbie: 3,
+	achive: 3,
+	front_workflow: 4,
+	front_perform: 7,
+	back_workflow: 4,
+	back_perform: 7,
+	depoly_workflow: 4,
+};
+
 const folderData = {
 	folders: {
 		Mrinal: {
@@ -950,4 +970,4 @@ const aboutData = {
 	},
 };
 
-module.exports = { folderData, aboutData };
+module.exports = { folderList, folderData, aboutData };
