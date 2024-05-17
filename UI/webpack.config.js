@@ -15,6 +15,14 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: "public/index.html",
 		}),
+		new webpack.DefinePlugin({
+			"process.env.REACT_APP_EMAILJS_SERVICE_ID": JSON.stringify(process.env.REACT_APP_EMAILJS_SERVICE_ID),
+			"process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT_ID": JSON.stringify(
+				process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT_ID
+			),
+			"process.env.REACT_APP_EMAILJS_USER_ID": JSON.stringify(process.env.REACT_APP_EMAILJS_USER_ID),
+			"process.env.REACT_APP_TESTING_FOR_ENV_VAR": JSON.stringify(process.env.REACT_APP_TESTING_FOR_ENV_VAR),
+		}),
 	],
 	devServer: {
 		port: 3333,
