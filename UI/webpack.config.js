@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
 	entry: "./src/index.js", // Entry point for your app
@@ -14,6 +15,14 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: "public/index.html",
+		}),
+		new webpack.DefinePlugin({
+			"process.env.REACT_APP_EMAILJS_SERVICE_ID": JSON.stringify(process.env.REACT_APP_EMAILJS_SERVICE_ID),
+			"process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT_ID": JSON.stringify(
+				process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT_ID
+			),
+			"process.env.REACT_APP_EMAILJS_USER_ID": JSON.stringify(process.env.REACT_APP_EMAILJS_USER_ID),
+			"process.env.REACT_APP_TESTING_FOR_ENV_VAR": JSON.stringify(process.env.REACT_APP_TESTING_FOR_ENV_VAR),
 		}),
 	],
 	devServer: {

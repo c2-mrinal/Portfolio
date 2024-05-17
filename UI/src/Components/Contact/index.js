@@ -51,7 +51,9 @@ function Contact() {
 					<div className="downArrow">
 						<div className="downArrowContainer">
 							<img
-								src={"https://drive.google.com/uc?export=view&id=1DogaiT31_9vkDL6nlXe1qsSr47svQPZE"}
+								src={
+									"https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/logos/ArrowPointing.gif"
+								}
 								className="pointingArrow"
 								alt="error"
 							/>
