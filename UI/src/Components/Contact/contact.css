@@ -251,6 +251,10 @@ i {
 	font-weight: 500;
 	margin-bottom: 5vh;
 }
+.alreadyMailSent p {
+	font-family: fangsong;
+}
+
 .alreadyMailSent h1 {
 	text-align: center;
 	/* margin: 5vh auto; */
@@ -299,6 +303,10 @@ i {
 .copyClipboard:hover {
 	color: hsl(118, 43%, 62%);
 }
+.copiedField {
+	color: hsl(118, 43%, 62%);
+}
+
 @media (min-width: 1600px) {
 	.workIcon .iconHandle {
 		right: -10rem;

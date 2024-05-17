@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Modal from "react-bootstrap/Modal";
 import Input from "../../../Shared/Input";
 import Loader from "../../../Shared/Loader";
+import emailjs from "@emailjs/browser";
 
 function MailPopUp(props) {
+	const [Copied, setCopied] = useState(false);
 	const [RecentMail, setRecentMail] = useState(false);
 	const [MailData, setMailData] = useState({
 		name: "",
@@ -15,6 +17,7 @@ function MailPopUp(props) {
 		mailingID: false,
 		mailingMessage: false,
 	});
+	const mailForm = useRef();
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
@@ -65,35 +68,37 @@ function MailPopUp(props) {
 		});
 		return !mailingName && !mailingID && !mailingMessage;
 	};
-
-	const sendMail = async () => {
+	const sendMailApi = async () => {
 		try {
-			const isValid = await validateMailDetail();
-
-			if (isValid) {
-				setLoading(true);
-
-				const rawResponse = await fetch("/api/sendMail", {
-					method: "POST",
-					headers: {
-						Accept: "application/json",
-						"Content-Type": "application/json",
+			setLoading(true);
+			emailjs
+				.send(
+					process.env.REACT_APP_EMAILJS_SERVICE_ID,
+					process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT_ID,
+					MailData,
+					process.env.REACT_APP_EMAILJS_USER_ID
+				)
+				.then(
+					(result) => {
+						cancelMail();
+						localStorage.setItem("lastMailSent", new Date());
+						setRecentMail(true);
 					},
-					body: JSON.stringify(MailData),
-				});
-				if (rawResponse.ok) {
-					cancelMail();
-					localStorage.setItem("lastMailSent", new Date());
-					setRecentMail(true);
-				} else {
-					console.error("Failed to send email:", rawResponse.statusText);
-				}
-			}
+					(error) => {
+						console.error("Failed to send email:", error);
+					}
+				);
 		} catch (error) {
 			console.error("An error occurred while sending email:", error);
 		} finally {
-			cancelMail();
 			setLoading(false);
+		}
+	};
+
+	const sendMail = async () => {
+		const isValid = await validateMailDetail();
+		if (isValid) {
+			sendMailApi();
 		}
 	};
 
@@ -103,6 +108,10 @@ function MailPopUp(props) {
 	const copyContent = async () => {
 		try {
 			await navigator.clipboard.writeText("mrinalspec@gmail.com");
+			setCopied(true);
+			setTimeout(() => {
+				setCopied(false);
+			}, 2000);
 			console.log("Content copied to clipboard");
 		} catch (err) {
 			console.error("Failed to copy: ", err);
@@ -144,7 +153,7 @@ function MailPopUp(props) {
 				<Modal.Body>
 					{RecentMail ? (
 						<>
-							<div className="inputFieldsAlign">
+							<div className="inputFieldsAlign" ref={mailForm}>
 								<div>
 									<Input
 										id="name"
@@ -154,7 +163,11 @@ function MailPopUp(props) {
 										onChange={handleChange}
 										disabled={true}
 									/>
-									<i className="fa fa-copy copyClipboard" onClick={copyContent} title="Copy Mail ID"></i>
+									<i
+										className={`fa fa-copy copyClipboard ${Copied ? " copiedField " : ""}`}
+										onClick={copyContent}
+										title="Copy Mail ID"
+									></i>
 								</div>
 
 								<div>
