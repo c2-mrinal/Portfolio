@@ -1,6 +1,6 @@
-import React, { lazy, Suspense } from "react";
+import React, { useState, useEffect, useTransition, lazy, Suspense } from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import Header from "./Main/Navbar";
@@ -17,84 +17,110 @@ const Contact = lazy(() => import("./Components/Contact"));
 const Skills = lazy(() => import("./Components/Skill"));
 const About = lazy(() => import("./Components/About"));
 const NotFound = lazy(() => import("./Shared/NotFound"));
+
+const Blog = lazy(() => import("./Components/Blog"));
 const UnderProgress = lazy(() => import("./Shared/UnderProgress"));
 
 function App() {
+	const [isPending, startTransition] = useTransition(false);
+	const [isLoading, setIsLoading] = useState(false);
+	const navigate = useNavigate();
+
+	const handleRouteChange = (path) => {
+		startTransition(() => {
+			navigate(path);
+		});
+	};
+
+	useEffect(() => {
+		if (isPending) {
+			setIsLoading(true); // Simulate loading state
+		} else {
+			setIsLoading(false);
+		}
+	}, [isPending]);
+
 	return (
 		<div className="App">
 			<Provider store={configureStore()}>
-				<BrowserRouter>
-					<Header />
-					<Suspense fallback={<Loader />}>
-						<Routes className="headerPlaced">
+				<Header handleRouteChange={handleRouteChange} />
+				<Suspense fallback={<Loader />}>
+					<Routes className="headerPlaced">
+						<Route
+							path="/"
+							element={
+								<ErrorBoundary>
+									<Intro />
+								</ErrorBoundary>
+							}
+						/>
+						<Route
+							path="/career"
+							element={
+								<ErrorBoundary>
+									<Timeline />
+								</ErrorBoundary>
+							}
+						/>
+						<Route
+							path="/contact"
+							element={
+								<ErrorBoundary>
+									<Contact />
+								</ErrorBoundary>
+							}
+						/>
+						<Route
+							path="/about"
+							element={
+								<ErrorBoundary>
+									<About />
+								</ErrorBoundary>
+							}
+						>
 							<Route
-								path="/"
-								element={
-									<ErrorBoundary>
-										<Intro />
-									</ErrorBoundary>
-								}
-							/>
-							<Route
-								path="/career"
-								element={
-									<ErrorBoundary>
-										<Timeline />
-									</ErrorBoundary>
-								}
-							/>
-							<Route
-								path="/contact"
-								element={
-									<ErrorBoundary>
-										<Contact />
-									</ErrorBoundary>
-								}
-							/>
-							<Route
-								path="/about"
+								path=":folder"
 								element={
 									<ErrorBoundary>
 										<About />
 									</ErrorBoundary>
 								}
-							>
-								<Route
-									path=":folder"
-									element={
-										<ErrorBoundary>
-											<About />
-										</ErrorBoundary>
-									}
-								></Route>
-							</Route>
-							<Route
-								path="/skill"
-								element={
-									<ErrorBoundary>
-										<Skills />
-									</ErrorBoundary>
-								}
 							/>
-							<Route
-								path="/loader"
-								element={
-									<ErrorBoundary>
-										<Loader />
-									</ErrorBoundary>
-								}
-							/>
-							<Route
-								path="*"
-								element={
-									<ErrorBoundary>
-										<NotFound />
-									</ErrorBoundary>
-								}
-							/>
-						</Routes>
-					</Suspense>
-				</BrowserRouter>
+						</Route>
+						<Route
+							path="/skill"
+							element={
+								<ErrorBoundary>
+									<Skills />
+								</ErrorBoundary>
+							}
+						/>
+						<Route
+							path="/loader"
+							element={
+								<ErrorBoundary>
+									<Loader />
+								</ErrorBoundary>
+							}
+						/>
+						<Route
+							path="*"
+							element={
+								<ErrorBoundary>
+									<NotFound />
+								</ErrorBoundary>
+							}
+						/>
+						<Route
+							path="/blog"
+							element={
+								<ErrorBoundary>
+									<Blog />
+								</ErrorBoundary>
+							}
+						/>
+					</Routes>
+				</Suspense>
 			</Provider>
 		</div>
 	);
