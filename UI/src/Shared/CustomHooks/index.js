@@ -1,10 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const useMyFirstHook = (input) => {
-	console.log("customHook", input);
-	// ...
-};
-
 const useProgressiveImage = (src) => {
 	const sourceLoadedRef = useRef(null);
 
@@ -19,4 +14,4 @@ const useProgressiveImage = (src) => {
 	return sourceLoadedRef.current;
 };
 
-export { useMyFirstHook, useProgressiveImage };
+export { useProgressiveImage };

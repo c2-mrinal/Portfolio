@@ -1,4 +1,4 @@
-.main {
+.contact-container .main {
 	height: 100vh;
 	overflow-y: scroll;
 	scroll-snap-type: y mandatory;
@@ -7,10 +7,10 @@ textarea {
 	resize: none;
 	font-size: 1.2rem;
 }
-.contactContainer {
+.contact-container .contactContainer {
 	scroll-behavior: smooth;
 }
-.contactContainer > section {
+.contact-container .contactContainer > section {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -18,7 +18,7 @@ textarea {
 	scroll-snap-align: start;
 	scroll-snap-stop: always;
 }
-.contactBG {
+.contact-container .contactBG {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -31,7 +31,7 @@ textarea {
 	border-radius: 50px;
 }
 
-.contactBox {
+.contact-container .contactBox {
 	position: relative;
 	margin: auto;
 	height: 80%;
@@ -43,7 +43,7 @@ textarea {
 	border-radius: 40px;
 	border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.contactIcon {
+.contact-container .contactIcon {
 	min-height: 60px;
 	min-width: 60px;
 	margin: auto 1.5em;
@@ -55,7 +55,7 @@ textarea {
 .contactIcon i {
 	/* transition: transform 0.3s ease-in-out; */
 }
-.contactBoxContent {
+.contact-container .contactBoxContent {
 	display: flex;
 	align-items: center;
 	position: relative;
@@ -64,10 +64,10 @@ textarea {
 	width: 100%;
 	text-align: center;
 }
-.contactBoxContent .contactIcon {
+.contact-container .contactBoxContent .contactIcon {
 	margin: 1vh 2vw 1vh auto;
 }
-.contactBoxContent h1,
+.contact-container .contactBoxContent h1,
 h2 {
 	margin: auto;
 	text-align: center;
@@ -78,27 +78,27 @@ h2 {
 i {
 	font-size: clamp(2.5rem, 5vw, 5vw);
 }
-.instagram {
+.contact-container .instagram {
 	color: #d6249f;
 	color: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%) !important;
 }
-.github {
+.contact-container .github {
 	color: #171515;
 }
-.stackoverflow {
+.contact-container .stackoverflow {
 	color: #f48024;
 }
-.linkedin {
+.contact-container .linkedin {
 	color: #0a66c2;
 }
-.twitter {
+.contact-container .twitter {
 	color: black;
 }
-.hackerrank {
+.contact-container .hackerrank {
 	color: #20c20e;
 }
-.contactBoxContent a:hover {
-	.contactIcon i {
+.contact-container .contactBoxContent a:hover {
+	i {
 		animation: zoomAndRotate 0.1s ease 0.2s forwards;
 	}
 	.iconHandle {
@@ -115,7 +115,7 @@ i {
 		opacity: 1;
 	}
 }
-.iconHandle {
+.contact-container .iconHandle {
 	display: none;
 	font-size: 1rem;
 	font-weight: 900;
@@ -129,11 +129,11 @@ i {
 	text-decoration: none;
 	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
-.socialIcons .iconHandle {
+.contact-container .socialIcons .iconHandle {
 	right: -4rem;
 	bottom: -2rem;
 }
-.workIcon .iconHandle {
+.contact-container .workIcon .iconHandle {
 	right: -7rem;
 	bottom: -6rem;
 }
@@ -152,14 +152,14 @@ i {
 	}
 }
 
-.typewriter {
+.contact-container .typewriter {
 	margin: calc(4vh + 2vw) auto;
 	cursor: pointer;
 	max-width: 22vw;
 	border-bottom: 0.2em solid rgba(211, 138, 138, 0.56);
 }
 
-.typewriter h1 {
+.contact-container .typewriter h1 {
 	color: #fff;
 	font-family: monospace;
 	overflow: hidden;
@@ -171,7 +171,7 @@ i {
 	animation: typing 5s steps(30, end), blink-caret 1s step-end infinite;
 }
 
-.socialIcons {
+.contact-container .socialIcons {
 	margin: calc(4vh + 2vw) auto;
 	text-align: center;
 }
@@ -198,10 +198,9 @@ i {
 .errorMail {
 	color: red;
 	font-size: 1rem;
-	margin: auto auto auto 15%;
-	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	margin: 0 0 0.6rem 8px;
 }
-.mailMessageBox {
+.contact-container .mailMessageBox {
 	margin: 40px auto auto;
 }
 .mailMessageBox textarea {
@@ -209,20 +208,20 @@ i {
 	border-radius: 20px;
 	padding: 1rem;
 	outline: none;
-	height: 40vh;
+	min-height: 25vh;
 	width: 100%;
 }
-.mailMessageBox textarea::placeholder {
-	font-size: calc(1.5vw + 1vh);
+.contact-container .mailMessageBox textarea::placeholder {
+	font-size: calc(0.5vw + 0.6vh + 12px);
 	font-weight: bold;
-	opacity: 0.5;
+	opacity: 0.4;
 	color: rgb(29, 28, 28);
 }
-.mailMessageBox textarea:focus {
+.contact-container .mailMessageBox textarea:focus {
 	border: 2px solid #9b9b9b;
 	border-radius: 10px;
 }
-.modelHeaderMenu {
+.contact-container .modelHeaderMenu {
 	margin-right: 10px;
 }
 
@@ -235,14 +234,14 @@ i {
 .modelHeaderMenuConfirm:hover {
 	color: rgb(96, 231, 107);
 }
-.modelHeaderMenuDummy {
+.contact-container .modelHeaderMenuDummy {
 	padding: 0px 0px 0px 1vw;
 	margin-right: -5px !important;
 }
 .modelHeaderMenuDummy:hover {
 	color: #fdf497;
 }
-.alreadyMailSent {
+.contact-container .alreadyMailSent {
 	min-height: 50vh;
 	text-align: justify;
 	font-size: calc(0.7rem + 0.5vw + 0.5vh);
@@ -251,11 +250,11 @@ i {
 	font-weight: 500;
 	margin-bottom: 5vh;
 }
-.alreadyMailSent p {
+.contact-container .alreadyMailSent p {
 	font-family: fangsong;
 }
 
-.alreadyMailSent h1 {
+.contact-container .alreadyMailSent h1 {
 	text-align: center;
 	/* margin: 5vh auto; */
 }
@@ -263,16 +262,16 @@ i {
 	font-size: 5rem;
 	padding-bottom: 5vh;
 }
-.resendMial {
+.contact-container .resendMial {
 	font-weight: 600;
 	color: #0a66c2;
 }
-.resendMial:hover {
+.contact-container .resendMial:hover {
 	text-decoration: underline;
 	color: #0a66c2;
 	cursor: pointer;
 }
-.disabledLink {
+.contact-container .disabledLink {
 	pointer-events: none !important;
 	cursor: pointer !important;
 	opacity: 0.4;
@@ -281,14 +280,14 @@ i {
 	font-size: calc(1rem + 0.5vw + 0.5vh);
 	cursor: pointer;
 }
-.downArrow {
+.contact-container .downArrow {
 	position: absolute;
 	width: 100vw;
 	bottom: 0;
 	display: flex;
 	justify-content: center;
 }
-.pointingArrow {
+.contact-container .pointingArrow {
 	height: calc(10vh + 5vw);
 	width: calc(20vw + 20vh);
 	transform: rotate(180deg);
@@ -308,20 +307,20 @@ i {
 }
 
 @media (min-width: 1600px) {
-	.workIcon .iconHandle {
+	.contact-container .workIcon .iconHandle {
 		right: -10rem;
 		bottom: -10rem;
 	}
-	.iconHandle {
+	.contact-container .iconHandle {
 		font-size: 2rem;
 	}
 }
 @media (max-width: 992px) {
-	.socialIcons .iconHandle {
+	.contact-container .socialIcons .iconHandle {
 		right: -2rem;
 		bottom: -1rem;
 	}
-	.workIcon .iconHandle {
+	.contact-container .workIcon .iconHandle {
 		position: relative;
 		text-decoration: none;
 	}

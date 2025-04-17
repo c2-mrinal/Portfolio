@@ -220,7 +220,7 @@ video::-webkit-media-controls-play-button {
 	background: rgb(11, 11, 11);
 	text-align: center;
 	color: white;
-	font-family: cursive;
+	/* font-family: cursive; */
 	width: 100vw;
 }
 .cursorAniContainer {

@@ -2,18 +2,14 @@ import React from "react";
 
 function TimeLineSvg(props) {
 	return (
-		<div className={props.className}>
+		<div className={props?.className}>
 			<svg
 				version="1.0"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 648.000000 726.000000"
 				preserveAspectRatio="xMidYMid meet"
 			>
-				<g
-					transform="translate(0.000000,726.000000) scale(0.100000,-0.100000)"
-					fill="rgba(0, 255, 255, 0.257)"
-					stroke="none"
-				>
+				<g transform="translate(0.000000,726.000000) scale(0.100000,-0.100000)" fill="#98ded2b9" stroke="none">
 					<path
 						d="M3150 7068 c-219 -10 -265 -14 -330 -27 -30 -7 -62 -12 -70 -12 -40
    -3 -260 -53 -346 -79 -53 -17 -102 -30 -108 -30 -6 0 -23 -6 -37 -14 -15 -7

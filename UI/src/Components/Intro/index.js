@@ -33,7 +33,7 @@ function Intro(props) {
 					setDownloadSuccess(true);
 					setTimeout(() => setDownloadSuccess(false), 4000);
 				} else {
-					console.log(response.statusText || response.message);
+					console.warn(response.statusText || response.message);
 				}
 			} catch (error) {
 				console.error("An error occurred:", error);
