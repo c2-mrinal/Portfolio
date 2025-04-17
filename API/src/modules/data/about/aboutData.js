@@ -1,6 +1,7 @@
 const { fetchImageFromServer } = require("../../common/comon");
 
 const folderList = {
+	mp: 2,
 	vrooms: 2,
 	freelance: 2,
 	softwebSolutions: 2,
@@ -33,6 +34,13 @@ const folderData = {
 					isFolder: true,
 					isOpen: true,
 					items: [
+						{
+							name: "Programming.com",
+							isFolder: false,
+							value: "mp",
+							category: 2,
+							items: [],
+						},
 						{
 							name: "VROOMS",
 							isFolder: false,
@@ -188,9 +196,9 @@ const folderData = {
 		},
 	},
 	defaultSelected: {
-		name: "Vrooms",
+		name: "Programming.com",
 		isFolder: false,
-		value: "vrooms",
+		value: "mp",
 		category: 2,
 	},
 };
@@ -347,14 +355,65 @@ const aboutData = {
 			"During my time at Sunflower Public School, where I pursued my matriculation education under the CBSE board, I had a fulfilling academic journey. The school provided a well-rounded education, emphasizing not only on core subjects like Science, Math, English, Sanskrit, and Social Science but also promoting extracurricular activities. The dedicated faculty members were supportive and encouraged a conducive learning environment. Participating in various school events, competitions, and clubs enhanced my overall growth and development. Sunflower Public School played a significant role in shaping my educational foundation and fostering a love for learning that continues to drive me forward in my academic and personal pursuits.",
 		term: "2011 - 2013",
 	},
+	mp: {
+		name: "Programming.com",
+		designation: "Software Developer",
+		department: "Web Development",
+		startDate: "June 2024",
+		endDate: "Present",
+		website: "https://www.programming.com/",
+		linkedin: "https://www.linkedin.com/company/programmingcom/posts/?feedView=all",
+		img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/mp/logo.png",
+		skills: {
+			ReactJS: "fa-brands fa-react",
+			NextJS: "fa-brands fa-react",
+			Redux: "fa-brands fa-react",
+			MUI: "fa-solid fa-desktop",
+			JavaScript: "fa-brands fa-square-js",
+			TypeScript: "fa-solid fa-code",
+			NodeJS: "fa-brands fa-node",
+			ExpressJS: "fa-solid fa-network-wired",
+			MongoDB: "fa-solid fa-database",
+			Firebase: "fa-solid fa-fire",
+			"Google Maps API": "fa-solid fa-map",
+			"REST API": "fa-solid fa-gear",
+			i18n: "fa-solid fa-globe",
+			"Responsive Design": "fa-solid fa-mobile-screen-button",
+			"Role-Based Auth": "fa-solid fa-user-shield",
+		},
+		notableWork: [
+			"Awarded Certificate of Appreciation for contributions to CTX GO V1, praised by client and team.",
+			"Led a backend team of 4 engineers, boosting development efficiency by 20%.",
+			"Built AI-powered GPT-based prompt system for resume analysis, increasing accuracy by 30%.",
+			"Implemented database migrations, REST APIs, and UI flow for recruiter test creation/editing, reducing task time by 25%.",
+			"Developed scalable React/Next.js monolithic app with centralized API handling and global error management.",
+			"Integrated Google Maps APIs with advanced overlays, routing, markers, and real-time Firebase notifications.",
+		],
+		about: `At Programming, I contributed as a full stack developer with a focus on frontend engineering. My responsibilities included building AI-driven features using GPT models, managing backend development for recruiter AI, and delivering scalable web applications using React, Next.js, Redux, MUI, and Node.js. I led teams, improved performance, and received client and team appreciation for exceeding expectations in delivering high-quality solutions.`,
+		activity: [
+			{
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/mp/award.png",
+				name: "Certificate of Appreciation",
+			},
+			{
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/mp/outing.png",
+				name: "Team Picknic",
+			},
+			{
+				img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/mp/birthday.png",
+				name: "Birtday Celebration",
+			},
+		],
+	},
+
 	vrooms: {
 		name: "Vrooms",
-		designation: "Co-Founder - Teach Lead",
+		designation: "Co-Founder - Tech Lead",
 		department: "",
-		startDate: "2021",
+		startDate: " 2021",
 		endDate: "present",
 		website: "www.vrooms.in",
-		linkedin: "",
+		linkedin: "https://www.linkedin.com/company/vrooms-estate",
 		img: "https://raw.githubusercontent.com/c2-mrinal/PROJECT_IMAGES/main/Portfolio/Images/Company/vroomsIcon.jpeg",
 		skills: {
 			Html5: "fa-brands fa-html5",
