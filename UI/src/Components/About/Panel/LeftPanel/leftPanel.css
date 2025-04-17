@@ -1,3 +1,49 @@
+.folder-container {
+	margin-bottom: 8px;
+}
+
+.folder-header {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+	padding: 6px 10px;
+	border-radius: 4px;
+	transition: background-color 0.2s ease;
+}
+
+.folder-header:hover {
+	background-color: #f3f3f3;
+}
+
+.folder-selected {
+	background-color: #e0e0ff;
+}
+
+.folder-label {
+	margin-left: 8px;
+	font-weight: 500;
+}
+
+/* Wrapper that we animate */
+.folder-content-wrapper {
+	overflow: hidden;
+	height: 0;
+	transition: height 0.3s ease;
+}
+
+/* Inner content for padding and layout */
+.folder-content-inner {
+	padding-left: 20px;
+}
+
+/* Expand/Collapse Content */
+.folder-content {
+	overflow: hidden;
+	transition: max-height 0.3s ease;
+	padding-left: 20px;
+}
+
 .folderTreeExpandable {
 	display: flex;
 	margin: auto;

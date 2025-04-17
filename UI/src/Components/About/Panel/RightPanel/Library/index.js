@@ -2,7 +2,6 @@ import React from "react";
 
 export default function Library(props) {
 	const { data } = props;
-	console.log(data);
 
 	return (
 		<div className="libraryContaner">

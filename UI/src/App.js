@@ -19,6 +19,7 @@ const About = lazy(() => import("./Components/About"));
 const NotFound = lazy(() => import("./Shared/NotFound"));
 
 const Blog = lazy(() => import("./Components/Blog"));
+const BlogRouting = lazy(() => import("./Components/Blog/blogs"));
 const UnderProgress = lazy(() => import("./Shared/UnderProgress"));
 
 function App() {
@@ -116,6 +117,14 @@ function App() {
 							element={
 								<ErrorBoundary>
 									<Blog />
+								</ErrorBoundary>
+							}
+						/>
+						<Route
+							path="blog/:blog"
+							element={
+								<ErrorBoundary>
+									<BlogRouting />
 								</ErrorBoundary>
 							}
 						/>

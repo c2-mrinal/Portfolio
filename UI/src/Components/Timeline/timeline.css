@@ -1,8 +1,8 @@
 .containers {
-	width: 600vw;
 	height: 100vh;
 	display: flex;
 	flex-wrap: wrap;
+	overflow-x: hidden;
 }
 .col-smm-1,
 .col-smm-5 {
@@ -35,7 +35,6 @@
 .timeLineFrame {
 	width: 100vw;
 	height: 60vh;
-	width: 100vw;
 	position: fixed;
 	display: flex;
 	top: 20%;
@@ -131,34 +130,38 @@
 
 .shape1 {
 	height: 100%;
-	background-color: aqua;
+	background-color: var(--color-aqua);
 	-webkit-clip-path: polygon(0 70%, 0 42%, 100% 100%, 50% 100%);
 	clip-path: polygon(0 70%, 0 42%, 100% 100%, 50% 100%);
 }
 .shape2 {
 	z-index: 1;
 	height: 100%;
-	background-color: rgba(0, 255, 255, 0.257);
+	opacity: 0.4;
+	background-color: var(--color-aqua);
 	-webkit-clip-path: polygon(75% 0, 100% 0, 25% 100%, 0 100%);
 	clip-path: polygon(75% 0, 100% 0, 25% 100%, 0 100%);
 }
 .shape3 {
 	z-index: 5;
+	opacity: 0.4;
 	height: 100%;
-	background-color: rgba(0, 255, 255, 0.257);
+	background-color: var(--color-aqua);
 	-webkit-clip-path: polygon(0 0, 12% 0, 100% 100%, 88% 100%);
 	clip-path: polygon(0 0, 9% 0, 100% 100%, 91% 100%);
 }
 .shape4 {
 	height: 100%;
-	background-color: rgba(0, 255, 255, 0.257);
+	opacity: 0.4;
+
+	background-color: var(--color-aqua);
 	-webkit-clip-path: polygon(75% 0, 100% 0, 25% 100%, 0 100%);
 	clip-path: polygon(75% 0, 100% 0, 25% 100%, 0 100%);
 }
 
 .shape5 {
 	height: 100%;
-	background-color: aqua;
+	background-color: var(--color-aqua);
 	-webkit-clip-path: polygon(0 0, 50% 0, 100% 36%, 100% 69%);
 	clip-path: polygon(0 0, 50% 0, 100% 36%, 100% 69%);
 }

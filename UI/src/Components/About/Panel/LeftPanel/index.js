@@ -33,10 +33,10 @@ function LeftPanel(props) {
 						setFolderData(responseData.data.folders);
 						folderSelected(responseData.data.defaultSelected);
 					} else {
-						console.log(responseData.statusText || responseData.message);
+						console.error(responseData.statusText || responseData.message);
 					}
 				} else {
-					console.log("Network error");
+					console.error("Network error");
 				}
 			} catch (error) {
 				console.error("An error occurred:", error);

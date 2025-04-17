@@ -136,7 +136,7 @@ function Skill({ onMouseOver, onMouseOut }) {
 						handlePopup();
 					}, 2000);
 				} else {
-					console.log(responseData.statusText || responseData.message);
+					console.warn(responseData.statusText || responseData.message);
 				}
 			} catch (error) {
 				console.error("An error occurred while fetching data:", error);
@@ -184,26 +184,16 @@ function Skill({ onMouseOver, onMouseOut }) {
 	}, [data, windowWidth, windowHeight]);
 
 	const createBubblePlot = (data) => {
-		// Clear existing content inside the SVG
+		// Clear existing content
 		d3.select(refNode.current).selectAll("g").remove();
 
-		// Calculate width and height
 		const width = windowWidth - Margin.left - Margin.right;
 		const height = windowHeight - Margin.top - Margin.bottom;
 
 		// Define forces
-		const forceX = d3
-			.forceX()
-			.strength(0.1)
-			.x(width * 0.5);
-		const forceY = d3
-			.forceY()
-			.strength(0.1)
-			.y(height * 0.5);
-		const centerForce = d3
-			.forceCenter()
-			.x(width * 0.5)
-			.y(height * 0.5);
+		const forceX = d3.forceX(width * 0.5).strength(0.1);
+		const forceY = d3.forceY(height * 0.5).strength(0.1);
+		const centerForce = d3.forceCenter(width * 0.5, height * 0.5);
 		const chargeForce = d3.forceManyBody().strength(-15);
 
 		simulation
@@ -212,24 +202,21 @@ function Skill({ onMouseOver, onMouseOut }) {
 			.force("center", centerForce)
 			.force("charge", chargeForce);
 
-		// Create a tooltip div
+		// Tooltip
 		const tooltip = d3
 			.select("body")
 			.append("div")
 			.style("position", "absolute")
 			.style("z-index", "2")
-			.style("visibility", "hidden")
-			.text((d) => `${d && d.value ? d.value : ""}`);
+			.style("visibility", "hidden");
 
-		const nodeg = d3
+		// Main SVG group
+		const svgGroup = d3
 			.select(refNode.current)
 			.attr("width", width + Margin.left + Margin.right)
 			.attr("height", height + Margin.top + Margin.bottom)
 			.append("g")
 			.attr("transform", `translate(${Margin.left},${Margin.top})`);
-
-		// Define nodes, text, and inner circles
-		let nodes, nodestext1, nodeinnercircle;
 
 		// Configure simulation
 		simulation
@@ -246,17 +233,17 @@ function Skill({ onMouseOver, onMouseOut }) {
 					})
 					.iterations(1)
 			)
-			.on("tick", function () {
+			.on("tick", () => {
 				nodes.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-
-				nodestext1.attr("x", (d) => d.x).attr("y", (d) => d.y);
-
-				nodeinnercircle.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+				nodeLabels.attr("x", (d) => d.x).attr("y", (d) => d.y);
+				innerCircles.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
 			});
 
-		const nodedata = nodeg.selectAll("circle").data(data).enter();
+		// Join data
+		const nodeEnter = svgGroup.selectAll("circle").data(data).enter();
 
-		nodes = nodedata
+		// Main bubbles
+		const nodes = nodeEnter
 			.append("circle")
 			.attr("r", (d) => {
 				const adjustedHeight = height - width > 50 ? height - (height - width) + 50 : height;
@@ -264,41 +251,30 @@ function Skill({ onMouseOver, onMouseOut }) {
 				return aspectRatio * d.radius;
 			})
 			.attr("fill", (d) => {
-				if (d.value > 4.5) {
-					return "#6f8cc3";
-				} else if (d.value > 4.0) {
-					return "#00cc9c";
-				} else if (d.value > 3.5) {
-					return "#7ecd8c";
-				} else if (d.value > 3.0) {
-					return "#7a7cb8";
-				} else if (d.value > 2.5) {
-					return "#d378a0";
-				} else if (d.value > 2.0) {
-					return "#e3654f";
-				} else if (d.value > 1.5) {
-					return "#87b287";
-				} else {
-					return "#9254DE";
-				}
+				if (d.value > 4.5) return "#6f8cc3";
+				if (d.value > 4.0) return "#00cc9c";
+				if (d.value > 3.5) return "#7ecd8c";
+				if (d.value > 3.0) return "#7a7cb8";
+				if (d.value > 2.5) return "#d378a0";
+				if (d.value > 2.0) return "#e3654f";
+				if (d.value > 1.5) return "#87b287";
+				return "#9254DE";
 			})
 			.attr("fill-opacity", (d) => {
-				if (d.value) {
-					const opacity = d.value.toFixed(2);
-					return opacity >= 4 ? opacity : opacity < 4 && opacity > 3 ? 0.8 : opacity < 3 && opacity > 2 ? 0.6 : 0.5;
-				} else {
-					return 1;
-				}
+				const val = parseFloat(d.value) || 1;
+				if (val >= 4) return val;
+				if (val > 3) return 0.8;
+				if (val > 2) return 0.6;
+				return 0.5;
 			})
 			.attr("cx", (d) => d.x)
 			.attr("cy", (d) => d.y)
 			.style("z-index", "5")
 			.on("mouseover", function (e, d) {
 				mouseOver(e, d);
-				tooltip.html(d.label && d !== "undefined" ? showTooltip(d) : "");
-				tooltip.style("visibility", "visible");
+				tooltip.html(d.label ? showTooltip(d) : "").style("visibility", "visible");
 			})
-			.on("mousemove", function (e, d) {
+			.on("mousemove", (e) => {
 				tooltip.style("top", "15%").style("left", "1%");
 			})
 			.on("mouseout", function (e, d) {
@@ -307,62 +283,35 @@ function Skill({ onMouseOver, onMouseOut }) {
 			})
 			.call(d3.drag().on("start", dragstarted).on("drag", dragged).on("end", dragended));
 
-		nodeinnercircle = nodedata
+		// Inner circles
+		const innerCircles = nodeEnter
 			.append("circle")
 			.attr("cx", (d) => d.x)
 			.attr("cy", (d) => d.y)
-			.attr("r", (d) => {
-				if (d.label === "" || d.label === " ") {
-					return 0;
-				} else {
-					return 11;
-				}
-			})
-			.attr("visibility", (d) => {
-				if (d.label === "" || d.label === " " || !d.label) {
-					return "hidden";
-				} else {
-					return "visible";
-				}
-			})
+			.attr("r", (d) => (!d.label || d.label.trim() === "" ? 0 : 11))
+			.attr("visibility", (d) => (!d.label || d.label.trim() === "" ? "hidden" : "visible"))
 			.attr("fill", "#000000")
-			.style("z-index", "5")
-			.attr("fill-opacity", "0");
+			.attr("fill-opacity", "0")
+			.style("z-index", "5");
 
-		const nodetxt = nodeg.selectAll("text").data(data).enter();
-
-		nodestext1 = nodetxt
+		// Text labels
+		const nodeLabels = svgGroup
+			.selectAll("text")
+			.data(data)
+			.enter()
 			.append("text")
 			.attr("x", (d) => d.x)
 			.attr("y", (d) => d.y)
 			.attr("dy", ".3em")
 			.style("text-anchor", "middle")
-			.text(function (d) {
-				return d.label;
-			})
-			.attr("r", (d) => {
-				if (d.label === "" || d.label === " ") {
-					return 0;
-				} else {
-					return 11;
-				}
-			})
-			.attr("visibility", (d) => {
-				if (d.label === "" || d.label === " " || !d.label) {
-					return "hidden";
-				} else {
-					return "visible";
-				}
-			})
+			.attr("visibility", (d) => (!d.label || d.label.trim() === "" ? "hidden" : "visible"))
 			.attr("font-family", "SF-Pro-Display-Semibold")
 			.attr("font-size", "calc(1vh + 1.3vw)")
 			.attr("font-weight", 800)
-			.text(function (d) {
-				return d.label;
-			})
-			.attr("line-height", "20px")
-			.attr("fill", "white");
+			.attr("fill", "white")
+			.text((d) => d.label || "");
 
+		// Restart simulation
 		simulation.alphaTarget(0.03).restart();
 	};
 

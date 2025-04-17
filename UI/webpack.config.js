@@ -1,31 +1,22 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpack = require("webpack");
-const dotenv = require("dotenv");
+const Dotenv = require("dotenv-webpack");
 
-dotenv.config();
 module.exports = {
-	entry: "./src/index.js", // Entry point for your app
+	entry: "./src/index.js",
 	output: {
-		path: path.resolve(__dirname, "build"), // The bundle output path
-		filename: "bundle.js", // The name of the bundle
-		publicPath: "/", // Public path for assets (useful for routing)
+		path: path.resolve(__dirname, "build"),
+		filename: "bundle.js",
+		publicPath: "/",
 	},
 	resolve: {
-		extensions: [".js", ".jsx"], // Allow importing .js and .jsx files without extensions
+		extensions: [".js", ".jsx"],
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: "public/index.html",
 		}),
-		new webpack.DefinePlugin({
-			"process.env.REACT_APP_EMAILJS_SERVICE_ID": JSON.stringify(process.env.REACT_APP_EMAILJS_SERVICE_ID),
-			"process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT_ID": JSON.stringify(
-				process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT_ID
-			),
-			"process.env.REACT_APP_EMAILJS_USER_ID": JSON.stringify(process.env.REACT_APP_EMAILJS_USER_ID),
-			"process.env.REACT_APP_TESTING_FOR_ENV_VAR": JSON.stringify(process.env.REACT_APP_TESTING_FOR_ENV_VAR),
-		}),
+		new Dotenv(), // Automatically injects .env variables
 	],
 	devServer: {
 		port: 3333,
