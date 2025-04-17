@@ -1,213 +1,191 @@
 import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 import Modal from "react-bootstrap/Modal";
 import Input from "../../../Shared/Input";
 import Loader from "../../../Shared/Loader";
 import emailjs from "@emailjs/browser";
 
-function MailPopUp(props) {
-	const [Copied, setCopied] = useState(false);
-	const [RecentMail, setRecentMail] = useState(false);
-	const [MailData, setMailData] = useState({
+function MailPopUp({ show, hide }) {
+	const [copied, setCopied] = useState(false);
+	const [recentMail, setRecentMail] = useState(true); // assume allowed initially
+	const [mailData, setMailData] = useState({
 		name: "",
 		mailId: "",
 		message: "",
 	});
-	const [IsSendingMailValid, setIsSendingMailValid] = useState({
+	const [isSendingMailValid, setIsSendingMailValid] = useState({
 		mailingName: false,
 		mailingID: false,
 		mailingMessage: false,
 	});
-	const mailForm = useRef();
 	const [loading, setLoading] = useState(false);
+	const mailForm = useRef();
 
 	useEffect(() => {
-		return () => {
-			const localStorageDate = localStorage.getItem("lastMailSent");
-			let prevDate = new Date(localStorageDate).getTime();
-			let newDate = new Date().getTime();
-			const diff = Math.abs(newDate - prevDate) / (1000 * 60 * 60);
-			if (diff > 6) {
-				setRecentMail(true);
-			} else {
-				setRecentMail(false);
-			}
-		};
-	}, [props]);
+		const localStorageDate = localStorage.getItem("lastMailSent");
+		if (!localStorageDate) {
+			setRecentMail(true);
+			return;
+		}
+		const prevDate = new Date(localStorageDate).getTime();
+		const newDate = new Date().getTime();
+		const diff = Math.abs(newDate - prevDate) / (1000 * 60 * 60); // hours
+		setRecentMail(diff > 6);
+	}, [show]);
 
-	const handleChange = (val) => {
+	const handleChange = (e) => {
 		setIsSendingMailValid({
 			mailingName: false,
 			mailingID: false,
 			mailingMessage: false,
 		});
-		setMailData((prevVal) => ({
-			...prevVal,
-			[val.target.id]: val.target.value,
+		setMailData((prev) => ({
+			...prev,
+			[e.target.id]: e.target.value,
 		}));
 	};
+
 	const cancelMail = () => {
 		setIsSendingMailValid({});
-		setMailData(
-			{
-				name: "",
-				mailId: "",
-				message: "",
-			},
-			props.hide()
-		);
-	};
-	const validateMailDetail = () => {
-		const mailingName = MailData.name.trim()?.length <= 1;
-
-		const mailingID = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(MailData.mailId);
-		const mailingMessage = MailData.message.trim()?.length < 10;
-		setIsSendingMailValid({
-			mailingName: mailingName,
-			mailingID: mailingID,
-			mailingMessage: mailingMessage,
+		setMailData({
+			name: "",
+			mailId: "",
+			message: "",
 		});
+		hide();
+	};
+
+	const validateMailDetail = () => {
+		const mailingName = mailData.name.trim()?.length <= 1;
+		const mailingID = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mailData.mailId);
+		const mailingMessage = mailData.message.trim()?.length < 10;
+
+		setIsSendingMailValid({
+			mailingName,
+			mailingID,
+			mailingMessage,
+		});
+
 		return !mailingName && !mailingID && !mailingMessage;
 	};
+
 	const sendMailApi = async () => {
 		try {
 			setLoading(true);
-			emailjs
-				.send(
-					process.env.REACT_APP_EMAILJS_SERVICE_ID,
-					process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT_ID,
-					MailData,
-					process.env.REACT_APP_EMAILJS_USER_ID
-				)
-				.then(
-					(result) => {
-						cancelMail();
-						localStorage.setItem("lastMailSent", new Date());
-						setRecentMail(true);
-					},
-					(error) => {
-						console.error("Failed to send email:", error);
-					}
-				);
+			await emailjs.send(
+				process.env.REACT_APP_EMAILJS_SERVICE_ID,
+				process.env.REACT_APP_EMAILJS_TEMPLATE_CONTACT_ID,
+				mailData,
+				process.env.REACT_APP_EMAILJS_USER_ID
+			);
+			localStorage.setItem("lastMailSent", new Date());
+			setRecentMail(false); // lock out future mails until cooldown
+			cancelMail();
 		} catch (error) {
-			console.error("An error occurred while sending email:", error);
+			console.error("Failed to send email:", error);
 		} finally {
 			setLoading(false);
 		}
 	};
 
 	const sendMail = async () => {
+		if (!recentMail) return;
 		const isValid = await validateMailDetail();
 		if (isValid) {
 			sendMailApi();
 		}
 	};
 
-	const errorInMail = (msg) => {
-		return <div className="errorMail">{msg}</div>;
-	};
 	const copyContent = async () => {
 		try {
 			await navigator.clipboard.writeText("mrinalspec@gmail.com");
 			setCopied(true);
-			setTimeout(() => {
-				setCopied(false);
-			}, 2000);
-			console.log("Content copied to clipboard");
+			setTimeout(() => setCopied(false), 2000);
 		} catch (err) {
 			console.error("Failed to copy: ", err);
 		}
 	};
 
+	const errorInMail = (msg) => <div className="errorMail">{msg}</div>;
+
 	return (
-		<div>
-			<Modal show={props.show} onHide={props.hide} className="modelContainer">
+		<div className="contact-container">
+			<Modal show={show} onHide={hide} className="modelContainer">
 				<Modal.Header>
-					<div>
-						<span onClick={props.hide} title="Close" className="modelHeaderMenuAlert modelIcons">
-							<i className="fa fa-solid fa-xmark"></i>{" "}
-						</span>
-					</div>
-					<div className="modelHeaderMenu d-flex">
-						<span
-							onClick={cancelMail}
-							title="Discard"
-							className={`${!RecentMail ? "disabledLink" : ""} modelHeaderMenuAlert modelIcons`}
-						>
-							<i className=" fa fa-solid fa-trash"></i>
-						</span>
-						<span
-							onClick={sendMail}
-							title="Send"
-							className={`${!RecentMail ? "disabledLink" : ""} modelHeaderMenuConfirm modelIcons`}
-						>
-							<i className="fa fa-solid fa-paper-plane"></i>
-						</span>
-						<span
-							title="Its Dummy : )"
-							className={`${!RecentMail ? "disabledLink" : ""} modelHeaderMenuDummy modelIcons`}
-						>
-							<i className=" fa fa-solid fa-ellipsis-vertical"></i>{" "}
-						</span>
+					<div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
+						<div>
+							<span onClick={hide} title="Close" className="modelHeaderMenuAlert modelIcons">
+								<i className="fa fa-solid fa-xmark"></i>
+							</span>
+						</div>
+						<div className="modelHeaderMenu d-flex">
+							<span
+								onClick={cancelMail}
+								title="Discard"
+								className={`${!recentMail ? "disabledLink" : ""} modelHeaderMenuAlert modelIcons`}
+							>
+								<i className="fa fa-solid fa-trash"></i>
+							</span>
+							<span
+								onClick={sendMail}
+								title="Send"
+								className={`${!recentMail ? "disabledLink" : ""} modelHeaderMenuConfirm modelIcons`}
+							>
+								<i className="fa fa-solid fa-paper-plane"></i>
+							</span>
+							<span
+								title="It's Dummy :)"
+								className={`${!recentMail ? "disabledLink" : ""} modelHeaderMenuDummy modelIcons`}
+							>
+								<i className="fa fa-solid fa-ellipsis-vertical"></i>
+							</span>
+						</div>
 					</div>
 				</Modal.Header>
 				<Modal.Body>
-					{RecentMail ? (
+					{recentMail ? (
 						<>
 							<div className="inputFieldsAlign" ref={mailForm}>
 								<div>
-									<Input
-										id="name"
-										type="text"
-										name="To"
-										value={"mrinalspec@gmail.com"}
-										onChange={handleChange}
-										disabled={true}
-									/>
+									<Input id="recipient" type="text" name="To" value="mrinalspec@gmail.com" disabled={true} />
 									<i
-										className={`fa fa-copy copyClipboard ${Copied ? " copiedField " : ""}`}
+										className={`fa fa-copy copyClipboard ${copied ? "copiedField" : ""}`}
 										onClick={copyContent}
-										title="Copy Mail ID"
+										title={copied ? "Copied!" : "Copy Mail ID"}
 									></i>
 								</div>
 
 								<div>
 									<Input
 										id="mailId"
-										type="mail"
+										type="email"
 										name="From"
-										value={MailData.mailId}
+										value={mailData.mailId}
 										onChange={handleChange}
-										required={true}
-										autoFocus={true}
+										required
+										autoFocus
 									/>
-									<>
-										{IsSendingMailValid.mailingID &&
-											errorInMail("Hey, there is some issue with the Mail provided please verify it !!!")}
-									</>
+									{isSendingMailValid.mailingID &&
+										errorInMail("Hey, there is some issue with the Mail provided please verify it!")}
 								</div>
+
 								<div>
-									<Input
-										id="name"
-										type="text"
-										name="Name"
-										value={MailData.name}
-										onChange={handleChange}
-										required={true}
-									/>
-									<>{IsSendingMailValid.mailingName && errorInMail("Hey, You need to put you name here.")}</>
+									<Input id="name" type="text" name="Name" value={mailData.name} onChange={handleChange} required />
+									{isSendingMailValid.mailingName && errorInMail("Hey, You need to put your name here.")}
 								</div>
 							</div>
+
 							<div className="mailMessageBox">
 								<textarea
 									id="message"
 									type="text"
 									name="Message"
 									placeholder="Write a Message ..."
-									value={MailData.message}
+									value={mailData.message}
 									onChange={handleChange}
-									required={true}
+									required
 								></textarea>
-								<>{IsSendingMailValid.mailingMessage && errorInMail("Come On atleast share 5 characters.")}</>
+								{isSendingMailValid.mailingMessage && errorInMail("Come on, at least share 10 characters.")}
 							</div>
 						</>
 					) : (
@@ -215,16 +193,11 @@ function MailPopUp(props) {
 							<h1>
 								<i className="fa-solid fa-envelope-circle-check" style={{ color: "#6ad920" }}></i>
 							</h1>
-							<p>You've recently sent an email in the last six hours. Please feel free to await my response.</p>
+							<p>You've recently sent an email in the last six hours. Please await a response.</p>
 							<p>
-								Should you wish to send another email, you may do so by{" "}
-								<span
-									className="resendMial"
-									onClick={() => {
-										setRecentMail(true);
-									}}
-								>
-									clicking here
+								If you'd still like to send another,{" "}
+								<span className="resendMial" onClick={() => setRecentMail(true)}>
+									click here
 								</span>
 								.
 							</p>
@@ -236,5 +209,10 @@ function MailPopUp(props) {
 		</div>
 	);
 }
+
+MailPopUp.propTypes = {
+	show: PropTypes.bool.isRequired,
+	hide: PropTypes.func.isRequired,
+};
 
 export default MailPopUp;

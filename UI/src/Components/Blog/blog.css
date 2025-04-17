@@ -1,0 +1,159 @@
+/* MindMap Component Styles */
+.mindmap-container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	font-size: clamp(0.8rem, 1vw + 0.5rem, 1.2rem);
+}
+
+.mindmap {
+	position: relative;
+	width: 50%;
+	min-height: 100vh;
+	background-color: #f9f9f9;
+}
+
+.node-container {
+	position: relative;
+}
+
+.mindmap-node {
+	position: relative;
+	max-width: 12rem;
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: transform 0.2s;
+}
+
+.mindmap-node:hover {
+	transform: scale(1.05);
+}
+
+.central-node {
+	top: 100px;
+	left: 50px;
+	background-color: #ececec;
+	font-weight: bold;
+}
+
+.details {
+	width: 50%;
+	padding: 20px;
+	background-color: #f1f1f1;
+	overflow-y: auto;
+}
+
+.children {
+	margin-top: 2rem;
+	margin-left: 50px;
+}
+
+.curve-line {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+	pointer-events: none;
+}
+
+.curve-line path {
+	stroke: #ccc;
+	stroke-width: 2;
+	fill: transparent;
+}
+
+/* Filter Component Styles */
+.filter-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 10rem;
+}
+
+.filter-box {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 40vw;
+	height: 4rem;
+	border: 1px solid grey;
+	border-radius: 25px;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.5s ease;
+}
+
+.filter-part {
+	cursor: pointer;
+	padding: 10px 20px;
+	text-align: center;
+	flex: 1;
+	transition: all 0.5s ease;
+}
+
+.filter-box.expanded .filter-part {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.dropdown-container {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: expand 0.5s ease forwards;
+}
+
+.dropdown-container select {
+	width: 80%;
+	padding: 5px;
+	font-size: 1.5rem;
+	opacity: 0;
+	border: none;
+	animation: fadeIn 0.5s 0.3s ease forwards;
+}
+
+.closeDropDown:hover {
+	cursor: pointer;
+	color: red;
+}
+
+.selected-filter {
+	white-space: nowrap;
+	color: darkgray;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+	width: 100%;
+	font-size: clamp(1rem, 1.2vw, 1.5rem);
+	margin-bottom: -5%;
+}
+
+.select-filter {
+	font-size: clamp(0.6rem, 1.2vw, 1rem);
+}
+
+/* Keyframes for Animations */
+@keyframes expand {
+	from {
+		width: 0;
+		left: 50%;
+	}
+	to {
+		width: 100%;
+		left: 0;
+	}
+}
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
