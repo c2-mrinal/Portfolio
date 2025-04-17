@@ -13,11 +13,21 @@ const yearAge = (year) => {
 };
 const careerData = [
 	{
+		year: 2025,
+		age: getCurrentYear(2025),
+		header: "Programming.com",
+		url: "https://www.vrooms.in/",
+		about: "Software Developer ( Sept, 2021 - Present )",
+		detail: `As a Full Stack Developer with Programming, I played a pivotal role in delivering a high-impact product under tight deadlines and complex requirements. My contributions spanned both frontend and backend development—from leading a team of backend engineers to building scalable applications with modern frameworks like Next.js, React, Redux, and MUI. I architected a monolithic system from scratch with centralized API handling and integrated advanced features like Google Maps APIs, real-time Firebase notifications, and robust role-based authentication. My work on GPT-based resume analysis and recruiter test flows led to notable performance boosts and client satisfaction, earning me a Certificate of Appreciation for exceeding expectations and delivering excellence.`,
+		name: "Programming.com",
+		value: "programming.com",
+	},
+	{
 		year: 2024,
-		age: getCurrentYear(new Date().getFullYear()),
+		age: getCurrentYear(2024),
 		header: "Vrooms",
 		url: "https://www.vrooms.in/",
-		about: "Co-Founded( Sept, 2021 - Present )",
+		about: "Co-Founded( April 2023 - May 2024 )",
 		detail: `Vrooms revolutionizes real estate by connecting brokers and customers across Lucknow, Kolkata, Ahmedabad, Delhi, and Kanpur. We tackle market challenges with innovative solutions, empowering seamless transactions through advanced tools and unwavering commitment to satisfaction. Your trusted partner in navigating the real estate journey.`,
 		name: "Vrooms",
 		value: "vrooms",
@@ -27,7 +37,7 @@ const careerData = [
 		age: getCurrentYear(2024),
 		header: "Freelance",
 		url: "https://www.nourl.com/",
-		about: "Self Employed ( May, 2023 - Present )",
+		about: "Self Employed",
 		detail: `I'm an experienced MERN developer with a diverse portfolio. At Zonvoir, I enhanced a pharmaceutical software, and at STIC Soft, I improved a fintech platform, delivering tailored solutions for each client.`,
 		name: "Freelance",
 		value: "freelance",
