@@ -3,13 +3,14 @@
 	width: 100vw;
 	background-color: rgba(0, 255, 255, 0.588);
 }
-.menuListContainer a {
-	text-decoration: none;
-	color: rgb(34, 33, 33);
-}
+
 .nav-container {
 	margin: 0;
 	padding: 0;
+}
+.nav-container button {
+	text-decoration: none;
+	border: none;
 }
 .navbar-brand img {
 	height: calc(3vw + 4vh);
@@ -48,13 +49,10 @@ li a:hover:not(.active) {
 }
 
 .active {
-	/* background-color: #0faa7b; */
 	font-weight: 400;
 	text-decoration: underline blue;
 }
 
-.nav-container {
-}
 .navbar-brand {
 	margin: 0 15px;
 }
@@ -64,12 +62,7 @@ li a:hover:not(.active) {
 .nav-container .justify-content-end {
 	margin-right: -2vw;
 }
-.nav-container .container {
-	/* border-top: 1px solid grey; */
-}
-.flex-grow-1 {
-	/* background-color: blueviolet; */
-}
+
 .flex-grow-1 span a {
 	font-size: calc(0.8rem + 0.8vw);
 }
@@ -86,6 +79,7 @@ li a:hover:not(.active) {
 	text-align: center;
 	cursor: pointer;
 	padding: 20px;
+	bottom: none !important;
 }
 .menuContainerExpand {
 	animation: slideInFromLeft 1s ease-out forwards;
@@ -115,24 +109,11 @@ li a:hover:not(.active) {
 	position: absolute;
 }
 .menuListContainer a {
+	text-decoration: none;
+	color: rgb(34, 33, 33);
 	font-size: clamp(0.5rem, calc(1vh + 2vw), 1.6rem);
 	font-weight: 800;
 	font-family: "Courier New", Courier, monospace;
-	color: radial-gradient(
-		circle,
-		#f3ff66,
-		#ffdf6f,
-		#ffc391,
-		#ffb4b6,
-		#ffb0cf,
-		#f1b8e6,
-		#ddc2f6,
-		#c7ccff,
-		#a0dbff,
-		#6ceaff,
-		#47f7ff,
-		#65ffdb
-	);
 }
 .menuList0 {
 	margin: 1vh auto;

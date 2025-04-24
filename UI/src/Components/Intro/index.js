@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef } from "react";
 import "./intro.css";
 import { useSelector } from "react-redux";
 import Loader from "../../Shared/Loader";
@@ -6,6 +6,8 @@ import IntroSection from "./IntroSection";
 import ErrorBoundary from "../../Shared/ErrorBoundry";
 import CursorComponent from "./CursorComponents/CursorComponent";
 import IntroBgSvg from "../../Shared/SVG/IntroBgSvg";
+import { sharedKeywords } from "../../Shared/Static/data";
+import { Helmet } from "react-helmet-async";
 
 const width = window.innerWidth;
 const height = window.innerHeight;
@@ -45,7 +47,16 @@ function Intro(props) {
 	};
 
 	return (
-		<>
+		<div className="c2-home">
+			<Helmet>
+				<title>Mrinal Kasyap | MERN Developer Portfolio</title>
+				<meta
+					name="description"
+					content="Hi, I'm Mrinal Kasyap—a passionate MERN stack developer. Explore my resume, animations, and dynamic full-stack projects."
+				/>
+				<meta name="keywords" content={sharedKeywords} />
+				<link rel="canonical" href="https://kasyapmrinal.com/" />
+			</Helmet>
 			{loading && <Loader />}
 			<div className="myVideo">
 				<IntroBgSvg width={width} height={height} />
@@ -61,7 +72,7 @@ function Intro(props) {
 					<div className="cursorAnimationSection ca1">
 						<CursorComponent
 							pointerCircle={[20]}
-							pointerIndex={1}
+							pointerIndex={0}
 							pointerComp={pointerComp}
 							setPointerComp={setPointerComp}
 							href="/career"
@@ -72,7 +83,7 @@ function Intro(props) {
 					<div className="cursorAnimationSection ca2">
 						<CursorComponent
 							pointerCircle={[50]}
-							pointerIndex={2}
+							pointerIndex={1}
 							pointerComp={pointerComp}
 							setPointerComp={setPointerComp}
 							href="/skill"
@@ -83,7 +94,7 @@ function Intro(props) {
 					<div className="cursorAnimationSection ca3">
 						<CursorComponent
 							pointerCircle={[10, 20, 30, 40, 50]}
-							pointerIndex={3}
+							pointerIndex={2}
 							pointerComp={pointerComp}
 							setPointerComp={setPointerComp}
 							href="/about"
@@ -96,7 +107,7 @@ function Intro(props) {
 						<CursorComponent
 							pointerCircle={[1, 2, 4, 6, 9, 12, 15, 18, 22, 26, 30, 34, 38]}
 							sizeFixed={true}
-							pointerIndex={4}
+							pointerIndex={3}
 							pointerComp={pointerComp}
 							setPointerComp={setPointerComp}
 							href="/contact"
@@ -107,7 +118,7 @@ function Intro(props) {
 					</div>
 				</div>
 			</ErrorBoundary>
-		</>
+		</div>
 	);
 }
 

@@ -3,6 +3,8 @@ import * as d3 from "d3";
 import "./skill.css";
 import Loader from "../../Shared/Loader";
 import Modal from "react-bootstrap/Modal";
+import { Helmet } from "react-helmet-async";
+import { sharedKeywords } from "../../Shared/Static/data";
 
 const halfStar = `<i class="fa-solid fa-star-half"></i>`;
 const oneStar = `<i class="fa-solid fa-star"></i>`;
@@ -402,7 +404,17 @@ function Skill({ onMouseOver, onMouseOut }) {
 		setShowAlert(!showAlert);
 	};
 	return (
-		<div style={divStyle}>
+		<div style={divStyle} className="c2-skills">
+			<Helmet>
+				<title>Skills of Mrinal Kasyap | D3 Bubble Visualization</title>
+				<meta
+					name="description"
+					content="Discover Mrinal Kasyap’s tech skills using animated, interactive D3 bubbles with drag-and-hover effects."
+				/>
+				<meta name="keywords" content={sharedKeywords} />
+				<link rel="canonical" href="https://kasyapmrinal.com/skills" />
+			</Helmet>
+
 			{data.length > 0 ? <svg ref={refNode} className="svgBody" /> : "NO Data Found"}
 			{loading && <Loader />}
 			<Modal show={showAlert} onHide={setShowAlert} className="modelContainer">

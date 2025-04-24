@@ -1,9 +1,9 @@
 import React from "react";
 import pointerGif from "../../image/invertedArrowPointing.gif";
-import { useProgressiveImage } from "../../Shared/CustomHooks";
+// import { useProgressiveImage } from "../../Shared/CustomHooks";
 
 function IntroSection(props) {
-	const pointerImage = useProgressiveImage(pointerGif);
+	// const pointerImage = useProgressiveImage(pointerGif);
 
 	return (
 		<section className=" intoSection ">
