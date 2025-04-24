@@ -1,52 +1,56 @@
 import React, { useState, useEffect, useTransition, lazy, Suspense } from "react";
-import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Provider } from "react-redux";
+import { HelmetProvider } from "react-helmet-async";
 
-import Header from "./Main/Navbar";
-import Loader from "./Shared/Loader";
-import configureStore from "./Store/store";
-
+// Styles
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./Shared/Fonts/fonts.css";
+import "./App.css";
+
+// Components
+import Header from "./Main/Navbar";
+import Loader from "./Shared/Loader";
 import ErrorBoundary from "./Shared/ErrorBoundry";
+
+// Store
+import configureStore from "./Store/store";
+const store = configureStore(); // Store initialized once
+
+// Lazy-loaded pages
 const Intro = lazy(() => import("./Components/Intro"));
 const Timeline = lazy(() => import("./Components/Timeline"));
 const Contact = lazy(() => import("./Components/Contact"));
 const Skills = lazy(() => import("./Components/Skill"));
 const About = lazy(() => import("./Components/About"));
-const NotFound = lazy(() => import("./Shared/NotFound"));
-
 const Blog = lazy(() => import("./Components/Blog"));
 const BlogRouting = lazy(() => import("./Components/Blog/blogs"));
-const UnderProgress = lazy(() => import("./Shared/UnderProgress"));
+const NotFound = lazy(() => import("./Shared/NotFound"));
+// const UnderProgress = lazy(() => import("./Shared/UnderProgress"));
 
 function App() {
-	const [isPending, startTransition] = useTransition(false);
+	const [isPending, startTransition] = useTransition();
 	const [isLoading, setIsLoading] = useState(false);
 	const navigate = useNavigate();
 
+	// Handle route changes with transition
 	const handleRouteChange = (path) => {
-		startTransition(() => {
-			navigate(path);
-		});
+		startTransition(() => navigate(path));
 	};
 
+	// Toggle loading state based on transition
 	useEffect(() => {
-		if (isPending) {
-			setIsLoading(true); // Simulate loading state
-		} else {
-			setIsLoading(false);
-		}
-	}, [isPending]);
+		setIsLoading(isPending);
+	}, [isPending, isLoading]);
 
 	return (
-		<div className="App">
-			<Provider store={configureStore()}>
+		<Provider store={store}>
+			<HelmetProvider>
 				<Header handleRouteChange={handleRouteChange} />
+
 				<Suspense fallback={<Loader />}>
-					<Routes className="headerPlaced">
+					<Routes>
 						<Route
 							path="/"
 							element={
@@ -105,14 +109,6 @@ function App() {
 							}
 						/>
 						<Route
-							path="*"
-							element={
-								<ErrorBoundary>
-									<NotFound />
-								</ErrorBoundary>
-							}
-						/>
-						<Route
 							path="/blog"
 							element={
 								<ErrorBoundary>
@@ -121,17 +117,25 @@ function App() {
 							}
 						/>
 						<Route
-							path="blog/:blog"
+							path="/blog/:blog"
 							element={
 								<ErrorBoundary>
 									<BlogRouting />
 								</ErrorBoundary>
 							}
 						/>
+						<Route
+							path="*"
+							element={
+								<ErrorBoundary>
+									<NotFound />
+								</ErrorBoundary>
+							}
+						/>
 					</Routes>
 				</Suspense>
-			</Provider>
-		</div>
+			</HelmetProvider>
+		</Provider>
 	);
 }
 

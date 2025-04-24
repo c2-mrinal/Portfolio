@@ -109,7 +109,7 @@ function MailPopUp({ show, hide }) {
 	const errorInMail = (msg) => <div className="errorMail">{msg}</div>;
 
 	return (
-		<div className="contact-container">
+		<div className="c2-contact contact-container">
 			<Modal show={show} onHide={hide} className="modelContainer">
 				<Modal.Header>
 					<div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>

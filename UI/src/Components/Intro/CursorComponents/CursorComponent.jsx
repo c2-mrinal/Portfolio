@@ -7,19 +7,19 @@ function CareerBG({ delay, sizeFixed, pointerCircle, pointerIndex, pointerComp, 
 	const wrapperRef = useRef(null);
 	const circleRefs = useRef([]);
 
-	// Memoized move handler
+	// Memoized move handler to optimize performance
 	const onMove = useCallback(
 		({ clientX, clientY }) => {
 			const bounds = wrapperRef.current?.getBoundingClientRect();
 			if (!bounds) return;
 
-			const x = bounds.x;
-			const y = bounds.y;
+			const { x, y } = bounds;
 
-			const updatedPointer = [false, false, false, false];
+			const updatedPointer = Array(4).fill(false);
 			updatedPointer[pointerIndex] = true;
 			setPointerComp(updatedPointer);
 
+			// Update each circle's position based on mouse movement
 			circleRefs.current.forEach((circle) => {
 				if (circle?.moveTo) {
 					circle.moveTo(clientX - x, clientY - y);
@@ -41,7 +41,7 @@ function CareerBG({ delay, sizeFixed, pointerCircle, pointerIndex, pointerComp, 
 		};
 	}, [onMove]);
 
-	// Register circle refs without duplicates
+	// Register circle refs ensuring no duplicates
 	const addCircleRef = useCallback((ref) => {
 		if (ref && !circleRefs.current.includes(ref)) {
 			circleRefs.current.push(ref);
@@ -72,7 +72,7 @@ function CareerBG({ delay, sizeFixed, pointerCircle, pointerIndex, pointerComp, 
 	);
 }
 
-// ✅ Prop Types
+// PropTypes for type safety and clarity
 CareerBG.propTypes = {
 	delay: PropTypes.bool,
 	sizeFixed: PropTypes.bool,

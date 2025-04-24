@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Loader from "../../Shared/Loader";
 import "./timeline.css";
 import TimeLineSvg from "../../Shared/SVG/TimeLineSvg";
+import { Helmet } from "react-helmet-async";
+import { sharedKeywords } from "../../Shared/Static/data";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,6 +81,15 @@ export default function Scene() {
 
 	return (
 		<>
+			<Helmet>
+				<title>Mrinal Kasyap | Career Timeline & Developer Milestones</title>
+				<meta
+					name="description"
+					content="A detailed view of Mrinal Kasyap’s professional career, reverse-scrolling timeline built with GSAP, and lifetime achievements in development."
+				/>
+				<meta name="keywords" content={sharedKeywords} />
+				<link rel="canonical" href="https://kasyapmrinal.com/career" />
+			</Helmet>
 			<div ref={componentRef}>
 				{!loading && Data.length > 0 && (
 					<div ref={sliderRef} className="containers" style={{ width: 100 * Data?.length + "vw" }}>
