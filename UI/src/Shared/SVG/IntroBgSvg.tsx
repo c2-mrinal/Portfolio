@@ -12,7 +12,7 @@ function useMouseMove() {
 	return { mouseX, mouseY, onMouseMove };
 }
 
-function IntroBgSvg({ width, height }) {
+function IntroBgSvg() {
 	const WrapperRef = useRef(null);
 	const { mouseX, mouseY, onMouseMove } = useMouseMove();
 
@@ -29,8 +29,8 @@ function IntroBgSvg({ width, height }) {
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			version="1.1"
-			width={width}
-			height={height}
+			width="100%"
+			height="100%"
 			viewBox="0 0 1422 800"
 			ref={WrapperRef}
 		>

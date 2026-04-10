@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import Modal from "react-bootstrap/Modal";
+import { Modal, ModalContent, ModalHeader, ModalBody } from "@nextui-org/react";
 import Input from "../../../Shared/Input";
 import Loader from "../../../Shared/Loader";
 import emailjs from "@emailjs/browser";
@@ -110,8 +110,9 @@ function MailPopUp({ show, hide }) {
 
 	return (
 		<div className="c2-contact contact-container">
-			<Modal show={show} onHide={hide} className="modelContainer">
-				<Modal.Header>
+			<Modal isOpen={show} onClose={hide} className="modelContainer">
+				<ModalContent>
+					<ModalHeader>
 					<div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
 						<div>
 							<span onClick={hide} title="Close" className="modelHeaderMenuAlert modelIcons">
@@ -141,8 +142,8 @@ function MailPopUp({ show, hide }) {
 							</span>
 						</div>
 					</div>
-				</Modal.Header>
-				<Modal.Body>
+					</ModalHeader>
+					<ModalBody>
 					{recentMail ? (
 						<>
 							<div className="inputFieldsAlign" ref={mailForm}>
@@ -203,7 +204,8 @@ function MailPopUp({ show, hide }) {
 							</p>
 						</div>
 					)}
-				</Modal.Body>
+					</ModalBody>
+				</ModalContent>
 			</Modal>
 			{loading && <Loader />}
 		</div>

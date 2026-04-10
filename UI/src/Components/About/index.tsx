@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import "./about.css";
 import LeftPanel from "./Panel/LeftPanel";
 import RightPanel from "./Panel/RightPanel";
-import { Helmet } from "react-helmet-async";
+
 import { sharedKeywords } from "../../Shared/Static/data";
 
 function About() {
@@ -33,15 +33,7 @@ function About() {
 	}, [selectedFolderStore]);
 	return (
 		<div className="about-cointainer">
-			<Helmet>
-				<title>About Mrinal Kasyap | Full-Stack Developer Journey</title>
-				<meta
-					name="description"
-					content="Know Mrinal Kasyap’s full journey—career, education, achievements, hobbies, tech stack, and how this MERN portfolio was built and deployed."
-				/>
-				<meta name="keywords" content={sharedKeywords} />
-				<link rel="canonical" href="https://kasyapmrinal.com/about" />
-			</Helmet>
+			
 			<div className={`splitLeft ${!displayVisual ? "splitLeftWidth20" : "splitLeftMinWidth"}`}>
 				<LeftPanel selectFolder={setSelectedFolder} display={!displayVisual || showCollpase} />
 				{displayVisual && (

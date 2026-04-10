@@ -1,10 +1,10 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 import HooksCheatsheet from "./HooksCheatsheet";
 import NotFound from "../../../Shared/NotFound";
 
 const BlogRouting = () => {
-	const location = useLocation();
+	const pathname = usePathname();
 	const renderComponent = (path) => {
 		switch (path) {
 			case "/blog/react-hooks-cheatsheet":
@@ -15,7 +15,7 @@ const BlogRouting = () => {
 		}
 	};
 
-	return <div>{renderComponent(location.pathname)}</div>;
+	return <div>{renderComponent(pathname)}</div>;
 };
 
 export default BlogRouting;

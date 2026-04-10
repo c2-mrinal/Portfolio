@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./contact.css";
 import MailPopUp from "./MailPopUp";
-import { Helmet } from "react-helmet-async";
+
 import { sharedKeywords } from "../../Shared/Static/data";
 
 const socialLinks = [
@@ -61,15 +61,7 @@ const Contact = () => {
 
 	return (
 		<div className="c2-contact contact-container">
-			<Helmet>
-				<title>Contact Mrinal Kasyap | Connect & Collaborate</title>
-				<meta
-					name="description"
-					content="Get in touch with Mrinal Kasyap via social platforms or direct email. Built-in React mailing service included in this responsive MERN portfolio."
-				/>
-				<meta name="keywords" content={sharedKeywords} />
-				<link rel="canonical" href="https://kasyapmrinal.com/contact" />
-			</Helmet>
+			
 			<div className="contactContainer">
 				<section>
 					<div className="contactBG">

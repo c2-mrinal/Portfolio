@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "react-bootstrap/Nav";
+import { Link } from "@nextui-org/react";
 import "./NotFound.css";
 
 function NotFound() {
@@ -12,7 +12,7 @@ function NotFound() {
 				<strong>Oh No! Page Not Found.</strong>
 			</div>
 			<div className="contactLink">
-				<Nav.Link href="/contact">Contact Path Support</Nav.Link>
+				<Link href="/contact">Contact Path Support</Link>
 			</div>
 		</div>
 	);

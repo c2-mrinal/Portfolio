@@ -36,7 +36,7 @@ function IntroSection(props) {
 				</div>
 				<div>
 					<img
-						src={pointerGif}
+						src={pointerGif.src}
 						className="pointingArrow"
 						style={{ display: `${pointerGif ? "block" : "none"}` }}
 						alt="error"

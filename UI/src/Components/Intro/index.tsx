@@ -7,10 +7,8 @@ import ErrorBoundary from "../../Shared/ErrorBoundry";
 import CursorComponent from "./CursorComponents/CursorComponent";
 import IntroBgSvg from "../../Shared/SVG/IntroBgSvg";
 import { sharedKeywords } from "../../Shared/Static/data";
-import { Helmet } from "react-helmet-async";
 
-const width = window.innerWidth;
-const height = window.innerHeight;
+
 function Intro(props) {
 	const [downloading, setDownloading] = useState(false);
 	const [downloadSuccess, setDownloadSuccess] = useState(false);
@@ -48,18 +46,10 @@ function Intro(props) {
 
 	return (
 		<div className="c2-home">
-			<Helmet>
-				<title>Mrinal Kasyap | MERN Developer Portfolio</title>
-				<meta
-					name="description"
-					content="Hi, I'm Mrinal Kasyap—a passionate MERN stack developer. Explore my resume, animations, and dynamic full-stack projects."
-				/>
-				<meta name="keywords" content={sharedKeywords} />
-				<link rel="canonical" href="https://kasyapmrinal.com/" />
-			</Helmet>
+			
 			{loading && <Loader />}
 			<div className="myVideo">
-				<IntroBgSvg width={width} height={height} />
+				<IntroBgSvg />
 			</div>
 			<ErrorBoundary hide={true}>
 				<div ref={WrapperRef}>

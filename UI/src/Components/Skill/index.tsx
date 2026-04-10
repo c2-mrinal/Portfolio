@@ -2,19 +2,17 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import * as d3 from "d3";
 import "./skill.css";
 import Loader from "../../Shared/Loader";
-import Modal from "react-bootstrap/Modal";
-import { Helmet } from "react-helmet-async";
+import { Modal, ModalContent, ModalBody } from "@nextui-org/react";
+
 import { sharedKeywords } from "../../Shared/Static/data";
 
 const halfStar = `<i class="fa-solid fa-star-half"></i>`;
 const oneStar = `<i class="fa-solid fa-star"></i>`;
-const heightS = window.innerHeight;
-const widthS = window.innerWidth;
 function useWindowSize() {
 	const [size, setSize] = useState([0, 0]);
 	useLayoutEffect(() => {
 		function updateSize() {
-			setSize([widthS, heightS]);
+			setSize([window.innerWidth, window.innerHeight]);
 		}
 		window.addEventListener("resize", updateSize);
 		updateSize();
@@ -23,7 +21,7 @@ function useWindowSize() {
 	return size;
 }
 
-function Skill({ onMouseOver, onMouseOut }) {
+function Skill({ onMouseOver, onMouseOut }: any) {
 	const [windowWidth, windowHeight] = useWindowSize();
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
@@ -97,8 +95,8 @@ function Skill({ onMouseOver, onMouseOut }) {
 		backgroundSize: "cover",
 		maxHeight: "100vh",
 		zIndex: "1",
-		height: heightS,
-		widthS: widthS,
+		height: windowHeight,
+		width: windowWidth,
 		overflow: "hidden",
 	};
 	useEffect(() => {
@@ -405,20 +403,13 @@ function Skill({ onMouseOver, onMouseOut }) {
 	};
 	return (
 		<div style={divStyle} className="c2-skills">
-			<Helmet>
-				<title>Skills of Mrinal Kasyap | D3 Bubble Visualization</title>
-				<meta
-					name="description"
-					content="Discover Mrinal Kasyap’s tech skills using animated, interactive D3 bubbles with drag-and-hover effects."
-				/>
-				<meta name="keywords" content={sharedKeywords} />
-				<link rel="canonical" href="https://kasyapmrinal.com/skills" />
-			</Helmet>
+			
 
 			{data.length > 0 ? <svg ref={refNode} className="svgBody" /> : "NO Data Found"}
 			{loading && <Loader />}
-			<Modal show={showAlert} onHide={setShowAlert} className="modelContainer">
-				<Modal.Body>
+			<Modal isOpen={showAlert} onClose={() => setShowAlert(false)} className="modelContainer">
+				<ModalContent>
+					<ModalBody>
 					<ul className="alert-ul">
 						<li>
 							<span className="alert-emoji">&#x1F913;</span>
@@ -431,7 +422,8 @@ function Skill({ onMouseOver, onMouseOut }) {
 					</ul>
 					<h6 onClick={handlePopup}>close</h6>
 					<div className="pointingTri"></div>
-				</Modal.Body>
+					</ModalBody>
+				</ModalContent>
 			</Modal>
 		</div>
 	);

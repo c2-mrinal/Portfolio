@@ -1,35 +1,38 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 
 import allActions from "../../actions";
 import Logo from "../../image/LOGO.png";
 import "./navbar.css";
 
-const Header = ({ handleRouteChange }) => {
+const Header = () => {
 	const dispatch = useDispatch();
-	const location = useLocation();
+	const pathname = usePathname();
+    const router = useRouter();
 
 	const [isHome, setIsHome] = useState(true);
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	// Detect device type (run once)
 	useEffect(() => {
-		const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+		const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0 || (navigator as any).msMaxTouchPoints > 0;
 		dispatch(allActions.deviceType(isTouchDevice));
 	}, [dispatch]);
 
 	// Update path state
 	useEffect(() => {
-		setIsHome(location.pathname === "/");
-	}, [location.pathname]);
+		setIsHome(pathname === "/");
+	}, [pathname]);
 
 	const toggleMenu = () => setMenuOpen((prev) => !prev);
 
 	const handleNavigation = (path) => {
-		handleRouteChange(path);
+		router.push(path);
 		setMenuOpen(false);
 	};
 
@@ -42,12 +45,12 @@ const Header = ({ handleRouteChange }) => {
 	];
 
 	return (
-		<Navbar className="nav-container fixed-top" expand="lg">
-			<Navbar.Brand className="navbar-brand" onClick={() => handleNavigation("/")}>
-				<img className="logo-img" src={Logo} alt="Site Logo" />
-			</Navbar.Brand>
+		<Navbar className="nav-container bg-transparent shadow-none !absolute top-0 w-full z-50" maxWidth="full" position="static">
+			<NavbarBrand className="navbar-brand cursor-pointer" onClick={() => handleNavigation("/")}>
+				<img className="logo-img" src={Logo.src} alt="Site Logo" />
+			</NavbarBrand>
 
-			<Container className="justify-content-end">
+			<NavbarContent justify="end" className="justify-content-end">
 				<button className="collapseMenuContainer" onClick={toggleMenu} aria-label="Toggle navigation menu">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +70,11 @@ const Header = ({ handleRouteChange }) => {
 						{routes.map((route, idx) => (
 							<div className={`menuList${idx}`} key={route.path}>
 								<Link
-									to={route.path}
-									onClick={() => handleNavigation(route.path)}
+									href={route.path}
+									onClick={(e) => {
+                                        e.preventDefault();
+                                        handleNavigation(route.path);
+                                    }}
 									className={isHome ? "fontColorWhite" : ""}
 								>
 									{route.label}
@@ -77,7 +83,7 @@ const Header = ({ handleRouteChange }) => {
 						))}
 					</div>
 				)}
-			</Container>
+			</NavbarContent>
 		</Navbar>
 	);
 };

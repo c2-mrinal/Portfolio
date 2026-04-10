@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import PropTypes from "prop-types";
-import Nav from "react-bootstrap/Nav";
+import { Link } from "@nextui-org/react";
 import { Circle } from "../../../Shared/CircleRef";
 
 function CareerBG({ delay, sizeFixed, pointerCircle, pointerIndex, pointerComp, setPointerComp, href, buttonText }) {
@@ -64,9 +64,9 @@ function CareerBG({ delay, sizeFixed, pointerCircle, pointerIndex, pointerComp, 
 				))}
 			</div>
 			<div className="pageDetail introCursorButton">
-				<Nav.Link href={href}>
+				<Link href={href}>
 					<h3>{buttonText}</h3>
-				</Nav.Link>
+				</Link>
 			</div>
 		</>
 	);

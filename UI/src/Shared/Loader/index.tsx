@@ -7,8 +7,8 @@ function Loader() {
 	return (
 		<div className="loaderBackgroung">
 			<div className="loader-box">
-				<img className="loader-ring" src={ring} alt="loading ... " />
-				<img className="loader-c2icon" src={c2Icon} alt="loading ... " />
+				<img className="loader-ring" src={ring.src} alt="loading ... " />
+				<img className="loader-c2icon" src={c2Icon.src} alt="loading ... " />
 			</div>
 		</div>
 	);

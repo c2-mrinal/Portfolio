@@ -6,10 +6,10 @@ import Folder from "./Folder";
 import "./leftPanel.css";
 import Loader from "../../../../Shared/Loader";
 
-function LeftPanel(props) {
-	const path = window.location.pathname.split("/");
+function LeftPanel(props: any) {
+	const path = typeof window !== 'undefined' ? window.location.pathname.split("/") : [];
 
-	const [FolderData, setFolderData] = useState({});
+	const [FolderData, setFolderData] = useState<any>({});
 	const [loading, setLoading] = useState(false);
 
 	const selectedFolder = useSelector((state) => {
