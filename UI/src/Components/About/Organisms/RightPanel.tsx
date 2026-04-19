@@ -1,23 +1,25 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import "./rightPanel.css";
-import allActions from "../../../../actions";
+import allActions from "../../../actions";
 import { useSelector, useDispatch } from "react-redux";
-import Loader from "../../../../Shared/Loader";
-import UnderProgress from "../../../../Shared/UnderProgress";
-import Educational from "./Educational";
-import Experiance from "./Experiance";
-import Extracurricular from "./Extracurricular";
-import Library from "./Library";
-import Workflow from "./Workflow";
+import Loader from "../../../Shared/Loader";
+import UnderProgress from "../../../Shared/UnderProgress";
+import Educational from "./DetailPanels/Educational";
+import Experiance from "./DetailPanels/Experiance";
+import Extracurricular from "./DetailPanels/Extracurricular";
+import Library from "./DetailPanels/Library";
+import Workflow from "./DetailPanels/Workflow";
 
-function RightPanel(props) {
-	const [data, setdata] = useState({});
+function RightPanel() {
+	const [data, setdata] = useState<any>({});
 	const [loading, setLoading] = useState(false);
-	const scrollToRef = useRef(null);
+	const scrollToRef = useRef<HTMLDivElement>(null);
 
 	const dispatch = useDispatch();
-	const folderIs = useSelector((state) => state.folderIs || "");
-	const folderData = useSelector((state) => state.folderData || {});
+	const folderIs = useSelector((state: any) => state.folderIs || "");
+	const folderData = useSelector((state: any) => state.folderData || {});
 
 	useEffect(() => {
 		async function fetchMyAPI() {
@@ -48,10 +50,10 @@ function RightPanel(props) {
 		}
 
 		fetchMyAPI();
-		scrollToRef.current.scrollIntoView();
+		scrollToRef.current?.scrollIntoView();
 	}, [folderIs.value]);
 
-	const storefolderDataUpdate = (key, data) => {
+	const storefolderDataUpdate = (key: string, data: any) => {
 		dispatch(allActions.folderDataAction({ ...folderData, [key]: data }));
 	};
 

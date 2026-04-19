@@ -1,9 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./leftPanel.css";
+"use client";
 
-function Folder({ explorer, selectedFolder, folderSelected }) {
+import React, { useState, useEffect, useRef } from "react";
+import "../Organisms/leftPanel.css";
+
+interface FolderItemProps {
+	explorer: any;
+	selectedFolder: any;
+	folderSelected: (data: any) => void;
+}
+
+function FolderItem({ explorer, selectedFolder, folderSelected }: FolderItemProps) {
 	const [isExpanded, setIsExpanded] = useState(false);
-	const contentRef = useRef(null);
+	const contentRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		if (explorer?.isOpen) {
@@ -60,8 +68,8 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
 
 			<div className="folder-content-wrapper" ref={contentRef}>
 				<div className="folder-content-inner">
-					{explorer?.items?.map((child) => (
-						<Folder key={child.name} explorer={child} selectedFolder={selectedFolder} folderSelected={folderSelected} />
+					{explorer?.items?.map((child: any) => (
+						<FolderItem key={child.name} explorer={child} selectedFolder={selectedFolder} folderSelected={folderSelected} />
 					))}
 				</div>
 			</div>
@@ -69,4 +77,4 @@ function Folder({ explorer, selectedFolder, folderSelected }) {
 	);
 }
 
-export default Folder;
+export default FolderItem;

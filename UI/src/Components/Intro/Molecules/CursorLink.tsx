@@ -1,15 +1,36 @@
+"use client";
+
 import React, { useEffect, useRef, useCallback } from "react";
 import PropTypes from "prop-types";
 import { Link } from "@nextui-org/react";
 import { Circle } from "../../../Shared/CircleRef";
 
-function CareerBG({ delay, sizeFixed, pointerCircle, pointerIndex, pointerComp, setPointerComp, href, buttonText }) {
-	const wrapperRef = useRef(null);
-	const circleRefs = useRef([]);
+interface CursorLinkProps {
+	delay?: boolean;
+	sizeFixed?: boolean;
+	pointerCircle: number[];
+	pointerIndex: number;
+	pointerComp: boolean[];
+	setPointerComp: (updated: boolean[]) => void;
+	href: string;
+	buttonText: string;
+}
 
-	// Memoized move handler to optimize performance
+const CursorLink: React.FC<CursorLinkProps> = ({ 
+    delay, 
+    sizeFixed, 
+    pointerCircle, 
+    pointerIndex, 
+    pointerComp, 
+    setPointerComp, 
+    href, 
+    buttonText 
+}) => {
+	const wrapperRef = useRef<HTMLDivElement>(null);
+	const circleRefs = useRef<any[]>([]);
+
 	const onMove = useCallback(
-		({ clientX, clientY }) => {
+		(event: PointerEvent) => {
 			const bounds = wrapperRef.current?.getBoundingClientRect();
 			if (!bounds) return;
 
@@ -19,10 +40,9 @@ function CareerBG({ delay, sizeFixed, pointerCircle, pointerIndex, pointerComp, 
 			updatedPointer[pointerIndex] = true;
 			setPointerComp(updatedPointer);
 
-			// Update each circle's position based on mouse movement
 			circleRefs.current.forEach((circle) => {
 				if (circle?.moveTo) {
-					circle.moveTo(clientX - x, clientY - y);
+					circle.moveTo(event.clientX - x, event.clientY - y);
 				}
 			});
 		},
@@ -32,17 +52,16 @@ function CareerBG({ delay, sizeFixed, pointerCircle, pointerIndex, pointerComp, 
 	useEffect(() => {
 		const wrapper = wrapperRef.current;
 		if (wrapper) {
-			wrapper.addEventListener("pointermove", onMove);
+			wrapper.addEventListener("pointermove", onMove as any);
 		}
 		return () => {
 			if (wrapper) {
-				wrapper.removeEventListener("pointermove", onMove);
+				wrapper.removeEventListener("pointermove", onMove as any);
 			}
 		};
 	}, [onMove]);
 
-	// Register circle refs ensuring no duplicates
-	const addCircleRef = useCallback((ref) => {
+	const addCircleRef = useCallback((ref: any) => {
 		if (ref && !circleRefs.current.includes(ref)) {
 			circleRefs.current.push(ref);
 		}
@@ -72,16 +91,4 @@ function CareerBG({ delay, sizeFixed, pointerCircle, pointerIndex, pointerComp, 
 	);
 }
 
-// PropTypes for type safety and clarity
-CareerBG.propTypes = {
-	delay: PropTypes.bool,
-	sizeFixed: PropTypes.bool,
-	pointerCircle: PropTypes.arrayOf(PropTypes.number).isRequired,
-	pointerIndex: PropTypes.number.isRequired,
-	pointerComp: PropTypes.arrayOf(PropTypes.bool).isRequired,
-	setPointerComp: PropTypes.func.isRequired,
-	href: PropTypes.string.isRequired,
-	buttonText: PropTypes.string.isRequired,
-};
-
-export default CareerBG;
+export default CursorLink;

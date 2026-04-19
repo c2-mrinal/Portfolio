@@ -1,22 +1,14 @@
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useEffect, useRef, useState } from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Loader from "../../Shared/Loader";
 import "./timeline.css";
-import TimeLineSvg from "../../Shared/SVG/TimeLineSvg";
-
-import { sharedKeywords } from "../../Shared/Static/data";
-
-gsap.registerPlugin(ScrollTrigger);
-
-let currentScrollIndex = 0;
+import TimelineBackground from "./Atoms/TimelineBackground";
+import TimelineFrame from "./Atoms/TimelineFrame";
+import TimelineScroller from "./Organisms/TimelineScroller";
 
 export default function Scene() {
-	const componentRef = useRef();
-	const sliderRef = useRef();
-	const panelYearRef = useRef([]);
-	const [viewSlide, setViewSlide] = useState(0);
-	const [Data, setData] = useState([]);
+	const [Data, setData] = useState<any[]>([]);
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
@@ -46,122 +38,15 @@ export default function Scene() {
 		fetchMyAPI();
 	}, []);
 
-	useEffect(() => {
-		if (!Data.length) return;
-
-		const ctx = gsap.context(() => {
-			const panels = gsap.utils.toArray(".panel");
-
-			gsap.to(panels, {
-				xPercent: -100 * (panels.length - 1),
-				ease: "none",
-				scrollTrigger: {
-					trigger: sliderRef.current,
-					pin: true,
-					scrub: 1,
-					snap: 1 / (panels.length - 1),
-					end: () => "+=" + sliderRef.current.offsetWidth,
-					markers: false,
-					onUpdate: (self) => {
-						const panelsLength = panels.length;
-						const progress = self.progress;
-						const newIndex = Math.floor(progress * panelsLength);
-
-						if (newIndex !== currentScrollIndex) {
-							currentScrollIndex = newIndex;
-							setViewSlide(newIndex); // Update slide view state if needed
-						}
-					},
-				},
-			});
-		}, componentRef);
-
-		return () => ctx.revert();
-	}, [Data]);
-
 	return (
 		<>
+			{!loading && Data && Data.length > 0 && (
+				<TimelineScroller data={Data} />
+			)}
 			
-			<div ref={componentRef}>
-				{!loading && Data.length > 0 && (
-					<div ref={sliderRef} className="containers" style={{ width: 100 * Data?.length + "vw" }}>
-						{Data.map((val, ind) => (
-							<div className="panel" key={val?.age + ind}>
-								<div className="textContainer">
-									<div className="col-smm-1 t1"></div>
+			<TimelineFrame />
+			<TimelineBackground />
 
-									<div className="col-smm-2 t2" ref={(el) => (panelYearRef.current[ind] = el)}>
-										<div className="textRotated subClass">{val.age}</div>
-									</div>
-
-									<div className="col-smm-6 t3">
-										<h2 className={`textHeader ${currentScrollIndex === ind ? "showpanelHeader" : "hidepanelHeader"}`}>
-											{val.header}{" "}
-											<a href={`/about/${val.value}`} target="_blank" rel="noreferrer">
-												<i className="fa fa-external-link" aria-hidden="true"></i>
-											</a>
-										</h2>
-										<div className="textAbout">
-											<em>{val.about}</em>
-										</div>
-										<div className="textDetail">{val.detail}</div>
-									</div>
-
-									<div className="col-smm-2 t4">{val.year}</div>
-									<div className="col-smm-1 t5"></div>
-								</div>
-							</div>
-						))}
-					</div>
-				)}
-			</div>
-
-			{/* Static Timeline Frame */}
-			<div className="timeLineFrame headerTextContainer">
-				<div className="col-smm-1 contain1">
-					<div className="careerHeaderText chtStart">
-						<h3>CAREER</h3>
-					</div>
-					<TimeLineSvg className="wapper1" />
-				</div>
-				<div className="col-smm-2 contain2">
-					<TimeLineSvg className="wapper2" />
-				</div>
-				<div className="col-smm-6 contain3"></div>
-				<div className="col-smm-2 contain4">
-					<TimeLineSvg className="wapper3" />
-				</div>
-				<div className="col-smm-1 contain5">
-					<div className="careerHeaderText chtEnd">
-						<h3>TIMELINE</h3>
-					</div>
-					<TimeLineSvg className="wapper4" />
-				</div>
-			</div>
-
-			{/* Background Shapes */}
-			<div className="timelineBgOver">
-				<div className="bgover1"></div>
-				<div className="bgover2"></div>
-			</div>
-
-			<div className="timeLineFrame">
-				<div className="col-smm-1">
-					<div className="shape1"></div>
-				</div>
-				<div className="col-smm-2 bgWhite">
-					<div className="shape2"></div>
-				</div>
-				<div className="col-smm-6 shape3"></div>
-				<div className="col-smm-2 bgWhite">
-					<div className="shape4"></div>
-				</div>
-				<div className="col-smm-1 bgWhite">
-					<div className="shape5"></div>
-				</div>
-			</div>
-
-			{/* Loader */}
 			{loading && <Loader />}
 		</>
 	);

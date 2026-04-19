@@ -1,18 +1,27 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
-import allActions from "../../../../actions";
+import { usePathname } from "next/navigation";
+import allActions from "../../../actions";
 import { useSelector, useDispatch } from "react-redux";
 
-import Folder from "./Folder";
+import FolderItem from "../Molecules/FolderItem";
 import "./leftPanel.css";
-import Loader from "../../../../Shared/Loader";
+import Loader from "../../../Shared/Loader";
 
-function LeftPanel(props: any) {
-	const path = typeof window !== 'undefined' ? window.location.pathname.split("/") : [];
+interface LeftPanelProps {
+	selectFolder: (data: any) => void;
+	display: boolean;
+}
+
+function LeftPanel(props: LeftPanelProps) {
+	const pathname = usePathname();
+	const path = pathname ? pathname.split("/") : [];
 
 	const [FolderData, setFolderData] = useState<any>({});
 	const [loading, setLoading] = useState(false);
 
-	const selectedFolder = useSelector((state) => {
+	const selectedFolder = useSelector((state: any) => {
 		return state.folderIs;
 	});
 
@@ -26,7 +35,7 @@ function LeftPanel(props: any) {
 				if (path[2]) {
 					url += "/" + path[2];
 				}
-				const response = await fetch(url);
+				const response: any = await fetch(url);
 				if (response.ok) {
 					const responseData = await response.json();
 					if (responseData.success && responseData.data) {
@@ -48,8 +57,8 @@ function LeftPanel(props: any) {
 		fetchMyAPI();
 	}, []);
 
-	const folderSelected = (data) => {
-		if (data.value !== selectedFolder.value) {
+	const folderSelected = (data: any) => {
+		if (data.value !== selectedFolder?.value) {
 			props.selectFolder(data);
 			dispatch(allActions.folderAction(data));
 		}
@@ -58,10 +67,10 @@ function LeftPanel(props: any) {
 	return (
 		<div className={`${props.display ? "folderListDiplay" : "folderListHide"}`}>
 			{FolderData.Mrinal && (
-				<Folder explorer={FolderData.Mrinal} selectedFolder={selectedFolder} folderSelected={folderSelected} />
+				<FolderItem explorer={FolderData.Mrinal} selectedFolder={selectedFolder} folderSelected={folderSelected} />
 			)}
 			{FolderData.Website && (
-				<Folder explorer={FolderData.Website} selectedFolder={selectedFolder} folderSelected={folderSelected} />
+				<FolderItem explorer={FolderData.Website} selectedFolder={selectedFolder} folderSelected={folderSelected} />
 			)}
 			<div className="splitBottomspacing"></div>
 

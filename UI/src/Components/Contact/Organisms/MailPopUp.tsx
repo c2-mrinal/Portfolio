@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { Modal, ModalContent, ModalHeader, ModalBody } from "@nextui-org/react";

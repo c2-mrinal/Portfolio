@@ -15,3 +15,4 @@ const useProgressiveImage = (src) => {
 };
 
 export { useProgressiveImage };
+export { useWindowSize } from "./useWindowSize";

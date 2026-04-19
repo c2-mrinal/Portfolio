@@ -3,8 +3,16 @@
 	margin: auto;
 	width: calc(100%);
 	max-height: 100vh;
-	z-index: -1;
+	z-index: 100;
+	position: absolute;
+	top: 0;
+	left: 0;
 	overflow: hidden;
+	pointer-events: none;
+}
+
+.svgBody circle, .svgBody text {
+	pointer-events: all;
 }
 
 .svgBody text {
@@ -16,20 +24,20 @@
 .bubble {
 	position: fixed;
 	margin-left: auto;
-	max-width: calc(16vh + 25vw);
-	padding: 1rem;
+	max-width: calc(12vh + 18vw);
+	padding: 0.6rem;
 	background: var(--color-aqua);
-	outline: solid 0.2rem black;
-	outline-offset: -0.5rem;
-	border-radius: 10px;
+	outline: solid 0.15rem black;
+	outline-offset: -0.3rem;
+	border-radius: 8px;
 }
 
 .bubbleTooltip h6 {
-	font-size: clamp(0.7rem, calc(0.8vw + 0.9vh), 1.3rem);
+	font-size: clamp(0.55rem, calc(0.6vw + 0.7vh), 0.95rem);
 	text-align: justify;
 }
 .bubbleTooltip h5 {
-	font-size: calc(0.5rem + 1vw);
+	font-size: calc(0.45rem + 0.8vw);
 }
 
 .containerbackground {
@@ -185,4 +193,61 @@
 .alert-emoji {
 	padding: 0 1rem;
 	font-size: calc(1rem + 1.5vw);
+}
+
+/* Base Responsive Adjustments for Mobile and Tablets */
+@media screen and (max-width: 768px) {
+	.bubble {
+		top: auto !important;
+		bottom: 5% !important;
+		left: 50% !important;
+		transform: translateX(-50%);
+		max-width: 85vw;
+		width: max-content;
+		padding: 0.5rem;
+	}
+
+	.bubbleTooltip h6 {
+		font-size: 0.8rem;
+	}
+
+	.bubbleTooltip h5 {
+		font-size: 0.9rem;
+	}
+
+	.modal-content {
+		width: 95% !important;
+		border-bottom: 0.2rem solid #28433fb9;
+		border-right: 0.4rem solid #254c46b9;
+	}
+
+	.alert-ul li span {
+		font-size: 0.75rem;
+	}
+
+	.alert-emoji {
+		font-size: 1.2rem;
+		padding: 0 0.5rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.bubble {
+		bottom: 2% !important;
+		max-width: 95vw;
+		padding: 0.4rem;
+	}
+
+	.bubbleTooltip h6 {
+		font-size: 0.75rem;
+	}
+
+	.bubbleTooltip h5 {
+		font-size: 0.8rem;
+	}
+
+	.modal-content h5 {
+		font-size: 1.1rem;
+		letter-spacing: 1px;
+	}
 }
